@@ -4,13 +4,13 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Profile;
+use App\Models\Director;
 use Session;
 
-class ProfileController extends Controller
+class DirectorController extends Controller
 {
     public function addProfile(){
-        return view('backend/profile/add_profile');
+        return view('backend/director/add_director');
     }
 
     public function stroeProfile(Request $request){
@@ -24,29 +24,29 @@ class ProfileController extends Controller
 
         $img = $request->file('image');
 
-        $profile = new Profile;
+        $profile = new Director;
         $profile->name = $request->name;
         $profile->position = $request->position;
         if($img){
             $imgname = time().'.'.$img->getClientOriginalExtension();
-            $img->move(base_path('public/uploads/profile'),$imgname);
+            $img->move(base_path('public/uploads/director'),$imgname);
             $profile->image = $imgname;
         }
         $profile->status = $request->status;
         $profile->save();
 
         Session::flash('success','Added successfully!');
-        return redirect()->route('admin.list.profile');
+        return redirect()->route('admin.list.director');
     }
 
     public function listProfile(){
-        $data = Profile::select('id','name','position','image','status')->orderBy('id','asc')->get();
-        return view('backend/profile/list_profile')->with(['data'=>$data]);
+        $data = Director::select('id','name','position','image','status')->orderBy('id','asc')->get();
+        return view('backend/director/list_director')->with(['data'=>$data]);
     }
 
     public function editProfile(Request $request,$id){
-        $data = Profile::where('id',$id)->first();
-        return view('backend/profile/edit_profile')->with(['data'=>$data]);
+        $data = Director::where('id',$id)->first();
+        return view('backend/director/edit_director')->with(['data'=>$data]);
     }
 
     public function editStoreProfile(Request $request,$id){
@@ -60,12 +60,12 @@ class ProfileController extends Controller
         $img = $request->file('image');
 
         if($img){
-            $old = Profile::find($id);
-            if(is_file(base_path('public/uploads/profile/'.$old->image))){
-                unlink(base_path('public/uploads/profile/'.$old->image));
+            $old = Director::find($id);
+            if(is_file(base_path('public/uploads/director/'.$old->image))){
+                unlink(base_path('public/uploads/director/'.$old->image));
             }
             $imgname = time().'.'.$img->getClientOriginalExtension();
-            $img->move(base_path('public/uploads/profile'),$imgname);
+            $img->move(base_path('public/uploads/director'),$imgname);
             $data = array(
                 "name" => $request->name,
                 "position" => $request->position,
@@ -79,18 +79,18 @@ class ProfileController extends Controller
                 "status" => $request->status,
             );
         }
-        Profile::where('id',$id)->update($data);
+        Director::where('id',$id)->update($data);
         Session::flash('success','Updated successfully!');
-        return redirect()->route('admin.list.profile');
+        return redirect()->route('admin.list.director');
     }
 
     public function deleteProfile($id){
-        $old = Profile::find($id);
-        if(is_file(base_path('public/uploads/profile/'.$old->image))){
-            unlink(base_path('public/uploads/profile/'.$old->image));
+        $old = Director::find($id);
+        if(is_file(base_path('public/uploads/director/'.$old->image))){
+            unlink(base_path('public/uploads/director/'.$old->image));
         }
         $old->delete();
         Session::flash('success','Deleted Successfully!');
-        return redirect()->route('admin.list.profile');
+        return redirect()->route('admin.list.director');
     }
 }

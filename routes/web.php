@@ -19,7 +19,7 @@ use App\Http\Controllers\backend\AmenityController;
 use App\Http\Controllers\backend\TypeController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\AwardController;
-use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\DirectorController;
 
 // frontend controllers
 use App\Http\Controllers\frontend\HomeController;
@@ -161,13 +161,13 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit-store-award/{id}', [AwardController::class, 'editStoreAward'])->name('admin.edit.store.award');
         Route::get('/delete-award/{id}', [AwardController::class, 'deleteAward'])->name('admin.delete.award');
 
-        // Manage Profile
-        Route::get('/add-profile', [ProfileController::class, 'addProfile'])->name('admin.add.profile');
-        Route::post('/store-profile', [ProfileController::class, 'stroeProfile'])->name('admin.store.profile');
-        Route::get('/list-profile', [ProfileController::class, 'listProfile'])->name('admin.list.profile');
-        Route::get('/edit-profile/{id}', [ProfileController::class, 'editProfile'])->name('admin.edit.profile');
-        Route::post('/edit-store-profile/{id}', [ProfileController::class, 'editStoreProfile'])->name('admin.edit.store.profile');
-        Route::get('/delete-profile/{id}', [ProfileController::class, 'deleteProfile'])->name('admin.delete.profile');
+        // Manage Directors
+        Route::get('/add-director', [DirectorController::class, 'addProfile'])->name('admin.add.director');
+        Route::post('/store-director', [DirectorController::class, 'stroeProfile'])->name('admin.store.director');
+        Route::get('/list-director', [DirectorController::class, 'listProfile'])->name('admin.list.director');
+        Route::get('/edit-director/{id}', [DirectorController::class, 'editProfile'])->name('admin.edit.director');
+        Route::post('/edit-store-director/{id}', [DirectorController::class, 'editStoreProfile'])->name('admin.edit.store.director');
+        Route::get('/delete-director/{id}', [DirectorController::class, 'deleteProfile'])->name('admin.delete.director');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

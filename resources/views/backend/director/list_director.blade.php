@@ -1,5 +1,5 @@
 @extends('backend/layouts/main')
-@section('title', 'Profile List | River Edge')
+@section('title', 'Director List | River Edge')
 @section('content')
 <style type="text/css">
     .pcm{
@@ -16,12 +16,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Profile List</h4>
+                    <h4 class="mb-sm-0">Director List</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Profile List</li>
+                            <li class="breadcrumb-item active">Director List</li>
                         </ol>
                     </div>
 
@@ -44,10 +44,10 @@
 
                         <div class="row mb-4 border-bottom">
                             <div class="col-6">
-                                <h4 class="card-title">Manage Profiles</h4>
+                                <h4 class="card-title">Manage Directors</h4>
                             </div>
                             <div class="col-6">
-                                <h4 class="card-title text-end"><a href="{{route('admin.add.profile')}}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a></h4>
+                                <h4 class="card-title text-end"><a href="{{route('admin.add.director')}}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a></h4>
                             </div>
                         </div>
 
@@ -68,11 +68,11 @@
                                 <tr>
                                     <td>{{$dataRow->name}}</td>
                                     <td>{{$dataRow->position}}</td>
-                                    <td><img width="50" src="{{url('uploads/profile/'.$dataRow->image)}}" alt="{{$dataRow->name}}"></td>
+                                    <td><img width="50" src="{{url('uploads/director/'.$dataRow->image)}}" alt="{{$dataRow->name}}"></td>
                                     <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
                                     <td>
-                                        <a href="{{route('admin.edit.profile',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{route('admin.delete.profile',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
+                                        <a href="{{route('admin.edit.director',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="{{route('admin.delete.director',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -190,9 +190,9 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.list.profile')}}" class="waves-effect">
+                                <a href="{{route('admin.list.director')}}" class="waves-effect">
                                     <i class="fas fa-sliders-h"></i>
-                                    <span>Profiles</span>
+                                    <span>Directors</span>
                                 </a>
                             </li>
 

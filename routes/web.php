@@ -154,14 +154,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/store-web-story', [WebStoryMasterController::class, 'stroeWebStory'])->name('admin.store.story');
 
 
-        // Manage Brand
-        Route::get('/add-brand', [BrandController::class, 'addBrand'])->name('admin.add.brand');
-        Route::post('/store-brand', [BrandController::class, 'stroeBrand'])->name('admin.store.brand');
-        Route::get('/list-brand', [BrandController::class, 'listBrand'])->name('admin.list.brand');
-        Route::get('/edit-brand/{id}', [BrandController::class, 'editBrand'])->name('admin.edit.brand');
-        Route::post('/edit-store-brand/{id}', [BrandController::class, 'editStoreBrand'])->name('admin.edit.store.brand');
-        Route::get('/delete-brand/{id}', [BrandController::class, 'deleteBrand'])->name('admin.delete.brand');
-
         // Manage Amenity
         Route::get('/add-amenity', [AmenityController::class, 'addAmenity'])->name('admin.add.amenity');
         Route::post('/store-amenity', [AmenityController::class, 'stroeAmenity'])->name('admin.store.amenity');

@@ -153,14 +153,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/add-web-story', [WebStoryMasterController::class, 'addWebStory'])->name('admin.add.story');
         Route::post('/store-web-story', [WebStoryMasterController::class, 'stroeWebStory'])->name('admin.store.story');
 
-        // Manage Amenity
-        Route::get('/add-amenity', [AmenityController::class, 'addAmenity'])->name('admin.add.amenity');
-        Route::post('/store-amenity', [AmenityController::class, 'stroeAmenity'])->name('admin.store.amenity');
-        Route::get('/list-amenity', [AmenityController::class, 'listAmenity'])->name('admin.list.amenity');
-        Route::get('/edit-amenity/{id}', [AmenityController::class, 'editAmenity'])->name('admin.edit.amenity');
-        Route::post('/edit-store-amenity/{id}', [AmenityController::class, 'editStoreAmenity'])->name('admin.edit.store.amenity');
-        Route::get('/delete-amenity/{id}', [AmenityController::class, 'deleteAmenity'])->name('admin.delete.amenity');
-
         // Manage Award
         Route::get('/add-award', [AwardController::class, 'addAward'])->name('admin.add.award');
         Route::post('/store-award', [AwardController::class, 'stroeAward'])->name('admin.store.award');

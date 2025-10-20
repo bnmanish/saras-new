@@ -27,7 +27,7 @@ class AboutController extends Controller
 
     public function awards(){
         $page = Page::where(['id'=>16])->first();
-        $awards = Award::orderBy('sequence')->get();
+        $awards = Award::orderBy('id','desc')->get();
         return view('frontend/awards')->with(['page'=>$page,'awards'=>$awards]);
     }
 }

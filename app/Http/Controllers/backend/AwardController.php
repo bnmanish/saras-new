@@ -20,26 +20,14 @@ class AwardController extends Controller
 
         $request->validate([
             'title' => ['required', 'max:255', Rule::unique('awards', 'title')],
-            'url' => ['nullable', 'max:255', Rule::unique('awards', 'url')],
-            'sequence' => ['nullable', 'numeric'],
-            'meta_title' => ['nullable', 'max:1000'],
-            'meta_keywords' => ['nullable', 'max:1000'],
-            'meta_description' => ['nullable', 'max:1000'],
             'status' => ['required'],
-            'image' => ['nullable', 'image'],
+            'image' => ['required', 'image'],
         ]);
 
         $img = $request->file('image');
 
         $award = new Award;
         $award->title = $request->title;
-        $award->sequence = $request->sequence;
-        $award->url = $request->url;
-        $award->meta_title = $request->meta_title;
-        $award->meta_keywords = $request->meta_keywords;
-        $award->meta_description = $request->meta_description;
-        $award->short_description = $request->short_description;
-        $award->description = $request->desciption;
         if($img){
             $imgname = time().'.'.$img->getClientOriginalExtension();
             $img->move(base_path('public/uploads/award'),$imgname);
@@ -53,7 +41,7 @@ class AwardController extends Controller
     }
 
     public function listAward(){
-        $data = Award::select('id','title','sequence','image','status')->orderBy('id','asc')->get();
+        $data = Award::select('id','title','image','status')->orderBy('id','asc')->get();
         return view('backend/award/list_award')->with(['data'=>$data]);
     }
 
@@ -65,11 +53,6 @@ class AwardController extends Controller
     public function editStoreAward(Request $request,$id){
         $request->validate([
             'title' => ['required','max:255',Rule::unique('awards', 'title')->ignore($id)],
-            'url' => ['nullable','max:255',Rule::unique('awards', 'url')->ignore($id)],
-            'sequence' => ['nullable','numeric'],
-            'meta_title' => ['max:1000'],
-            'meta_keywords' => ['max:1000'],
-            'meta_description' => ['max:1000'],
             'status' => ['required'],
         ]);
 
@@ -84,25 +67,12 @@ class AwardController extends Controller
             $img->move(base_path('public/uploads/award'),$imgname);
             $data = array(
                 "title" => $request->title,
-                "url" => $request->url,
-                "sequence" => $request->sequence,
-                "meta_title" => $request->meta_title,
-                "meta_keywords" => $request->meta_keywords,
-                "meta_description" => $request->meta_description,
-                "short_description" => $request->short_description,
-                "description" => $request->desciption,
                 "image" => $imgname,
                 "status" => $request->status,
             );
         }else{
             $data = array(
                 "title" => $request->title,
-                "url" => $request->url,
-                "sequence" => $request->sequence,
-                "meta_title" => $request->meta_title,
-                "meta_keywords" => $request->meta_keywords,
-                "meta_description" => $request->meta_description,
-                "short_description" => $request->short_description,
                 "status" => $request->status,
             );
         }

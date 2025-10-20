@@ -47,77 +47,6 @@
                             </div>
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">URL</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="url" placeholder="url" value="{{old('url')}}">
-                                    @if($errors->first('url'))
-                                    <p class="text-danger mb-0">{{ $errors->first('url') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Sequence</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="sequence" placeholder="enter no 1 or 2" value="{{old('sequence')}}">
-                                    @if($errors->first('sequence'))
-                                    <p class="text-danger mb-0">{{ $errors->first('sequence') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Meta Title </label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="meta_title" placeholder="meta title" value="{{old('meta_title')}}">
-                                    @if($errors->first('meta_title'))
-                                    <p class="text-danger mb-0">{{ $errors->first('meta_title') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Meta Keywords </label>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" name="meta_keywords" placeholder="meta keywords">{{old('meta_keywords')}}</textarea>
-                                    @if($errors->first('meta_keywords'))
-                                    <p class="text-danger mb-0">{{ $errors->first('meta_keywords') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Meta Description </label>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" name="meta_description" placeholder="meta desciption">{{old('meta_description')}}</textarea>
-                                    @if($errors->first('meta_description'))
-                                    <p class="text-danger mb-0">{{ $errors->first('meta_description') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Short Description </label>
-                                <div class="col-md-10">
-                                    <textarea class="w-100 texteditor" name="short_description" placeholder="short description">{{old('short_description')}}</textarea>
-                                    @if($errors->first('short_description'))
-                                    <p class="text-danger mb-0">{{ $errors->first('short_description') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Description </label>
-                                <div class="col-md-10">
-                                    <textarea class="w-100 texteditor" name="desciption" placeholder="description">{{old('desciption
-                                    ')}}</textarea>
-                                    @if($errors->first('desciption'))
-                                    <p class="text-danger mb-0">{{ $errors->first('desciption') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
                                     <div class="form-check form-check-inline">
@@ -139,7 +68,7 @@
                             </div>
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Image </label>
+                                <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
                                     <input class="form-control dropify" type="file" name="image">
                                     @if($errors->first('image'))

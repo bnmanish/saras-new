@@ -55,8 +55,7 @@
                             <thead>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Sequence</th>
-                                    <th>image</th>
+                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -67,7 +66,6 @@
                                 @foreach($data as $dataRow)
                                 <tr>
                                     <td>{{$dataRow->title}}</td>
-                                    <td>{{$dataRow->sequence}}</td>
                                     <td><img width="50" src="{{url('uploads/award/'.$dataRow->image)}}" alt="{{$dataRow->title}}"></td>
                                     <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
                                     <td>

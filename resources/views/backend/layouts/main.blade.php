@@ -184,7 +184,7 @@
 
                             <li>
                                 <a href="{{route('admin.list.award')}}" class="waves-effect">
-                                    <i class="fas fa-sliders-h"></i>
+                                    <i class="fas fa-trophy"></i>
                                     <span>Awards</span>
                                 </a>
                             </li>
@@ -205,48 +205,48 @@
 
                             <li>
                                 <a href="{{route('admin.list.director')}}" class="waves-effect">
-                                    <i class="fas fa-sliders-h"></i>
+                                    <i class="fas fa-user-tie"></i>
                                     <span>Directors</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
-                                    <i class="fas fa-sliders-h"></i>
+                                    <i class="fas fa-quote-left"></i>
                                     <span>Testimonial</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{route('admin.list.page')}}" class="waves-effect">
-                                    <i class="fas fa-regular fa-file"></i>
+                                    <i class="fas fa-file-alt"></i>
                                     <span>Pages</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{route('admin.list.additional.page')}}" class="waves-effect">
-                                    <i class="fas fa-regular fa-file"></i>
+                                    <i class="fas fa-file-alt"></i>
                                     <span>Additional Pages</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{route('admin.list.subscriber')}}" class="waves-effect">
-                                    <i class="fab fa-staylinked"></i>
+                                    <i class="fas fa-users"></i>
                                     <span>Subscribers</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{route('admin.contact.enquiry')}}" class="waves-effect">
-                                    <i class="fas fa-bell"></i>
+                                    <i class="fas fa-envelope-open"></i>
                                     <span>Enquiry</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
-                                    <i class="fas fa-wrench"></i>
+                                    <i class="fas fa-cog"></i>
                                     <span>Setting</span>
                                 </a>
                             </li>

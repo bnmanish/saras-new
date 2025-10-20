@@ -190,6 +190,20 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.category')}}" class="waves-effect">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Categories</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{route('admin.list.product')}}" class="waves-effect">
+                                    <i class="fas fa-box"></i>
+                                    <span>Products</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.list.director')}}" class="waves-effect">
                                     <i class="fas fa-sliders-h"></i>
                                     <span>Directors</span>

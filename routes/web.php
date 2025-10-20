@@ -20,6 +20,8 @@ use App\Http\Controllers\backend\TypeController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\AwardController;
 use App\Http\Controllers\backend\DirectorController;
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\ProductController;
 
 
 // frontend controllers
@@ -166,6 +168,22 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-award/{id}', [AwardController::class, 'editAward'])->name('admin.edit.award');
         Route::post('/edit-store-award/{id}', [AwardController::class, 'editStoreAward'])->name('admin.edit.store.award');
         Route::get('/delete-award/{id}', [AwardController::class, 'deleteAward'])->name('admin.delete.award');
+
+        // Manage Categories
+        Route::get('/add-category', [CategoryController::class, 'addCategory'])->name('admin.add.category');
+        Route::post('/store-category', [CategoryController::class, 'storeCategory'])->name('admin.store.category');
+        Route::get('/list-category', [CategoryController::class, 'listCategory'])->name('admin.list.category');
+        Route::get('/edit-category/{id}', [CategoryController::class, 'editCategory'])->name('admin.edit.category');
+        Route::post('/edit-store-category/{id}', [CategoryController::class, 'editStoreCategory'])->name('admin.edit.store.category');
+        Route::get('/delete-category/{id}', [CategoryController::class, 'deleteCategory'])->name('admin.delete.category');
+
+        // Manage Products
+        Route::get('/add-product', [ProductController::class, 'addProduct'])->name('admin.add.product');
+        Route::post('/store-product', [ProductController::class, 'storeProduct'])->name('admin.store.product');
+        Route::get('/list-product', [ProductController::class, 'listProduct'])->name('admin.list.product');
+        Route::get('/edit-product/{id}', [ProductController::class, 'editProduct'])->name('admin.edit.product');
+        Route::post('/edit-store-product/{id}', [ProductController::class, 'editStoreProduct'])->name('admin.edit.store.product');
+        Route::get('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('admin.delete.product');
 
         // Manage Directors
         Route::get('/add-director', [DirectorController::class, 'addProfile'])->name('admin.add.director');

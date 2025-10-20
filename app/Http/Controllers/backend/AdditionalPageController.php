@@ -18,14 +18,14 @@ class AdditionalPageController extends Controller
 
         // return $request->all();
 
-        $this->validate($request,[
-            'title' => 'required|unique:additional_pages|max:255',
-            'slug' => 'required|unique:additional_pages|max:255',
-            'meta_title' => 'max:255',
-            'meta_keywords' => 'max:255',
-            'meta_description' => 'max:255',
-            'status' => 'required',
-            'file' => 'image',
+        $request->validate([
+            'title' => ['required', 'max:255', \Illuminate\Validation\Rule::unique('additional_pages', 'title')],
+            'slug' => ['required', 'max:255', \Illuminate\Validation\Rule::unique('additional_pages', 'slug')],
+            'meta_title' => ['nullable', 'max:255'],
+            'meta_keywords' => ['nullable', 'max:255'],
+            'meta_description' => ['nullable', 'max:255'],
+            'status' => ['required'],
+            'file' => ['nullable', 'image'],
         ]);
 
         $img = $request->file('file');
@@ -61,14 +61,14 @@ class AdditionalPageController extends Controller
     }
 
     public function editStorePage(Request $request,$id){
-        $this->validate($request,[
-            'title' => 'required|max:255|unique:additional_pages,title,'.$id,
-            'slug' => 'required|max:255|unique:additional_pages,slug,'.$id,
-            'meta_title' => 'max:255',
-            'meta_keywords' => 'max:255',
-            'meta_description' => 'max:255',
-            'status' => 'required',
-            'file' => 'image',
+        $request->validate([
+            'title' => ['required', 'max:255', \Illuminate\Validation\Rule::unique('additional_pages', 'title')->ignore($id)],
+            'slug' => ['required', 'max:255', \Illuminate\Validation\Rule::unique('additional_pages', 'slug')->ignore($id)],
+            'meta_title' => ['nullable', 'max:255'],
+            'meta_keywords' => ['nullable', 'max:255'],
+            'meta_description' => ['nullable', 'max:255'],
+            'status' => ['required'],
+            'file' => ['nullable', 'image'],
         ]);
 
         $img = $request->file('file');

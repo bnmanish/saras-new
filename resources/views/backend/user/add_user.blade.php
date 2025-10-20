@@ -30,16 +30,6 @@
                     <strong>Greate!</strong> {{Session::get('success')}}
                 </div>
                 @endif
-                {{--
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        <strong>Error!</strong> {{$error}}
-                    </div>
-                    @endforeach
-                @endif
-                --}}
                 <div class="card">
                     <div class="card-body">
                         <form method="post" action="{{route('admin.store.user')}}">
@@ -50,16 +40,6 @@
                                     <input class="form-control" type="text" name="name" value="{{old('name')}}">
                                     @if($errors->first('name'))
                                     <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Mobile</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="mobile" value="{{old('mobile')}}">
-                                    @if($errors->first('mobile'))
-                                    <p class="text-danger mb-0">{{ $errors->first('mobile') }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -90,41 +70,6 @@
                                     <input class="form-control" type="password" name="password" value="{{old('password')}}">
                                     @if($errors->first('password'))
                                     <p class="text-danger mb-0">{{ $errors->first('password') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Role <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <select class="form-select" name="role">
-                                        <option value="user" @if(old('role') == 'user') selected @endif>User</option>
-                                        <option value="admin" @if(old('role') == 'admin') selected @endif>Admin</option>
-                                    </select>
-                                    @if($errors->first('role'))
-                                    <p class="text-danger mb-0">{{ $errors->first('role') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Email Verified</label>
-                                <div class="col-md-10">
-                                    <input class="form-check form-switch" type="checkbox" id="emailstatus" switch="bool" name="emailverified">
-                                    <label class="form-label" for="emailstatus" data-on-label="Yes" data-off-label="No"></label>
-                                    @if($errors->first('emailverified'))
-                                    <p class="text-danger mb-0">{{ $errors->first('emailverified') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Mobile Verified</label>
-                                <div class="col-md-10">
-                                    <input class="form-check form-switch" type="checkbox" id="mobilestatus" switch="bool" name="mobileverified">
-                                    <label class="form-label" for="mobilestatus" data-on-label="Yes" data-off-label="No"></label>
-                                    @if($errors->first('mobileverified'))
-                                    <p class="text-danger mb-0">{{ $errors->first('mobileverified') }}</p>
                                     @endif
                                 </div>
                             </div>

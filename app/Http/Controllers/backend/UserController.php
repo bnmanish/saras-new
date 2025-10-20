@@ -100,24 +100,20 @@ class UserController extends Controller
 
     public function stroeUser(Request $request){
 
-        $this->validate($request,[
-            'name'  =>  'required|max:255',
-            'mobile'  =>  'unique:users,mobile',
-            'email'  =>  'required|unique:users,email',
-            'user_name'  =>  'required|unique:users,user_name',
-            'password'  =>  'required',
-            'role'  =>  'required',
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|email|unique:users,email',
+            'user_name' => 'required|string|unique:users,user_name',
+            'password'  => 'required|string|min:8',
         ]);
 
         $user = new User;
         $user->name = $request->name;
-        $user->mobile = $request->mobile;
         $user->email = $request->email;
         $user->user_name = $request->user_name;
         $user->password = Hash::make($request->password);
-        $user->role = $request->role;
-        $user->email_verified = $request->emailverified ? '1':'0';
-        $user->mobile_verified = $request->mobileverified ? '1':'0';
+        $user->email_verified = 1;
+        $user->mobile_verified = 1;
         $user->status = $request->status ? '1':'0';
         $user->save();
 
@@ -133,35 +129,29 @@ class UserController extends Controller
     }
 
     public function editStoreUser(Request $request,$id){
-        $this->validate($request,[
-            'name'  =>  'required|max:255',
-            'mobile'  =>  'unique:users,mobile,'.$id,
-            'email'  =>  'required|unique:users,email,'.$id,
-            'user_name'  =>  'required|unique:users,user_name,'.$id,
-            'role'  =>  'required',
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', \Illuminate\Validation\Rule::unique('users', 'email')->ignore($id)],
+            'user_name' => ['required', 'string', \Illuminate\Validation\Rule::unique('users', 'user_name')->ignore($id)],
         ]);
 
         if($request->password){
             $data = array(
                 "name" => $request->name,
-                "mobile" => $request->mobile,
                 "email" => $request->email,
                 "user_name" => $request->user_name,
                 "password" => Hash::make($request->password),
-                "role" => $request->role,
-                "email_verified" => $request->emailverified ? '1':'0',
-                "mobile_verified" => $request->mobileverified ? '1':'0',
+                "email_verified" => 1,
+                "mobile_verified" => 1,
                 "status" => $request->status ? '1':'0',
             );
         }else{
             $data = array(
                 "name" => $request->name,
-                "mobile" => $request->mobile,
                 "email" => $request->email,
                 "user_name" => $request->user_name,
-                "role" => $request->role,
-                "email_verified" => $request->emailverified ? '1':'0',
-                "mobile_verified" => $request->mobileverified ? '1':'0',
+                "email_verified" => 1,
+                "mobile_verified" => 1,
                 "status" => $request->status ? '1':'0',
             );
         }

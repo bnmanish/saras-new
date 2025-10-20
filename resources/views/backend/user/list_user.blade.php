@@ -44,10 +44,6 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>User Name</th>
-                                    <th>Mobile</th>
-                                    <th>Role</th>
-                                    <th>Email<br>Verified</th>
-                                    <th>Mobile<br>Verified</th>
                                     <th>Register Date</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -60,10 +56,6 @@
                                     <td>{{$dataRow->name}}</td>
                                     <td>{{$dataRow->email}} @if($dataRow->email_verified == '1')<i class="fas fa-check-circle"></i> @endif</td>
                                     <td>{{$dataRow->user_name}}</td>
-                                    <td>{{$dataRow->mobile}}</td>
-                                    <td>{{$dataRow->role}}</td>
-                                    <td>{{$dataRow->email_verified == '1' ? 'Yes' : 'No'}}</td>
-                                    <td>{{$dataRow->mobile_verified == '1' ? 'Yes' : 'No'}}</td>
                                     <td>{{date('d-m-Y',strtotime($dataRow->created_at))}}</td>
                                     <td>{{$dataRow->status == '1' ? 'Enable' : 'No'}}</td>
                                     <td>

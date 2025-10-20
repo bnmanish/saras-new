@@ -51,6 +51,8 @@ Route::get('/clear-all', function() {
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/about-us',[AboutController::class,'index'])->name('about.us');
+Route::get('/about-us/chairman-message',[AboutController::class,'chairmanMessage'])->name('chairman.message');
+Route::get('/about-us/md-message',[AboutController::class,'mdMessage'])->name('md.message');
 Route::get('/projects',[FrontProjectController::class,'index'])->name('projects');
 Route::get('/city/{url}',[FrontProjectController::class,'projectCitywise'])->name('project.citywise');
 Route::get('/brand/{url}',[FrontProjectController::class,'projectBrandwise'])->name('project.brandwise');
@@ -69,6 +71,7 @@ Route::post('/subscribe-news-letter', [HomeController::class, 'subscribeNewsLett
 
 
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
+
 // Admin login route
 Route::prefix('admin')->group(function () {
     Route::get('login', [LoginController::class, 'login'])->name('admin.login');

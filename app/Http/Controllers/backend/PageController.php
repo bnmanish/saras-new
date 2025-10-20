@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use Session;
+use Illuminate\Validation\Rule;
 
 class PageController extends Controller
 {
@@ -15,15 +16,10 @@ class PageController extends Controller
 
     public function stroePage(Request $request){
 
-        // return $request->all();
-
-        $this->validate($request,[
-            'title' => 'required|unique:pages|max:255',
-            // 'meta_title' => 'max:255',
-            // 'meta_keywords' => 'max:255',
-            // 'meta_description' => 'max:255',
-            'status' => 'required',
-            'file' => 'image',
+        $request->validate([
+            'title' => ['required', 'string', 'max:255', Rule::unique('pages', 'title')],
+            'status' => ['required', 'in:0,1'],
+            'file' => ['nullable', 'image', 'mimes:jpeg,jpg,png,gif', 'max:2048'],
         ]);
 
         $img = $request->file('file');
@@ -59,13 +55,10 @@ class PageController extends Controller
     }
 
     public function editStorePage(Request $request,$id){
-        $this->validate($request,[
-            'title' => 'required|max:255|unique:pages,title,'.$id,
-            // 'meta_title' => 'max:255',
-            // 'meta_keywords' => 'max:255',
-            // 'meta_description' => 'max:255',
-            'status' => 'required',
-            'file' => 'image',
+        $request->validate([
+            'title' => ['required', 'string', 'max:255', Rule::unique('pages', 'title')->ignore($id)],
+            'status' => ['required', 'in:0,1'],
+            'file' => ['nullable', 'image', 'mimes:jpeg,jpg,png,gif', 'max:2048'],
         ]);
 
         $img = $request->file('file');

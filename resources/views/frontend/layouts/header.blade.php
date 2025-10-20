@@ -4,7 +4,7 @@
         <div class="widget footer-widget">
             <div class="th-widget-about">
                 <div class="about-logo">
-                    <a href="home-university.html">
+                    <a href="{{route('home')}}">
                         <img src="{{url('assets/frontend')}}/img/logo2.svg" alt="Stadum">
                     </a>
                 </div>
@@ -86,12 +86,12 @@ Mobile Menu
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="home-university.html"><img src="{{url('assets/frontend')}}/img/logo.svg" alt="Stadum"></a>
+            <a href="{{route('home')}}"><img src="{{@url('uploads/setting/'.getSetting()->site_logo)}}" alt="Saras"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
                 <li class="menu-item-has-children">
-                    <a href="home-university.html">Home</a>
+                    <a href="{{route('home')}}">Home</a>
                     <ul class="sub-menu">
                         <li><a href="index.html">University Home</a></li>
                         <li><a href="home-admission.html">Admission Home</a></li>
@@ -234,63 +234,25 @@ Header Area
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="home-university.html">
-                                <img src="{{url('assets/frontend')}}/img/light-white-logo.svg" alt="Stadum">
+                            <a href="{{route('home')}}">
+                                <img src="{{url('uploads/setting/'.getSetting()->site_logo)}}" alt="Saras" style="width: 136px;">
                             </a>
                         </div>
                     </div>
                     <div class="col-auto d-none d-xl-block">
                         <nav class="main-menu">
                             <ul>
+                                <li>
+                                    <a href="{{route('home')}}">Home</a>
+                                </li>
+
                                 <li class="menu-item-has-children">
-                                    <a href="home-university.html">Home</a>
-                                    <ul class="mega-menu mega-menu-content mega-scroll">
-                                        <li>
-                                            <div class="container">
-                                                <div class="row gy-4">
-                                                    <div class="col-lg-4">
-                                                        <div class="mega-menu-box">
-                                                            <div class="mega-menu-img">
-                                                                <img src="{{url('assets/frontend')}}/img/pages/home-university.jpg" alt="Home One">
-                                                                <div class="btn-wrap">
-                                                                    <a href="home-university.html" class="th-btn">Multipage</a>
-                                                                    <a href="home-university-op.html" class="th-btn">Onepage</a>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="mega-menu-title"><a href="home-university.html">Home University</a></h3>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="mega-menu-box">
-                                                            <div class="mega-menu-img">
-                                                                <img src="{{url('assets/frontend')}}/img/pages/home-admission.jpg" alt="Home Two">
-                                                                <div class="btn-wrap">
-                                                                    <a href="home-admission.html" class="th-btn">Multipage</a>
-                                                                    <a href="home-admission-op.html" class="th-btn">Onepage</a>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="mega-menu-title"><a href="home-admission.html">Home Admission</a></h3>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="mega-menu-box">
-                                                            <div class="mega-menu-img">
-                                                                <img src="{{url('assets/frontend')}}/img/pages/home-courses.jpg" alt="Home Three">
-                                                                <div class="btn-wrap">
-                                                                    <a href="home-courses.html" class="th-btn">Multipage</a>
-                                                                    <a href="home-courses-op.html" class="th-btn">Onepage</a>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="mega-menu-title"><a href="home-courses.html">Home Courses</a>
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                    <a href="{{route('about.us')}}">About Us</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('chairman.message') }}">Chairman Message</a></li>
+                                        <li><a href="{{ route('md.message') }}">MD Message</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About Us</a></li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Programs</a>
                                     <ul class="sub-menu">

@@ -4,33 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Stadum - University Education HTML Template - Home Two</title>
-    <meta name="author" content="Stadum">
-    <meta name="description" content="Stadum - University Education HTML Template">
-    <meta name="keywords" content="Stadum - University Education HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{url('assets/frontend')}}/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{url('assets/frontend')}}/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{url('assets/frontend')}}/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{url('assets/frontend')}}/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{url('assets/frontend')}}/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{url('assets/frontend')}}/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{url('assets/frontend')}}/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{url('assets/frontend')}}/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/frontend')}}/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{url('assets/frontend')}}/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/frontend')}}/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{url('assets/frontend')}}/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/frontend')}}/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="{{url('assets/frontend')}}/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{url('assets/frontend')}}/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <title>{{$page->meta_title}}</title>
+    <meta name="keywords" content="{{$page->meta_keywords}}">
+    <meta name="description" content="{{$page->meta_description}}">
+    <meta property="og:title" content="{{$page->meta_title}}">
+    <meta property="og:description" content="{{$page->meta_description}}">
+    <meta property="og:image" content="{{url('uploads/setting/'.getSetting()->favicon)}}">
+    <link rel="canonical" href="{{route('home')}}">
+    {!!getSetting()->head_content!!}
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
 
     <!--==============================
 	  Google Fonts
@@ -52,7 +35,22 @@
     <link rel="stylesheet" href="{{url('assets/frontend')}}/css/swiper-bundle.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{url('assets/frontend')}}/css/style.css">
+    <style>
+        .th-hero-wrapper,.hero-inner {
+            min-height: 770px;
+        }
 
+        .th-hero-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -60,116 +58,29 @@
     @include('frontend.layouts.header')
     
     <!--============================== Hero Area ==============================-->
-
-    <div class="th-hero-wrapper hero-2 position-relative" id="hero" data-bg-src="{{url('assets/frontend')}}/img/bg/hero_bg_2_1.jpg">
-        <div class="swiper th-slider hero-slider2" id="heroSlide" data-slider-options='{"effect":"fade"}'>
+    <div class="th-hero-wrapper hero-1" id="hero">
+        <div class="swiper th-slider" id="heroSlide" data-slider-options='{"effect":"fade"}'>
             <div class="swiper-wrapper">
+                @foreach($slider as $sliderRow)
                 <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-lg-8">
-                                <div class="hero-style2">
-                                    <h1 class="hero-title text-white" data-ani="slideinleft" data-ani-delay="0.3s">
-                                        World Leading University For Future Best Career </h1>
-                                    <p class="hero-text text-white" data-ani="slideinleft" data-ani-delay="0.4s">
-                                        We want every student and study partner to feel that they are part of a common good and cohesive team. We help our teams form stronger relationships.</p>
-                                    <div class="btn-wrap justify-content-center justify-content-lg-start" data-ani="slideinup" data-ani-delay="0.9s">
-                                        <a href="program.html" class="th-btn th-icon white-hover">find your program</a>
-                                        <a href="contact.html" class="th-btn th-icon style-border1 white-hover">request info</a>
+                    <div class="hero-inner">
+                        <div class="th-hero-bg" data-bg-src="{{url('uploads/slider/'.$sliderRow->image)}}"></div>
+                        <!-- <div class="container th-container2">
+                            <div class="row gy-60 align-items-center">
+                                <div class="col-xxl-6 col-xl-8 col-lg-9">
+                                    <div class="hero-style1">
+                                        <div class="hero-text-wrap">
+                                           
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="hero-image" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <img src="{{url('assets/frontend')}}/img/hero/hero_2_1.png" alt="">
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
-
                 </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-lg-8">
-                                <div class="hero-style2">
-                                    <h1 class="hero-title text-white" data-ani="slideinleft" data-ani-delay="0.3s">
-                                        World Leading University For Future Best Career </h1>
-                                    <p class="hero-text text-white" data-ani="slideinleft" data-ani-delay="0.4s">
-                                        We want every student and study partner to feel that they are part of a common good and cohesive team. We help our teams form stronger relationships.</p>
-                                    <div class="btn-wrap justify-content-center justify-content-lg-start" data-ani="slideinup" data-ani-delay="0.9s">
-                                        <a href="program.html" class="th-btn th-icon white-hover">find your program</a>
-                                        <a href="contact.html" class="th-btn th-icon style-border1 white-hover">request info</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="hero-image" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <img src="{{url('assets/frontend')}}/img/hero/hero_2_2.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-lg-8">
-                                <div class="hero-style2">
-                                    <h1 class="hero-title text-white" data-ani="slideinleft" data-ani-delay="0.3s">
-                                        World Leading University For Future Best Career </h1>
-                                    <p class="hero-text text-white" data-ani="slideinleft" data-ani-delay="0.4s">
-                                        We want every student and study partner to feel that they are part of a common good and cohesive team. We help our teams form stronger relationships.</p>
-                                    <div class="btn-wrap justify-content-center justify-content-lg-start" data-ani="slideinup" data-ani-delay="0.9s">
-                                        <a href="program.html" class="th-btn th-icon white-hover">find your program</a>
-                                        <a href="contact.html" class="th-btn th-icon style-border1 white-hover">request info</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="hero-image" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <img src="{{url('assets/frontend')}}/img/hero/hero_2_3.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-lg-8">
-                                <div class="hero-style2">
-                                    <h1 class="hero-title text-white" data-ani="slideinleft" data-ani-delay="0.3s">
-                                        World Leading University For Future Best Career </h1>
-                                    <p class="hero-text text-white" data-ani="slideinleft" data-ani-delay="0.4s">
-                                        We want every student and study partner to feel that they are part of a common good and cohesive team. We help our teams form stronger relationships.</p>
-                                    <div class="btn-wrap justify-content-center justify-content-lg-start" data-ani="slideinup" data-ani-delay="0.9s">
-                                        <a href="program.html" class="th-btn th-icon white-hover">find your program</a>
-                                        <a href="contact.html" class="th-btn th-icon style-border1 white-hover">request info</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="hero-image" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <img src="{{url('assets/frontend')}}/img/hero/hero_2_1.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                @endforeach
             </div>
             <div class="slider-pagination"></div>
-        </div>
-        <div class="hero-2-social d-none d-xxl-block">
-            <div class="th-social">
-                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-            </div>
         </div>
     </div>
     <!--======== / Hero Section ========--><!--============================== Program Area Home 2 ==============================-->
@@ -1572,81 +1483,6 @@ Blog Area
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
             </path>
         </svg>
-    </div>
-    <!--==============================
-modal Area  
-==============================-->
-    <div id="login-form" class="popup-login-register mfp-hide">
-        <ul class="nav" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Login</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-menu active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Register</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <h3 class="box-title mb-30">Sign in to your account</h3>
-                <div class="th-login-form">
-                    <form action="mail.php" method="POST" class="login-form ajax-contact">
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <label>Username or email</label>
-                                <input type="text" class="form-control" name="email" id="email" required="required">
-                            </div>
-                            <div class="frontendform-group col-12">
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="pasword" id="pasword" required="required">
-                            </div>
-
-                            <div class="form-btn mb-20 col-12">
-                                <button class="th-btn btn-fw th-radius2 ">Send Message</button>
-                            </div>
-                        </div>
-                        <div id="forgot_url">
-                            <a href="my-account.html">Forgot password?</a>
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
-                </div>
-            </div>
-            <div class="tab-pane fade active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="mail.php" method="POST" class="login-form ajax-contact">
-                    <div class="row">
-                        <div class="form-group col-12">
-                            <label>Username*</label>
-                            <input type="text" class="form-control" name="usename" id="usename" required="required">
-                        </div>
-                        <div class="form-group col-12">
-                            <label>First name*</label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" required="required">
-                        </div>
-                        <div class="form-group col-12">
-                            <label>Last name*</label>
-                            <input type="text" class="form-control" name="lastname" id="lastname" required="required">
-                        </div>
-                        <div class="form-group col-12">
-                            <label for="new_email">Your email*</label>
-                            <input type="text" class="form-control" name="new_email" id="new_email" required="required">
-                        </div>
-                        <div class="form-group col-12">
-                            <label for="new_email_confirm">Confirm email*</label>
-                            <input type="text" class="form-control" name="new_email_confirm" id="new_email_confirm" required="required">
-                        </div>
-                        <div class="statement">
-                            <span class="register-notes">A password will be emailed to you.</span>
-                        </div>
-
-                        <div class="form-btn mt-20 col-12">
-                            <button class="th-btn btn-fw th-radius2 ">Sign up</button>
-                        </div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </form>
-            </div>
-        </div>
     </div>
     
     <!--==============================

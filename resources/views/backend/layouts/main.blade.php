@@ -216,6 +216,14 @@
                                     <span>Slider</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="{{route('admin.list.award')}}" class="waves-effect">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span>Awards</span>
+                                </a>
+                            </li>
+
                             <li>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
                                     <i class="fas fa-sliders-h"></i>

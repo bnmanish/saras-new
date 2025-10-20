@@ -19,6 +19,7 @@ use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\AmenityController;
 use App\Http\Controllers\backend\TypeController;
 use App\Http\Controllers\backend\ProjectController;
+use App\Http\Controllers\backend\AwardController;
 
 // frontend controllers
 use App\Http\Controllers\frontend\HomeController;
@@ -53,6 +54,7 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/about-us',[AboutController::class,'index'])->name('about.us');
 Route::get('/about-us/chairman-message',[AboutController::class,'chairmanMessage'])->name('chairman.message');
 Route::get('/about-us/md-message',[AboutController::class,'mdMessage'])->name('md.message');
+Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');
 Route::get('/projects',[FrontProjectController::class,'index'])->name('projects');
 Route::get('/city/{url}',[FrontProjectController::class,'projectCitywise'])->name('project.citywise');
 Route::get('/brand/{url}',[FrontProjectController::class,'projectBrandwise'])->name('project.brandwise');
@@ -196,6 +198,13 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete-project-slider', [ProjectController::class, 'deleteProjectSlider'])->name('admin.delete.project.slider');
         Route::post('/delete-project-floorplan', [ProjectController::class, 'deleteProjectFloorPlan'])->name('admin.delete.project.floor.plan');
 
+        // Manage Award
+        Route::get('/add-award', [AwardController::class, 'addAward'])->name('admin.add.award');
+        Route::post('/store-award', [AwardController::class, 'stroeAward'])->name('admin.store.award');
+        Route::get('/list-award', [AwardController::class, 'listAward'])->name('admin.list.award');
+        Route::get('/edit-award/{id}', [AwardController::class, 'editAward'])->name('admin.edit.award');
+        Route::post('/edit-store-award/{id}', [AwardController::class, 'editStoreAward'])->name('admin.edit.store.award');
+        Route::get('/delete-award/{id}', [AwardController::class, 'deleteAward'])->name('admin.delete.award');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

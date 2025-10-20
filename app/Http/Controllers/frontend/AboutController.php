@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Page;
+use App\Models\Award;
 
 class AboutController extends Controller
 {
@@ -24,4 +25,9 @@ class AboutController extends Controller
         return view('frontend/md_message')->with(['page'=>$page]);
     }
 
+    public function awards(){
+        $page = Page::where(['id'=>16])->first();
+        $awards = Award::orderBy('sequence')->get();
+        return view('frontend/awards')->with(['page'=>$page,'awards'=>$awards]);
+    }
 }

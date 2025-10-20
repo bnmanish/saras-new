@@ -251,6 +251,7 @@ Header Area
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('chairman.message') }}">Chairman Message</a></li>
                                         <li><a href="{{ route('md.message') }}">MD Message</a></li>
+                                        <li><a href="{{ route('awards') }}">Awards</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">

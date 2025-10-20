@@ -32,16 +32,6 @@
 
         <div class="row">
             <div class="col-12">
-                {{
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        <strong>Error!</strong> {{$error}}
-                    </div>
-                    @endforeach
-                @endif
-                --}}
                 <div class="card">
                     <div class="card-body">
                         <form method="post" action="{{route('admin.edit.store.award',$data->id)}}" enctype="multipart/form-data">

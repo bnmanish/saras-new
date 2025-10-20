@@ -20,6 +20,7 @@ use App\Http\Controllers\backend\AmenityController;
 use App\Http\Controllers\backend\TypeController;
 use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\AwardController;
+use App\Http\Controllers\backend\ProfileController;
 
 // frontend controllers
 use App\Http\Controllers\frontend\HomeController;
@@ -205,6 +206,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-award/{id}', [AwardController::class, 'editAward'])->name('admin.edit.award');
         Route::post('/edit-store-award/{id}', [AwardController::class, 'editStoreAward'])->name('admin.edit.store.award');
         Route::get('/delete-award/{id}', [AwardController::class, 'deleteAward'])->name('admin.delete.award');
+
+        // Manage Profile
+        Route::get('/add-profile', [ProfileController::class, 'addProfile'])->name('admin.add.profile');
+        Route::post('/store-profile', [ProfileController::class, 'stroeProfile'])->name('admin.store.profile');
+        Route::get('/list-profile', [ProfileController::class, 'listProfile'])->name('admin.list.profile');
+        Route::get('/edit-profile/{id}', [ProfileController::class, 'editProfile'])->name('admin.edit.profile');
+        Route::post('/edit-store-profile/{id}', [ProfileController::class, 'editStoreProfile'])->name('admin.edit.store.profile');
+        Route::get('/delete-profile/{id}', [ProfileController::class, 'deleteProfile'])->name('admin.delete.profile');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

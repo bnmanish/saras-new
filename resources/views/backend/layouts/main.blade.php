@@ -225,6 +225,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.profile')}}" class="waves-effect">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span>Profiles</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
                                     <i class="fas fa-sliders-h"></i>
                                     <span>Testimonial</span>

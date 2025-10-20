@@ -153,7 +153,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/add-web-story', [WebStoryMasterController::class, 'addWebStory'])->name('admin.add.story');
         Route::post('/store-web-story', [WebStoryMasterController::class, 'stroeWebStory'])->name('admin.store.story');
 
-
         // Manage Amenity
         Route::get('/add-amenity', [AmenityController::class, 'addAmenity'])->name('admin.add.amenity');
         Route::post('/store-amenity', [AmenityController::class, 'stroeAmenity'])->name('admin.store.amenity');
@@ -161,15 +160,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-amenity/{id}', [AmenityController::class, 'editAmenity'])->name('admin.edit.amenity');
         Route::post('/edit-store-amenity/{id}', [AmenityController::class, 'editStoreAmenity'])->name('admin.edit.store.amenity');
         Route::get('/delete-amenity/{id}', [AmenityController::class, 'deleteAmenity'])->name('admin.delete.amenity');
-
-        // Manage Type
-        Route::get('/add-type', [TypeController::class, 'addType'])->name('admin.add.type');
-        Route::post('/store-type', [TypeController::class, 'stroeType'])->name('admin.store.type');
-        Route::get('/list-type', [TypeController::class, 'listType'])->name('admin.list.type');
-        Route::get('/edit-type/{id}', [TypeController::class, 'editType'])->name('admin.edit.type');
-        Route::post('/edit-store-type/{id}', [TypeController::class, 'editStoreType'])->name('admin.edit.store.type');
-        Route::get('/delete-type/{id}', [TypeController::class, 'deleteType'])->name('admin.delete.type');
-
 
         // Manage Project
         Route::get('/add-project', [ProjectController::class, 'addProject'])->name('admin.add.project');

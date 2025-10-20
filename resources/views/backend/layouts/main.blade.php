@@ -170,13 +170,6 @@
                             </li>
 
                             <!-- <li>
-                                <a href="{{route('admin.list.type')}}" class="waves-effect">
-                                    <i class=" fas fa-columns"></i>
-                                    <span>Type</span>
-                                </a>
-                            </li>
-
-                            <li>
                                 <a href="{{route('admin.list.project')}}" class="waves-effect">
                                     <i class=" fas fa-columns"></i>
                                     <span>Project</span>

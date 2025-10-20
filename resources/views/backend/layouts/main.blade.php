@@ -169,13 +169,6 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{route('admin.list.city')}}" class="waves-effect">
-                                    <i class=" fas fa-city"></i>
-                                    <span>Gallery</span>
-                                </a>
-                            </li>
-
                             <!-- <li>
                                 <a href="{{route('admin.list.brand')}}" class="waves-effect">
                                     <i class=" fas fa-building"></i>

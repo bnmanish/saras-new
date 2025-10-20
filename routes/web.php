@@ -14,7 +14,6 @@ use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\backend\EnquiryController;
 use App\Http\Controllers\backend\AdditionalPageController;
 use App\Http\Controllers\backend\BlogController;
-use App\Http\Controllers\backend\CityController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\AmenityController;
 use App\Http\Controllers\backend\TypeController;
@@ -153,15 +152,6 @@ Route::prefix('admin')->group(function () {
         // Manage user
         Route::get('/add-web-story', [WebStoryMasterController::class, 'addWebStory'])->name('admin.add.story');
         Route::post('/store-web-story', [WebStoryMasterController::class, 'stroeWebStory'])->name('admin.store.story');
-
-
-        // Manage City
-        Route::get('/add-city', [CityController::class, 'addCity'])->name('admin.add.city');
-        Route::post('/store-city', [CityController::class, 'stroeCity'])->name('admin.store.city');
-        Route::get('/list-city', [CityController::class, 'listCity'])->name('admin.list.city');
-        Route::get('/edit-city/{id}', [CityController::class, 'editCity'])->name('admin.edit.city');
-        Route::post('/edit-store-city/{id}', [CityController::class, 'editStoreCity'])->name('admin.edit.store.city');
-        Route::get('/delete-city/{id}', [CityController::class, 'deleteCity'])->name('admin.delete.city');
 
 
         // Manage Brand

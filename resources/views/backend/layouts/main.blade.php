@@ -169,13 +169,6 @@
                                 </a>
                             </li>
 
-                            <!-- <li>
-                                <a href="{{route('admin.list.project')}}" class="waves-effect">
-                                    <i class=" fas fa-columns"></i>
-                                    <span>Project</span>
-                                </a>
-                            </li> -->
-
                             <li>
                                 <a href="{{route('admin.list.blog')}}" class="waves-effect">
                                     <i class=" fas fa-blog"></i>

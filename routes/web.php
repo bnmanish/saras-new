@@ -161,16 +161,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit-store-amenity/{id}', [AmenityController::class, 'editStoreAmenity'])->name('admin.edit.store.amenity');
         Route::get('/delete-amenity/{id}', [AmenityController::class, 'deleteAmenity'])->name('admin.delete.amenity');
 
-        // Manage Project
-        Route::get('/add-project', [ProjectController::class, 'addProject'])->name('admin.add.project');
-        Route::post('/store-project', [ProjectController::class, 'stroeProject'])->name('admin.store.project');
-        Route::get('/list-project', [ProjectController::class, 'listProject'])->name('admin.list.project');
-        Route::get('/edit-project/{id}', [ProjectController::class, 'editProject'])->name('admin.edit.project');
-        Route::post('/edit-store-project/{id}', [ProjectController::class, 'editStoreProject'])->name('admin.edit.store.project');
-        Route::get('/delete-project/{id}', [ProjectController::class, 'deleteProject'])->name('admin.delete.project');
-        Route::post('/delete-project-slider', [ProjectController::class, 'deleteProjectSlider'])->name('admin.delete.project.slider');
-        Route::post('/delete-project-floorplan', [ProjectController::class, 'deleteProjectFloorPlan'])->name('admin.delete.project.floor.plan');
-
         // Manage Award
         Route::get('/add-award', [AwardController::class, 'addAward'])->name('admin.add.award');
         Route::post('/store-award', [AwardController::class, 'stroeAward'])->name('admin.store.award');

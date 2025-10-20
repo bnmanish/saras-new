@@ -106,15 +106,26 @@
                 </div>
                 <div class="col-md-auto">
                     <p class="copyright-text">
-                        <i class="fal fa-copyright"></i> Copyright 2025 <a href="home-university.html">Stadum</a>. All Rights Reserved.
+                        {!!@getSetting()->copyrights!!}
                     </p>
                 </div>
                 <div class="col-md-auto text-md-end text-center">
                     <div class="th-social">
-                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        @if(getSetting()->facebook)
+                        <a target="_blank" href="{{getSetting()->facebook}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        @endif
+                        @if(getSetting()->twitter)
+                        <a target="_blank" href="{{getSetting()->twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        @endif
+                        @if(getSetting()->instagram)
+                        <a target="_blank" href="{{getSetting()->instagram}}"><i class="fa-brands fa-instagram"></i></a>
+                        @endif
+                        @if(getSetting()->youtube)
+                        <a target="_blank" href="{{getSetting()->youtube}}"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        @endif
+                        @if(getSetting()->linkedin)
+                        <a target="_blank" href="{{getSetting()->linkedin}}"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        @endif
                     </div>
                 </div>
             </div>

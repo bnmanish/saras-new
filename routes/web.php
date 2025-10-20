@@ -21,6 +21,7 @@ use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\AwardController;
 use App\Http\Controllers\backend\DirectorController;
 
+
 // frontend controllers
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\AboutController;
@@ -28,6 +29,8 @@ use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\frontBlogController;
 use App\Http\Controllers\frontend\FrontAdditionalPageController;
 use App\Http\Controllers\frontend\FrontProjectController;
+use App\Http\Controllers\frontend\DirectorsController;
+
 //-------------------------------------------------------------------------
 use App\Models\Page;
 use Illuminate\Support\Facades\Artisan;
@@ -54,6 +57,9 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/about-us',[AboutController::class,'index'])->name('about.us');
 Route::get('/about-us/chairman-message',[AboutController::class,'chairmanMessage'])->name('chairman.message');
 Route::get('/about-us/md-message',[AboutController::class,'mdMessage'])->name('md.message');
+Route::get('/directors',[DirectorsController::class,'index'])->name('directors');
+
+
 Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');
 Route::get('/projects',[FrontProjectController::class,'index'])->name('projects');
 Route::get('/city/{url}',[FrontProjectController::class,'projectCitywise'])->name('project.citywise');

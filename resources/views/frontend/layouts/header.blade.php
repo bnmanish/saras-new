@@ -254,15 +254,7 @@ Header Area
                                         <li><a href="{{ route('awards') }}">Awards</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Programs</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="program.html">Programs Style 1</a></li>
-                                        <li><a href="program-2.html">Programs Style 2</a></li>
-                                        <li><a href="program-details.html">Program Details</a></li>
-                                        <li><a href="program-details-sidebar.html">Program Details With Sidebar</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{route('directors')}}">Directors</a></li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Pages</a>
                                     <ul class="sub-menu">

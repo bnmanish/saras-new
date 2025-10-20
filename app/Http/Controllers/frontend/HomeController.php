@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Testimonial;
-use App\Models\Project;
 use App\Models\Blog;
 use App\Models\Page;
 use App\Models\Type;
@@ -24,19 +23,10 @@ class HomeController extends Controller
         $slider = Slider::select('desciption','image')->where('status','1')->orderBy('sorting_order','asc')->get();
         $page = Page::where(['id'=>1])->first();
         $about = Page::where(['id'=>2])->first();
-        $product = Amenity::where(['status'=>'1'])->get();
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
         $blogs = Blog::where('status','1')->orderBy('created_at','desc')->limit(3)->get();
-        $type = Type::where(['status'=>'1'])->orderBy('sequence','asc')->get();
-        $city = City::where(['status'=>'1'])->orderBy('sequence','asc')->get();
-        $brand = Brand::where(['status'=>'1'])->orderBy('sequence','asc')->get();
-        $feature = Project::where(['status'=>'1','section'=>'featured'])->limit(10)->get();
-        $recent = Project::where(['status'=>'1'])->orderBy('created_at','desc')->limit(10)->get();
-        $luxury = Project::where(['status'=>'1','section'=>'luxury'])->limit(10)->get();
-        $popular = Project::where(['status'=>'1','section'=>'popular'])->limit(10)->get();
-        // return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'testimonials'=>$testimonials,'blogs'=>$blogs,'type'=>$type,'city'=>$city,'brand'=>$brand,'feature'=>$feature,'recent'=>$recent,'luxury'=>$luxury,'popular'=>$popular]);
-        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'product'=>$product]);
+        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about]);
     }
 
     public function searchProject(Request $request){

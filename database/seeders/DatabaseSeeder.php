@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MediaPressSeeder::class);
         $this->call(ImportantLinkSeeder::class);
         $this->call(OurTeamSeeder::class);
+        $this->call(GalleryCategorySeeder::class);
+        $this->call(GallerySeeder::class);
     }
 }

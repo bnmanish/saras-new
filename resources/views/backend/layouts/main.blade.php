@@ -273,6 +273,20 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.gallery_category')}}" class="waves-effect">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Gallery Category</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{route('admin.list.gallery')}}" class="waves-effect">
+                                    <i class="fas fa-images"></i>
+                                    <span>Gallery</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

@@ -26,6 +26,8 @@ use App\Http\Controllers\backend\CarrierController;
 use App\Http\Controllers\backend\MediaPressController;
 use App\Http\Controllers\backend\ImportantLinkController;
 use App\Http\Controllers\backend\OurTeamController;
+use App\Http\Controllers\backend\GalleryController;
+use App\Http\Controllers\backend\GalleryCategoryController;
 
 
 // frontend controllers
@@ -223,6 +225,24 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-our-team/{id}', [OurTeamController::class, 'editOurTeam'])->name('admin.edit.our_team');
         Route::post('/edit-store-our-team/{id}', [OurTeamController::class, 'editStoreOurTeam'])->name('admin.edit.store.our_team');
         Route::get('/delete-our-team/{id}', [OurTeamController::class, 'deleteOurTeam'])->name('admin.delete.our_team');
+
+        // Gallery Category
+        Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');
+        Route::post('/store-gallery-category', [GalleryCategoryController::class, 'storeGalleryCategory'])->name('admin.store.gallery_category');
+        Route::get('/list-gallery-category', [GalleryCategoryController::class, 'listGalleryCategory'])->name('admin.list.gallery_category');
+        Route::get('/edit-gallery-category/{id}', [GalleryCategoryController::class, 'editGalleryCategory'])->name('admin.edit.gallery_category');
+        Route::post('/edit-store-gallery-category/{id}', [GalleryCategoryController::class, 'editStoreGalleryCategory'])->name('admin.edit.store.gallery_category');
+        Route::get('/delete-gallery-category/{id}', [GalleryCategoryController::class, 'deleteGalleryCategory'])->name('admin.delete.gallery_category');
+
+        // Gallery
+        Route::get('/add-gallery', [GalleryController::class, 'addGallery'])->name('admin.add.gallery');
+        Route::post('/store-gallery', [GalleryController::class, 'storeGallery'])->name('admin.store.gallery');
+        Route::get('/list-gallery', [GalleryController::class, 'listGallery'])->name('admin.list.gallery');
+        Route::get('/edit-gallery/{id}', [GalleryController::class, 'editGallery'])->name('admin.edit.gallery');
+        Route::post('/edit-store-gallery/{id}', [GalleryController::class, 'editStoreGallery'])->name('admin.edit.store.gallery');
+        Route::get('/delete-gallery/{id}', [GalleryController::class, 'deleteGallery'])->name('admin.delete.gallery');
+        Route::post('/delete-gallery-image/{id}', [GalleryController::class, 'deleteGalleryImage'])->name('admin.delete.gallery_image');
+        Route::post('/reorder-gallery-images', [GalleryController::class, 'reorderGalleryImages'])->name('admin.reorder.gallery_images');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

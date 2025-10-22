@@ -25,6 +25,7 @@ use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CarrierController;
 use App\Http\Controllers\backend\MediaPressController;
 use App\Http\Controllers\backend\ImportantLinkController;
+use App\Http\Controllers\backend\OurTeamController;
 
 
 // frontend controllers
@@ -214,6 +215,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-important-link/{id}', [ImportantLinkController::class, 'editImportantLink'])->name('admin.edit.important_link');
         Route::post('/edit-store-important-link/{id}', [ImportantLinkController::class, 'editStoreImportantLink'])->name('admin.edit.store.important_link');
         Route::get('/delete-important-link/{id}', [ImportantLinkController::class, 'deleteImportantLink'])->name('admin.delete.important_link');
+
+        // Our Team
+        Route::get('/add-our-team', [OurTeamController::class, 'addOurTeam'])->name('admin.add.our_team');
+        Route::post('/store-our-team', [OurTeamController::class, 'storeOurTeam'])->name('admin.store.our_team');
+        Route::get('/list-our-team', [OurTeamController::class, 'listOurTeam'])->name('admin.list.our_team');
+        Route::get('/edit-our-team/{id}', [OurTeamController::class, 'editOurTeam'])->name('admin.edit.our_team');
+        Route::post('/edit-store-our-team/{id}', [OurTeamController::class, 'editStoreOurTeam'])->name('admin.edit.store.our_team');
+        Route::get('/delete-our-team/{id}', [OurTeamController::class, 'deleteOurTeam'])->name('admin.delete.our_team');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

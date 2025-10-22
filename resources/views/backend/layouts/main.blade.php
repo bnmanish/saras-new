@@ -266,6 +266,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.our_team')}}" class="waves-effect">
+                                    <i class="fas fa-users"></i>
+                                    <span>Our Team</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

@@ -189,19 +189,16 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{route('admin.list.category')}}" class="waves-effect">
-                                    <i class="fas fa-tags"></i>
-                                    <span>Categories</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.list.product')}}" class="waves-effect">
-                                    <i class="fas fa-box"></i>
-                                    <span>Products</span>
-                                </a>
-                            </li>
+                             <li>
+                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                     <i class="fas fa-box"></i>
+                                     <span>Manage Products</span>
+                                 </a>
+                                 <ul class="sub-menu" aria-expanded="false">
+                                     <li><a href="{{route('admin.list.category')}}">Categories</a></li>
+                                     <li><a href="{{route('admin.list.product')}}">Products</a></li>
+                                 </ul>
+                             </li>
 
                             <li>
                                 <a href="{{route('admin.list.director')}}" class="waves-effect">
@@ -216,19 +213,16 @@
                                     <span>Testimonial</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{route('admin.list.page')}}" class="waves-effect">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span>Pages</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.list.additional.page')}}" class="waves-effect">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span>Additional Pages</span>
-                                </a>
-                            </li>
+                             <li>
+                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                     <i class="fas fa-file-alt"></i>
+                                     <span>Manage Pages</span>
+                                 </a>
+                                 <ul class="sub-menu" aria-expanded="false">
+                                     <li><a href="{{route('admin.list.page')}}">Pages</a></li>
+                                     <li><a href="{{route('admin.list.additional.page')}}">Additional Pages</a></li>
+                                 </ul>
+                             </li>
 
                             <li>
                                 <a href="{{route('admin.list.subscriber')}}" class="waves-effect">
@@ -273,17 +267,14 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.list.gallery_category')}}" class="waves-effect">
-                                    <i class="fas fa-tags"></i>
-                                    <span>Gallery Category</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.list.gallery')}}" class="waves-effect">
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="fas fa-images"></i>
-                                    <span>Gallery</span>
+                                    <span>Manage Gallery</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.list.gallery_category')}}">Gallery Category</a></li>
+                                    <li><a href="{{route('admin.list.gallery')}}">Gallery</a></li>
+                                </ul>
                             </li>
 
                             <li>

@@ -245,6 +245,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.carrier')}}" class="waves-effect">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Carrier</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

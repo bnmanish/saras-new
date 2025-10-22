@@ -22,6 +22,7 @@ use App\Http\Controllers\backend\AwardController;
 use App\Http\Controllers\backend\DirectorController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\CarrierController;
 
 
 // frontend controllers
@@ -148,6 +149,9 @@ Route::prefix('admin')->group(function () {
 
         // Enquiry
         Route::get('/contact-enquiry', [EnquiryController::class, 'contactEnquiry'])->name('admin.contact.enquiry');
+
+        // Carrier
+        Route::get('/list-carrier', [CarrierController::class, 'listCarrier'])->name('admin.list.carrier');
 
         // Manage Additional
         Route::get('/add-additional-page', [AdditionalPageController::class, 'addPage'])->name('admin.add.additional.page');

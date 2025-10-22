@@ -24,6 +24,7 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CarrierController;
 use App\Http\Controllers\backend\MediaPressController;
+use App\Http\Controllers\backend\ImportantLinkController;
 
 
 // frontend controllers
@@ -205,6 +206,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-media-press/{id}', [MediaPressController::class, 'editMediaPress'])->name('admin.edit.media_press');
         Route::post('/edit-store-media-press/{id}', [MediaPressController::class, 'editStoreMediaPress'])->name('admin.edit.store.media_press');
         Route::get('/delete-media-press/{id}', [MediaPressController::class, 'deleteMediaPress'])->name('admin.delete.media_press');
+
+        // Important Links
+        Route::get('/add-important-link', [ImportantLinkController::class, 'addImportantLink'])->name('admin.add.important_link');
+        Route::post('/store-important-link', [ImportantLinkController::class, 'storeImportantLink'])->name('admin.store.important_link');
+        Route::get('/list-important-link', [ImportantLinkController::class, 'listImportantLink'])->name('admin.list.important_link');
+        Route::get('/edit-important-link/{id}', [ImportantLinkController::class, 'editImportantLink'])->name('admin.edit.important_link');
+        Route::post('/edit-store-important-link/{id}', [ImportantLinkController::class, 'editStoreImportantLink'])->name('admin.edit.store.important_link');
+        Route::get('/delete-important-link/{id}', [ImportantLinkController::class, 'deleteImportantLink'])->name('admin.delete.important_link');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

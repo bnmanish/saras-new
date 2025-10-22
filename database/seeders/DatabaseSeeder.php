@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CarrierSeeder::class);
         $this->call(MediaPressSeeder::class);
+        $this->call(ImportantLinkSeeder::class);
     }
 }

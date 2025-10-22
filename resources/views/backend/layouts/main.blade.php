@@ -259,6 +259,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.important_link')}}" class="waves-effect">
+                                    <i class="fas fa-link"></i>
+                                    <span>Important Links</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

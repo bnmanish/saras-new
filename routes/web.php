@@ -23,6 +23,7 @@ use App\Http\Controllers\backend\DirectorController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CarrierController;
+use App\Http\Controllers\backend\MediaPressController;
 
 
 // frontend controllers
@@ -196,6 +197,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-director/{id}', [DirectorController::class, 'editProfile'])->name('admin.edit.director');
         Route::post('/edit-store-director/{id}', [DirectorController::class, 'editStoreProfile'])->name('admin.edit.store.director');
         Route::get('/delete-director/{id}', [DirectorController::class, 'deleteProfile'])->name('admin.delete.director');
+
+        // Media/Press
+        Route::get('/add-media-press', [MediaPressController::class, 'addMediaPress'])->name('admin.add.media_press');
+        Route::post('/store-media-press', [MediaPressController::class, 'storeMediaPress'])->name('admin.store.media_press');
+        Route::get('/list-media-press', [MediaPressController::class, 'listMediaPress'])->name('admin.list.media_press');
+        Route::get('/edit-media-press/{id}', [MediaPressController::class, 'editMediaPress'])->name('admin.edit.media_press');
+        Route::post('/edit-store-media-press/{id}', [MediaPressController::class, 'editStoreMediaPress'])->name('admin.edit.store.media_press');
+        Route::get('/delete-media-press/{id}', [MediaPressController::class, 'deleteMediaPress'])->name('admin.delete.media_press');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

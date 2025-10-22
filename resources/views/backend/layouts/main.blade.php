@@ -252,6 +252,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.media_press')}}" class="waves-effect">
+                                    <i class="fas fa-newspaper"></i>
+                                    <span>Media/Press</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

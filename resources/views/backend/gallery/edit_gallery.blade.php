@@ -55,28 +55,24 @@
                             </div>
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Current Images</label>
+                                <label class="col-md-2 col-form-label">Images</label>
                                 <div class="col-md-10">
-                                    <div class="row">
-                                        @foreach($data->images as $image)
-                                        <div class="col-md-3 mb-3">
+                                    <div class="row sortable-images" id="sortable">
+                                        @foreach($data->images->sortBy('order') as $image)
+                                        <div class="col-md-3 mb-3 image-item" data-id="{{$image->id}}" style="cursor: move;">
+                                            <i class="fas fa-arrows-alt"></i>
                                             <img src="{{url('uploads/gallery/'.$image->image)}}" class="img-thumbnail" width="100">
                                             <br>
                                             <button type="button" class="btn btn-danger btn-sm mt-1" onclick="deleteImage({{$image->id}})">Delete</button>
                                         </div>
                                         @endforeach
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Add More Images</label>
-                                <div class="col-md-10">
+                                    <hr>
                                     <input class="form-control" type="file" name="images[]" multiple>
                                     @if($errors->first('images'))
                                     <p class="text-danger mb-0">{{ $errors->first('images') }}</p>
                                     @endif
-                                    <small class="text-muted">Select multiple images to add</small>
+                                    <small class="text-muted">Select multiple images to add more</small>
                                 </div>
                             </div>
 
@@ -98,6 +94,7 @@
 </div>
 @stop
 @push('scripts')
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
 $(function() {

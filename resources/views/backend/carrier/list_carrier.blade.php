@@ -61,8 +61,8 @@
                                     <td>{{$dataRow->created_at->format('d-m-Y')}}</td>
                                     <td>
                                         @if($dataRow->resume)
-                                        <a href="{{asset('uploads/'.$dataRow->resume)}}" target="_blank" class="btn btn-sm btn-info me-1">View</a>
-                                        <a href="{{asset('uploads/'.$dataRow->resume)}}" download class="btn btn-sm btn-success">Download</a>
+                                        <a href="{{asset('uploads/'.$dataRow->resume)}}" target="_blank" class="btn btn-sm btn-info me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View Resume"><i class="fas fa-eye"></i></a>
+                                        <a href="{{asset('uploads/'.$dataRow->resume)}}" download class="btn btn-sm btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Download Resume"><i class="fas fa-download"></i></a>
                                         @else
                                         No Resume
                                         @endif

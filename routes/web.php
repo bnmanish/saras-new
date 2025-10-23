@@ -28,6 +28,7 @@ use App\Http\Controllers\backend\ImportantLinkController;
 use App\Http\Controllers\backend\OurTeamController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\GalleryCategoryController;
+use App\Http\Controllers\backend\QualityAssuranceController;
 
 
 // frontend controllers
@@ -225,6 +226,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-our-team/{id}', [OurTeamController::class, 'editOurTeam'])->name('admin.edit.our_team');
         Route::post('/edit-store-our-team/{id}', [OurTeamController::class, 'editStoreOurTeam'])->name('admin.edit.store.our_team');
         Route::get('/delete-our-team/{id}', [OurTeamController::class, 'deleteOurTeam'])->name('admin.delete.our_team');
+
+        // Quality Assurance
+        Route::get('/add-quality-assurance', [QualityAssuranceController::class, 'addQualityAssurance'])->name('admin.add.quality_assurance');
+        Route::post('/store-quality-assurance', [QualityAssuranceController::class, 'storeQualityAssurance'])->name('admin.store.quality_assurance');
+        Route::get('/list-quality-assurance', [QualityAssuranceController::class, 'listQualityAssurance'])->name('admin.list.quality_assurance');
+        Route::get('/edit-quality-assurance/{id}', [QualityAssuranceController::class, 'editQualityAssurance'])->name('admin.edit.quality_assurance');
+        Route::post('/edit-store-quality-assurance/{id}', [QualityAssuranceController::class, 'editStoreQualityAssurance'])->name('admin.edit.store.quality_assurance');
+        Route::get('/delete-quality-assurance/{id}', [QualityAssuranceController::class, 'deleteQualityAssurance'])->name('admin.delete.quality_assurance');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

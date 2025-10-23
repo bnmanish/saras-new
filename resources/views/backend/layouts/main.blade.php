@@ -267,6 +267,13 @@
                             </li>
 
                             <li>
+                                <a href="{{route('admin.list.quality_assurance')}}" class="waves-effect">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Quality Assurance</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="fas fa-images"></i>
                                     <span>Manage Gallery</span>

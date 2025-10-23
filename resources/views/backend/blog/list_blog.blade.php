@@ -57,7 +57,7 @@
                                     <td><img width="100" src="{{url('uploads/blog/'.$dataRow->banner)}}"></td>
                                     <td>{{$dataRow->user->name}}</td>
                                     <td>{{$dataRow->status == '1' ? 'Enable' : 'Disable'}}</td>
-                                    <td><span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="{{date('d F, Y',strtotime($dataRow->created_at))}}">{{date('d-m-Y',strtotime($dataRow->created_at))}}</span></td>
+                                    <td><span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="{{date('d-m-Y',strtotime($dataRow->created_at))}}">{{date('d-m-Y',strtotime($dataRow->created_at))}}</span></td>
                                     <td>
                                         <a href="{{route('admin.edit.blog',$dataRow->id)}}" class='btn btn-primary btn-sm' data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Edit"><i class='fas fa-edit'></i></a>&nbsp;<a href="{{route('admin.delete.blog',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Delete"><i class='fas fa-trash'></i></a>
                                     </td>

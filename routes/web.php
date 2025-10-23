@@ -33,6 +33,7 @@ use App\Http\Controllers\backend\DealershipEnquiryController;
 use App\Http\Controllers\backend\ImportantContactController;
 use App\Http\Controllers\backend\TenderController;
 use App\Http\Controllers\backend\MilkPurchasePriceChartController;
+use App\Http\Controllers\backend\MilkSalePriceChartController;
 
 
 // frontend controllers
@@ -269,6 +270,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'editMilkPurchasePriceChart'])->name('admin.edit.milk_purchase_price_chart');
         Route::put('/update-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'updateMilkPurchasePriceChart'])->name('admin.update.milk_purchase_price_chart');
         Route::get('/delete-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'deleteMilkPurchasePriceChart'])->name('admin.delete.milk_purchase_price_chart');
+
+        // Milk Sale Price Charts
+        Route::get('/add-milk-sale-price-chart', [MilkSalePriceChartController::class, 'addMilkSalePriceChart'])->name('admin.add.milk_sale_price_chart');
+        Route::post('/store-milk-sale-price-chart', [MilkSalePriceChartController::class, 'storeMilkSalePriceChart'])->name('admin.store.milk_sale_price_chart');
+        Route::get('/list-milk-sale-price-charts', [MilkSalePriceChartController::class, 'listMilkSalePriceCharts'])->name('admin.list.milk_sale_price_charts');
+        Route::get('/edit-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'editMilkSalePriceChart'])->name('admin.edit.milk_sale_price_chart');
+        Route::put('/update-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'updateMilkSalePriceChart'])->name('admin.update.milk_sale_price_chart');
+        Route::get('/delete-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'deleteMilkSalePriceChart'])->name('admin.delete.milk_sale_price_chart');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

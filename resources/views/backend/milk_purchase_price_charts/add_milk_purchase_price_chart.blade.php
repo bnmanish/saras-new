@@ -40,15 +40,15 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Publish Date <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="date" name="publish_date" value="{{old('publish_date')}}">
-                                    @if($errors->first('publish_date'))
-                                    <p class="text-danger mb-0">{{ $errors->first('publish_date') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Publish Date <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control datepicker" type="text" name="publish_date" value="{{old('publish_date')}}" placeholder="dd-mm-yyyy">
+                                     @if($errors->first('publish_date'))
+                                     <p class="text-danger mb-0">{{ $errors->first('publish_date') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">File (PDF)</label>
@@ -99,4 +99,15 @@
 </div>
 @endsection
 @push('scripts')
+<script>
+$(document).ready(function() {
+    $('.datepicker').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+            format: 'DD-MM-YYYY'
+        }
+    });
+});
+</script>
 @endpush

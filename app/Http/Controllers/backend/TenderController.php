@@ -22,7 +22,7 @@ class TenderController extends Controller
     public function storeTender(Request $request){
         $request->validate([
             'title' => 'required|string|max:255',
-            'publish_date' => 'required|date',
+            'publish_date' => 'required|date_format:d-m-Y',
             'file' => 'nullable|file|mimes:pdf|max:2048',
             'status' => 'required|in:active,inactive',
         ]);
@@ -54,7 +54,7 @@ class TenderController extends Controller
     public function updateTender(Request $request, $id){
         $request->validate([
             'title' => 'required|string|max:255',
-            'publish_date' => 'required|date',
+            'publish_date' => 'required|date_format:d-m-Y',
             'file' => 'nullable|file|mimes:pdf|max:2048',
             'status' => 'required|in:active,inactive',
         ]);

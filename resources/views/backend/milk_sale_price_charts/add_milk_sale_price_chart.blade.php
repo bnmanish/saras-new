@@ -1,5 +1,5 @@
 @extends('backend/layouts/main')
-@section('title', 'Add Tender | River Edge')
+@section('title', 'Add Milk Sale Price Chart | River Edge')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Add Tender</h4>
+                    <h4 class="mb-sm-0">Add Milk Sale Price Chart</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
-                            <li class="breadcrumb-item active">Add Tender</li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.list.milk_sale_price_charts')}}">Milk Sale Price Charts</a></li>
+                            <li class="breadcrumb-item active">Add Milk Sale Price Chart</li>
                         </ol>
                     </div>
 
@@ -27,7 +27,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="{{route('admin.store.tender')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('admin.store.milk_sale_price_chart')}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3 row">

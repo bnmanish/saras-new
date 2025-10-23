@@ -59,7 +59,7 @@
                                 @foreach($data as $dataRow)
                                 <tr>
                                     <td>{{$dataRow->email}}</td>
-                                    <td>{{date('d-M-Y',strtotime($dataRow->created_at))}}</td>
+                                    <td>{{date('d-m-Y',strtotime($dataRow->created_at))}}</td>
                                     <td>
                                         {{--<a href="{{route('admin.edit.service',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>--}}
                                         <a href="{{route('admin.delete.subscriber',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>

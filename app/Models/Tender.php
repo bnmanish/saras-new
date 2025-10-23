@@ -12,4 +12,8 @@ class Tender extends Model
         'file',
         'status',
     ];
+
+    protected $casts = [
+        'publish_date' => 'date',
+    ];
 }

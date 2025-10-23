@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MilkPurchasePriceChart extends Model
+class MilkSalePriceChart extends Model
 {
     protected $fillable = [
         'title',

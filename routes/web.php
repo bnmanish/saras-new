@@ -29,6 +29,7 @@ use App\Http\Controllers\backend\OurTeamController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\GalleryCategoryController;
 use App\Http\Controllers\backend\QualityAssuranceController;
+use App\Http\Controllers\backend\DealershipEnquiryController;
 
 
 // frontend controllers
@@ -39,6 +40,7 @@ use App\Http\Controllers\frontend\frontBlogController;
 use App\Http\Controllers\frontend\FrontAdditionalPageController;
 use App\Http\Controllers\frontend\FrontProjectController;
 use App\Http\Controllers\frontend\DirectorsController;
+use App\Http\Controllers\frontend\DealershipEnquiryController as FrontendDealershipEnquiryController;
 
 //-------------------------------------------------------------------------
 use App\Models\Page;
@@ -88,6 +90,9 @@ Route::post('/subscribe-news-letter', [HomeController::class, 'subscribeNewsLett
 
 
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
+
+Route::get('/dealership-enquiry', [FrontendDealershipEnquiryController::class, 'showForm'])->name('dealership.enquiry');
+Route::post('/dealership-enquiry', [FrontendDealershipEnquiryController::class, 'submitForm'])->name('dealership.enquiry.submit');
 
 // Admin login route
 Route::prefix('admin')->group(function () {
@@ -234,6 +239,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-quality-assurance/{id}', [QualityAssuranceController::class, 'editQualityAssurance'])->name('admin.edit.quality_assurance');
         Route::post('/edit-store-quality-assurance/{id}', [QualityAssuranceController::class, 'editStoreQualityAssurance'])->name('admin.edit.store.quality_assurance');
         Route::get('/delete-quality-assurance/{id}', [QualityAssuranceController::class, 'deleteQualityAssurance'])->name('admin.delete.quality_assurance');
+
+        // Dealership Enquiry
+        Route::get('/list-dealership-enquiry', [DealershipEnquiryController::class, 'listEnquiries'])->name('admin.list.dealership_enquiry');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

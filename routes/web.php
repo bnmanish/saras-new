@@ -31,6 +31,8 @@ use App\Http\Controllers\backend\GalleryCategoryController;
 use App\Http\Controllers\backend\QualityAssuranceController;
 use App\Http\Controllers\backend\DealershipEnquiryController;
 use App\Http\Controllers\backend\ImportantContactController;
+use App\Http\Controllers\backend\TenderController;
+use App\Http\Controllers\backend\MilkPurchasePriceChartController;
 
 
 // frontend controllers
@@ -251,6 +253,22 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-important-contact/{id}', [ImportantContactController::class, 'editContact'])->name('admin.edit.important_contact');
         Route::put('/update-important-contact/{id}', [ImportantContactController::class, 'updateContact'])->name('admin.update.important_contact');
         Route::get('/delete-important-contact/{id}', [ImportantContactController::class, 'deleteContact'])->name('admin.delete.important_contact');
+
+        // Tenders
+        Route::get('/add-tender', [TenderController::class, 'addTender'])->name('admin.add.tender');
+        Route::post('/store-tender', [TenderController::class, 'storeTender'])->name('admin.store.tender');
+        Route::get('/list-tenders', [TenderController::class, 'listTenders'])->name('admin.list.tenders');
+        Route::get('/edit-tender/{id}', [TenderController::class, 'editTender'])->name('admin.edit.tender');
+        Route::put('/update-tender/{id}', [TenderController::class, 'updateTender'])->name('admin.update.tender');
+        Route::get('/delete-tender/{id}', [TenderController::class, 'deleteTender'])->name('admin.delete.tender');
+
+        // Milk Purchase Price Charts
+        Route::get('/add-milk-purchase-price-chart', [MilkPurchasePriceChartController::class, 'addMilkPurchasePriceChart'])->name('admin.add.milk_purchase_price_chart');
+        Route::post('/store-milk-purchase-price-chart', [MilkPurchasePriceChartController::class, 'storeMilkPurchasePriceChart'])->name('admin.store.milk_purchase_price_chart');
+        Route::get('/list-milk-purchase-price-charts', [MilkPurchasePriceChartController::class, 'listMilkPurchasePriceCharts'])->name('admin.list.milk_purchase_price_charts');
+        Route::get('/edit-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'editMilkPurchasePriceChart'])->name('admin.edit.milk_purchase_price_chart');
+        Route::put('/update-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'updateMilkPurchasePriceChart'])->name('admin.update.milk_purchase_price_chart');
+        Route::get('/delete-milk-purchase-price-chart/{id}', [MilkPurchasePriceChartController::class, 'deleteMilkPurchasePriceChart'])->name('admin.delete.milk_purchase_price_chart');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

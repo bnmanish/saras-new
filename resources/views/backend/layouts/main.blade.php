@@ -287,6 +287,17 @@
                                  </a>
                              </li>
 
+                              <li>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                      <i class="fas fa-info-circle"></i>
+                                      <span>Informations</span>
+                                  </a>
+                                  <ul class="sub-menu" aria-expanded="false">
+                                      <li><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
+                                      <li><a href="{{route('admin.list.milk_purchase_price_charts')}}">Purchase Charts</a></li>
+                                  </ul>
+                              </li>
+
                              <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="fas fa-images"></i>

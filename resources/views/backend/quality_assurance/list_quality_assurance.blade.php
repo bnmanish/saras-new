@@ -61,13 +61,11 @@
                                 <tr>
                                     <td>{{$sl}}</td>
                                     <td>{{$dataRow->title}}</td>
-                                    <td>
-                                        @if($dataRow->image)
-                                            <a href="{{url('uploads/quality_assurance/'.$dataRow->image)}}" target="_blank">View File</a>
-                                        @else
-                                            No File
-                                        @endif
-                                    </td>
+                                     <td>
+                                         @if($dataRow->image && file_exists(public_path('uploads/quality_assurance/'.$dataRow->image)))
+                                             <a href="{{url('uploads/quality_assurance/'.$dataRow->image)}}" target="_blank">View File</a>
+                                         @endif
+                                     </td>
                                     <td>
                                         @if($dataRow->status == 'active')
                                             <span class="badge bg-success">Active</span>

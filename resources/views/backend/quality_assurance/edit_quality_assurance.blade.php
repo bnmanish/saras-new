@@ -52,9 +52,9 @@
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">File</label>
                                 <div class="col-md-10">
-                                    @if($data->image)
-                                        <p><a href="{{url('uploads/quality_assurance/'.$data->image)}}" target="_blank">Preview Current File</a></p>
-                                    @endif
+                                     @if($data->image && file_exists(public_path('uploads/quality_assurance/'.$data->image)))
+                                         <p><a href="{{url('uploads/quality_assurance/'.$data->image)}}" target="_blank">Preview Current File</a></p>
+                                     @endif
                                     <input class="form-control" type="file" name="image">
                                     @if($errors->first('image'))
                                     <p class="text-danger mb-0">{{ $errors->first('image') }}</p>

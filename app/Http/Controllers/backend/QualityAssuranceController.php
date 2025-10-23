@@ -18,7 +18,7 @@ class QualityAssuranceController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'image' => ['nullable', 'file', 'max:2048'],
             'status' => ['required', 'in:active,inactive'],
         ]);
 
@@ -53,7 +53,7 @@ class QualityAssuranceController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'image' => ['nullable', 'file', 'max:2048'],
             'status' => ['required', 'in:active,inactive'],
         ]);
 

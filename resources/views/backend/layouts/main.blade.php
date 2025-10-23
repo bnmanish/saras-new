@@ -292,11 +292,12 @@
                                       <i class="fas fa-info-circle"></i>
                                       <span>Informations</span>
                                   </a>
-                                  <ul class="sub-menu" aria-expanded="false">
-                                      <li><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
-                                      <li><a href="{{route('admin.list.milk_purchase_price_charts')}}">Purchase Charts</a></li>
-                                      <li><a href="{{route('admin.list.milk_sale_price_charts')}}">Sale Charts</a></li>
-                                  </ul>
+                                   <ul class="sub-menu" aria-expanded="false">
+                                       <li><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
+                                       <li><a href="{{route('admin.list.milk_purchase_price_charts')}}">Purchase Charts</a></li>
+                                       <li><a href="{{route('admin.list.milk_sale_price_charts')}}">Sale Charts</a></li>
+                                       <li><a href="{{route('admin.list.beneficiaries')}}">Beneficiaries</a></li>
+                                   </ul>
                               </li>
 
                              <li>

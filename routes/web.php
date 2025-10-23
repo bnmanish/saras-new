@@ -34,6 +34,7 @@ use App\Http\Controllers\backend\ImportantContactController;
 use App\Http\Controllers\backend\TenderController;
 use App\Http\Controllers\backend\MilkPurchasePriceChartController;
 use App\Http\Controllers\backend\MilkSalePriceChartController;
+use App\Http\Controllers\backend\BeneficiaryController;
 
 
 // frontend controllers
@@ -176,9 +177,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/edit-store-additional-page/{id}', [AdditionalPageController::class, 'editStorePage'])->name('admin.edit.store.additional.page');
         Route::get('/delete-additional-page/{id}', [AdditionalPageController::class, 'deletePage'])->name('admin.delete.additional.page');
 
-        // Manage user
-        Route::get('/add-web-story', [WebStoryMasterController::class, 'addWebStory'])->name('admin.add.story');
-        Route::post('/store-web-story', [WebStoryMasterController::class, 'stroeWebStory'])->name('admin.store.story');
+
 
         // Manage Award
         Route::get('/add-award', [AwardController::class, 'addAward'])->name('admin.add.award');
@@ -278,6 +277,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'editMilkSalePriceChart'])->name('admin.edit.milk_sale_price_chart');
         Route::put('/update-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'updateMilkSalePriceChart'])->name('admin.update.milk_sale_price_chart');
         Route::get('/delete-milk-sale-price-chart/{id}', [MilkSalePriceChartController::class, 'deleteMilkSalePriceChart'])->name('admin.delete.milk_sale_price_chart');
+
+        // Beneficiaries
+        Route::get('/add-beneficiary', [BeneficiaryController::class, 'addBeneficiary'])->name('admin.add.beneficiary');
+        Route::post('/store-beneficiary', [BeneficiaryController::class, 'storeBeneficiary'])->name('admin.store.beneficiary');
+        Route::get('/list-beneficiaries', [BeneficiaryController::class, 'listBeneficiaries'])->name('admin.list.beneficiaries');
+        Route::get('/edit-beneficiary/{id}', [BeneficiaryController::class, 'editBeneficiary'])->name('admin.edit.beneficiary');
+        Route::put('/update-beneficiary/{id}', [BeneficiaryController::class, 'updateBeneficiary'])->name('admin.update.beneficiary');
+        Route::get('/delete-beneficiary/{id}', [BeneficiaryController::class, 'deleteBeneficiary'])->name('admin.delete.beneficiary');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

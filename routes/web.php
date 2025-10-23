@@ -30,6 +30,7 @@ use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\GalleryCategoryController;
 use App\Http\Controllers\backend\QualityAssuranceController;
 use App\Http\Controllers\backend\DealershipEnquiryController;
+use App\Http\Controllers\backend\ImportantContactController;
 
 
 // frontend controllers
@@ -242,6 +243,14 @@ Route::prefix('admin')->group(function () {
 
         // Dealership Enquiry
         Route::get('/list-dealership-enquiry', [DealershipEnquiryController::class, 'listEnquiries'])->name('admin.list.dealership_enquiry');
+
+        // Important Contacts
+        Route::get('/add-important-contact', [ImportantContactController::class, 'addContact'])->name('admin.add.important_contact');
+        Route::post('/store-important-contact', [ImportantContactController::class, 'storeContact'])->name('admin.store.important_contact');
+        Route::get('/list-important-contacts', [ImportantContactController::class, 'listContacts'])->name('admin.list.important_contacts');
+        Route::get('/edit-important-contact/{id}', [ImportantContactController::class, 'editContact'])->name('admin.edit.important_contact');
+        Route::put('/update-important-contact/{id}', [ImportantContactController::class, 'updateContact'])->name('admin.update.important_contact');
+        Route::get('/delete-important-contact/{id}', [ImportantContactController::class, 'deleteContact'])->name('admin.delete.important_contact');
 
         // Gallery Category
         Route::get('/add-gallery-category', [GalleryCategoryController::class, 'addGalleryCategory'])->name('admin.add.gallery_category');

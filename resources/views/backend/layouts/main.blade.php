@@ -281,6 +281,13 @@
                              </li>
 
                              <li>
+                                 <a href="{{route('admin.list.important_contacts')}}" class="waves-effect">
+                                     <i class="fas fa-address-book"></i>
+                                     <span>Important Contacts</span>
+                                 </a>
+                             </li>
+
+                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="fas fa-images"></i>
                                     <span>Manage Gallery</span>

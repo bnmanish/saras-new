@@ -62,16 +62,20 @@
                                     <option value="fail">Fail</option>
                                 </select>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>&nbsp;</label>
-                                <button type="button" class="btn btn-primary" id="filterBtn">Filter</button>
-                            </div>
+                             <div class="col-md-6 mb-3">
+                                 <label>&nbsp;</label>
+                                 <div class="d-flex gap-2">
+                                     <button type="button" class="btn btn-primary" id="filterBtn">Filter</button>
+                                     <button type="button" class="btn btn-success" id="exportCsvBtn">Export CSV</button>
+                                     <button type="button" class="btn btn-info" id="exportExcelBtn">Export Excel</button>
+                                 </div>
+                             </div>
                         </div>
 
                         <table id="loginLogsTable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>Sl No</th>
+                                    <th>ID</th>
                                     <th>Username</th>
                                     <th>Location/IP</th>
                                     <th>Created At</th>
@@ -104,23 +108,43 @@ $(document).ready(function() {
             }
         },
         columns: [
-            { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-            { data: 'username', name: 'username' },
-            { data: 'location_info', name: 'ip_address' },
-            { data: 'created_at_formatted', name: 'created_at' },
-            { data: 'status_badge', name: 'status', orderable: false }
+            { data: 'id', name: 'id', orderable: true, searchable: false },
+            { data: 'username', name: 'username', orderable: true, searchable: true },
+            { data: 'location_info', name: 'ip_address', orderable: true, searchable: true },
+            { data: 'created_at_formatted', name: 'created_at', orderable: true, searchable: false },
+            { data: 'status_badge', name: 'status', orderable: true, searchable: false }
         ],
         order: [[3, 'desc']]
     });
 
-    // Set default date to today
-    var today = new Date().toISOString().split('T')[0];
-    $('#start_date').val(today);
-    $('#end_date').val(today);
+    // Leave dates empty for default today's data filtering
 
     $('#filterBtn').on('click', function() {
         table.ajax.reload();
     });
+
+    // Export buttons
+    $('#exportCsvBtn').on('click', function() {
+        exportData('csv');
+    });
+
+    $('#exportExcelBtn').on('click', function() {
+        exportData('excel');
+    });
+
+    function exportData(format) {
+        var params = {
+            start_date: $('#start_date').val(),
+            end_date: $('#end_date').val(),
+            username: $('#username').val(),
+            ip_address: $('#ip_address').val(),
+            status: $('#status').val(),
+            format: format
+        };
+
+        var url = '{{ route("admin.login.logs.export") }}?' + $.param(params);
+        window.open(url, '_blank');
+    }
 
     // Auto filter on input change
     $('#start_date, #end_date, #username, #ip_address, #status').on('change keyup', function() {

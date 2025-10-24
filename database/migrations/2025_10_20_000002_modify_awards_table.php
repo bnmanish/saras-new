@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('awards', function (Blueprint $table) {
+            $table->dropUnique(['url']);
             $table->dropColumn(['url', 'sequence', 'meta_title', 'meta_keywords', 'meta_description', 'short_description', 'description']);
         });
     }

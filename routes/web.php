@@ -216,6 +216,7 @@ Route::prefix('admin')->group(function () {
         // Login Logs
         Route::get('/login-logs', [LoginLogController::class, 'index'])->name('admin.login.logs');
         Route::get('/login-logs-data', [LoginLogController::class, 'getData'])->name('admin.login.logs.data');
+        Route::get('/login-logs-export', [LoginLogController::class, 'export'])->name('admin.login.logs.export');
 
         // Media/Press
         Route::get('/add-media-press', [MediaPressController::class, 'addMediaPress'])->name('admin.add.media_press');

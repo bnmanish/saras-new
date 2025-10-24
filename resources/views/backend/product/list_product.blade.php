@@ -52,31 +52,41 @@
                         </div>
 
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Image</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
+                             <thead>
+                                 <tr>
+                                     <th>Name</th>
+                                     <th>Category</th>
+                                     <th>Price</th>
+                                     <th>Pack Size</th>
+                                     <th>Image</th>
+                                     <th>Status</th>
+                                     <th>Action</th>
+                                 </tr>
+                             </thead>
 
 
-                            <tbody>
-                                @foreach($data as $dataRow)
-                                <tr>
-                                    <td>{{$dataRow->title}}</td>
-                                    <td>{{$dataRow->category->name ?? 'N/A'}}</td>
-                                    <td><img width="50" src="{{url('uploads/product/'.$dataRow->image)}}" alt="{{$dataRow->title}}"></td>
-                                    <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
-                                    <td>
-                                        <a href="{{route('admin.edit.product',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{route('admin.delete.product',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                             <tbody>
+                                 @foreach($data as $dataRow)
+                                 <tr>
+                                     <td>{{$dataRow->name}}</td>
+                                     <td>{{$dataRow->category->name ?? 'N/A'}}</td>
+                                     <td>{{$dataRow->price ? '₹'.$dataRow->price : 'N/A'}}</td>
+                                     <td>{{$dataRow->pack_size ?? 'N/A'}}</td>
+                                     <td>
+                                         @if($dataRow->primaryImage)
+                                         <img width="50" src="{{url('uploads/product/'.$dataRow->primaryImage->image)}}" alt="{{$dataRow->name}}">
+                                         @else
+                                         No Image
+                                         @endif
+                                     </td>
+                                     <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
+                                     <td>
+                                         <a href="{{route('admin.edit.product',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                         <a href="{{route('admin.delete.product',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
+                                     </td>
+                                 </tr>
+                                 @endforeach
+                             </tbody>
                         </table>
                     </div>
                 </div>

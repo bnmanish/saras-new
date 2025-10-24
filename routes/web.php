@@ -202,6 +202,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-product/{id}', [ProductController::class, 'editProduct'])->name('admin.edit.product');
         Route::post('/edit-store-product/{id}', [ProductController::class, 'editStoreProduct'])->name('admin.edit.store.product');
         Route::get('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('admin.delete.product');
+        Route::get('/delete-product-image/{id}', [ProductController::class, 'deleteProductImage'])->name('admin.delete.product.image');
 
         // Manage Directors
         Route::get('/add-director', [DirectorController::class, 'addProfile'])->name('admin.add.director');

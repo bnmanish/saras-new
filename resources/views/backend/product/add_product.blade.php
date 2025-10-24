@@ -37,30 +37,84 @@
                         <form method="post" action="{{route('admin.store.product')}}" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Title <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="title" placeholder="Product title *" value="{{old('title')}}">
-                                    @if($errors->first('title'))
-                                    <p class="text-danger mb-0">{{ $errors->first('title') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Product Name <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="name" placeholder="Product name *" value="{{old('name')}}">
+                                     @if($errors->first('name'))
+                                     <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Category <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="category_id">
-                                        <option value="">Select Category</option>
-                                        @foreach($categories as $category)
-                                        <option value="{{$category->id}}" @if(old('category_id') == $category->id) selected @endif>{{$category->name}}</option>
-                                        @endforeach
-                                    </select>
-                                    @if($errors->first('category_id'))
-                                    <p class="text-danger mb-0">{{ $errors->first('category_id') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Category <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <select class="form-control" name="category_id">
+                                         <option value="">Select Category</option>
+                                         @foreach($categories as $category)
+                                         <option value="{{$category->id}}" @if(old('category_id') == $category->id) selected @endif>{{$category->name}}</option>
+                                         @endforeach
+                                     </select>
+                                     @if($errors->first('category_id'))
+                                     <p class="text-danger mb-0">{{ $errors->first('category_id') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Price</label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="number" name="price" placeholder="Price" value="{{old('price')}}">
+                                     @if($errors->first('price'))
+                                     <p class="text-danger mb-0">{{ $errors->first('price') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Pack Size</label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="pack_size" placeholder="Pack size" value="{{old('pack_size')}}">
+                                     @if($errors->first('pack_size'))
+                                     <p class="text-danger mb-0">{{ $errors->first('pack_size') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Short Description</label>
+                                 <div class="col-md-10">
+                                     <textarea class="form-control" name="short_description" rows="3" placeholder="Short description">{{old('short_description')}}</textarea>
+                                     @if($errors->first('short_description'))
+                                     <p class="text-danger mb-0">{{ $errors->first('short_description') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Long Description</label>
+                                 <div class="col-md-10">
+                                     <textarea class="form-control texteditor" name="long_description" rows="5" placeholder="Long description">{{old('long_description')}}</textarea>
+                                     @if($errors->first('long_description'))
+                                     <p class="text-danger mb-0">{{ $errors->first('long_description') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Related Products</label>
+                                 <div class="col-md-10">
+                                     <select class="form-control" name="related_products[]" multiple>
+                                         @foreach($products as $product)
+                                         <option value="{{$product->id}}" @if(in_array($product->id, old('related_products', []))) selected @endif>{{$product->name}}</option>
+                                         @endforeach
+                                     </select>
+                                     @if($errors->first('related_products'))
+                                     <p class="text-danger mb-0">{{ $errors->first('related_products') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
@@ -83,15 +137,16 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control dropify" type="file" name="image">
-                                    @if($errors->first('image'))
-                                    <p class="text-danger mb-0">{{ $errors->first('image') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">HD Images <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="file" name="images[]" multiple accept="image/*">
+                                     <small class="form-text text-muted">Select at least one image. Hold Ctrl to select multiple.</small>
+                                     @if($errors->first('images'))
+                                     <p class="text-danger mb-0">{{ $errors->first('images') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
                             <div class="offset-md-2">
                                 <button type="submit" class="btn btn-primary submit-btn">Submit</button>

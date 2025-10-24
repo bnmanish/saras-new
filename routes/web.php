@@ -35,6 +35,7 @@ use App\Http\Controllers\backend\TenderController;
 use App\Http\Controllers\backend\MilkPurchasePriceChartController;
 use App\Http\Controllers\backend\MilkSalePriceChartController;
 use App\Http\Controllers\backend\BeneficiaryController;
+use App\Http\Controllers\backend\LoginLogController;
 
 
 // frontend controllers
@@ -211,6 +212,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-director/{id}', [DirectorController::class, 'editProfile'])->name('admin.edit.director');
         Route::post('/edit-store-director/{id}', [DirectorController::class, 'editStoreProfile'])->name('admin.edit.store.director');
         Route::get('/delete-director/{id}', [DirectorController::class, 'deleteProfile'])->name('admin.delete.director');
+
+        // Login Logs
+        Route::get('/login-logs', [LoginLogController::class, 'index'])->name('admin.login.logs');
+        Route::get('/login-logs-data', [LoginLogController::class, 'getData'])->name('admin.login.logs.data');
 
         // Media/Press
         Route::get('/add-media-press', [MediaPressController::class, 'addMediaPress'])->name('admin.add.media_press');

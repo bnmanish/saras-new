@@ -200,14 +200,21 @@
                                  </ul>
                              </li>
 
-                            <li>
-                                <a href="{{route('admin.list.director')}}" class="waves-effect">
-                                    <i class="fas fa-user-tie"></i>
-                                    <span>Directors</span>
-                                </a>
-                            </li>
+                             <li>
+                                 <a href="{{route('admin.list.director')}}" class="waves-effect">
+                                     <i class="fas fa-user-tie"></i>
+                                     <span>Directors</span>
+                                 </a>
+                             </li>
 
-                            <li>
+                             <li>
+                                 <a href="{{route('admin.login.logs')}}" class="waves-effect">
+                                     <i class="fas fa-history"></i>
+                                     <span>Login Logs</span>
+                                 </a>
+                             </li>
+
+                             <li>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
                                     <i class="fas fa-quote-left"></i>
                                     <span>Testimonial</span>

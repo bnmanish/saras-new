@@ -61,10 +61,13 @@
                             <div class="">
                                 <img src="{{ url('uploads/director/'.$director->image) }}" alt="{{ $director->name }}" class="img-fluid w-100">
                             </div>
-                            <div class="card-body py-3 bg-white text-center">
-                                <h5 class="card-title mb-1 fw-bold fs-6 text-dark">{{ $director->name }}</h5>
-                                <p class="card-text text-dark mb-0 small">{{ $director->position }}</p>
-                            </div>
+                             <div class="card-body py-3 bg-white text-center">
+                                 <h5 class="card-title mb-1 fw-bold fs-6 text-dark">{{ $director->name }}</h5>
+                                 <p class="card-text text-dark mb-0 small">{{ $director->position }}</p>
+                                 @if($director->message)
+                                 <p class="card-text text-dark small mt-2">{{ $director->message }}</p>
+                                 @endif
+                             </div>
                         </div>
                     </div>
                 @endforeach

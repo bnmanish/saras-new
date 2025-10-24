@@ -20,6 +20,7 @@ class DirectorController extends Controller
             'position' => ['required', 'string', 'max:255'],
             'status' => ['required', 'in:0,1'],
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'message' => ['nullable', 'string'],
         ]);
 
         $img = $request->file('image');
@@ -27,6 +28,7 @@ class DirectorController extends Controller
         $profile = new Director;
         $profile->name = $request->name;
         $profile->position = $request->position;
+        $profile->message = $request->message;
         if($img){
             $imgname = time().'.'.$img->getClientOriginalExtension();
             $img->move(base_path('public/uploads/director'),$imgname);
@@ -55,6 +57,7 @@ class DirectorController extends Controller
             'position' => ['required', 'string', 'max:255'],
             'status' => ['required', 'in:0,1'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'message' => ['nullable', 'string'],
         ]);
 
         $img = $request->file('image');
@@ -69,6 +72,7 @@ class DirectorController extends Controller
             $data = array(
                 "name" => $request->name,
                 "position" => $request->position,
+                "message" => $request->message,
                 "image" => $imgname,
                 "status" => $request->status,
             );
@@ -76,6 +80,7 @@ class DirectorController extends Controller
             $data = array(
                 "name" => $request->name,
                 "position" => $request->position,
+                "message" => $request->message,
                 "status" => $request->status,
             );
         }

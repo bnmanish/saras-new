@@ -9,4 +9,11 @@ class Director extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'position',
+        'image',
+        'message',
+        'status',
+    ];
 }

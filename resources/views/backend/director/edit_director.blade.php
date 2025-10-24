@@ -47,15 +47,25 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Position <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="position" placeholder="position *" value="{{$data->position}}">
-                                    @if($errors->first('position'))
-                                    <p class="text-danger mb-0">{{ $errors->first('position') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Position <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="position" placeholder="position *" value="{{$data->position}}">
+                                     @if($errors->first('position'))
+                                     <p class="text-danger mb-0">{{ $errors->first('position') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Message</label>
+                                 <div class="col-md-10">
+                                     <textarea class="form-control texteditor" name="message" rows="3" placeholder="Message">{{$data->message}}</textarea>
+                                     @if($errors->first('message'))
+                                     <p class="text-danger mb-0">{{ $errors->first('message') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>

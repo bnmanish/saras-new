@@ -20,12 +20,17 @@ class LoginLogController extends Controller
         $query = LoginLog::leftJoin('users', 'login_logs.user_id', '=', 'users.id')
                          ->select('login_logs.*', 'users.email as user_email');
 
-        // Apply filters
+        // Apply filters - default to today's data if no dates provided
         if ($request->has('start_date') && $request->start_date) {
             $query->whereDate('login_logs.created_at', '>=', $request->start_date);
+        } else {
+            $query->whereDate('login_logs.created_at', '>=', today());
         }
+
         if ($request->has('end_date') && $request->end_date) {
             $query->whereDate('login_logs.created_at', '<=', $request->end_date);
+        } else {
+            $query->whereDate('login_logs.created_at', '<=', today());
         }
         if ($request->has('username') && $request->username) {
             $query->where(function($q) use ($request) {
@@ -71,12 +76,17 @@ class LoginLogController extends Controller
         $query = LoginLog::leftJoin('users', 'login_logs.user_id', '=', 'users.id')
                          ->select('login_logs.*', 'users.email as user_email');
 
-        // Apply the same filters as getData
+        // Apply the same filters as getData - default to today's data if no dates provided
         if ($request->has('start_date') && $request->start_date) {
             $query->whereDate('login_logs.created_at', '>=', $request->start_date);
+        } else {
+            $query->whereDate('login_logs.created_at', '>=', today());
         }
+
         if ($request->has('end_date') && $request->end_date) {
             $query->whereDate('login_logs.created_at', '<=', $request->end_date);
+        } else {
+            $query->whereDate('login_logs.created_at', '<=', today());
         }
         if ($request->has('username') && $request->username) {
             $query->where(function($q) use ($request) {

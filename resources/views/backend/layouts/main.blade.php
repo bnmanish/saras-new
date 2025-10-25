@@ -239,12 +239,7 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{route('admin.contact.enquiry')}}" class="waves-effect">
-                                    <i class="fas fa-envelope-open"></i>
-                                    <span>Contact Enquiry</span>
-                                </a>
-                            </li>
+
 
                             <li>
                                 <a href="{{route('admin.list.carrier')}}" class="waves-effect">
@@ -276,12 +271,16 @@
                                  </a>
                              </li>
 
-                             <li>
-                                 <a href="{{route('admin.list.dealership_enquiry')}}" class="waves-effect">
-                                     <i class="fas fa-handshake"></i>
-                                     <span>Dealership Enquiry</span>
-                                 </a>
-                             </li>
+                              <li>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                      <i class="fas fa-envelope"></i>
+                                      <span>Enquiries</span>
+                                  </a>
+                                  <ul class="sub-menu" aria-expanded="false">
+                                      <li><a href="{{route('admin.contact.enquiry')}}">Contact Enquiry</a></li>
+                                      <li><a href="{{route('admin.list.dealership_enquiry')}}">Dealership Enquiry</a></li>
+                                  </ul>
+                              </li>
 
                              <li>
                                  <a href="{{route('admin.list.important_contacts')}}" class="waves-effect">

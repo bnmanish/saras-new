@@ -163,10 +163,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('admin.list.user')}}" class="waves-effect">
-                                    <i class="fas fa-user"></i>
-                                    <span>Users</span>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-users-cog"></i>
+                                    <span>User Management</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.list.user')}}">Users</a></li>
+                                    <li><a href="{{route('admin.login.logs')}}">Login Logs</a></li>
+                                </ul>
                             </li>
 
                             <li>
@@ -200,19 +204,16 @@
                                  </ul>
                              </li>
 
-                             <li>
-                                 <a href="{{route('admin.list.director')}}" class="waves-effect">
-                                     <i class="fas fa-user-tie"></i>
-                                     <span>Directors</span>
-                                 </a>
-                             </li>
-
-                             <li>
-                                 <a href="{{route('admin.login.logs')}}" class="waves-effect">
-                                     <i class="fas fa-history"></i>
-                                     <span>Login Logs</span>
-                                 </a>
-                             </li>
+                              <li>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                      <i class="fas fa-users"></i>
+                                      <span>Team Management</span>
+                                  </a>
+                                  <ul class="sub-menu" aria-expanded="false">
+                                      <li><a href="{{route('admin.list.director')}}">Directors</a></li>
+                                      <li><a href="{{route('admin.list.our_team')}}">Our Team</a></li>
+                                  </ul>
+                              </li>
 
                              <li>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
@@ -266,12 +267,7 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{route('admin.list.our_team')}}" class="waves-effect">
-                                    <i class="fas fa-users"></i>
-                                    <span>Our Team</span>
-                                </a>
-                            </li>
+
 
                              <li>
                                  <a href="{{route('admin.list.quality_assurance')}}" class="waves-effect">

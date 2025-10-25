@@ -53,15 +53,15 @@
                                 <input type="text" class="form-control" id="ip_address" name="ip_address" placeholder="IP or Location">
                             </div>
                         </div>
-                        <div class="row mb-4">
-                             <div class="col-md-3 mb-3">
-                                 <label for="status">Status</label>
-                                 <select class="form-control form-select" id="status" name="status">
-                                     <option value="">All Status</option>
-                                     <option value="success">✅ Success</option>
-                                     <option value="fail">❌ Fail</option>
-                                 </select>
-                             </div>
+                         <div class="row mb-4">
+                              <div class="col-12 col-md-3 mb-3">
+                                  <label for="status">Status</label>
+                                  <select class="form-control form-select" id="status" name="status">
+                                      <option value="">All Status</option>
+                                      <option value="success">✅ Success</option>
+                                      <option value="fail">❌ Fail</option>
+                                  </select>
+                              </div>
                              <div class="col-md-6 mb-3">
                                  <label>&nbsp;</label>
                                  <div class="d-flex gap-2">

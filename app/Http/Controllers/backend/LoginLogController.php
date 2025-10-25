@@ -22,10 +22,10 @@ class LoginLogController extends Controller
 
         // Apply filters
         if ($request->has('start_date') && $request->start_date) {
-            $query->whereDate('created_at', '>=', $request->start_date);
+            $query->whereDate('login_logs.created_at', '>=', $request->start_date);
         }
         if ($request->has('end_date') && $request->end_date) {
-            $query->whereDate('created_at', '<=', $request->end_date);
+            $query->whereDate('login_logs.created_at', '<=', $request->end_date);
         }
         if ($request->has('username') && $request->username) {
             $query->where(function($q) use ($request) {
@@ -73,10 +73,10 @@ class LoginLogController extends Controller
 
         // Apply the same filters as getData
         if ($request->has('start_date') && $request->start_date) {
-            $query->whereDate('created_at', '>=', $request->start_date);
+            $query->whereDate('login_logs.created_at', '>=', $request->start_date);
         }
         if ($request->has('end_date') && $request->end_date) {
-            $query->whereDate('created_at', '<=', $request->end_date);
+            $query->whereDate('login_logs.created_at', '<=', $request->end_date);
         }
         if ($request->has('username') && $request->username) {
             $query->where(function($q) use ($request) {
@@ -91,7 +91,7 @@ class LoginLogController extends Controller
             $query->where('status', $request->status);
         }
 
-        $logs = $query->orderBy('created_at', 'desc')->get();
+        $logs = $query->orderBy('login_logs.created_at', 'desc')->get();
 
         $format = $request->get('format', 'csv');
 

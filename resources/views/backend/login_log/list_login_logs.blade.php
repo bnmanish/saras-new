@@ -55,8 +55,8 @@
                         </div>
                          <div class="row mb-4">
                               <div class="col-12 col-md-3 mb-3">
-                                  <label for="status">Status</label>
-                                  <select class="form-control form-select" id="status" name="status">
+                                  <label for="statusInput">Status</label>
+                                  <select class="form-control form-select" id="statusInput" name="status">
                                       <option value="">All Status</option>
                                       <option value="success">✅ Success</option>
                                       <option value="fail">❌ Fail</option>
@@ -104,7 +104,7 @@ $(document).ready(function() {
                 d.end_date = $('#end_date').val();
                 d.username = $('#username').val();
                 d.ip_address = $('#ip_address').val();
-                d.status = $('#status').val();
+                d.status = $('#statusInput').val();
             }
         },
         columns: [
@@ -138,7 +138,7 @@ $(document).ready(function() {
             end_date: $('#end_date').val(),
             username: $('#username').val(),
             ip_address: $('#ip_address').val(),
-            status: $('#status').val(),
+            status: $('#statusInput').val(),
             format: format
         };
 
@@ -147,7 +147,7 @@ $(document).ready(function() {
     }
 
     // Auto filter on input change
-    $('#start_date, #end_date, #username, #ip_address, #status').on('change keyup', function() {
+    $('#start_date, #end_date, #username, #ip_address, #statusInput').on('change keyup', function() {
         table.ajax.reload();
     });
 });

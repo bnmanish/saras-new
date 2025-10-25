@@ -42,7 +42,7 @@ class LoginLogController extends Controller
             $query->where('ip_address', 'like', '%' . $request->ip_address . '%');
         }
         if ($request->has('status') && $request->status) {
-            $query->where('status', $request->status);
+            $query->where('login_logs.status', $request->status);
         }
 
         return DataTables::of($query)
@@ -98,7 +98,7 @@ class LoginLogController extends Controller
             $query->where('ip_address', 'like', '%' . $request->ip_address . '%');
         }
         if ($request->has('status') && $request->status) {
-            $query->where('status', $request->status);
+            $query->where('login_logs.status', $request->status);
         }
 
         $logs = $query->orderBy('login_logs.created_at', 'desc')->get();

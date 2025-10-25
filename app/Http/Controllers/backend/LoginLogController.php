@@ -65,6 +65,12 @@ class LoginLogController extends Controller
             ->addColumn('created_at_formatted', function ($log) {
                 return $log->created_at->format('Y-m-d H:i:s');
             })
+            ->orderColumn('username', function ($query, $order) {
+                $query->orderByRaw("COALESCE(login_logs.username, users.email, 'N/A') $order");
+            })
+            ->orderColumn('location_info', function ($query, $order) {
+                $query->orderBy('ip_address', $order);
+            })
             ->rawColumns(['status_badge'])
             ->make(true);
     }

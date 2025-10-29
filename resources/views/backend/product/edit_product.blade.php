@@ -114,10 +114,20 @@
                                      <p class="text-danger mb-0">{{ $errors->first('related_products') }}</p>
                                      @endif
                                  </div>
-                             </div>
+                              </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
+                              <div class="mb-3 row">
+                                  <label class="col-md-2 col-form-label">Scripts</label>
+                                  <div class="col-md-10">
+                                      <textarea rows="8" class="form-control" name="scripts">{{$data->scripts}}</textarea>
+                                      @if($errors->first('scripts'))
+                                      <p class="text-danger mb-0">{{ $errors->first('scripts') }}</p>
+                                      @endif
+                                  </div>
+                              </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input status" type="radio" name="status" id="enable" value="1" @if($data->status == '1') checked @endif>

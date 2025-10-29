@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class AdditionalPage extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'slug', 'meta_title', 'meta_keywords', 'meta_description', 'description', 'scripts', 'image', 'status'];
 }

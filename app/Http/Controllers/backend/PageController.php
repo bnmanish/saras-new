@@ -18,6 +18,7 @@ class PageController extends Controller
 
         $request->validate([
             'title' => ['required', 'string', 'max:255', Rule::unique('pages', 'title')],
+            'scripts' => ['nullable', 'string'],
             'status' => ['required', 'in:0,1'],
             'file' => ['nullable', 'image', 'mimes:jpeg,jpg,png,gif', 'max:2048'],
         ]);
@@ -57,6 +58,7 @@ class PageController extends Controller
     public function editStorePage(Request $request,$id){
         $request->validate([
             'title' => ['required', 'string', 'max:255', Rule::unique('pages', 'title')->ignore($id)],
+            'scripts' => ['nullable', 'string'],
             'status' => ['required', 'in:0,1'],
             'file' => ['nullable', 'image', 'mimes:jpeg,jpg,png,gif', 'max:2048'],
         ]);

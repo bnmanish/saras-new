@@ -28,6 +28,7 @@ class ProductController extends Controller
             'long_description' => ['nullable', 'string'],
             'related_products' => ['nullable', 'array'],
             'related_products.*' => ['exists:products,id'],
+            'scripts' => ['nullable', 'string'],
             'status' => ['required', 'in:0,1'],
             'images' => ['required', 'array', 'min:1'],
             'images.*' => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
@@ -41,6 +42,7 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $product->related_products = $request->related_products;
+        $product->scripts = $request->scripts;
         $product->status = $request->status;
         $product->save();
 
@@ -86,6 +88,7 @@ class ProductController extends Controller
             'long_description' => ['nullable', 'string'],
             'related_products' => ['nullable', 'array'],
             'related_products.*' => ['exists:products,id'],
+            'scripts' => ['nullable', 'string'],
             'status' => ['required', 'in:0,1'],
             'images' => ['nullable', 'array'],
             'images.*' => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
@@ -99,6 +102,7 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $product->related_products = $request->related_products;
+        $product->scripts = $request->scripts;
         $product->status = $request->status;
         $product->save();
 

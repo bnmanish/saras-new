@@ -156,87 +156,87 @@
                         <ul class="metismenu list-unstyled" id="side-menu">
                             <li class="menu-title">Menu</li>
 
-                            <li>
+                            <li @if(Route::currentRouteName() == 'admin.dashboard') class="mm-active" @endif>
                                 <a href="{{route('admin.dashboard')}}" class="waves-effect">
                                     <i class="fas fa-home"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <li @if(str_contains(Route::currentRouteName(), 'user') || str_contains(Route::currentRouteName(), 'login')) class="mm-active" @endif>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'user') || str_contains(Route::currentRouteName(), 'login')) mm-active @endif">
                                     <i class="fas fa-users-cog"></i>
                                     <span>User Management</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('admin.list.user')}}">Users</a></li>
-                                    <li><a href="{{route('admin.login.logs')}}">Login Logs</a></li>
+                                    <li @if(str_contains(Route::currentRouteName(), 'user')) class="mm-active" @endif><a href="{{route('admin.list.user')}}">Users</a></li>
+                                    <li @if(str_contains(Route::currentRouteName(), 'login')) class="mm-active" @endif><a href="{{route('admin.login.logs')}}">Login Logs</a></li>
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <li @if(str_contains(Route::currentRouteName(), 'blog')) class="mm-active" @endif>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'blog')) mm-active @endif">
                                     <i class="fas fa-blog"></i>
                                     <span>Blog</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('admin.list.blog_category')}}">Blog Category</a></li>
-                                    <li><a href="{{route('admin.list.blog')}}">Blog</a></li>
+                                    <li @if(str_contains(Route::currentRouteName(), 'blog_category')) class="mm-active" @endif><a href="{{route('admin.list.blog_category')}}">Blog Category</a></li>
+                                    <li @if(str_contains(Route::currentRouteName(), 'blog') && !str_contains(Route::currentRouteName(), 'blog_category')) class="mm-active" @endif><a href="{{route('admin.list.blog')}}">Blog</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'slider')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.slider')}}" class="waves-effect">
                                     <i class="fas fa-sliders-h"></i>
                                     <span>Slider</span>
                                 </a>
                             </li>
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'award')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.award')}}" class="waves-effect">
                                     <i class="fas fa-trophy"></i>
                                     <span>Awards</span>
                                 </a>
                             </li>
 
-                             <li>
-                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                     <i class="fas fa-box"></i>
-                                     <span>Manage Products</span>
-                                 </a>
-                                 <ul class="sub-menu" aria-expanded="false">
-                                     <li><a href="{{route('admin.list.category')}}">Categories</a></li>
-                                     <li><a href="{{route('admin.list.product')}}">Products</a></li>
-                                 </ul>
-                             </li>
+                              <li @if(str_contains(Route::currentRouteName(), 'category') || str_contains(Route::currentRouteName(), 'product')) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'category') || str_contains(Route::currentRouteName(), 'product')) mm-active @endif">
+                                      <i class="fas fa-box"></i>
+                                      <span>Manage Products</span>
+                                  </a>
+                                  <ul class="sub-menu" aria-expanded="false">
+                                      <li @if(str_contains(Route::currentRouteName(), 'category')) class="mm-active" @endif><a href="{{route('admin.list.category')}}">Categories</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'product')) class="mm-active" @endif><a href="{{route('admin.list.product')}}">Products</a></li>
+                                  </ul>
+                              </li>
 
-                              <li>
-                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                              <li @if(str_contains(Route::currentRouteName(), 'director') || str_contains(Route::currentRouteName(), 'our_team')) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'director') || str_contains(Route::currentRouteName(), 'our_team')) mm-active @endif">
                                       <i class="fas fa-users"></i>
                                       <span>Team Management</span>
                                   </a>
                                   <ul class="sub-menu" aria-expanded="false">
-                                      <li><a href="{{route('admin.list.director')}}">Directors</a></li>
-                                      <li><a href="{{route('admin.list.our_team')}}">Our Team</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'director')) class="mm-active" @endif><a href="{{route('admin.list.director')}}">Directors</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'our_team')) class="mm-active" @endif><a href="{{route('admin.list.our_team')}}">Our Team</a></li>
                                   </ul>
                               </li>
 
-                             <li>
+                             <li @if(str_contains(Route::currentRouteName(), 'testimonial')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.testimonial')}}" class="waves-effect">
                                     <i class="fas fa-quote-left"></i>
                                     <span>Testimonial</span>
                                 </a>
                             </li>
-                             <li>
-                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
+                             <li @if(str_contains(Route::currentRouteName(), 'page')) class="mm-active" @endif>
+                                 <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'page')) mm-active @endif">
                                      <i class="fas fa-file-alt"></i>
                                      <span>Manage Pages</span>
                                  </a>
                                  <ul class="sub-menu" aria-expanded="false">
-                                     <li><a href="{{route('admin.list.page')}}">Pages</a></li>
-                                     <li><a href="{{route('admin.list.additional.page')}}">Additional Pages</a></li>
+                                     <li @if(str_contains(Route::currentRouteName(), 'page') && !str_contains(Route::currentRouteName(), 'additional')) class="mm-active" @endif><a href="{{route('admin.list.page')}}">Pages</a></li>
+                                     <li @if(str_contains(Route::currentRouteName(), 'additional.page')) class="mm-active" @endif><a href="{{route('admin.list.additional.page')}}">Additional Pages</a></li>
                                  </ul>
                              </li>
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'subscriber')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.subscriber')}}" class="waves-effect">
                                     <i class="fas fa-users"></i>
                                     <span>Subscribers</span>
@@ -245,21 +245,21 @@
 
 
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'carrier')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.carrier')}}" class="waves-effect">
                                     <i class="fas fa-briefcase"></i>
                                     <span>Carrier</span>
                                 </a>
                             </li>
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'media_press')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.media_press')}}" class="waves-effect">
                                     <i class="fas fa-newspaper"></i>
                                     <span>Media/Press</span>
                                 </a>
                             </li>
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'important_link')) class="mm-active" @endif>
                                 <a href="{{route('admin.list.important_link')}}" class="waves-effect">
                                     <i class="fas fa-link"></i>
                                     <span>Important Links</span>
@@ -268,56 +268,56 @@
 
 
 
-                             <li>
+                             <li @if(str_contains(Route::currentRouteName(), 'quality_assurance')) class="mm-active" @endif>
                                  <a href="{{route('admin.list.quality_assurance')}}" class="waves-effect">
                                      <i class="fas fa-shield-alt"></i>
                                      <span>Quality Assurance</span>
                                  </a>
                              </li>
 
-                              <li>
-                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                              <li @if(str_contains(Route::currentRouteName(), 'enquiry')) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'enquiry')) mm-active @endif">
                                       <i class="fas fa-envelope"></i>
                                       <span>Enquiries</span>
                                   </a>
                                   <ul class="sub-menu" aria-expanded="false">
-                                      <li><a href="{{route('admin.contact.enquiry')}}">Contact Enquiry</a></li>
-                                      <li><a href="{{route('admin.list.dealership_enquiry')}}">Dealership Enquiry</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'contact.enquiry')) class="mm-active" @endif><a href="{{route('admin.contact.enquiry')}}">Contact Enquiry</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'dealership_enquiry')) class="mm-active" @endif><a href="{{route('admin.list.dealership_enquiry')}}">Dealership Enquiry</a></li>
                                   </ul>
                               </li>
 
-                             <li>
+                             <li @if(str_contains(Route::currentRouteName(), 'important_contacts')) class="mm-active" @endif>
                                  <a href="{{route('admin.list.important_contacts')}}" class="waves-effect">
                                      <i class="fas fa-address-book"></i>
                                      <span>Important Contacts</span>
                                  </a>
                              </li>
 
-                              <li>
-                                  <a href="javascript: void(0);" class="has-arrow waves-effect">
+                              <li @if(str_contains(Route::currentRouteName(), 'tenders') || str_contains(Route::currentRouteName(), 'milk') || str_contains(Route::currentRouteName(), 'beneficiaries')) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'tenders') || str_contains(Route::currentRouteName(), 'milk') || str_contains(Route::currentRouteName(), 'beneficiaries')) mm-active @endif">
                                       <i class="fas fa-info-circle"></i>
                                       <span>Informations</span>
                                   </a>
                                    <ul class="sub-menu" aria-expanded="false">
-                                       <li><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
-                                       <li><a href="{{route('admin.list.milk_purchase_price_charts')}}">Purchase Charts</a></li>
-                                       <li><a href="{{route('admin.list.milk_sale_price_charts')}}">Sale Charts</a></li>
-                                       <li><a href="{{route('admin.list.beneficiaries')}}">Beneficiaries</a></li>
+                                       <li @if(str_contains(Route::currentRouteName(), 'tenders')) class="mm-active" @endif><a href="{{route('admin.list.tenders')}}">Tenders</a></li>
+                                       <li @if(str_contains(Route::currentRouteName(), 'milk_purchase')) class="mm-active" @endif><a href="{{route('admin.list.milk_purchase_price_charts')}}">Purchase Charts</a></li>
+                                       <li @if(str_contains(Route::currentRouteName(), 'milk_sale')) class="mm-active" @endif><a href="{{route('admin.list.milk_sale_price_charts')}}">Sale Charts</a></li>
+                                       <li @if(str_contains(Route::currentRouteName(), 'beneficiaries')) class="mm-active" @endif><a href="{{route('admin.list.beneficiaries')}}">Beneficiaries</a></li>
                                    </ul>
                               </li>
 
-                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="fas fa-images"></i>
-                                    <span>Manage Gallery</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('admin.list.gallery_category')}}">Gallery Category</a></li>
-                                    <li><a href="{{route('admin.list.gallery')}}">Gallery</a></li>
-                                </ul>
-                            </li>
+                             <li @if(str_contains(Route::currentRouteName(), 'gallery')) class="mm-active" @endif>
+                                 <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'gallery')) mm-active @endif">
+                                     <i class="fas fa-images"></i>
+                                     <span>Manage Gallery</span>
+                                 </a>
+                                 <ul class="sub-menu" aria-expanded="false">
+                                     <li @if(str_contains(Route::currentRouteName(), 'gallery_category')) class="mm-active" @endif><a href="{{route('admin.list.gallery_category')}}">Gallery Category</a></li>
+                                     <li @if(str_contains(Route::currentRouteName(), 'gallery') && !str_contains(Route::currentRouteName(), 'gallery_category')) class="mm-active" @endif><a href="{{route('admin.list.gallery')}}">Gallery</a></li>
+                                 </ul>
+                             </li>
 
-                            <li>
+                            <li @if(str_contains(Route::currentRouteName(), 'setting')) class="mm-active" @endif>
                                 <a href="{{route('admin.manage.setting')}}" class="waves-effect">
                                     <i class="fas fa-cog"></i>
                                     <span>Setting</span>

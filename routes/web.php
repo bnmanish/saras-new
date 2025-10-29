@@ -21,6 +21,7 @@ use App\Http\Controllers\backend\ProjectController;
 use App\Http\Controllers\backend\AwardController;
 use App\Http\Controllers\backend\DirectorController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\BlogCategoryController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\CarrierController;
 use App\Http\Controllers\backend\MediaPressController;
@@ -137,6 +138,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit-blog/{id}', [BlogController::class, 'editBlog'])->name('admin.edit.blog');
         Route::post('/edit-store-blog/{id}', [BlogController::class, 'editStoreBlog'])->name('admin.edit.store.blog');
         Route::get('/delete-blog/{id}', [BlogController::class, 'deleteBlog'])->name('admin.delete.blog');
+
+        // Blog Category
+        Route::get('/add-blog-category', [BlogCategoryController::class, 'addBlogCategory'])->name('admin.add.blog_category');
+        Route::post('/store-blog-category', [BlogCategoryController::class, 'storeBlogCategory'])->name('admin.store.blog_category');
+        Route::get('/list-blog-category', [BlogCategoryController::class, 'listBlogCategory'])->name('admin.list.blog_category');
+        Route::get('/edit-blog-category/{id}', [BlogCategoryController::class, 'editBlogCategory'])->name('admin.edit.blog_category');
+        Route::post('/edit-store-blog-category/{id}', [BlogCategoryController::class, 'editStoreBlogCategory'])->name('admin.edit.store.blog_category');
+        Route::get('/delete-blog-category/{id}', [BlogCategoryController::class, 'deleteBlogCategory'])->name('admin.delete.blog_category');
 
         // Testimonial
         Route::get('/add-testimonial', [TestimonialController::class, 'addTestimonial'])->name('admin.add.testimonial');

@@ -16,12 +16,12 @@ class CategoryController extends Controller
     public function storeCategory(Request $request){
 
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
             'status' => ['required', 'in:0,1'],
         ]);
 
         $category = new Category;
-        $category->name = $request->name;
+        $category->title = $request->title;
         $category->status = $request->status;
         $category->save();
 
@@ -30,7 +30,7 @@ class CategoryController extends Controller
     }
 
     public function listCategory(){
-        $data = Category::select('id','name','status')->orderBy('id','asc')->get();
+        $data = Category::select('id','title','status')->orderBy('id','asc')->get();
         return view('backend/category/list_category')->with(['data'=>$data]);
     }
 
@@ -41,12 +41,12 @@ class CategoryController extends Controller
 
     public function editStoreCategory(Request $request,$id){
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
             'status' => ['required', 'in:0,1'],
         ]);
 
         $data = array(
-            "name" => $request->name,
+            "title" => $request->title,
             "status" => $request->status,
         );
         Category::where('id',$id)->update($data);

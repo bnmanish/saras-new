@@ -13,6 +13,7 @@ class Blog extends Model
         return $this->belongsTo(User::class);
     }
 
-
-
+    public function blogCategory(){
+        return $this->belongsTo(BlogCategory::class, 'blog_category_id');
+    }
 }

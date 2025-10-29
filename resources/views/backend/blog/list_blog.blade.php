@@ -38,24 +38,26 @@
                         </div>
 
                         <table id="userlist-datatable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Title</th>
-                                    <th>Banner</th>
-                                    <th>Added By</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
+                             <thead>
+                                 <tr>
+                                     <th>Sl</th>
+                                     <th>Title</th>
+                                     <th>Banner</th>
+                                     <th>Category</th>
+                                     <th>Added By</th>
+                                     <th>Status</th>
+                                     <th>Date</th>
+                                     <th>Action</th>
+                                 </tr>
+                             </thead>
                             <tbody>
                                 @foreach($data as $key => $dataRow)
-                                <tr>
-                                    <td>{{$key + 1}}</td>
-                                    <td>{{$dataRow->title}}</td>
-                                    <td><img width="100" src="{{url('uploads/blog/'.$dataRow->banner)}}"></td>
-                                    <td>{{$dataRow->user->name}}</td>
+                                 <tr>
+                                     <td>{{$key + 1}}</td>
+                                     <td>{{$dataRow->title}}</td>
+                                     <td><img width="100" src="{{url('uploads/blog/'.$dataRow->banner)}}"></td>
+                                     <td>{{$dataRow->category ?? 'N/A'}}</td>
+                                     <td>{{$dataRow->name ?? 'N/A'}}</td>
                                     <td>{{$dataRow->status == '1' ? 'Enable' : 'Disable'}}</td>
                                     <td><span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="{{date('d-m-Y',strtotime($dataRow->created_at))}}">{{date('d-m-Y',strtotime($dataRow->created_at))}}</span></td>
                                     <td>

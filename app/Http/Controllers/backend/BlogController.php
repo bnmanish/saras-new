@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
-use App\Models\Category;
+use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 use Session;
@@ -15,11 +15,12 @@ use Session;
 class BlogController extends Controller
 {
     public function addBlog(){
-        return view('backend/blog/add_blog');
+        $blogCategories = BlogCategory::where('status', 'active')->get();
+        return view('backend/blog/add_blog', compact('blogCategories'));
     }
 
     public function listBlog(){
-        $qry = Blog::orderBy('title');
+        $qry = Blog::select('blogs.id','blogs.title','blogs.banner','blogs.status','blog_categories.title as category','users.name','blogs.created_at')->leftJoin('users', 'blogs.user_id', '=', 'users.id')->leftJoin('blog_categories', 'blogs.blog_category_id', '=', 'blog_categories.id')->orderBy('blogs.title');
         $data = $qry->limit(10)->get();
         $dataCount = $qry->count();
         return view('backend/blog/list_blog')->with(['data'=>$data,'datacount'=>$dataCount]);
@@ -38,7 +39,7 @@ class BlogController extends Controller
 
         $searchkey = $request->search['value'];
         $total = Blog::count();
-        $data = Blog::select('blogs.id','blogs.title','blogs.banner','blogs.status','categories.title as category','users.name','blogs.created_at')->join('users', 'blogs.user_id', '=', 'users.id')->join('categories', 'blogs.category_id', '=', 'categories.id');
+        $data = Blog::select('blogs.id','blogs.title','blogs.banner','blogs.status','blog_categories.title as category','users.name','blogs.created_at')->leftJoin('users', 'blogs.user_id', '=', 'users.id')->leftJoin('blog_categories', 'blogs.blog_category_id', '=', 'blog_categories.id');
         if($sort){
             if($sortcol == '1'){
                 $data = $data->orderBy('blogs.title',$sortdir);
@@ -63,8 +64,8 @@ class BlogController extends Controller
             $fdata[$key][] = $sl;
             $fdata[$key][] = $dataRow->title;
             $fdata[$key][] = "<img width='100' src='".url('uploads/blog/'.$dataRow->banner)."'>";
-            // $fdata[$key][] = $dataRow->category;
-            $fdata[$key][] = $dataRow->name;
+            $fdata[$key][] = $dataRow->category ?? 'N/A';
+            $fdata[$key][] = $dataRow->name ?? 'N/A';
             $fdata[$key][] = $dataRow->status == '1' ? 'Enable' : 'Disable';
             $fdata[$key][] = "<span data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='".date('d F, Y',strtotime($dataRow->created_at))."'>".date('d-m-Y',strtotime($dataRow->created_at))."</span>";
             $fdata[$key][] = "<a href=".route('admin.edit.blog',$dataRow->id)." class='btn btn-primary btn-sm' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='Edit'><i class='fas fa-edit'></i></a>&nbsp;<a href=".route('admin.delete.blog',$dataRow->id)." class='btn btn-danger btn-sm' onclick=return confirm('Really! Do you want to delete?') data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='Edit'><i class='fas fa-trash'></i></a>";
@@ -95,7 +96,7 @@ class BlogController extends Controller
             return response()->json(array('status'=>false,'errors' => $validator->errors()));
         }
         $blog = new Blog();
-        // $blog->category_id = $request->category;
+        $blog->blog_category_id = $request->category;
         $blog->title = $request->title;
         $blog->slug = $request->slug;
         $blog->meta_title = $request->meta_title;
@@ -124,7 +125,8 @@ class BlogController extends Controller
 
     public function editBlog($id){
         $data = Blog::where('id',$id)->first();
-        return view('backend/blog/edit_blog')->with(['data'=>$data]);
+        $blogCategories = BlogCategory::where('status', 'active')->get();
+        return view('backend/blog/edit_blog', compact('data', 'blogCategories'));
     }
 
     public function editStoreBlog(Request $request,$id){
@@ -140,7 +142,7 @@ class BlogController extends Controller
         }
 
         $data = array(
-            // "category_id" => $request->category,
+            "blog_category_id" => $request->category,
             "title" => $request->title,
             "slug" => $request->slug,
             "meta_title" => $request->meta_title,

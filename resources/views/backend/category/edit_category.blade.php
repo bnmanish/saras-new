@@ -30,11 +30,11 @@
                             @csrf
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Name <span class="text-danger">*</span></label>
+                                <label class="col-md-2 col-form-label">Title <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="text" name="name" placeholder="Category name *" value="{{$data->name}}">
-                                    @if($errors->first('name'))
-                                    <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
+                                    <input class="form-control" type="text" name="title" placeholder="Category title *" value="{{$data->title}}">
+                                    @if($errors->first('title'))
+                                    <p class="text-danger mb-0">{{ $errors->first('title') }}</p>
                                     @endif
                                 </div>
                             </div>

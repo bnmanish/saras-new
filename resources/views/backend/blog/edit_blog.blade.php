@@ -43,15 +43,27 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Slug <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="slug" value="{{$data->slug}}">
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Slug <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="slug" value="{{$data->slug}}">
+                                 </div>
+                             </div>
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Meta Title</label>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Category <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <select class="form-control" name="category">
+                                         <option value="">Select Category</option>
+                                         @foreach($blogCategories as $cat)
+                                             <option value="{{$cat->id}}" {{$data->blog_category_id == $cat->id ? 'selected' : ''}}>{{$cat->title}}</option>
+                                         @endforeach
+                                     </select>
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Meta Title</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="meta_title" value="{{$data->meta_title}}">
                                 </div>

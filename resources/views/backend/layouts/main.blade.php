@@ -174,10 +174,14 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.list.blog')}}" class="waves-effect">
-                                    <i class=" fas fa-blog"></i>
-                                    <span>Blogs</span>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-blog"></i>
+                                    <span>Blog</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.list.blog_category')}}">Blog Category</a></li>
+                                    <li><a href="{{route('admin.list.blog')}}">Blog</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="{{route('admin.list.slider')}}" class="waves-effect">

@@ -197,13 +197,13 @@
                                 </a>
                             </li>
 
-                              <li @if(str_contains(Route::currentRouteName(), 'category') || str_contains(Route::currentRouteName(), 'product')) class="mm-active" @endif>
-                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'category') || str_contains(Route::currentRouteName(), 'product')) mm-active @endif">
+                              <li @if(str_contains(Route::currentRouteName(), 'product') || (str_contains(Route::currentRouteName(), 'category') && !str_contains(Route::currentRouteName(), 'blog') && !str_contains(Route::currentRouteName(), 'gallery'))) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'product') || (str_contains(Route::currentRouteName(), 'category') && !str_contains(Route::currentRouteName(), 'blog') && !str_contains(Route::currentRouteName(), 'gallery'))) mm-active @endif">
                                       <i class="fas fa-box"></i>
                                       <span>Manage Products</span>
                                   </a>
                                   <ul class="sub-menu" aria-expanded="false">
-                                      <li @if(str_contains(Route::currentRouteName(), 'category')) class="mm-active" @endif><a href="{{route('admin.list.category')}}">Categories</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'category') && !str_contains(Route::currentRouteName(), 'blog') && !str_contains(Route::currentRouteName(), 'gallery')) class="mm-active" @endif><a href="{{route('admin.list.category')}}">Categories</a></li>
                                       <li @if(str_contains(Route::currentRouteName(), 'product')) class="mm-active" @endif><a href="{{route('admin.list.product')}}">Products</a></li>
                                   </ul>
                               </li>

@@ -46,7 +46,7 @@
                             @csrf
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Primary Contact</label>
+                                <label class="col-md-2 col-form-label">Contact</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="primary_contact" value="{{@$data->primary_contact}}">
                                     @if($errors->first('primary_contact'))
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
+                            <!-- <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Secondary Contact</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="secondary_contact" value="{{@$data->secondary_contact}}">
@@ -63,10 +63,10 @@
                                     <p class="text-danger mb-0">{{ $errors->first('secondary_contact') }}</p>
                                     @endif
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Primary Email</label>
+                                <label class="col-md-2 col-form-label">Email</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="primary_email" value="{{@$data->primary_email}}">
                                     @if($errors->first('primary_email'))
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
+                           <!--  <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Secondary Email</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="secondary_email" value="{{@$data->secondary_email}}">
@@ -83,10 +83,10 @@
                                     <p class="text-danger mb-0">{{ $errors->first('secondary_email') }}</p>
                                     @endif
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Primary Address</label>
+                                <label class="col-md-2 col-form-label">Address</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="primary_address" value="{{@$data->primary_address}}">
                                     @if($errors->first('primary_address'))
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
+                            <!-- <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Secondary Address</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" name="secondary_address" value="{{@$data->secondary_address}}">
@@ -103,7 +103,7 @@
                                     <p class="text-danger mb-0">{{ $errors->first('secondary_address') }}</p>
                                     @endif
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Copyrights</label>
@@ -173,7 +173,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 row">
+                            <!-- <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label"> Site Logo2 </label>
                                 <div class="col-md-10">
                                     <input class="form-control dropify" type="file" name="site_logo2" @if(@$data->site_logo2) data-default-file="{{url('uploads/setting/'.$data->site_logo2)}}" @endif>
@@ -181,7 +181,7 @@
                                     <p class="text-danger mb-0">{{ $errors->first('site_logo2') }}</p>
                                     @endif
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label"> Favicon </label>

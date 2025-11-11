@@ -1,1573 +1,1206 @@
-<!doctype html>
-<html class="no-js" lang="zxx" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Stadum - University Education HTML Template - Home One</title>
-    <meta name="author" content="Stadum">
-    <meta name="description" content="Stadum - University Education HTML Template">
-    <meta name="keywords" content="Stadum - University Education HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{url('assets/frontend')}}/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{url('assets/frontend')}}/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{url('assets/frontend')}}/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{url('assets/frontend')}}/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{url('assets/frontend')}}/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{url('assets/frontend')}}/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{url('assets/frontend')}}/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{url('assets/frontend')}}/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/frontend')}}/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{url('assets/frontend')}}/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/frontend')}}/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{url('assets/frontend')}}/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/frontend')}}/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="{{url('assets/frontend')}}/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{url('assets/frontend')}}/img/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="../../../fonts.googleapis.com/index.html">
-    <link rel="preconnect" href="../../../fonts.gstatic.com/index.html" crossorigin>
-    <link
-        href="../../../fonts.googleapis.com/css2ee14.css?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Urbanist:ital,wght@0,100..900;1,100..900&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{{url('assets/frontend')}}/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{url('assets/frontend')}}/css/fontawesome.min.css">
-    <link rel="stylesheet" href="{{url('assets/frontend')}}/css/magnific-popup.min.css">
-    <link rel="stylesheet" href="{{url('assets/frontend')}}/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{{url('assets/frontend')}}/css/style.css">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
 
-<body>
-    <div class="color-scheme-wrap active"><button class="switchIcon"><i class="fa-solid fa-palette"></i></button>
-        <h3 class="color-scheme-wrap-title text-center">Color Switcher</h3>
-        <div class="color-switch-btns"><button data-color="#FF4F38"><i class="fa-solid fa-droplet"></i></button> <button
-                data-color="#3282FB"><i class="fa-solid fa-droplet"></i></button> <button data-color="#563BFB"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#27AE60"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#FF7E02"><i
-                    class="fa-solid fa-droplet"></i></button></div>
-    </div>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<meta name="description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
+		<meta name="keywords" content="practo clone, doccure, doctor appointment, Practo clone html template, doctor booking template">
+		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
+		<meta property="og:url" content="https://doccure.dreamstechnologies.com/html/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Doctors Appointment HTML Website Templates | Doccure">
+		<meta property="og:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
+		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="https://doccure.dreamstechnologies.com/html/">
+		<meta property="twitter:url" content="https://doccure.dreamstechnologies.com/html/">
+		<meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Doccure">
+		<meta name="twitter:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
+		<meta name="twitter:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
+		<title>Doccure</title>
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{{url('/')}}/assets/frontend/img/favicon.png" type="image/x-icon">
 
-    <div class="sidemenu-wrapper">
-        <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget footer-widget">
-                <div class="th-widget-about">
-                    <div class="about-logo"><a href="home-university.html"><img src="{{url('assets/frontend')}}/img/logo2.svg"
-                                alt="Stadum"></a></div>
-                    <p class="about-text">Since 1999, when the newly minted Stadum team embraced its mandate to breathe
-                        new life into the downtrodden neighbourhood, East Village’s transformation has been nothing
-                        short of remarkable. </p>
-                    <div class="footer-info"><a href="#"><span class="footer-info-icon"><i
-                                    class="fa-solid fa-location-dot"></i></span> 45 New Eskaton Road, Austria </a><a
-                            href="mailto:infomail@example.com"><span class="footer-info-icon"><i
-                                    class="fa-solid fa-envelope"></i></span> infomail@example.com</a></div>
-                </div>
-            </div>
-            <div class="widget footer-widget">
-                <h3 class="widget_title">Recent Posts</h3>
-                <div class="recent-post-wrap">
-                    <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
-                                    src="{{url('assets/frontend')}}/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
-                        <div class="media-body">
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Trailblazers in
-                                    Faculty Perspectives</a></h4>
-                            <div class="recent-post-meta"><a href="blog.html"><i
-                                        class="far fa-calendar"></i>26/6/2025</a></div>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
-                                    src="{{url('assets/frontend')}}/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
-                        <div class="media-body">
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Future Focus
-                                    Preparing for Tomorrow</a></h4>
-                            <div class="recent-post-meta"><a href="blog.html"><i
-                                        class="far fa-calendar"></i>24/6/2025</a></div>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="media-img"><a href="blog-details.html"><img
-                                    src="{{url('assets/frontend')}}/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a></div>
-                        <div class="media-body">
-                            <h4 class="post-title"><a class="text-inherit" href="blog-details.html">The Green Initiative
-                                    Sustainability in Action</a></h4>
-                            <div class="recent-post-meta"><a href="blog.html"><i
-                                        class="far fa-calendar"></i>24/6/2025</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="widget footer-widget">
-                <h3 class="widget_title">Popular Tags</h3>
-                <div class="th-social"><a href="../../../external.html?link=https://facebook.com/"><i
-                            class="fab fa-facebook-f"></i></a> <a
-                        href="../../../external.html?link=https://twitter.com/"><i class="fab fa-twitter"></i></a> <a
-                        href="../../../external.html?link=https://pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="../../../external.html?link=https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="../../../external.html?link=https://linkedin.com/"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popup-search-box"><button class="searchClose"><i class="far fa-times"></i></button>
-        <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i
-                    class="fal fa-search"></i></button></form>
-    </div>
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo"><a href="home-university.html"><img src="{{url('assets/frontend')}}/img/logo.svg" alt="Stadum"></a>
-            </div>
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children"><a href="home-university.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">University Home</a></li>
-                            <li><a href="home-admission.html">Admission Home</a></li>
-                            <li><a href="home-courses.html">Course Home</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="menu-item-has-children"><a href="#">Programs</a>
-                        <ul class="sub-menu">
-                            <li><a href="program.html">Programs Style 1</a></li>
-                            <li><a href="program-2.html">Programs Style 2</a></li>
-                            <li><a href="program-details.html">Program Details</a></li>
-                            <li><a href="program-details-sidebar.html">Program Details With Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Faculties</a>
-                                <ul class="sub-menu">
-                                    <li><a href="faculty.html">Faculty</a></li>
-                                    <li><a href="faculty-details.html">Faculty Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="alumni.html">Alumni Page</a></li>
-                            <li class="menu-item-has-children"><a href="#">Researches</a>
-                                <ul class="sub-menu">
-                                    <li><a href="research.html">Research</a></li>
-                                    <li><a href="research-details.html">Research Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Teachers</a>
-                                <ul class="sub-menu">
-                                    <li><a href="teacher.html">Teacher</a></li>
-                                    <li><a href="teacher-details.html">Teacher Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="campus.html">Campus Life</a></li>
-                            <li><a href="pricing.html">Pricing Plan</a></li>
-                            <li><a href="faq.html">Faqs Page</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#">Events</a>
-                        <ul class="sub-menu">
-                            <li><a href="event.html">Events Page</a></li>
-                            <li><a href="event-details.html">Event Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#">Blogs</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                            <li><a href="blog-details-sidebar.html">Blog Details With Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+		<!-- Apple Touch Icon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{{url('/')}}/assets/frontend/img/apple-touch-icon.png">
 
-    @include('frontend.layouts.header')
+		<!-- Theme Settings Js -->
+		<script src="{{url('/')}}/assets/frontend/js/theme-script.js"></script>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/bootstrap.min.css">
 
-    <div class="th-hero-wrapper hero-1" id="hero">
-        <div class="swiper th-slider" id="heroSlide" data-slider-options='{"effect":"fade"}'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="{{url('assets/frontend')}}/img/hero/hero_1_1.jpg"></div>
-                        <div class="container th-container2">
-                            <div class="row gy-60 align-items-center">
-                                <div class="col-xxl-6 col-xl-8 col-lg-9">
-                                    <div class="hero-style1">
-                                        <div class="hero-text-wrap">
-                                            <h1 class="hero-title text-white" data-ani="slideinup"
-                                                data-ani-delay="0.3s">Welcome To The Stadum University</h1>
-                                            <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
-                                                We want every student and study partner to feel that they are part of a
-                                                common good and cohesive team. We help our teams form stronger
-                                                relationships.</p>
-                                            <div class="btn-wrap justify-content-center justify-content-lg-start"
-                                                data-ani="slideinup" data-ani-delay="0.8s"><a href="contact.html"
-                                                    class="th-btn white-hover th-icon">Admission Now</a> <a
-                                                    href="program.html"
-                                                    class="th-btn style-border1 th-icon white-hover">View Program</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-6 col-xl-4 col-lg-3">
-                                    <div class="hero-video text-center ms-xl-5 ps-xl-5" data-ani="fadeinright"
-                                        data-ani-delay="0.9s"><a
-                                            href="../../../external.html?link=https://www.youtube.com/watch?v=EZfLOSQ8hW8"
-                                            class="video-play-btn popup-video"><i
-                                                class="fa-sharp fa-solid fa-play"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="{{url('assets/frontend')}}/img/hero/hero_1_2.jpg"></div>
-                        <div class="container th-container2">
-                            <div class="row gy-60 align-items-center">
-                                <div class="col-xxl-6 col-xl-8 col-lg-9">
-                                    <div class="hero-style1">
-                                        <div class="hero-text-wrap">
-                                            <h1 class="hero-title text-white" data-ani="slideinup"
-                                                data-ani-delay="0.3s">Shaping the Leaders of Tomorrow</h1>
-                                            <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
-                                                We want every student and study partner to feel that they are part of a
-                                                common good and cohesive team. We help our teams form stronger
-                                                relationships.</p>
-                                            <div class="btn-wrap justify-content-center justify-content-lg-start"
-                                                data-ani="slideinup" data-ani-delay="0.8s"><a href="contact.html"
-                                                    class="th-btn white-hover th-icon">Admission Now</a> <a
-                                                    href="program.html"
-                                                    class="th-btn style-border1 th-icon white-hover">View Program</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-6 col-xl-4 col-lg-3">
-                                    <div class="hero-video text-center ms-xl-5 ps-xl-5" data-ani="fadeinright"
-                                        data-ani-delay="0.9s"><a
-                                            href="../../../external.html?link=https://www.youtube.com/watch?v=EZfLOSQ8hW8"
-                                            class="video-play-btn popup-video"><i
-                                                class="fa-sharp fa-solid fa-play"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="{{url('assets/frontend')}}/img/hero/hero_1_1.jpg"></div>
-                        <div class="container th-container2">
-                            <div class="row gy-60 align-items-center">
-                                <div class="col-xxl-6 col-xl-8 col-lg-9">
-                                    <div class="hero-style1">
-                                        <div class="hero-text-wrap">
-                                            <h1 class="hero-title text-white" data-ani="slideinup"
-                                                data-ani-delay="0.3s">Where Innovation Meets Education</h1>
-                                            <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
-                                                We want every student and study partner to feel that they are part of a
-                                                common good and cohesive team. We help our teams form stronger
-                                                relationships.</p>
-                                            <div class="btn-wrap justify-content-center justify-content-lg-start"
-                                                data-ani="slideinup" data-ani-delay="0.8s"><a href="contact.html"
-                                                    class="th-btn white-hover th-icon">Admission Now</a> <a
-                                                    href="program.html"
-                                                    class="th-btn style-border1 th-icon white-hover">View Program</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-6 col-xl-4 col-lg-3">
-                                    <div class="hero-video text-center ms-xl-5 ps-xl-5" data-ani="fadeinright"
-                                        data-ani-delay="0.9s"><a
-                                            href="../../../external.html?link=https://www.youtube.com/watch?v=EZfLOSQ8hW8"
-                                            class="video-play-btn popup-video"><i
-                                                class="fa-sharp fa-solid fa-play"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-inner">
-                        <div class="th-hero-bg" data-bg-src="{{url('assets/frontend')}}/img/hero/hero_1_2.jpg"></div>
-                        <div class="container th-container2">
-                            <div class="row gy-60 align-items-center">
-                                <div class="col-xxl-6 col-xl-8 col-lg-9">
-                                    <div class="hero-style1">
-                                        <div class="hero-text-wrap">
-                                            <h1 class="hero-title text-white" data-ani="slideinup"
-                                                data-ani-delay="0.3s">Welcome To The Stadum University</h1>
-                                            <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.5s">
-                                                We want every student and study partner to feel that they are part of a
-                                                common good and cohesive team. We help our teams form stronger
-                                                relationships.</p>
-                                            <div class="btn-wrap justify-content-center justify-content-lg-start"
-                                                data-ani="slideinup" data-ani-delay="0.8s"><a href="contact.html"
-                                                    class="th-btn white-hover th-icon">Admission Now</a> <a
-                                                    href="program.html"
-                                                    class="th-btn style-border1 th-icon white-hover">View Program</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-6 col-xl-4 col-lg-3">
-                                    <div class="hero-video text-center ms-xl-5 ps-xl-5" data-ani="fadeinright"
-                                        data-ani-delay="0.9s"><a
-                                            href="../../../external.html?link=https://www.youtube.com/watch?v=EZfLOSQ8hW8"
-                                            class="video-play-btn popup-video"><i
-                                                class="fa-sharp fa-solid fa-play"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-pagination"></div>
-        </div>
-    </div>
-    <div class="feature-sec-1 position-relative overflow-hidden space-bottom">
-        <div class="about-shep-2 shape-mockup d-none d-xxl-block" data-top="19%" data-left="0%"><img
-                src="{{url('assets/frontend')}}/img/shape/feature-shep-home-1.png" alt="shape"></div>
-        <div class="container th-container2">
-            <div class="row gx-10 gy-10">
-                <div class="col-xl-3 col-md-6 feature-card_wrapp">
-                    <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
-                        <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/feature-icon1-1.svg" alt="icon"></div>
-                        <h3 class="box-title">University Life</h3>
-                        <p class="box-text style2">On the other hand denounce with righteous indignation dislike.</p><a
-                            href="program.html" class="th-btn style-border2 th-icon">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 feature-card_wrapp">
-                    <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
-                        <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/feature-icon1-2.svg" alt="icon"></div>
-                        <h3 class="box-title">Research</h3>
-                        <p class="box-text style2">On the other hand denounce with righteous indignation dislike.</p><a
-                            href="program.html" class="th-btn style-border2 th-icon">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 feature-card_wrapp">
-                    <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
-                        <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/feature-icon1-3.svg" alt="icon"></div>
-                        <h3 class="box-title">Athletics</h3>
-                        <p class="box-text style2">On the other hand denounce with righteous indignation dislike.</p><a
-                            href="program.html" class="th-btn style-border2 th-icon">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 feature-card_wrapp">
-                    <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
-                        <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/feature-icon1-4.svg" alt="icon"></div>
-                        <h3 class="box-title">Academics</h3>
-                        <p class="box-text style2">On the other hand denounce with righteous indignation dislike.</p><a
-                            href="program.html" class="th-btn style-border2 th-icon">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="about1-area position-relative overflow-hidden space-bottom" id="about-sec">
-        <div class="about-shep-2 shape-mockup d-none d-xxl-block" data-bottom="0%" data-right="0%"><img
-                src="{{url('assets/frontend')}}/img/shape/feature-shep-2-home-1.png" alt="shape"></div><span
-            class="about-shape-right shape-mockup jump-reverse" data-right="3%" data-top="2%"><img
-                src="{{url('assets/frontend')}}/img/shape/ab-shape1-2.png" alt=""></span>
-        <div class="container">
-            <div class="about-wrap1 position-relative z-index-2">
-                <div class="row gy-60 align-items-center justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="img-box1">
-                            <div class="img1 text-center text-sm-start wow fadeInLeft" data-wow-delay=".2s"><img
-                                    src="{{url('assets/frontend')}}/img/about/home-1-about-thumb1-1.jpg" alt="About"></div>
-                            <div class="img2 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="position-relative"><img class="mb-25"
-                                        src="{{url('assets/frontend')}}/img/about/home-1-about-thumb1-2.jpg" alt="About"></div>
-                                <div class="position-relative wow fadeInUp" data-wow-delay=".3s"><img
-                                        src="{{url('assets/frontend')}}/img/about/home-1-about-thumb1-3.jpg" alt="About"></div>
-                            </div>
-                            <div class="about-wrapp">
-                                <div class="discount-wrapp">
-                                    <div class="logo"><img src="{{url('assets/frontend')}}/img/circle-logo.svg" alt="img"></div>
-                                    <div class="discount-tag"><span class="discount-anime">* 1996 EST * 25 Years Quality
-                                            Teaching</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="about-content ms-xxl-4 ps-xxl-2 ms-xl-2">
-                            <div class="title-area"><span class="sub-title text-anim">About Us</span>
-                                <h2 class="sec-title text-anim2">We Offer best program for Shaping the best Future</h2>
-                                <p class="sec-text mt-25 mb-0 wow fadeInUp" data-wow-delay=".2s">We are committed to
-                                    leaving the world a better place. We pursue new technology, encourage
-                                    creativity, engage with our communities, and share an entrepreneurial mindset.</p>
-                            </div>
-                            <div class="about-feature-box">
-                                <div class="about-feature wow fadeInUp" data-wow-delay=".3s"><span class="box-icon"><img
-                                            src="{{url('assets/frontend')}}/img/icon/ab-users.svg" alt="icon"></span>
-                                    <div class="box-content">
-                                        <h3 class="box-title">Three MBA degrees</h3>
-                                        <p class="box-text">Our team is ready for any challenge! We put our joint
-                                            efforts to generate brave business ideas.</p>
-                                    </div>
-                                </div>
-                                <div class="about-feature wow fadeInUp" data-wow-delay=".4s"><span class="box-icon"><img
-                                            src="{{url('assets/frontend')}}/img/icon/ab-message.svg" alt="icon"></span>
-                                    <div class="box-content">
-                                        <h3 class="box-title">Choose From 98+ Degrees</h3>
-                                        <p class="box-text">Our team is ready for any challenge! We put our joint
-                                            efforts to generate brave business ideas.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-wrap wow fadeInUp" data-wow-delay=".5s"><a href="about.html"
-                                    class="th-btn th-icon">Learn More</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><span class="about-shape-left shape-mockup movingX d-none d-xxl-block" data-bottom="0%"
-            data-left="2%"><img src="{{url('assets/frontend')}}/img/shape/ab-shape1-1.png" alt=""></span>
-    </div>
-    <div class="counter-area1 overflow-hidden">
-        <div class="container th-container2">
-            <div class="counter-wrap1">
-                <div class="counter-card wow fadeInUp" data-wow-delay=".2s">
-                    <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/counter-icon1-1.svg" alt="icon"></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">157</span>+</h3>
-                        <p class="box-text">Total Programs</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="counter-card wow fadeInUp" data-wow-delay=".4s">
-                    <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/counter-icon1-2.svg" alt="icon"></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">18,250</span></h3>
-                        <p class="box-text">Faculty & Staff</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="counter-card wow fadeInUp" data-wow-delay=".6s">
-                    <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/counter-icon1-3.svg" alt="icon"></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">48</span>k</h3>
-                        <p class="box-text">Worldwide Alumni</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="counter-card wow fadeInUp" data-wow-delay=".7s">
-                    <div class="box-icon"><img src="{{url('assets/frontend')}}/img/icon/counter-icon1-4.svg" alt="icon"></div>
-                    <div class="media-body">
-                        <h3 class="box-number"><span class="counter-number">155</span>k</h3>
-                        <p class="box-text">Total Students</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div>
-    <section class="academic1-area space overflow-hidden" id="program-sec">
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-center">
-                <div class="col-lg-9 col-12">
-                    <div class="title-area text-center text-lg-start mb-75"><span
-                            class="sub-title text-anim">ACADEMICS</span>
-                        <h2 class="sec-title text-anim2">We have the best programs for you</h2>
-                    </div>
-                </div>
-                <div class="col-auto align-self-end">
-                    <div class="sec-btn wow fadeInUp" data-wow-delay=".3s"><a href="program.html"
-                            class="th-btn style-border1 th-icon">Explore All</a></div>
-                </div>
-            </div>
-            <div class="academic-wrapp">
-                <div class="slider-area">
-                    <div class="swiper th-slider has-shadow" id="academicSlider2"
-                        data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"3", "spaceBetween": "24"}},"autoHeight": "true", "autoplay" : "false"}'>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-1.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i> Media</span>
-                                        </div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Applied
-                                                Mathematics</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> English </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-2.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i> Science</span>
-                                        </div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Applied
-                                                Architecture</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> Arabic </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-3.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i> Public</span>
-                                        </div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Administration
-                                                Cse</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> Hindi </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-1.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i>
-                                                Education</span></div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Applied
-                                                Mathematics</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> English </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-2.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i>
-                                                Education</span></div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Applied
-                                                Architecture</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> Arabic </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="academic-card">
-                                    <div class="academic-img"><a href="program-details.html"><img
-                                                src="{{url('assets/frontend')}}/img/academic/academic1-3.jpg" alt="blog image"></a>
-                                        <div class="academic-tag"><span><i class="fa-solid fa-tags"></i>
-                                                Education</span></div>
-                                    </div>
-                                    <div class="academic-content">
-                                        <h3 class="box-title"><a href="program-details.html">Bachelor in Administration
-                                                Cse</a></h3>
-                                        <div class="academic-review"><span><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span> <span><i
-                                                    class="fa-solid fa-star"></i></span>
-                                            <p class="review-text">(4.8)</p>
-                                        </div>
-                                        <p class="box-text style2">Every traditional undergraduate student receives
-                                            scholarships. Rest assured you can afford us too.</p>
-                                    </div>
-                                    <div class="academic-meta-wrap">
-                                        <div class="academic-meta"><a href="program-details.html" class="subject"><i
-                                                    class="fa-solid fa-messages"></i> Hindi </a><a href="#"
-                                                class="duration"><i class="fa-solid fa-clock"></i> 04 Years</a></div><a
-                                            href="program-details.html"
-                                            class="th-btn style-border1 th-icon">Discover</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="why-area why-bg position-relative space overflow-hidden">
-        <div class="why-shape jump shape-mockup" data-left="0%" data-bottom="10%"><img
-                src="{{url('assets/frontend')}}/img/shape/why-1-1.png" alt=""></div>
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-xl-8">
-                    <div class="title-area text-center text-lg-start"><span class="sub-title text-anim">WHY
-                            CHOOSEUS</span>
-                        <h2 class="sec-title text-anim2">We help every student to <span class="d-block">stantout from
-                                the rest</span></h2>
-                    </div>
-                    <div class="row gy-60">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="why-card wow fadeInUp" data-wow-delay=".2s">
-                                <div class="why-content">
-                                    <div class="why-titlebox"><span class="why-number position-relative">1</span>
-                                        <h3 class="box-title"><a href="about.html">Get a Top-Tier Global Education</a>
-                                        </h3>
-                                    </div>
-                                    <div class="box-text-wrap">
-                                        <p class="box-text">A Kingdom perspective is integrated into your studies and
-                                            woven through the entire stadum experience.</p>
-                                    </div>
-                                </div><a href="about.html" class="th-btn style-border1 th-icon mt-40">Explore More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="why-card wow fadeInUp" data-wow-delay=".4s">
-                                <div class="why-content">
-                                    <div class="why-titlebox"><span class="why-number position-relative">2</span>
-                                        <h3 class="box-title"><a href="about.html">Join a Spiritually Vibrant Campus
-                                                Community</a></h3>
-                                    </div>
-                                    <div class="box-text-wrap">
-                                        <p class="box-text">Opportunities for faith and fellowship are all around, from
-                                            chapel worship and dorm devotions to communal meals, clubs and activities.
-                                        </p>
-                                    </div>
-                                </div><a href="about.html" class="th-btn style-border1 th-icon mt-40">Explore More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="why-card wow fadeInUp" data-wow-delay=".6s">
-                                <div class="why-content">
-                                    <div class="why-titlebox"><span class="why-number position-relative">3</span>
-                                        <h3 class="box-title"><a href="about.html">Be Prepared for a Thriving Career</a>
-                                        </h3>
-                                    </div>
-                                    <div class="box-text-wrap">
-                                        <p class="box-text">A Kingdom perspective is integrated into your studies and
-                                            woven through the entire stadum experience.</p>
-                                    </div>
-                                </div><a href="about.html" class="th-btn style-border1 th-icon mt-40">Explore More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="why-card wow fadeInUp" data-wow-delay=".8s">
-                                <div class="why-content">
-                                    <div class="why-titlebox"><span class="why-number position-relative">4</span>
-                                        <h3 class="box-title"><a href="about.html">Experience a Cost-Competitive
-                                                Education</a></h3>
-                                    </div>
-                                    <div class="box-text-wrap">
-                                        <p class="box-text">Opportunities for faith and fellowship are all around, from
-                                            chapel worship and dorm devotions to communal meals, clubs and activities.
-                                        </p>
-                                    </div>
-                                </div><a href="about.html" class="th-btn style-border1 th-icon mt-40">Explore More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="why-video">
-                        <div class="why-video-bg overflow-hidden gsap-parallax"><img
-                                src="{{url('assets/frontend')}}/img/why/why-video1-1.jpg" alt="image">
-                            <div class="why-video-btn"><a
-                                    href="../../../external.html?link=https://www.youtube.com/watch?v=_sI_Ps7JSEk"
-                                    class="play-btn popup-video"><i class="fa-sharp fa-solid fa-play"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="campus overflow-hidden space">
-        <div class="campus-shape jump shape-mockup d-none d-xxl-block" data-bottom="22%" data-right="5%"><img
-                src="{{url('assets/frontend')}}/img/shape/campus-1-1.png" alt="shape"></div>
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-center">
-                <div class="col-lg-8 col-12">
-                    <div class="title-area text-center text-lg-start"><span class="sub-title text-anim">EXPERIENCE
-                            STADUM</span>
-                        <h2 class="sec-title text-anim2">Campus Life</h2>
-                    </div>
-                </div>
-                <div class="col-auto align-self-end">
-                    <div class="sec-btn"><a href="campus.html" class="th-btn style-border1 th-icon wow fadeInUp"
-                            data-wow-delay=".2s">Explore All</a></div>
-                </div>
-            </div>
-            <div class="row gy-5 justify-content-center">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="campus-card wow fadeInLeft" data-wow-delay=".2s">
-                        <div class="campus-img global-img"><a href="campus.html" class="d-block position-relative"><img
-                                    src="{{url('assets/frontend')}}/img/campus/campus-1-1.jpg" alt="campus image" class="img-1"></a></div>
-                        <div class="campus-content">
-                            <h3 class="box-title"><a href="campus.html">Mentor Lecture</a></h3>
-                            <p class="box-text">Schedule a personalized tour of our Ancaster, Ontario campus and a
-                                one-on-one meeting with an Admissions Counsellor. Daily visits are offered regularly to
-                                accommodate your schedule.</p>
-                        </div><a href="campus.html" class="th-btn style-border1 th-icon">View The Campus</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="campus-card wow fadeInLeft" data-wow-delay=".4s">
-                        <div class="campus-img global-img"><a href="campus.html" class="d-block position-relative"><img
-                                    src="{{url('assets/frontend')}}/img/campus/campus-1-2.jpg" alt="campus image" class="img-1"></a></div>
-                        <div class="campus-content">
-                            <h3 class="box-title"><a href="campus.html">Group Study in Campus</a></h3>
-                            <p class="box-text">Our scheduled visits are pre-planned days that are specially catered to
-                                the different interests of each student. Tour campus and connect with staff, faculty and
-                                current students to help discover your place.</p>
-                        </div><a href="campus.html" class="th-btn style-border1 th-icon">View The Campus</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="campus-card wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="campus-img global-img"><a href="campus.html" class="d-block position-relative"><img
-                                    src="{{url('assets/frontend')}}/img/campus/campus-1-3.jpg" alt="campus image" class="img-1"></a></div>
-                        <div class="campus-content">
-                            <h3 class="box-title"><a href="campus.html">Art & Culture</a></h3>
-                            <p class="box-text">Can’t make it to campus? Explore parts of Redeemer’s 70-acre campus
-                                through a series of short videos and get a glimpse of what it has to offer—wherever and
-                                whenever works best for you.</p>
-                        </div><a href="campus.html" class="th-btn style-border1 th-icon">View The Campus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="story-area-1 overflow-hidden">
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-center">
-                <div class="col-lg-8 col-12">
-                    <div class="title-area text-center text-lg-start"><span class="sub-title text-anim">STUDENT
-                            STORIES</span>
-                        <h2 class="sec-title text-anim2">Our Student Stories</h2>
-                    </div>
-                </div>
-                <div class="col-auto align-self-end">
-                    <div class="sec-btn wow fadeInUp" data-wow-delay=".3s"><a href="program.html"
-                            class="th-btn style-border1 th-icon">Discover More Stories</a></div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="swiper th-slider story-slider1" id="storySlider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"1400":{"slidesPerView":"5"},"1200":{"slidesPerView":"4"},"992":{"slidesPerView":"4"},"768":{"slidesPerView":"3"},"576":{"slidesPerView":"2"}},"spaceBetween":"0"}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-1.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-2.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Brone Due</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Brone Due</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-3.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Moumita Mira</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Moumita Mira</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-4.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Maya Lily</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Maya Lily</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-5.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Sony & Ovi</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Sony & Ovi</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-1.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-2.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Brone Due</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Brone Due</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-3.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Moumita Mira</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Moumita Mira</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-4.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Maya Lily</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Maya Lily</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-5.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Sony & Ovi</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Sony & Ovi</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="story-card">
-                            <div class="box-img"><img src="{{url('assets/frontend')}}/img/story/story-1-1.jpg" alt="img"></div>
-                            <div class="story-content">
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                            <div class="story-content hover-style">
-                                <div class="quote-icon"><img src="{{url('assets/frontend')}}/img/icon/quote.svg" alt=""></div>
-                                <p class="box-text">"Stadum University’s humanities program is helping me develop the
-                                    perspective, critical thinking and adaptability I need to navigate and contribute to
-                                    this changing world."</p>
-                                <h3 class="box-title"><a href="program.html">Alex Smith</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="event-area-1 position-relative overflow-hidden space" id="event-sec">
-        <div class="event-shape shape-mockup d-none d-xxl-block" data-top="0%" data-left="0%"><img
-                src="{{url('assets/frontend')}}/img/shape/shape-2.png" alt=""></div>
-        <div class="event-shape jump shape-mockup d-none d-xxl-block" data-bottom="0%" data-left="3%"><img
-                src="{{url('assets/frontend')}}/img/shape/event-1-1.png" alt=""></div>
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-center">
-                <div class="col-lg-8 col-12">
-                    <div class="title-area text-center text-lg-start"><span class="sub-title text-anim">STUDENT
-                            EVENTS</span>
-                        <h2 class="sec-title text-anim2">Alumni Events</h2>
-                    </div>
-                </div>
-                <div class="col-auto align-self-end">
-                    <div class="sec-btn wow fadeInUp" data-wow-delay=".3s"><a href="event.html"
-                            class="th-btn style-border1 th-icon">Explore All</a></div>
-                </div>
-            </div>
-            <div class="event-card-wrap">
-                <div class="event-card wow fadeInUp" data-wow-delay=".2s">
-                    <div class="event-card-img global-img"><img src="{{url('assets/frontend')}}/img/event/event-1-1.jpg" alt="event">
-                        <p class="event-card-tag"><span class="tag-number">12</span>Jan</p>
-                    </div>
-                    <div class="event-content">
-                        <div class="event-wrapp">
-                            <h3 class="box-title text-anim2"><a href="event-details.html">Programming languages for a
-                                    better world</a></h3>
-                            <p class="box-text">Come for a quick session on how this question has crucially helped
-                                humanity with achieving one of its most impressive feats yet: orchestrating electric
-                                currents.</p>
-                            <div class="blog-meta"><a class="location" href="#"><i class="fa-solid fa-location-dot"></i>
-                                    25 Circular Road, New York City </a><a class="date" href="#"><i
-                                        class="fa-regular fa-calendar-days"></i> 25.02.2025 </a><a class="time"
-                                    href="#"><i class="fa-solid fa-clock"></i> 09:00am - 12:00pm</a></div>
-                        </div>
-                        <div class="btn-wrap"><a class="th-btn style-border1 th-icon"
-                                href="event-details.html">Details</a></div>
-                    </div>
-                </div>
-                <div class="event-card wow fadeInUp" data-wow-delay=".4s">
-                    <div class="event-card-img global-img"><img src="{{url('assets/frontend')}}/img/event/event-1-2.jpg" alt="event">
-                        <p class="event-card-tag"><span class="tag-number">07</span>Feb</p>
-                    </div>
-                    <div class="event-content">
-                        <div class="event-wrapp">
-                            <h3 class="box-title text-anim2"><a href="event-details.html">Center for Subjectivity
-                                    Research 2024</a></h3>
-                            <p class="box-text">Center for subjectivity research at the university of copenhagen was
-                                established in 2002 on the basis of a grant from national research.</p>
-                            <div class="blog-meta"><a class="location" href="#"><i class="fa-solid fa-location-dot"></i>
-                                    25 Circular Road, New York City </a><a class="date" href="#"><i
-                                        class="fa-regular fa-calendar-days"></i> 03.08.2025 </a><a class="time"
-                                    href="#"><i class="fa-solid fa-clock"></i> 10:00am - 03:20pm</a></div>
-                        </div>
-                        <div class="btn-wrap"><a class="th-btn style-border1 th-icon"
-                                href="event-details.html">Details</a></div>
-                    </div>
-                </div>
-                <div class="event-card wow fadeInUp" data-wow-delay=".6s">
-                    <div class="event-card-img global-img"><img src="{{url('assets/frontend')}}/img/event/event-1-3.jpg" alt="event">
-                        <p class="event-card-tag"><span class="tag-number">22</span>Sep</p>
-                    </div>
-                    <div class="event-content">
-                        <div class="event-wrapp">
-                            <h3 class="box-title text-anim2"><a href="event-details.html">The Future of Archives in the
-                                    Digital Age</a></h3>
-                            <p class="box-text">This talk explores the potential future of archives in the digital age,
-                                using one of the oldest philosophical archives and research institutes for philosophy in
-                                Germany</p>
-                            <div class="blog-meta"><a class="location" href="#"><i class="fa-solid fa-location-dot"></i>
-                                    25 Circular Road, New York City </a><a class="date" href="#"><i
-                                        class="fa-regular fa-calendar-days"></i> 14.11.2025 </a><a class="time"
-                                    href="#"><i class="fa-solid fa-clock"></i> 11:00am - 04:00pm</a></div>
-                        </div>
-                        <div class="btn-wrap"><a class="th-btn style-border1 th-icon"
-                                href="event-details.html">Details</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="apply-stadum-area bg-title position-relative space overflow-hidden">
-        <div class="container">
-            <div class="row gy-4 align-items-center justify-content-between">
-                <div class="col-xl-6 order-1 order-xl-0">
-                    <div class="apply-stadum-titlebox title-area">
-                        <div class="sec-title-wrap"><span class="sub-title text-anim">APPLY TO STADUM</span>
-                            <h2 class="sec-title text-white text-anim2">We are one of the largest university</h2>
-                        </div>
-                        <div class="box-text-wrap">
-                            <p class="box-text text-white mt-25 wow fadeInUp" data-wow-delay=".2s">A place to provide
-                                students with enough knowledge and skills in a complex world. Are you looking for
-                                exceptional education experience? Stadum might be the place for you.</p>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="apply-stadum-wrapp">
-                        <div class="apply-stadum-box">
-                            <div class="checklist">
-                                <ul class="list-unstyled">
-                                    <li class="wow fadeInUp" data-wow-delay=".2s">Undergraduate Admissions</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".3s">Graduate Admissions</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".4s">International Students</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".5s">Scholarship Opportunities</li>
-                                </ul>
-                            </div>
-                            <div class="checklist">
-                                <ul class="list-unstyled">
-                                    <li class="wow fadeInUp" data-wow-delay=".6s">Transfer Admissions</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".7s">Financial Aid Applications</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".8s">Scholarship Opportunities</li>
-                                    <li class="wow fadeInUp" data-wow-delay=".9s">Campus Visit Scheduling</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="apply-stadum-action th-btn-wrap wow fadeInUp" data-wow-delay=".10s"><a
-                                href="contact.html" class="th-btn th-icon white-hover">More About Admission</a></div>
-                    </div>
-                </div>
-                <div class="col-xl-6 order-0 order-xl-1">
-                    <div class="apply-stadum-thumb reveal"><img src="{{url('assets/frontend')}}/img/apply-stadum/apply-stadum-home-1.jpg"
-                            alt="image" class=""></div>
-                </div>
-            </div>
-        </div><span class="apply-stadum-shape wow fadeInRight" data-wow-delay=".3s"></span>
-    </section>
-    <section class="chancellor-area position-relative space">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-xl-6">
-                    <div class="chancellor-thumb"><img src="{{url('assets/frontend')}}/img/chancellor/chancellor-img-home-1.jpg"
-                            alt="image">
-                        <div class="ripple-shape style2"><span class="ripple-1"></span> <span class="ripple-2"></span>
-                            <span class="ripple-3"></span> <span class="ripple-4"></span> <span class="ripple-5"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="chancellor-wrapp">
-                        <div class="chancellor-titlebox title-area"><span class="sub-title text-anim">OUR CHANCELLOR &
-                                LECTURE</span>
-                            <h2 class="sec-title text-anim2">Chancellor & Lecturer</h2>
-                            <p class="box-text mt-25 wow fadeInUp" data-wow-delay=".4s">A place to provide students with
-                                enough knowledge and skills in a complex world. Are you looking for exceptional
-                                education experience? Stadum might be the place for you.</p>
-                        </div>
-                        <div class="chancellor-content">
-                            <div class="skill-feature wow fadeInUp" data-wow-delay=".2s">
-                                <h3 class="skill-feature-title">Faculty Skilled</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 95%;">
-                                        <div class="progress-value">95%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-feature wow fadeInUp" data-wow-delay=".4s">
-                                <h3 class="skill-feature-title">Computer Science</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 98%;">
-                                        <div class="progress-value">98%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-feature wow fadeInUp" data-wow-delay=".6s">
-                                <h3 class="skill-feature-title">Communication</h3>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 95%;">
-                                        <div class="progress-value">95%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="chancellor-bottom">
-                                <div class="chancellor-action"><a href="contact.html" class="th-btn th-icon">Lecturer at
-                                        Faculty</a></div>
-                                <div class="chancellor-signature-box text-sm-center">
-                                    <p class="box-text">Prof. Dr. Simons Doe, Ph.D</p><img
-                                        src="{{url('assets/frontend')}}/img/icon/signature.png" class="chancellor-signature"
-                                        alt="signature">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="marquee-area space-bottom overflow-hidden">
-        <div class="container-fluid p-0">
-            <div class="swiper th-slider marquee-slider1"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":"auto"}},"autoplay":{"delay":0,"disableOnInteraction":false},"noSwiping":"true","speed":10000,"spaceBetween":40}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/open-book.svg" alt="icon"></div><a
-                                target="_blank" href="#">CREATION</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/scollarship.svg" alt="icon"></div><a
-                                target="_blank" href="#">DISCOVER</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/open-book.svg" alt="icon"></div><a
-                                target="_blank" href="#">INNOVATE</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/open-book.svg" alt="icon"></div><a
-                                target="_blank" href="#">EDUCATION</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/scollarship.svg" alt="icon"></div><a
-                                target="_blank" href="#">CASE STUDIES</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/open-book.svg" alt="icon"></div><a
-                                target="_blank" href="#">CREATION</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/open-book.svg" alt="icon"></div><a
-                                target="_blank" href="#">DISCOVER</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <div class="color-masking"><img src="{{url('assets/frontend')}}/img/icon/scollarship.svg" alt="icon"></div><a
-                                target="_blank" href="#">INNOVATE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="community-area space" data-bg-src="{{url('assets/frontend')}}/img/bg/community-home-1.png">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-7">
-                    <div class="community-wrap">
-                        <div class="title-area"><span class="sub-title text-anim">INTERESTED IN JOINING WITH US?</span>
-                            <h2 class="sec-title text-anim2 mb-55">Join Us For Information About New Student Admission
-                            </h2>
-                            <div class="box-text-wrap mt-30 wow fadeInUp" data-wow-delay=".3s">
-                                <p class="box-text">At stadum eductin, we redefine consultancy through a dynamic fusion
-                                    of innovation, expertise, and strategic vision. Our dedicated team is committed to
-                                    delivering tailored solutions that transcend traditional consulting boundaries.</p>
-                            </div>
-                        </div>
-                        <div class="btn-wrap wow fadeInUp" data-wow-delay=".4s"><a href="contact.html"
-                                class="th-btn th-icon">Join Community</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="faq-area-1 position-relative space overflow-hidden">
-        <div class="faq-shape1 shape-mockup" data-top="0%" data-left="0%"><img
-                src="{{url('assets/frontend')}}/img/shape/feature-shep-home-1.png" alt="shape"></div>
-        <div class="faq-shape2 shape-mockup" data-bottom="0%" data-right="0%"><img
-                src="{{url('assets/frontend')}}/img/shape/feature-shep-2-home-1.png" alt="shape"></div>
-        <div class="faq-shape3 movingX shape-mockup" data-bottom="0%" data-right="2%"><img
-                src="{{url('assets/frontend')}}/img/shape/faq-1-1.png" alt="shape"></div>
-        <div class="ripple-shape d-none d-xl-block"><span class="ripple-1"></span> <span class="ripple-2"></span> <span
-                class="ripple-3"></span> <span class="ripple-4"></span> <span class="ripple-5"></span></div>
-        <div class="container">
-            <div class="row gy-30 gx-30 align-items-center justify-content-center">
-                <div class="col-xxl-4">
-                    <div class="faq-imgbox wow fadeInLeft" data-wow-delay=".3s">
-                        <div class="img1"><img src="{{url('assets/frontend')}}/img/faq/faq-1-2.jpg" alt="image"> <img
-                                src="{{url('assets/frontend')}}/img/faq/faq-1-1.jpg" alt="image"></div>
-                        <div class="img2"><img src="{{url('assets/frontend')}}/img/faq/faq-1-3.jpg" alt="image"></div>
-                    </div>
-                </div>
-                <div class="col-xxl-8">
-                    <div class="faq-content">
-                        <div class="faq-wrap">
-                            <div class="title-area"><span class="sub-title text-anim">FAQ</span>
-                                <h2 class="sec-title text-anim2">Frequently Ask Questions</h2>
-                                <p class="box-text mt-20 wow fadeInUp" data-wow-delay=".3s">We are committed to leaving
-                                    the world a better place. We pursue new technology, encourage creativity, </p>
-                            </div>
-                        </div>
-                        <div class="faq-box">
-                            <div class="faq-wrap1">
-                                <div class="accordion" id="faqAccordion">
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".1s">
-                                        <div class="accordion-header" id="collapse-item-1"><button
-                                                class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse-1" aria-expanded="true"
-                                                aria-controls="collapse-1">01. How this Stadum works?</button></div>
-                                        <div id="collapse-1" class="accordion-collapse collapse show"
-                                            aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="accordion-header" id="collapse-item-2"><button
-                                                class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse-2"
-                                                aria-expanded="false" aria-controls="collapse-2">02. How can i make
-                                                Cancel here?</button></div>
-                                        <div id="collapse-2" class="accordion-collapse collapse"
-                                            aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="accordion-header" id="collapse-item-3"><button
-                                                class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse-3"
-                                                aria-expanded="false" aria-controls="collapse-3">03. What services do yo
-                                                offer?</button></div>
-                                        <div id="collapse-3" class="accordion-collapse collapse"
-                                            aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="accordion-header" id="collapse-item-4"><button
-                                                class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse-4"
-                                                aria-expanded="false" aria-controls="collapse-4">04. How can consultant
-                                                benefits in my business?</button></div>
-                                        <div id="collapse-4" class="accordion-collapse collapse"
-                                            aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="accordion-header" id="collapse-item-5"><button
-                                                class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse-5"
-                                                aria-expanded="false" aria-controls="collapse-5">05. How to get all
-                                                programs?</button></div>
-                                        <div id="collapse-5" class="accordion-collapse collapse"
-                                            aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-card wow fadeInUp" data-wow-delay=".6s">
-                                        <div class="accordion-header" id="collapse-item-6"><button
-                                                class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse-6"
-                                                aria-expanded="false" aria-controls="collapse-6">06. When available
-                                                community join?</button></div>
-                                        <div id="collapse-6" class="accordion-collapse collapse"
-                                            aria-labelledby="collapse-item-6" data-bs-parent="#faqAccordion">
-                                            <div class="accordion-body">
-                                                <p class="faq-text">At stadum eductin, we redefine consultancy through a
-                                                    dynamic fusion of innovation, expertise, and strategic vision. Our
-                                                    dedicated team is committed to delivering tailored solutions that
-                                                    transcend traditional consulting boundaries.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="blog-area-1 overflow-hidden space" id="blog-sec">
-        <div class="container">
-            <div class="row justify-content-lg-between justify-content-center align-items-center">
-                <div class="col-lg-8 col-12">
-                    <div class="title-area text-center text-lg-start"><span class="sub-title text-anim">LATEST NEWS &
-                            BLOG</span>
-                        <h2 class="sec-title text-anim2">Blog & Insights</h2>
-                    </div>
-                </div>
-                <div class="col-auto align-self-end">
-                    <div class="sec-btn wow fadeInUp" data-wow-delay=".3s"><a href="blog.html"
-                            class="th-btn style-border1 th-icon">Our Blogs</a></div>
-                </div>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-4">
-                    <div class="blog-card wow fadeInUp">
-                        <div class="blog-img position-relative"><a href="blog-details.html">
-                                <div class="blog-img-box position-relative overflow-hidden"><img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_1.jpg" alt="blog image"> <img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_1.jpg" alt="blog image"></div>
-                            </a>
-                            <div class="blog-date">
-                                <h5 class="blog-date-title">24</h5>
-                                <p class="blog-date-text">FEB,2025</p>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><span class="author-icon"><img
-                                            src="{{url('assets/frontend')}}/img/blog/author.png" alt="img"></span>By themeholy</a> <a
-                                    href="blog.html"><span class="comment-icon"><i
-                                            class="fa-solid fa-comments"></i></span> 0 Comment</a></div>
-                            <h3 class="box-title"><a href="blog-details.html">Platform Innovation Centre & Parkade for
-                                    generation</a></h3>
-                            <p class="box-text">Studam fuels student success through smart tools and guides for academic
-                                excellence.</p>
-                            <div class="btn-wrap"><a href="blog-details.html" class="th-btn style-border1 th-icon">Read
-                                    More</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-card wow fadeInUp">
-                        <div class="blog-img position-relative"><a href="blog-details.html">
-                                <div class="blog-img-box position-relative overflow-hidden"><img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_2.jpg" alt="blog image"> <img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_2.jpg" alt="blog image"></div>
-                            </a>
-                            <div class="blog-date">
-                                <h5 class="blog-date-title">29</h5>
-                                <p class="blog-date-text">JAN,2025</p>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><span class="author-icon"><img
-                                            src="{{url('assets/frontend')}}/img/blog/author.png" alt="img"></span>By themeholy</a> <a
-                                    href="blog.html"><span class="comment-icon"><i
-                                            class="fa-solid fa-comments"></i></span> 0 Comment</a></div>
-                            <h3 class="box-title"><a href="blog-details.html">Olympic Plaza Transformar Advence
-                                    project</a></h3>
-                            <p class="box-text">Studam enables learners with powerful tools and support for every
-                                education phase.</p>
-                            <div class="btn-wrap"><a href="blog-details.html" class="th-btn style-border1 th-icon">Read
-                                    More</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-card wow fadeInUp">
-                        <div class="blog-img position-relative"><a href="blog-details.html">
-                                <div class="blog-img-box position-relative overflow-hidden"><img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_3.jpg" alt="blog image"> <img
-                                        src="{{url('assets/frontend')}}/img/blog/blog_1_3.jpg" alt="blog image"></div>
-                            </a>
-                            <div class="blog-date">
-                                <h5 class="blog-date-title">18</h5>
-                                <p class="blog-date-text">FEB,2025</p>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><span class="author-icon"><img
-                                            src="{{url('assets/frontend')}}/img/blog/author.png" alt="img"></span>By themeholy</a> <a
-                                    href="blog.html"><span class="comment-icon"><i
-                                            class="fa-solid fa-comments"></i></span> 0 Comment</a></div>
-                            <h3 class="box-title"><a href="blog-details.html">Calgary Municipal Land Corporation
-                                    launches</a></h3>
-                            <p class="box-text">Studam builds strong student networks and platforms for academic
-                                transformation daily.</p>
-                            <div class="btn-wrap"><a href="blog-details.html" class="th-btn style-border1 th-icon">Read
-                                    More</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/animate.css">
+				
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/fontawesome/css/all.min.css">
 
-    @include('frontend.layouts.footer')
+		<!-- Iconsax CSS-->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/iconsax.css">
 
-    <div id="login-form" class="popup-login-register mfp-hide">
-        <ul class="nav" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation"><button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                    aria-selected="false">Login</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-menu active" id="pills-profile-tab"
-                    data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
-                    aria-controls="pills-profile" aria-selected="true">Register</button></li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <h3 class="box-title mb-30">Sign in to your account</h3>
-                <div class="th-login-form">
-                    <form action="../../../external.html?link=https://html.themehour.net/stadum/demo/mail.php"
-                        method="POST" class="login-form ajax-contact">
-                        <div class="row">
-                            <div class="form-group col-12"><label>Username or email</label> <input type="text"
-                                    class="form-control" name="email" id="email" required="required"></div>
-                            <div class="form-group col-12"><label>Password</label> <input type="password"
-                                    class="form-control" name="pasword" id="pasword" required="required"></div>
-                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send
-                                    Message</button></div>
-                        </div>
-                        <div id="forgot_url"><a href="my-account.html">Forgot password?</a></div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
-                </div>
-            </div>
-            <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
-                aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="../../../external.html?link=https://html.themehour.net/stadum/demo/mail.php" method="POST"
-                    class="login-form ajax-contact">
-                    <div class="row">
-                        <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
-                                name="usename" id="usename" required="required"></div>
-                        <div class="form-group col-12"><label>First name*</label> <input type="text"
-                                class="form-control" name="firstname" id="firstname" required="required"></div>
-                        <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control"
-                                name="lastname" id="lastname" required="required"></div>
-                        <div class="form-group col-12"><label for="new_email">Your email*</label> <input type="text"
-                                class="form-control" name="new_email" id="new_email" required="required"></div>
-                        <div class="form-group col-12"><label for="new_email_confirm">Confirm email*</label> <input
-                                type="text" class="form-control" name="new_email_confirm" id="new_email_confirm"
-                                required="required"></div>
-                        <div class="statement"><span class="register-notes">A password will be emailed to you.</span>
-                        </div>
-                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>
-                        </div>
-                    </div>
-                    <p class="form-messages mb-0 mt-3"></p>
-                </form>
-            </div>
-        </div>
-    </div>
-    <script src="{{url('assets/frontend')}}/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/swiper-bundle.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/bootstrap.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/jquery.magnific-popup.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/jquery.counterup.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/jquery-ui.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/imagesloaded.pkgd.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/isotope.pkgd.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/wow.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/gsap.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/ScrollTrigger.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/SplitText.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/lenis.min.js"></script>
-    <script src="{{url('assets/frontend')}}/js/main.js"></script>
-</body>
+		<!-- Feathericon CSS -->
+    	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/feather.css">
+
+    	<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/bootstrap-datetimepicker.min.css">
+
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/owl.carousel.min.css">
+
+		<!-- Animation CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/aos.css">
+
+		<!-- select CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/select2/css/select2.min.css">
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
+
+	</head>		
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+			
+			@include('frontend.layouts.header')
+
+			<!-- Home Banner -->
+			<section class="banner-section banner-sec-one">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-7">
+							<div class="banner-content aos" data-aos="fade-up">
+								<div class="rating-appointment d-inline-flex align-items-center gap-2">
+									<div class="avatar-list-stacked avatar-group-lg">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="{{url('/')}}/assets/frontend/img/doctors/doctor-thumb-22.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="{{url('/')}}/assets/frontend/img/doctors/doctor-thumb-23.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img src="{{url('/')}}/assets/frontend/img/doctors/doctor-thumb-24.jpg" alt="img">
+										</span>
+									</div>
+									<div class="me-2">
+										<h6 class="mb-1">5K+ Appointments</h6>
+										<div class="d-flex align-items-center">
+											<div class="d-flex align-items-center">
+												<i class="fa-solid fa-star text-orange me-1"></i>
+												<i class="fa-solid fa-star text-orange me-1"></i>
+												<i class="fa-solid fa-star text-orange me-1"></i>
+												<i class="fa-solid fa-star text-orange me-1"></i>
+												<i class="fa-solid fa-star text-orange me-1"></i>
+											</div>
+											<p>5.0 Ratings</p>
+										</div>
+									</div>
+								</div>
+								<h1 class="display-5">Discover Health: Find Your Trusted <span class="banner-icon"><img src="{{url('/')}}/assets/frontend/img/icons/video.svg" alt="img"></span> <span class="text-gradient">Doctors</span> Today</h1>
+								<div class="search-box-one aos" data-aos="fade-up">
+									<form action="search-2.html"> 
+										<div class="search-input search-line">
+											<i class="isax isax-hospital5 bficon"></i>
+											<div class=" mb-0">
+												<input type="text" class="form-control" placeholder="Search doctors, clinics, hospitals, etc">
+											</div>
+										</div>
+										<div class="search-input search-map-line">
+											<i class="isax isax-location5"></i>
+											<div class=" mb-0">
+												<input type="text" class="form-control" placeholder="Location"> 
+											</div>
+										</div>
+										<div class="search-input search-calendar-line">
+											<i class="isax isax-calendar-tick5"></i>
+											<div class=" mb-0">
+												<input type="text" class="form-control datetimepicker" placeholder="Date">
+											</div>
+										</div>
+										<div class="form-search-btn">
+											<button class="btn btn-primary" type="submit"><i class="isax isax-search-normal5 me-2"></i>Search</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<div class="banner-img aos" data-aos="fade-up">
+								<img src="{{url('/')}}/assets/frontend/img/banner/banner-doctor.svg" class="img-fluid" alt="patient-image">
+								<div class="banner-appointment">
+									<h6>1K</h6>
+									<p>Appointments <span class="d-block">Completed</span></p>
+								</div>
+								<div class="banner-patient">
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img src="{{url('/')}}/assets/frontend/img/patients/patient19.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img  src="{{url('/')}}/assets/frontend/img/patients/patient16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img src="{{url('/')}}/assets/frontend/img/patients/patient18.jpg" alt="img">
+										</span>
+									</div>
+									<p>15K+</p>
+									<p>Satisfied Patients</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="banner-bg">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-bg-02.png" alt="img" class="banner-bg-01">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-bg-03.png" alt="img" class="banner-bg-02">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-bg-04.png" alt="img" class="banner-bg-03">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-bg-05.png" alt="img" class="banner-bg-04">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-icon-01.svg" alt="img" class="banner-bg-05">
+					<img src="{{url('/')}}/assets/frontend/img/bg/banner-icon-01.svg" alt="img" class="banner-bg-06">
+				</div>
+			</section>
+			<!-- /Home Banner -->
+
+			<!-- List -->
+			<div class="list-section">
+				<div class="container">
+					<div class="list-card card mb-0">
+						<div class="card-body">
+							<div class="d-flex align-items-center justify-content-center justify-content-xl-between flex-wrap gap-4 list-wraps">
+								<a href="booking.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-secondary">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-01.svg" alt="img">
+									</div>
+									<h6>Book Appointment</h6>
+								</a>
+								<a href="doctor-grid.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-primary">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-02.svg" alt="img">
+									</div>
+									<h6>Talk to Doctors</h6>
+								</a>
+								<a href="hospitals.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-pink">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-03.svg" alt="img">
+									</div>
+									<h6>Hospitals & Clinics</h6>
+								</a>
+								<a href="index-3.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-cyan">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-04.svg" alt="img">
+									</div>
+									<h6>Healthcare</h6>
+								</a>
+								<a href="index-13.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-purple">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-05.svg" alt="img">
+									</div>
+									<h6>Medicine & Supplies</h6>
+								</a>
+								<a href="index-12.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-orange">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-06.svg" alt="img">
+									</div>
+									<h6>Lab Testing</h6>
+								</a>
+								<a href="index-13.html" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-teal">
+										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-07.svg" alt="img">
+									</div>
+									<h6>Home Care</h6>
+								</a>
+							</div>
+						</div>		
+					</div>
+				</div>
+			</div>
+			<!-- /List -->
+
+			<!-- Speciality Section -->
+			<section class="speciality-section">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Top Specialties</span>
+						<h2>Highlighting the Care & Support</h2>
+					</div>
+					<div class="owl-carousel spciality-slider aos" data-aos="fade-up">
+						<div class="spaciality-item">
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-01.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-01.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Cardiology</a></h6>
+							<p class="mb-0">254 Doctors</p>
+						</div>
+						<div class="spaciality-item">
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-02.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-02.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Orthopedics</a></h6>
+							<p class="mb-0">151 Doctors</p>
+						</div>
+						<div class="spaciality-item">
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-03.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-03.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Neurology</a></h6>
+							<p class="mb-0">176 Doctors</p>
+						</div>
+						<div class="spaciality-item">							
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-04.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-04.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Pediatrics</a></h6>
+							<p class="mb-0">124 Doctors</p>
+						</div>
+						<div class="spaciality-item">						
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-05.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-05.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Psychiatry</a></h6>
+							<p class="mb-0">112 Doctors</p>
+						</div>
+						<div class="spaciality-item">													
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-06.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-06.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Endocrinology</a></h6>
+							<p class="mb-0">104 Doctors</p>
+						</div>
+						<div class="spaciality-item">						
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-07.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-07.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Pulmonology</a></h6>
+							<p class="mb-0">41 Doctors</p>
+						</div>
+						<div class="spaciality-item">						
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-08.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-08.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Urology</a></h6>
+							<p class="mb-0">39 Doctors</p>
+						</div>
+						<div class="spaciality-item">
+							<div class="spaciality-img">
+								<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-03.jpg" alt="img">
+								<span class="spaciality-icon">
+									<img src="{{url('/')}}/assets/frontend/img/specialities/speciality-icon-03.svg" alt="img">
+								</span>
+							</div>
+							<h6><a href="doctor-grid.html">Neurology</a></h6>
+							<p class="mb-0">176 Doctors</p>
+						</div>
+					</div>
+					<div class="spciality-nav nav-bottom owl-nav"></div>
+				</div>
+			</section>
+			<!-- /Speciality Section -->
+
+			<!-- Doctor Section -->
+			<section class="doctor-section">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Featured Doctors</span>
+						<h2>Our Highlighted Doctors</h2>
+					</div>
+
+					<div class="doctors-slider owl-carousel aos" data-aos="fade-up">
+						<div class="card">
+							<div class="card-img card-img-hover">
+								<a href="doctor-profile.html"><img src="{{url('/')}}/assets/frontend/img/doctor-grid/doctor-grid-01.jpg" alt=""></a>
+								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
+									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>5.0</span>
+									<a href="javascript:void(0)" class="fav-icon">
+										<i class="fa fa-heart"></i>
+									</a>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="d-flex active-bar align-items-center justify-content-between p-3">
+									<a href="#" class="text-indigo fw-medium fs-14">Psychologist</a>
+									<span class="badge bg-success-light d-inline-flex align-items-center">
+										<i class="fa-solid fa-circle fs-5 me-1"></i>
+										Available
+									</span>
+								</div>
+								<div class="p-3 pt-0">
+									<div class="doctor-info-detail mb-3 pb-3">
+										<h3 class="mb-1"><a href="doctor-profile.html">Dr. Michael Brown</a></h3>
+										<div class="d-flex align-items-center">
+											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>Minneapolis, MN</p>
+											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
+											<span class="fs-14 fw-medium">30 Min</span>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>
+											<p class="mb-1">Consultation Fees</p>
+											<h3 class="text-orange">$650</h3>
+										</div>
+										<a href="booking.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+											<i class="isax isax-calendar-1 me-2"></i>
+											Book Now
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-img card-img-hover">
+								<a href="doctor-profile.html"><img src="{{url('/')}}/assets/frontend/img/doctor-grid/doctor-grid-02.jpg" alt=""></a>
+								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
+									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>4.6</span>
+									<a href="javascript:void(0)" class="fav-icon">
+										<i class="fa fa-heart"></i>
+									</a>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="d-flex active-bar active-bar-pink align-items-center justify-content-between p-3">
+									<a href="booking-1.html" class="text-pink fw-medium fs-14">Pediatrician</a>
+									<span class="badge bg-success-light d-inline-flex align-items-center">
+										<i class="fa-solid fa-circle fs-5 me-1"></i>
+										Available
+									</span>
+								</div>
+								<div class="p-3 pt-0">
+									<div class="doctor-info-detail mb-3 pb-3">
+										<h3 class="mb-1"><a href="doctor-profile.html">Dr. Nicholas Tello</a></h3>
+										<div class="d-flex align-items-center">
+											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>Ogden, IA</p>
+											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
+											<span class="fs-14 fw-medium">60 Min</span>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>
+											<p class="mb-1">Consultation Fees</p>
+											<h3 class="text-orange">$400</h3>
+										</div>
+										<a href="booking.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+											<i class="isax isax-calendar-1 me-2"></i>
+											Book Now
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-img card-img-hover">
+								<a href="doctor-profile.html"><img src="{{url('/')}}/assets/frontend/img/doctor-grid/doctor-grid-03.jpg" alt=""></a>
+								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
+									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>4.8</span>
+									<a href="javascript:void(0)" class="fav-icon">
+										<i class="fa fa-heart"></i>
+									</a>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="d-flex active-bar active-bar-teal align-items-center justify-content-between p-3">
+									<a href="#" class="text-teal fw-medium fs-14">Neurologist</a>
+									<span class="badge bg-success-light d-inline-flex align-items-center">
+										<i class="fa-solid fa-circle fs-5 me-1"></i>
+										Available
+									</span>
+								</div>
+								<div class="p-3 pt-0">
+									<div class="doctor-info-detail mb-3 pb-3">
+										<h3 class="mb-1"><a href="doctor-profile.html">Dr. Harold Bryant</a></h3>
+										<div class="d-flex align-items-center">
+											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>Winona, MS</p>
+											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
+											<span class="fs-14 fw-medium">30 Min</span>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>
+											<p class="mb-1">Consultation Fees</p>
+											<h3 class="text-orange">$500</h3>
+										</div>
+										<a href="booking.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+											<i class="isax isax-calendar-1 me-2"></i>
+											Book Now
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-img card-img-hover">
+								<a href="doctor-profile.html"><img src="{{url('/')}}/assets/frontend/img/doctor-grid/doctor-grid-04.jpg" alt=""></a>
+								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
+									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>4.8</span>
+									<a href="javascript:void(0)" class="fav-icon">
+										<i class="fa fa-heart"></i>
+									</a>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="d-flex active-bar active-bar-info align-items-center justify-content-between p-3">
+									<a href="#" class="text-info fw-medium fs-14">Cardiologist</a>
+									<span class="badge bg-success-light d-inline-flex align-items-center">
+										<i class="fa-solid fa-circle fs-5 me-1"></i>
+										Available
+									</span>
+								</div>
+								<div class="p-3 pt-0">
+									<div class="doctor-info-detail mb-3 pb-3">
+										<h3 class="mb-1"><a href="doctor-profile.html">Dr. Sandra Jones</a></h3>
+										<div class="d-flex align-items-center">
+											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>Beckley, WV</p>
+											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
+											<span class="fs-14 fw-medium">30 Min</span>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>
+											<p class="mb-1">Consultation Fees</p>
+											<h3 class="text-orange">$550</h3>
+										</div>
+										<a href="booking.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+											<i class="isax isax-calendar-1 me-2"></i>
+											Book Now
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-img card-img-hover">
+								<a href="doctor-profile.html"><img src="{{url('/')}}/assets/frontend/img/doctor-grid/doctor-grid-05.jpg" alt=""></a>
+								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
+									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>4.2</span>
+									<a href="javascript:void(0)" class="fav-icon">
+										<i class="fa fa-heart"></i>
+									</a>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<div class="d-flex active-bar active-bar-teal align-items-center justify-content-between p-3">
+									<a href="#" class="text-teal fw-medium fs-14">Neurologist</a>
+									<span class="badge bg-success-light d-inline-flex align-items-center">
+										<i class="fa-solid fa-circle fs-5 me-1"></i>
+										Available
+									</span>
+								</div>
+								<div class="p-3 pt-0">
+									<div class="doctor-info-detail mb-3 pb-3">
+										<h3 class="mb-1"><a href="doctor-profile.html">Dr. Charles Scott</a></h3>
+										<div class="d-flex align-items-center">
+											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>Hamshire, TX</p>
+											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
+											<span class="fs-14 fw-medium">30 Min</span>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between">
+										<div>
+											<p class="mb-1">Consultation Fees</p>
+											<h3 class="text-orange">$600</h3>
+										</div>
+										<a href="booking.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+											<i class="isax isax-calendar-1 me-2"></i>
+											Book Now
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div class="doctor-nav nav-bottom owl-nav"></div>
+				</div>
+			</section>
+			<!-- /Doctor Section -->
+
+			<!-- Services Section -->
+			<section class="services-section aos" data-aos="fade-up">
+				<div class="horizontal-slide d-flex" data-direction="right" data-speed="slow">
+					<div class="slide-list d-flex gap-4">
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Multi Speciality Treatments & Doctors</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Lab Testing Services</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Medecines & Supplies</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Hospitals & Clinics</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Health Care Services</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Talk to Doctors</a></h6>
+						</div>
+						<div class="services-slide">
+							<h6><a href="javascript:void(0);">Home Care Services</a></h6>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Services Section -->
+
+			<!-- Reasons Section -->
+			<section class="reason-section">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Why Book With Us</span>
+						<h2>Compelling Reasons to Choose</h2>
+					</div>
+					<div class="row row-gap-4 justify-content-center">
+						<div class="col-lg-4 col-md-6">
+							<div class="reason-item aos" data-aos="fade-up">
+								<h6 class="mb-2 d-flex align-items-center"><i class="isax isax-tag-user5 text-orange me-2"></i>Follow-Up Care</h6>
+								<p class="fs-14 mb-0">We ensure continuity of care through regular follow-ups and communication, helping you stay on track with health goals.</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="reason-item aos" data-aos="fade-up">
+								<h6 class="mb-2 d-flex align-items-center"><i class="isax isax-voice-cricle text-purple me-2"></i>Patient-Centered Approach</h6>
+								<p class="fs-14 mb-0">We prioritize your comfort and preferences, tailoring our services to meet your individual needs and Care from Our Experts</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="reason-item aos" data-aos="fade-up">
+								<h6 class="mb-2 d-flex align-items-center"><i class="isax isax-wallet-add-15 text-cyan me-2"></i>Convenient Access</h6>
+								<p class="fs-14 mb-0">Easily book appointments online or through our dedicated customer service team, with flexible hours to fit your schedule.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Reasons Section -->
+
+			<!-- Bookus Section -->
+			<section class="bookus-section bg-dark">
+				<div class="container">
+					<div class="row align-items-center row-gap-4">
+						<div class="col-lg-6">
+							<div class="bookus-img">
+								<div class="row g-3">
+									<div class="col-md-12 aos" data-aos="fade-up">
+										<img src="{{url('/')}}/assets/frontend/img/book-01.jpg" alt="img" class="img-fluid">
+									</div>
+									<div class="col-sm-6 aos" data-aos="fade-up">
+										<img src="{{url('/')}}/assets/frontend/img/book-02.jpg" alt="img" class="img-fluid">
+									</div>
+									<div class="col-sm-6 aos" data-aos="fade-up">
+										<img src="{{url('/')}}/assets/frontend/img/book-03.jpg" alt="img" class="img-fluid">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="section-header sec-header-one mb-2 aos" data-aos="fade-up">
+								<span class="badge badge-primary">Why Book With Us</span>
+								<h2 class="text-white mb-3">We are committed to understanding your <span class="text-primary-gradient">unique needs and delivering care.</span></h2>
+							</div>
+							<p class="text-light mb-4">As a trusted healthAs a trusted healthcare provider in our community, we are passionate about promoting health and wellness beyond the clinic. We actively engage in community outreach programs, health fairs, and educational workshop.</p>
+							<div class="faq-info aos" data-aos="fade-up">
+								<div class="accordion" id="faq-details">
+
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingOne">
+											<a href="javascript:void(0);" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												01 . Our Vision
+											</a>
+										</h2>
+										<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>We envision a community where everyone has access to high-quality healthcare and the resources they need to lead healthy, fulfilling lives.</p>
+												</div> 
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingTwo">
+											<a href="javascript:void(0);" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-controls="collapseTwo">
+												02 . Our Mission
+											</a>
+										</h2>
+										<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>We envision a community where everyone has access to high-quality healthcare and the resources they need to lead healthy, fulfilling lives.</p>
+												</div> 
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bookus-sec">
+						<div class="row g-4">
+							<div class="col-lg-3">
+								<div class="book-item">
+									<div class="book-icon bg-primary">
+										<i class="isax isax-search-normal5"></i>
+									</div>
+									<div class="book-info">
+										<h6 class="text-white mb-2">Search For Doctors</h6>
+										<p class="fs-14 text-light">Search for a doctor based on specialization, location, or availability for your Treatements</p>
+									</div>
+									<div class="way-icon">
+										<img src="{{url('/')}}/assets/frontend/img/icons/way-icon.svg" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="book-item">
+									<div class="book-icon bg-orange">
+										<i class="isax isax-security-user5"></i>
+									</div>
+									<div class="book-info">
+										<h6 class="text-white mb-2">Check Doctor Profile</h6>
+										<p class="fs-14 text-light">Explore detailed doctor profiles on our platform to make informed healthcare decisions.</p>
+									</div>
+									<div class="way-icon">
+										<img src="{{url('/')}}/assets/frontend/img/icons/way-icon.svg" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="book-item">
+									<div class="book-icon bg-cyan">
+										<i class="isax isax-calendar5"></i>
+									</div>
+									<div class="book-info">
+										<h6 class="text-white mb-2">Schedule Appointment</h6>
+										<p class="fs-14 text-light">After choose your preferred doctor, select a convenient time slot, & confirm your appointment.</p>
+									</div>
+									<div class="way-icon">
+										<img src="{{url('/')}}/assets/frontend/img/icons/way-icon.svg" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3">
+								<div class="book-item">
+									<div class="book-icon bg-indigo">
+										<i class="isax isax-blend5"></i>
+									</div>
+									<div class="book-info">
+										<h6 class="text-white mb-2">Get Your Solution</h6>
+										<p class="fs-14 text-light">Discuss your health concerns with the doctor and receive the personalized advice & with solution.</p>
+									</div>
+								</div>
+							</div>
+						</div>		
+					</div>		
+				</div>
+			</section>
+			<!-- /Bookus Section -->
+			
+			<!-- Testimonial Section -->
+			<section class="testimonial-section-one">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Testimonials</span>
+						<h2>15k Users Trust Doccure Worldwide</h2>
+					</div>
+
+					<!-- Testimonial Slider -->
+					<div class="owl-carousel testimonials-slider aos" data-aos="fade-up">
+						<div class="card shadow-none mb-0">
+							<div class="card-body">
+								<div class="d-flex align-items-center mb-4">
+									<div class="rating d-flex">
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled"></i>
+									</div>
+									<span>
+										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
+									</span>
+								</div>
+								<h6 class="fs-16 fw-medium mb-2">Nice Treatment</h6>
+								<p>I had a wonderful experience the staff was friendly and attentive, and Dr. Smith took the time to explain everything clearly.</p>
+								<div class="d-flex align-items-center">
+									<a href="javascript:void(0);" class="avatar avatar-lg">
+										<img src="{{url('/')}}/assets/frontend/img/patients/patient22.jpg" class="rounded-circle" alt="img">
+									</a>
+									<div class="ms-2">
+										<h6 class="mb-1"><a href="javascript:void(0);">Deny Hendrawan</a></h6>
+										<p class="fs-14 mb-0">United States</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card shadow-none mb-0">
+							<div class="card-body">
+								<div class="d-flex align-items-center mb-4">
+									<div class="rating d-flex">
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled"></i>
+									</div>
+									<span>
+										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
+									</span>
+								</div>
+								<h6 class="fs-16 fw-medium mb-2">Good Hospitability</h6>
+								<p>Genuinely cares about his patients. He helped me understand my condition and worked with me to create a plan.</p>
+								<div class="d-flex align-items-center">
+									<a href="javascript:void(0);" class="avatar avatar-lg">
+										<img src="{{url('/')}}/assets/frontend/img/patients/patient21.jpg" class="rounded-circle" alt="img">
+									</a>
+									<div class="ms-2">
+										<h6 class="mb-1"><a href="javascript:void(0);">Johnson DWayne</a></h6>
+										<p class="fs-14 mb-0">United States</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card shadow-none mb-0">
+							<div class="card-body">
+								<div class="d-flex align-items-center mb-4">
+									<div class="rating d-flex">
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled"></i>
+									</div>
+									<span>
+										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
+									</span>
+								</div>
+								<h6 class="fs-16 fw-medium mb-2">Nice Treatment</h6>
+								<p>I had a great experience with Dr. Chen. She was not only professional but also made me feel comfortable discussing.</p>
+								<div class="d-flex align-items-center">
+									<a href="javascript:void(0);" class="avatar avatar-lg">
+										<img src="{{url('/')}}/assets/frontend/img/patients/patient.jpg" class="rounded-circle" alt="img">
+									</a>
+									<div class="ms-2">
+										<h6 class="mb-1"><a href="javascript:void(0);">Rayan Smith</a></h6>
+										<p class="fs-14 mb-0">United States</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card shadow-none mb-0">
+							<div class="card-body">
+								<div class="d-flex align-items-center mb-4">
+									<div class="rating d-flex">
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled me-1"></i>
+										<i class="fa-solid fa-star filled"></i>
+									</div>
+									<span>
+										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
+									</span>
+								</div>
+								<h6 class="fs-16 fw-medium mb-2">Excellent Service</h6>
+								<p>I had a wonderful experience the staff was friendly and attentive, and Dr. Smith took the time to explain everything clearly.</p>
+								<div class="d-flex align-items-center">
+									<a href="javascript:void(0);" class="avatar avatar-lg">
+										<img src="{{url('/')}}/assets/frontend/img/patients/patient23.jpg" class="rounded-circle" alt="img">
+									</a>
+									<div class="ms-2">
+										<h6 class="mb-1"><a href="javascript:void(0);">Sofia Doe</a></h6>
+										<p class="fs-14 mb-0">United States</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Testimonial Slider -->
+
+					<!-- Counter -->
+					<div class="testimonial-counter">
+						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 row-gap-4">
+							<div class="counter-item text-center aos" data-aos="fade-up">
+								<h6 class="display-6"><span class="count-digit">500</span>+</h6>
+								<p>Doctors Available</p>
+							</div>
+							<div class="counter-item text-center aos" data-aos="fade-up"">
+								<h6 class="display-6 secondary-count"><span class="count-digit">18</span>+</h6>
+								<p>Specialities</p>
+							</div>
+							<div class="counter-item text-center aos" data-aos="fade-up">
+								<h6 class="display-6 purple-count"><span class="count-digit">30</span>K</h6>
+								<p>Bookings Done</p>
+							</div>
+							<div class="counter-item text-center aos" data-aos="fade-up">
+								<h6 class="display-6 pink-count"><span class="count-digit">97</span>+</h6>
+								<p>Hospitals & Clinic</p>
+							</div>
+							<div class="counter-item text-center  aos" data-aos="fade-up">
+								<h6 class="display-6 warning-count"><span class="count-digit">317</span>+</h6>
+								<p>Lab Tests Available</p>
+							</div>
+						</div>
+					</div>
+					<!-- /Counter -->
+
+				</div>
+			</section>
+			<!-- /Testimonial Section -->
+
+			<section class="company-section bg-dark aos" data-aos="fade-up">
+				<div class="container">
+					<div class="section-header sec-header-one text-center">
+						<h6 class="text-light">Trusted by 5+ million people at companies like</h6>
+					</div>
+					<div class="owl-carousel company-slider">
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-01.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-02.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-03.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-04.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-05.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-06.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-07.svg" alt="img">
+						</div>
+						<div>
+							<img src="{{url('/')}}/assets/frontend/img/company/company-08.svg" alt="img">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="faq-section-one">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">FAQ'S</span>
+						<h2>Your Questions are Answered</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-10 mx-auto">
+							<div class="faq-info aos" data-aos="fade-up">
+								<div class="accordion" id="faq-details">
+		
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingOne">
+											<a href="javascript:void(0);" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												How do I book an appointment with a doctor?
+											</a>
+										</h2>
+										<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking.</p>
+												</div> 
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+		
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingTwo">
+											<a href="javascript:void(0);" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												Can I request a specific doctor when booking my appointment? 
+											</a>
+										</h2>
+										<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>Yes, you can usually request a specific doctor when booking your appointment, though availability may vary based on their schedule.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+		
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingThree">
+											<a href="javascript:void(0);" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												What should I do if I need to cancel or reschedule my appointment?
+											</a>
+										</h2>
+										<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>If you need to cancel or reschedule your appointment, contact the doctor as soon as possible to inform them and to reschedule for another available time slot.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+		
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingFour">
+											<a href="javascript:void(0);" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+												What if I'm running late for my appointment?
+											</a>
+										</h2>
+										<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>If you know you will be late, it's courteous to call the doctor's office and inform them. Depending on their policy and schedule, they may be able to accommodate you or reschedule your appointment.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+		
+									<!-- FAQ Item -->
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingFive">
+											<a href="javascript:void(0);" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+												Can I book appointments for family members or dependents?
+											</a>
+										</h2>
+										<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faq-details">
+											<div class="accordion-body">
+												<div class="accordion-content">
+													<p>Yes, in many cases, you can book appointments for family members or dependents. However, you may need to provide their personal information and consent to do so.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /FAQ Item -->
+												
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- App Section -->
+			<section class="app-section app-sec-one p-0">
+				<div class="container">
+					<div class="app-bg">
+						<div class="row">
+							<div class="col-lg-6 col-md-12 d-flex">
+								<div class="app-content d-flex flex-column justify-content-center">
+									<div class="app-header aos" data-aos="fade-up">
+										<h3 class="display-6 text-white">Download the Doccure App today!</h3>
+										<p class="text-light">To download an app related to a doctor or medical services, you can typically visit the app store on your device.</p>
+									</div>
+									<div class="google-imgs aos" data-aos="fade-up">
+										<a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/app-store-01.svg" alt="img"></a>
+										<a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/google-play-01.svg" alt="img"></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-12 aos" data-aos="fade-up">
+								<div class="mobile-img">
+									<img src="{{url('/')}}/assets/frontend/img/mobile-img.png" class="img-fluid" alt="img">
+								</div>
+							</div>
+						</div>
+						<div class="app-bgs">
+							<img src="{{url('/')}}/assets/frontend/img/bg/app-bg-02.png" alt="img" class="app-bg-01">
+							<img src="{{url('/')}}/assets/frontend/img/bg/app-bg-03.png" alt="img" class="app-bg-02">
+							<img src="{{url('/')}}/assets/frontend/img/bg/app-bg-04.png" alt="img" class="app-bg-03">
+						</div>
+					</div>
+				</div>
+				<div class="download-bg">
+					<img src="{{url('/')}}/assets/frontend/img/bg/download-bg.png" alt="img">
+				</div>
+			</section>
+			<!-- /App Section -->
+
+			<!-- Article Section -->
+			<section class="article-section">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Recent Blogs</span>
+						<h2>Stay Updated With Our Latest Articles</h2>
+					</div>
+					<div class="row g-4">
+						<div class="col-lg-6">
+							<div class="article-item aos" data-aos="fade-up">
+								<div class="article-img">
+									<a href="blog-details.html">
+										<img src="{{url('/')}}/assets/frontend/img/blog/article-01.jpg" class="img-fluid" alt="img">
+									</a>
+									<div class="date-icon">
+										<span>15</span>May
+									</div>
+								</div>
+								<div class="article-info">
+									<span class="badge badge-cyan mb-2">Treatments</span>
+									<h6 class="mb-2"><a href="blog-details.html">Understanding and Preventing Glaucoma: A Detailed Guide</a></h6>
+									<p>Glaucoma is a leading cause of blind worldwide, yet many....</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="article-item aos" data-aos="fade-up">
+								<div class="article-img">
+									<a href="blog-details.html">
+										<img src="{{url('/')}}/assets/frontend/img/blog/article-02.jpg" class="img-fluid" alt="img">
+									</a>
+									<div class="date-icon">
+										<span>18</span>May
+									</div>
+								</div>
+								<div class="article-info">
+									<span class="badge badge-cyan mb-2">Neurology</span>
+									<h6 class="mb-2"><a href="blog-details.html">Understanding and Preventing Glaucoma: A Detailed Guide</a></h6>
+									<p>Discover the intersection of technology and neurology, transforming....</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="article-item aos" data-aos="fade-up">
+								<div class="article-img">
+									<a href="blog-details.html">
+										<img src="{{url('/')}}/assets/frontend/img/blog/article-03.jpg" class="img-fluid" alt="img">
+									</a>
+									<div class="date-icon">
+										<span>21</span>Apr
+									</div>
+								</div>
+								<div class="article-info">
+									<span class="badge badge-cyan mb-2">Dental</span>
+									<h6 class="mb-2"><a href="blog-details.html">5 Essential Tips for Maintaining Optimal Oral Health</a></h6>
+									<p>Learn the top five daily practices to keep your teeth....</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="article-item aos" data-aos="fade-up">
+								<div class="article-img">
+									<a href="blog-details.html">
+										<img src="{{url('/')}}/assets/frontend/img/blog/article-04.jpg" class="img-fluid" alt="img">
+									</a>
+									<div class="date-icon">
+										<span>22</span>Jan
+									</div>
+								</div>
+								<div class="article-info">
+									<span class="badge badge-cyan mb-2">Care & Treatment</span>
+									<h6 class="mb-2"><a href="blog-details.html">Beating Strong: The Digital Revol in Cardiac Care</a></h6>
+									<p>Discover how digital advancements are transforming cardiac care...</p>
+								</div>
+							</div>
+						</div>
+					</div>		
+					<div class="text-center load-item aos" data-aos="fade-up">
+						<a href="blog-grid.html" class="btn btn-dark d-inline-flex align-items-center">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
+					</div>			
+				</div>
+			</section>
+			<!-- /Article Section -->
+
+			<!-- Info Section -->
+			<section class="info-section">
+				<div class="container">					
+					<div class="contact-info">
+						<div class="d-lg-flex align-items-center justify-content-between w-100 gap-4">
+							<div class="mb-4 mb-lg-0 aos" data-aos="fade-up">
+								<h6 class="display-6 text-white">Working for Your Better Health.</h6>
+							</div>
+							<div class="d-sm-flex align-items-center justify-content-lg-end gap-4 aos" data-aos="fade-up">
+								<div class="con-info d-flex align-items-center mb-3 mb-sm-0">
+									<span class="con-icon">
+										<i class="isax isax-headphone"></i>
+									</span>
+									<div class="ms-2">
+										<p class="text-white mb-1">Customer Support</p>
+										<p class="text-white fw-medium mb-0">+1 56589 54598</p>
+									</div>
+								</div>
+								<div class="con-info d-flex align-items-center">
+									<span class="con-icon">
+										<i class="isax isax-message-2"></i>
+									</span>
+									<div class="ms-2">
+										<p class="text-white mb-1">Drop Us an Email</p>
+										<p class="text-white fw-medium mb-0">info1256@example.com</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Info Section -->
+
+			@include('frontend.layouts.footer')
+		
+		</div>		
+		<!-- /Main Wrapper -->
+	
+		<!-- jQuery -->
+		<script src="{{url('/')}}/assets/frontend/js/jquery-3.7.1.min.js"></script>
+		
+		<!-- Bootstrap Bundle JS -->
+		<script src="{{url('/')}}/assets/frontend/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Feather Icon JS -->
+		<script src="{{url('/')}}/assets/frontend/js/feather.min.js"></script>
+
+		<!-- select JS -->
+		<script src="{{url('/')}}/assets/frontend/plugins/select2/js/select2.min.js"></script>
+
+		<!-- Datepicker JS -->
+		<script src="{{url('/')}}/assets/frontend/js/moment.min.js"></script>
+		<script src="{{url('/')}}/assets/frontend/js/bootstrap-datetimepicker.min.js"></script>
+
+		<!-- Owl Carousel JS -->
+		<script src="{{url('/')}}/assets/frontend/js/owl.carousel.min.js"></script>
+
+		<!-- Counter JS -->
+		<script src="{{url('/')}}/assets/frontend/js/counter.js"></script>
+
+		<!-- Animation JS -->
+		<script src="{{url('/')}}/assets/frontend/js/aos.js"></script>
+				
+		<!-- Custom JS -->
+		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
+	
+	</body>
 </html>

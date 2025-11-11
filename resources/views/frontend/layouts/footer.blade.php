@@ -1,132 +1,134 @@
-<footer class="footer-wrapper footer-default footer-overlay" data-bg-src="{{url('assets/frontend')}}/img/bg/footer-bg-1.jpg">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row gy-40 align-items-center justify-content-between">
-                    <div class="col-xl-auto">
-                        <div class="footer-logo z-index-common" data-cue="slideInLeft"><a
-                                href="home-university.html"><img src="{{url('assets/frontend')}}/img/logo-white.svg" alt="Stadum"></a></div>
-                    </div>
-                    <div class="col-xl-auto">
-                        <div class="client-group-wrap z-index-common" data-cue="slideInRight"><img
-                                src="{{url('assets/frontend')}}/img/normal/client-group1.png" alt="img">
-                            <h4 class="title">Have any question? <a href="contact.html"><img
-                                        src="{{url('assets/frontend')}}/img/icon/chat2.svg" alt=""> <span class="text-theme">Live</span></a>
-                                chat now</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="widget-area">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <div class="th-widget-about">
-                                <h3 class="widget_title">About Stadum</h3>
-                                <p class="about-text">Since 1999, when the newly minted Stadum team embraced its mandate
-                                    to breathe new life into the downtrodden neighbourhood, East Village’s
-                                    transformation has been nothing short of remarkable. </p>
-                                <div class="footer-info"><a href="#"><span class="footer-info-icon"><i
-                                                class="fa-solid fa-location-dot"></i></span> 45 New Eskaton Road,
-                                        Austria </a><a href="mailto:infomail@example.com"><span
-                                            class="footer-info-icon"><i class="fa-solid fa-envelope"></i></span>
-                                        infomail@example.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Useful Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="index.html">Students</a></li>
-                                    <li><a href="about.html">Admission</a></li>
-                                    <li><a href="pricing.html">Faculty & Stuffs</a></li>
-                                    <li><a href="service.html">Media Relations</a></li>
-                                    <li><a href="about.html">Alumni</a></li>
-                                    <li><a href="about.html">All Awards</a></li>
-                                    <li><a href="contact.html">Recent Events</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Our Programs</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">Ungraduate Programs</a></li>
-                                    <li><a href="about.html">Graduate Programs</a></li>
-                                    <li><a href="about.html">Certificate Programs</a></li>
-                                    <li><a href="about.html">Accelerate Programs</a></li>
-                                    <li><a href="about.html">Online Programs</a></li>
-                                    <li><a href="about.html">Financial Planning</a></li>
-                                    <li><a href="about.html">Business Advisory</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget th-widget-instagram footer-widget">
-                            <h3 class="widget_title">Instagram</h3>
-                            <div class="instagram-feeds">
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-1.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-1.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-2.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-2.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-3.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-3.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-4.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-4.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-5.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-5.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-6.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-6.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-7.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-7.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-8.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-8.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{{url('assets/frontend')}}/img/widget/insta-feed-1-9.jpg" alt="Image"> <a
-                                        href="{{url('assets/frontend')}}/img/widget/insta-feed-1-9.jpg" class="insta-btn popup-image"><i
-                                            class="fab fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-wrap z-index-common">
-            <div class="container">
-                <div class="row justify-content-center gy-3 align-items-center">
-                    <div class="col-lg-6">
-                        <p class="copyright-text"><i class="fal fa-copyright"></i> Copyright 2025 <a
-                                href="home-university.html">Stadum</a>. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-lg-6 text-lg-end text-center">
-                        <div class="footer-links">
-                            <ul>
-                                <li><a href="about.html">Privacy Policy</a></li>
-                                <li><a href="about.html">Terms of services</a></li>
-                                <li><a href="about.html">Disclaimer</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="scroll-top"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg>
-    </div>
+<!-- Footer Section -->
+<footer class="footer inner-footer footer-info">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-lg-3 col-md-3">
+							<div class="footer-widget footer-menu">
+								<h6 class="footer-title">Company</h6>
+								<ul>
+									<li><a href="about-us.html">About</a></li>
+									<li><a href="search.html">Features</a></li>
+									<li><a href="javascript:void(0);">Works</a></li>
+									<li><a href="javascript:void(0);">Careers</a></li>
+									<li><a href="javascript:void(0);">Locations</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3">
+							<div class="footer-widget footer-menu">
+								<h6 class="footer-title">Treatments</h6>
+								<ul>
+									<li><a href="search.html">Dental</a></li>
+									<li><a href="search.html">Cardiac</a></li>
+									<li><a href="search.html">Spinal Cord</a></li>
+									<li><a href="search.html">Hair Growth</a></li>
+									<li><a href="search.html">Anemia & Disorder</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3">
+							<div class="footer-widget footer-menu">
+								<h6 class="footer-title">Specialities</h6>
+								<ul>
+									<li><a href="search.html">Transplant</a></li>
+									<li><a href="search.html">Cardiologist</a></li>
+									<li><a href="search.html">Oncology</a></li>
+									<li><a href="search.html">Pediatrics</a></li>
+									<li><a href="search.html">Gynacology</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3">
+							<div class="footer-widget footer-menu">
+								<h6 class="footer-title">Utilites</h6>
+								<ul>
+									<li><a href="pricing.html">Pricing</a></li>
+									<li><a href="contact-us.html">Contact</a></li>
+									<li><a href="contact-us.html">Request A Quote</a></li>
+									<li><a href="javascript:void(0);">Premium Membership</a></li>
+									<li><a href="javascript:void(0);">Integrations</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-7">
+					<div class="footer-widget">
+						<h6 class="footer-title">Newsletter</h6>
+						<p class="mb-2">Subscribe & Stay Updated from the Doccure</p>
+						<div class="subscribe-input">
+							<form action="#">
+								<input type="email" class="form-control" placeholder="Enter Email Address">
+								<button type="submit" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center"><i class="isax isax-send-25 me-1"></i>Send</button>
+							</form>
+						</div>
+						<div class="social-icon">
+							<h6 class="mb-3">Connect With Us</h6>
+							<ul>
+								<li>
+									<a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bg">
+			<img src="{{url('/')}}/assets/frontend/img/bg/footer-bg-01.png" alt="img" class="footer-bg-01">
+			<img src="{{url('/')}}/assets/frontend/img/bg/footer-bg-02.png" alt="img" class="footer-bg-02">
+			<img src="{{url('/')}}/assets/frontend/img/bg/footer-bg-03.png" alt="img" class="footer-bg-03">
+			<img src="{{url('/')}}/assets/frontend/img/bg/footer-bg-04.png" alt="img" class="footer-bg-04">
+			<img src="{{url('/')}}/assets/frontend/img/bg/footer-bg-05.png" alt="img" class="footer-bg-05">
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<!-- Copyright -->
+			<div class="copyright">
+				<div class="copyright-text">
+					<p class="mb-0">Copyright © 2025 Doccure. All Rights Reserved</p>
+				</div>
+				<!-- Copyright Menu -->
+				<div class="copyright-menu">
+					<ul class="policy-menu">
+						<li><a href="javascript:void(0);">Legal Notice</a></li>
+						<li><a href="privacy-policy.html">Privacy Policy</a></li>
+						<li><a href="javascript:void(0);">Refund Policy</a></li>
+					</ul>
+				</div>
+				<!-- /Copyright Menu -->
+				<ul class="payment-method">
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-01.svg" alt="Img"></a></li>
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-02.svg" alt="Img"></a></li>
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-03.svg" alt="Img"></a></li>
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-04.svg" alt="Img"></a></li>
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-05.svg" alt="Img"></a></li>
+					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-06.svg" alt="Img"></a></li>
+				</ul>
+			</div>
+			<!-- /Copyright -->					
+		</div>
+	</div>
+</footer>
+<!-- /Footer Section -->
+
+<!-- Cursor -->
+<div class="mouse-cursor cursor-outer"></div>
+<div class="mouse-cursor cursor-inner"></div>
+<!-- /Cursor -->

@@ -1,185 +1,432 @@
-<header class="th-header header-layout1">
-        <div class="header-top">
-            <div class="container th-container4">
-                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
-                    <div class="col-auto d-none d-lg-block">
-                        <div class="header-links">
-                            <ul class="header-left-wrap">
-                                <li>
-                                    <div class="dropdown-link"><a class="dropdown-toggle" href="#" role="button"
-                                            id="dropdownMenuLink1" data-bs-toggle="dropdown"
-                                            aria-expanded="false">Studients</a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                            <li><a href="#">Scrollship</a> <a href="#">Forening</a> <a
-                                                    href="#">Online</a> <a href="#">Bysexual</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a href="{{route('contact')}}">Staff</a></li>
-                                <li><a href="alumni.html">Alumni</a></li>
-                                <li><a href="faculty.html">Faculty</a></li>
-                                <li><a href="{{route('contact')}}">Community</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-links">
-                            <ul class="header-right-wrap">
-                                <li><i class="fa-solid fa-user"></i><a href="#login-form" class="popup-content">Login /
-                                        Register</a></li>
-                                <li><i class="fas fa-comments"></i><a href="faq.html">FAQ</a></li>
-                                <li>
-                                    <div class="dropdown-link"><a class="dropdown-toggle" href="#" role="button"
-                                            id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false"><img
-                                                src="{{url('assets/frontend')}}/img/icon/lang.svg" alt=""></a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                            <li><a href="#">German</a> <a href="#">French</a> <a href="#">Italian</a> <a
-                                                    href="#">Latvian</a> <a href="#">Spanish</a> <a href="#">Greek</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-info d-none d-sm-block">
-            <div class="container th-container2">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-auto">
-                        <div class="header-logo"><a href="{{route('home')}}"><img src="{{url('assets/frontend')}}/img/logo.svg"
-                                    alt="Stadum"></a></div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-info-right">
-                            <div class="header-info-item">
-                                <div class="header-info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="header-info-content"><span class="header-info-text">Address</span>
-                                    <h3 class="header-info-title"><a href="#">{{getSetting()->primary_address}}</a></h3>
-                                </div>
-                            </div>
-                            <div class="header-info-item">
-                                <div class="header-info-icon"><i class="fa-solid fa-envelope"></i></div>
-                                <div class="header-info-content"><span class="header-info-text">Email</span>
-                                    <h3 class="header-info-title"><a
-                                            href="tel:{{getSetting()->primary_email}}">{{getSetting()->primary_email}}</a></h3>
-                                </div>
-                            </div>
-                            <div class="header-info-item">
-                                <div class="header-info-icon"><i class="fa-solid fa-phone"></i></div>
-                                <div class="header-info-content"><span class="header-info-text">Phone Number</span>
-                                    <h3 class="header-info-title"><a href="tel:{{getSetting()->primary_contact}}">{{getSetting()->primary_contact}}</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sticky-wrapper">
-            <div class="menu-area">
-                <div class="container th-container2">
-                    <div class="menu-wrapp">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-auto">
-                                <div class="header-left d-flex align-items-center">
-                                    <div class="header-logo d-block d-sm-none"><a href="{{route('home')}}"><img
-                                                src="{{url('assets/frontend')}}/img/logo.svg" alt="Stadum"></a></div>
-                                    <div class="header-button d-none d-sm-block"><a href="{{route('contact')}}"
-                                            class="th-btn">Get More Info <img src="{{url('assets/frontend')}}/img/icon/right-icon.svg"
-                                                class="th-arrow" alt="icon"></a></div>
-                                    <nav class="main-menu d-none d-xl-block">
-                                        <ul>
-                                            <li><a href="{{route('home')}}">Home</a></li>
-                                            <li class="menu-item-has-children">
-                                                <a href="{{route('about.us')}}">About Us</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="{{ route('chairman.message') }}">Chairman Message</a></li>
-                                                    <li><a href="{{ route('md.message') }}">MD Message</a></li>
-                                                    <li><a href="{{ route('awards') }}">Awards</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="#">Programs</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="program.html">Programs Style 1</a></li>
-                                                    <li><a href="program-2.html">Programs Style 2</a></li>
-                                                    <li><a href="program-details.html">Program Details</a></li>
-                                                    <li><a href="program-details-sidebar.html">Program Details With
-                                                            Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="#">Pages</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="shop.html">Shop</a></li>
-                                                            <li><a href="shop-details.html">Shop Details</a></li>
-                                                            <li><a href="cart.html">Cart Page</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children"><a href="#">Faculties</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="faculty.html">Faculty</a></li>
-                                                            <li><a href="faculty-details.html">Faculty Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="alumni.html">Alumni Page</a></li>
-                                                    <li class="menu-item-has-children"><a href="#">Researches</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="research.html">Research</a></li>
-                                                            <li><a href="research-details.html">Research Details</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children"><a href="#">Teachers</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="teacher.html">Teacher</a></li>
-                                                            <li><a href="teacher-details.html">Teacher Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="campus.html">Campus Life</a></li>
-                                                    <li><a href="pricing.html">Pricing Plan</a></li>
-                                                    <li><a href="faq.html">Faqs Page</a></li>
-                                                    <li><a href="error.html">Error Page</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="#">Events</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="event.html">Events Page</a></li>
-                                                    <li><a href="event-details.html">Event Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="#">Blogs</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                    <li><a href="blog-details-sidebar.html">Blog Details With
-                                                            Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="{{route('contact')}}">Contact Us</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-auto ms-lg-auto">
-                                <div class="header-button">
-                                    <form class="search-form"><input type="text" placeholder="Search..."> <button
-                                            type="submit"><i class="fa-light fa-magnifying-glass"></i></button></form><a
-                                        href="#" class="icon-btn sideMenuToggler d-none d-xl-block"><img
-                                            src="{{url('assets/frontend')}}/img/icon/grid2.svg" alt=""></a><button type="button"
-                                        class="th-menu-toggle d-inline-block d-xl-none"><i
-                                            class="far fa-bars"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<div class="header-topbar">
+	<div class="container">
+		<div class="topbar-info">
+			<div class="d-flex align-items-center gap-3 header-info">
+				<p><i class="isax isax-message-text5 me-1"></i>info@example.com</p>
+				<p><i class="isax isax-call5 me-1"></i>+1 66589 14556</p>
+			</div>
+			<ul>
+				<li class="header-theme">
+					<a href="javascript:void(0);" id="dark-mode-toggle" class="theme-toggle">
+						<i class="isax isax-sun-1"></i>
+					</a>
+					<a href="javascript:void(0);" id="light-mode-toggle" class="theme-toggle activate">
+						<i class="isax isax-moon"></i>
+					</a>
+				</li>
+				<li class="d-inline-flex align-items-center drop-header">
+					<div class="dropdown dropdown-country me-3">
+						<a href="javascript:void(0);" class="d-inline-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="{{url('/')}}/assets/frontend/img/flags/us-flag.svg" class="me-2" alt="flag">
+						</a>
+						<ul class="dropdown-menu p-2 mt-2">
+							<li>
+								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+									<img src="{{url('/')}}/assets/frontend/img/flags/us-flag.svg" class="me-2" alt="flag">ENG
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+									<img src="{{url('/')}}/assets/frontend/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
+									<img src="{{url('/')}}/assets/frontend/img/flags/france-flag.svg" class="me-2" alt="flag">FRA
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="dropdown dropdown-amt">
+						<a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							USD
+						</a>
+						<ul class="dropdown-menu p-2 mt-2">
+							<li><a class="dropdown-item rounded" href="javascript:void(0);">USD</a></li>
+							<li><a class="dropdown-item rounded" href="javascript:void(0);">YEN</a></li>
+							<li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="social-header">
+					<div class="social-icon">
+						<a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
+						<a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
+						<a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Header -->
+<header class="header header-custom header-fixed inner-header relative">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg header-nav">
+			<div class="navbar-header">
+				<a id="mobile_btn" href="javascript:void(0);">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</a>
+				<a href="index.html" class="navbar-brand logo">
+					<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
+				</a>
+			</div>
+			<div class="header-menu">
+				<div class="main-menu-wrapper">
+					<div class="menu-header">
+						<a href="index.html" class="menu-logo">
+							<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
+						</a>
+						<a id="menu_close" class="menu-close" href="javascript:void(0);">
+							<i class="fas fa-times"></i>
+						</a>
+					</div>
+					<ul class="main-nav">
+						<li class="has-submenu megamenu active">
+							<a href="javascript:void(0);">Home <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu mega-submenu">
+								<li>
+									<div class="megamenu-wrapper">
+										<div class="row">
+											<div class="col-lg-2">
+												<div class="single-demo active">
+													<div class="demo-img">
+														<a href="index.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index.html" class="inner-demo-img">General Home 1</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo ">
+													<div class="demo-img">
+														<a href="index-4.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-01.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-4.html" class="inner-demo-img">General Home 2</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-2.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-02.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-2.html" class="inner-demo-img">General Home 3</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-3.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-03.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-3.html" class="inner-demo-img">General Home 4</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-5.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-04.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-5.html" class="inner-demo-img">Cardiology</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-6.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-05.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-6.html" class="inner-demo-img">Eyecare</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo ">
+													<div class="demo-img">
+														<a href="index-7.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-06.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-7.html" class="inner-demo-img">Veterinary</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-8.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-07.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-8.html" class="inner-demo-img">Pediatric</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-9.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-08.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-9.html" class="inner-demo-img">Fertility</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-10.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-09.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-10.html" class="inner-demo-img">ENT</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-11.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-10.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-11.html" class="inner-demo-img">Cosmetics</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-12.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-11.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-12.html" class="inner-demo-img">Lab Test</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="pharmacy-index.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-12.jpg" class="img-fluid" alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-12.html" class="inner-demo-img">Pharmacy</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-13.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-13.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-13.html" class="inner-demo-img">Home Care</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="single-demo">
+													<div class="demo-img">
+														<a href="index-14.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-14.jpg" class="img-fluid " alt="img"></a>
+													</div>
+													<div class="demo-info">
+														<a href="index-14.html" class="inner-demo-img">Dentists</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="javascript:void(0);">Doctors <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
+								<li><a href="appointments.html">Appointments</a></li>
+								<li><a href="available-timings.html">Available Timing</a></li>
+								<li><a href="my-patients.html">Patients List</a></li>
+								<li><a href="patient-profile.html">Patients Profile</a></li>
+								<li><a href="chat-doctor.html">Chat</a></li>
+								<li><a href="invoices.html">Invoices</a></li>
+								<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
+								<li><a href="reviews.html">Reviews</a></li>
+								<li><a href="doctor-register.html">Doctor Register</a></li>
+								<li class="has-submenu">
+									<a href="doctor-blog.html">Blog</a>
+									<ul class="submenu">
+										<li><a href="doctor-blog.html">Blog</a></li>
+										<li><a href="blog-details.html">Blog view</a></li>
+										<li><a href="doctor-add-blog.html">Add Blog</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="javascript:void(0);">Patients <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Doctors</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="map-grid.html">Map Grid</a></li>
+										<li><a href="map-list.html">Map List</a></li>
+										<li><a href="map-list-availability.html">Map with Availability</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Search Doctor</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="search.html">Search Doctor 1</a></li>
+										<li><a href="search-2.html">Search Doctor 2</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Doctor Profile</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="doctor-profile.html">Doctor Profile 1</a></li>
+										<li><a href="doctor-profile-2.html">Doctor Profile 2</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Booking</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="booking.html">Booking</a></li>
+										<li><a href="booking-1.html">Booking 1</a></li>
+										<li><a href="booking-2.html">Booking 2</a></li>
+										<li><a href="booking-popup.html">Booking Popup</a></li>
+									</ul>
+								</li>
+								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="booking-success.html">Booking Success</a></li>
+								<li><a href="favourites.html">Favourites</a></li>
+								<li><a href="chat.html">Chat</a></li>
+								<li><a href="profile-settings.html">Profile Settings</a></li>
+								<li><a href="change-password.html">Change Password</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="javascript:void(0);">Pharmacy <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="pharmacy-index.html">Pharmacy</a></li>
+								<li><a href="pharmacy-details.html">Pharmacy Details</a></li>
+								<li><a href="pharmacy-search.html">Pharmacy Search</a></li>
+								<li><a href="product-all.html">Product</a></li>
+								<li><a href="product-description.html">Product Description</a></li>
+								<li><a href="cart.html">Cart</a></li>
+								<li><a href="product-checkout.html">Product Checkout</a></li>
+								<li><a href="payment-success.html">Payment Success</a></li>
+								<li><a href="pharmacy-register.html">Pharmacy Register</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="javascript:void(0);">Pages <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="about-us.html">About Us</a></li>
+								<li><a href="contact-us.html">Contact Us</a></li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Other Pages</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="blank-page.html">Starter Page</a></li>
+										<li><a href="pricing.html">Pricing Plan</a></li>
+										<li><a href="faq.html">FAQ</a></li>
+										<li><a href="maintenance.html">Maintenance</a></li>
+										<li><a href="coming-soon.html">Coming Soon</a></li>
+										<li><a href="terms-condition.html">Terms & Condition</a></li>
+										<li><a href="privacy-policy.html">Privacy Policy</a></li>
+										<li><a href="components.html">Components</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Authentication</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="login-email.html">Login Email</a></li>
+										<li><a href="login-phone.html">Login Phone</a></li>
+										<li><a href="doctor-signup.html">Doctor Signup</a></li>
+										<li><a href="patient-signup.html">Patient Signup</a></li>
+										<li><a href="forgot-password.html">Forgot Password 1</a></li>
+										<li><a href="forgot-password2.html">Forgot Password 2</a></li>
+										<li><a href="login-email-otp.html">Email OTP</a></li>
+										<li><a href="login-phone-otp.html">Phone OTP</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Error Pages</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="error-404.html">404 Error</a></li>
+										<li><a href="error-500.html">500 Error</a></li>
+									</ul>
+								</li>
+								<li><a href="hospitals.html">Hospitals</a></li>
+								<li><a href="speciality.html">Speciality</a></li>
+								<li><a href="clinic.html">Clinic</a></li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Call</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="voice-call.html">Voice Call</a></li>
+										<li><a href="video-call.html">Video Call</a></li>
+									</ul>
+								</li>
+								<li class="has-submenu">
+									<a href="javascript:void(0);">Invoices</a>
+									<ul class="submenu inner-submenu">
+										<li><a href="invoices.html">Invoices</a></li>
+										<li><a href="invoice-view.html">Invoice View</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="#">Blog <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="blog-list.html">Blog List</a></li>
+								<li><a href="blog-grid.html">Blog Grid</a></li>
+								<li><a href="blog-details.html">Blog Details</a></li>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a href="#">Admin <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="admin/index.html" target="_blank">Admin</a></li>
+								<li><a href="pharmacy/index.html" target="_blank">Pharmacy Admin</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav header-navbar-rht">
+					<li class="searchbar">
+						<a href="javascript:void(0);"><i class="feather-search"></i></a>
+						<div class="togglesearch">
+							<form action="search.html">
+								<div class="input-group">
+									<input type="text" class="form-control">
+									<button type="submit" class="btn">Search</button>
+								</div>
+							</form>
+						</div>
+					</li>
+					<li>
+						<a href="login.html" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-lock-1 me-1"></i>Sign Up</a>
+					</li>
+					<li>
+						<a href="register.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+							<i class="isax isax-user-tick me-1"></i>Register
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+<!-- /Header -->

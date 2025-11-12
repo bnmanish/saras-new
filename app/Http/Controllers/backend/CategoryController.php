@@ -17,12 +17,21 @@ class CategoryController extends Controller
 
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
+            'icon' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'status' => ['required', 'in:0,1'],
         ]);
 
         $category = new Category;
         $category->title = $request->title;
         $category->status = $request->status;
+
+        if($request->hasFile('icon')){
+            $icon = $request->file('icon');
+            $iconName = time().'.'.$icon->getClientOriginalExtension();
+            $icon->move(public_path('uploads/category_icons'), $iconName);
+            $category->icon = $iconName;
+        }
+
         $category->save();
 
         Session::flash('success','Category added successfully!');
@@ -30,7 +39,7 @@ class CategoryController extends Controller
     }
 
     public function listCategory(){
-        $data = Category::select('id','title','status')->orderBy('id','asc')->get();
+        $data = Category::select('id','title','icon','status')->orderBy('id','asc')->get();
         return view('backend/category/list_category')->with(['data'=>$data]);
     }
 
@@ -42,6 +51,7 @@ class CategoryController extends Controller
     public function editStoreCategory(Request $request,$id){
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
+            'icon' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'status' => ['required', 'in:0,1'],
         ]);
 
@@ -49,13 +59,30 @@ class CategoryController extends Controller
             "title" => $request->title,
             "status" => $request->status,
         );
+
+        if($request->hasFile('icon')){
+            $oldCategory = Category::find($id);
+            if($oldCategory->icon && file_exists(public_path('uploads/category_icons/'.$oldCategory->icon))){
+                unlink(public_path('uploads/category_icons/'.$oldCategory->icon));
+            }
+
+            $icon = $request->file('icon');
+            $iconName = time().'.'.$icon->getClientOriginalExtension();
+            $icon->move(public_path('uploads/category_icons'), $iconName);
+            $data['icon'] = $iconName;
+        }
+
         Category::where('id',$id)->update($data);
         Session::flash('success','Category updated successfully!');
         return redirect()->route('admin.list.category');
     }
 
     public function deleteCategory($id){
-        Category::find($id)->delete();
+        $category = Category::find($id);
+        if($category->icon && file_exists(public_path('uploads/category_icons/'.$category->icon))){
+            unlink(public_path('uploads/category_icons/'.$category->icon));
+        }
+        $category->delete();
         Session::flash('success','Category deleted successfully!');
         return redirect()->route('admin.list.category');
     }

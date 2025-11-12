@@ -26,7 +26,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="{{route('admin.edit.store.category',$data->id)}}">
+                        <form method="post" action="{{route('admin.edit.store.category',$data->id)}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3 row">
@@ -35,6 +35,23 @@
                                     <input class="form-control" type="text" name="title" placeholder="Category title *" value="{{$data->title}}">
                                     @if($errors->first('title'))
                                     <p class="text-danger mb-0">{{ $errors->first('title') }}</p>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label class="col-md-2 col-form-label">Icon</label>
+                                <div class="col-md-10">
+                                    @if($data->icon)
+                                        <div class="mb-2">
+                                            <img src="{{asset('uploads/category_icons/'.$data->icon)}}" alt="Current Icon" style="max-width: 50px; max-height: 50px;">
+                                            <small class="text-muted d-block">Current icon</small>
+                                        </div>
+                                    @endif
+                                    <input class="form-control" type="file" name="icon" accept="image/*">
+                                    <small class="text-muted">Upload a new icon to replace the current one (optional). Supported formats: JPEG, PNG, JPG, GIF, SVG. Max size: 2MB</small>
+                                    @if($errors->first('icon'))
+                                    <p class="text-danger mb-0">{{ $errors->first('icon') }}</p>
                                     @endif
                                 </div>
                             </div>

@@ -74,14 +74,14 @@
 						<span></span>
 					</span>
 				</a>
-				<a href="index.html" class="navbar-brand logo">
+				<a href="{{route('home')}}" class="navbar-brand logo">
 					<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
 				</a>
 			</div>
 			<div class="header-menu">
 				<div class="main-menu-wrapper">
 					<div class="menu-header">
-						<a href="index.html" class="menu-logo">
+						<a href="{{route('home')}}" class="menu-logo">
 							<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
 						</a>
 						<a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -90,165 +90,7 @@
 					</div>
 					<ul class="main-nav">
 						<li class="has-submenu megamenu active">
-							<a href="javascript:void(0);">Home <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu mega-submenu">
-								<li>
-									<div class="megamenu-wrapper">
-										<div class="row">
-											<div class="col-lg-2">
-												<div class="single-demo active">
-													<div class="demo-img">
-														<a href="index.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index.html" class="inner-demo-img">General Home 1</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo ">
-													<div class="demo-img">
-														<a href="index-4.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-01.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-4.html" class="inner-demo-img">General Home 2</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-2.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-02.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-2.html" class="inner-demo-img">General Home 3</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-3.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-03.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-3.html" class="inner-demo-img">General Home 4</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-5.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-04.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-5.html" class="inner-demo-img">Cardiology</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-6.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-05.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-6.html" class="inner-demo-img">Eyecare</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo ">
-													<div class="demo-img">
-														<a href="index-7.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-06.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-7.html" class="inner-demo-img">Veterinary</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-8.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-07.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-8.html" class="inner-demo-img">Pediatric</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-9.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-08.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-9.html" class="inner-demo-img">Fertility</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-10.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-09.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-10.html" class="inner-demo-img">ENT</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-11.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-10.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-11.html" class="inner-demo-img">Cosmetics</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-12.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-11.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-12.html" class="inner-demo-img">Lab Test</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="pharmacy-index.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-12.jpg" class="img-fluid" alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-12.html" class="inner-demo-img">Pharmacy</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-13.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-13.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-13.html" class="inner-demo-img">Home Care</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-2">
-												<div class="single-demo">
-													<div class="demo-img">
-														<a href="index-14.html" class="inner-demo-img"><img src="{{url('/')}}/assets/frontend/img/home/home-14.jpg" class="img-fluid " alt="img"></a>
-													</div>
-													<div class="demo-info">
-														<a href="index-14.html" class="inner-demo-img">Dentists</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
+							<a href="{{route('home')}}">Home</a>
 						</li>
 						<li class="has-submenu">
 							<a href="javascript:void(0);">Doctors <i class="fas fa-chevron-down"></i></a>

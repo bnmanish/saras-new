@@ -46,6 +46,7 @@
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                              <thead>
                                  <tr>
+                                     <th>S.No</th>
                                      <th>Icon</th>
                                      <th>Name</th>
                                      <th>Status</th>
@@ -55,8 +56,10 @@
 
 
                              <tbody>
+                                 @php $serial = 1; @endphp
                                  @foreach($data as $dataRow)
                                  <tr>
+                                     <td>{{$serial++}}</td>
                                      <td>
                                          @if($dataRow->icon)
                                              <img src="{{asset('uploads/category_icons/'.$dataRow->icon)}}" alt="Icon" style="max-width: 30px; max-height: 30px;">

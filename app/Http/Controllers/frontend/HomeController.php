@@ -14,6 +14,7 @@ use App\Models\Brand;
 use App\Models\AdditionalPage;
 use App\Models\Subscriber;
 use App\Models\Amenity;
+use App\Models\Category;
 use Illuminate\Support\Facades\Validator;
 use DB;
 
@@ -23,10 +24,11 @@ class HomeController extends Controller
         $slider = Slider::select('desciption','image')->where('status','1')->orderBy('sorting_order','asc')->get();
         $page = Page::where(['id'=>1])->first();
         $about = Page::where(['id'=>2])->first();
+        $categories = Category::select('title','icon')->where('status','1')->orderBy('id','asc')->get();
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
         $blogs = Blog::where('status','1')->orderBy('created_at','desc')->limit(3)->get();
-        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about]);
+        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories]);
     }
 
     public function searchProject(Request $request){

@@ -3789,6 +3789,24 @@ Version      : 1.3
 		})
 	}
 
+	if ($('.banner-slider').length > 0) {
+		$('.banner-slider').owlCarousel({
+			loop: true,
+			margin: 0,
+			dots: true,
+			nav: true,
+			smartSpeed: 2000,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			items: 1,
+			responsive: {
+				0: {
+					items: 1
+				}
+			}
+		})
+	}
+
 	if ($('.company-slider').length > 0) {
 		$('.company-slider').owlCarousel({
 			loop: true,

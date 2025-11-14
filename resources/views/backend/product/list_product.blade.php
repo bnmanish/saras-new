@@ -72,13 +72,13 @@
                                      <td>{{$dataRow->category->name ?? 'N/A'}}</td>
                                      <td>{{$dataRow->price ? '₹'.$dataRow->price : 'N/A'}}</td>
                                      <td>{{$dataRow->pack_size ?? 'N/A'}}</td>
-                                     <td>
-                                         @if($dataRow->primaryImage)
-                                         <img width="50" src="{{url('uploads/product/'.$dataRow->primaryImage->image)}}" alt="{{$dataRow->name}}">
-                                         @else
-                                         No Image
-                                         @endif
-                                     </td>
+                                      <td>
+                                          @if($dataRow->primaryImage)
+                                          <img width="50" src="{{asset('uploads/product/'.$dataRow->primaryImage->image)}}" alt="{{$dataRow->name}}">
+                                          @else
+                                          No Image
+                                          @endif
+                                      </td>
                                      <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
                                      <td>
                                          <a href="{{route('admin.edit.product',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>

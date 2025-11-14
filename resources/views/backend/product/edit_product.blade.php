@@ -8,6 +8,32 @@
     .dropify-wrapper{
         height: 190px;
     }
+    .image-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .checkbox-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        padding: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .checkbox-overlay input[type="checkbox"] {
+        margin: 0;
+        width: 18px;
+        height: 18px;
+    }
+    .image-container img {
+        transition: opacity 0.3s;
+    }
+    .image-container:hover img {
+        opacity: 0.8;
+    }
 </style>
 <div class="page-content">
     <div class="container-fluid">
@@ -147,26 +173,28 @@
                                 </div>
                             </div>
 
-                             <div class="mb-3 row">
-                                 <label class="col-md-2 col-form-label">Existing Images</label>
-                                 <div class="col-md-10">
-                                     @if($data->images->count() > 0)
-                                     <div class="row">
-                                         @foreach($data->images as $image)
-                                         <div class="col-md-3 mb-3">
-                                             <img src="{{url('uploads/product/'.$image->image)}}" class="img-thumbnail" width="100">
-                                             @if($image->is_primary)
-                                             <span class="badge badge-primary">Primary</span>
-                                             @endif
-                                             <button type="button" class="btn btn-sm btn-danger delete-image" data-id="{{$image->id}}">Delete</button>
-                                         </div>
-                                         @endforeach
-                                     </div>
-                                     @else
-                                     <p>No images uploaded yet.</p>
-                                     @endif
-                                 </div>
-                             </div>
+                              <div class="mb-3 row">
+                                  <label class="col-md-2 col-form-label">Existing Images</label>
+                                  <div class="col-md-10">
+                                      @if($data->images->count() > 0)
+                                      <div class="row">
+                                          @foreach($data->images as $image)
+                                          <div class="col-md-3 mb-3 position-relative">
+                                              <div class="image-container" data-image-id="{{$image->id}}">
+                                                  <img src="{{asset('uploads/product/'.$image->image)}}" class="img-thumbnail" width="120">
+                                                  <div class="checkbox-overlay">
+                                                      <input class="form-check-input primary-image" type="checkbox" name="primary_image" value="{{$image->id}}" @if($image->is_primary) checked @endif id="primary-{{$image->id}}">
+                                                  </div>
+                                              </div>
+                                              <button type="button" class="btn btn-sm btn-danger delete-image mt-1" data-id="{{$image->id}}">Delete</button>
+                                          </div>
+                                          @endforeach
+                                      </div>
+                                      @else
+                                      <p>No images uploaded yet.</p>
+                                      @endif
+                                  </div>
+                              </div>
 
                              <div class="mb-3 row">
                                  <label class="col-md-2 col-form-label">Add More HD Images</label>
@@ -211,6 +239,28 @@ $(document).ready(function(){
                     }
                 }
             });
+        }
+    });
+
+    // Make image container clickable to toggle checkbox
+    $('.image-container').on('click', function(e){
+        // Prevent triggering if clicking on checkbox itself
+        if($(e.target).is('input[type="checkbox"]')) return;
+
+        var imageId = $(this).data('image-id');
+        var checkbox = $('#primary-' + imageId);
+
+        // Uncheck all other checkboxes
+        $('.primary-image').not(checkbox).prop('checked', false);
+
+        // Toggle this checkbox
+        checkbox.prop('checked', !checkbox.is(':checked'));
+    });
+
+    // Ensure only one checkbox is selected for primary image
+    $('.primary-image').on('change', function(){
+        if($(this).is(':checked')) {
+            $('.primary-image').not(this).prop('checked', false);
         }
     });
 });

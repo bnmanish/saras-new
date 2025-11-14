@@ -106,6 +106,20 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->save();
 
+        // Handle primary image selection
+        // Set all images to not primary first
+        ProductImage::where('product_id', $product->id)->update(['is_primary' => false]);
+        // Set the selected image as primary if one is selected
+        if($request->has('primary_image') && $request->primary_image){
+            ProductImage::where('id', $request->primary_image)->update(['is_primary' => true]);
+        } else {
+            // If no primary selected, set the first image as primary
+            $firstImage = ProductImage::where('product_id', $product->id)->first();
+            if($firstImage){
+                $firstImage->update(['is_primary' => true]);
+            }
+        }
+
         // Handle new images
         if($request->hasFile('images')){
             $images = $request->file('images');
@@ -141,10 +155,22 @@ class ProductController extends Controller
     public function deleteProductImage($id){
         $image = ProductImage::find($id);
         if($image){
+            $productId = $image->product_id;
+            $wasPrimary = $image->is_primary;
+
             if(is_file(base_path('public/uploads/product/'.$image->image))){
                 unlink(base_path('public/uploads/product/'.$image->image));
             }
             $image->delete();
+
+            // If the deleted image was primary, set another image as primary
+            if($wasPrimary){
+                $remainingImage = ProductImage::where('product_id', $productId)->first();
+                if($remainingImage){
+                    $remainingImage->update(['is_primary' => true]);
+                }
+            }
+
             return response()->json(['success' => true]);
         }
         return response()->json(['success' => false]);

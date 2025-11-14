@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
         $blogs = Blog::where('status','1')->orderBy('created_at','desc')->limit(3)->get();
-        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories, 'products'=>$products]);
+        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories, 'products'=>$products, 'testimonials'=>$testimonials]);
     }
 
     public function searchProject(Request $request){

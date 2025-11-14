@@ -420,114 +420,27 @@
 
 					<!-- Testimonial Slider -->
 					<div class="owl-carousel testimonials-slider aos" data-aos="fade-up">
+						@foreach($testimonials as $testimonial)
 						<div class="card shadow-none mb-0">
 							<div class="card-body">
-								<div class="d-flex align-items-center mb-4">
-									<div class="rating d-flex">
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled"></i>
-									</div>
-									<span>
-										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
-									</span>
-								</div>
-								<h6 class="fs-16 fw-medium mb-2">Nice Treatment</h6>
-								<p>I had a wonderful experience the staff was friendly and attentive, and Dr. Smith took the time to explain everything clearly.</p>
-								<div class="d-flex align-items-center">
-									<a href="javascript:void(0);" class="avatar avatar-lg">
-										<img src="{{url('/')}}/assets/frontend/img/patients/patient22.jpg" class="rounded-circle" alt="img">
-									</a>
-									<div class="ms-2">
-										<h6 class="mb-1"><a href="javascript:void(0);">Deny Hendrawan</a></h6>
-										<p class="fs-14 mb-0">United States</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card shadow-none mb-0">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-4">
-									<div class="rating d-flex">
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled"></i>
-									</div>
-									<span>
-										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
-									</span>
-								</div>
-								<h6 class="fs-16 fw-medium mb-2">Good Hospitability</h6>
-								<p>Genuinely cares about his patients. He helped me understand my condition and worked with me to create a plan.</p>
-								<div class="d-flex align-items-center">
-									<a href="javascript:void(0);" class="avatar avatar-lg">
-										<img src="{{url('/')}}/assets/frontend/img/patients/patient21.jpg" class="rounded-circle" alt="img">
-									</a>
-									<div class="ms-2">
-										<h6 class="mb-1"><a href="javascript:void(0);">Johnson DWayne</a></h6>
-										<p class="fs-14 mb-0">United States</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card shadow-none mb-0">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-4">
-									<div class="rating d-flex">
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled"></i>
-									</div>
-									<span>
-										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
-									</span>
-								</div>
-								<h6 class="fs-16 fw-medium mb-2">Nice Treatment</h6>
-								<p>I had a great experience with Dr. Chen. She was not only professional but also made me feel comfortable discussing.</p>
-								<div class="d-flex align-items-center">
-									<a href="javascript:void(0);" class="avatar avatar-lg">
-										<img src="{{url('/')}}/assets/frontend/img/patients/patient.jpg" class="rounded-circle" alt="img">
-									</a>
-									<div class="ms-2">
-										<h6 class="mb-1"><a href="javascript:void(0);">Rayan Smith</a></h6>
-										<p class="fs-14 mb-0">United States</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card shadow-none mb-0">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-4">
-									<div class="rating d-flex">
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled me-1"></i>
-										<i class="fa-solid fa-star filled"></i>
-									</div>
-									<span>
-										<img src="{{url('/')}}/assets/frontend/img/icons/quote-icon.svg" alt="img">
-									</span>
-								</div>
 								<h6 class="fs-16 fw-medium mb-2">Excellent Service</h6>
-								<p>I had a wonderful experience the staff was friendly and attentive, and Dr. Smith took the time to explain everything clearly.</p>
+								<p>{{ strip_tags($testimonial->description) }}</p>
 								<div class="d-flex align-items-center">
 									<a href="javascript:void(0);" class="avatar avatar-lg">
-										<img src="{{url('/')}}/assets/frontend/img/patients/patient23.jpg" class="rounded-circle" alt="img">
+										@if($testimonial->image)
+											<img src="{{asset('uploads/testimonial/'.$testimonial->image)}}" class="rounded-circle" alt="img">
+										@else
+											<img src="{{url('/')}}/assets/frontend/img/patients/patient.jpg" class="rounded-circle" alt="img">
+										@endif
 									</a>
 									<div class="ms-2">
-										<h6 class="mb-1"><a href="javascript:void(0);">Sofia Doe</a></h6>
-										<p class="fs-14 mb-0">United States</p>
+										<h6 class="mb-1"><a href="javascript:void(0);">{{ $testimonial->name }}</a></h6>
+										<p class="fs-14 mb-0">{{ $testimonial->profession }}</p>
 									</div>
 								</div>
 							</div>
 						</div>
+						@endforeach
 					</div>
 					<!-- /Testimonial Slider -->
 

@@ -199,20 +199,18 @@
 								<div class="p-3 pt-0">
 									<div class="doctor-info-detail mb-3 pb-3">
 										<h3 class="mb-1"><a href="#">{{ $product->name }}</a></h3>
-										<div class="d-flex align-items-center">
-											<p class="d-flex align-items-center mb-0 fs-14"><i class="isax isax-location me-2"></i>{{ $product->pack_size ?? 'N/A' }}</p>
-											<i class="fa-solid fa-circle fs-5 text-primary mx-2 me-1"></i>
-											<span class="fs-14 fw-medium">{{ $product->short_description ?? 'Product' }}</span>
-										</div>
+
 									</div>
 									<div class="d-flex align-items-center justify-content-between">
+										@if($product->price)
 										<div>
 											<p class="mb-1">Price</p>
 											<h3 class="text-orange">${{ $product->price }}</h3>
 										</div>
+										@endif
 										<a href="#" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
 											<i class="isax isax-calendar-1 me-2"></i>
-											Buy Now
+											Details
 										</a>
 									</div>
 								</div>

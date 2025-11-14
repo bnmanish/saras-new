@@ -29,8 +29,8 @@ class HomeController extends Controller
         $products = Product::with(['primaryImage', 'category'])->where('status', '1')->inRandomOrder()->limit(10)->get();
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
-        $blogs = Blog::where('status','1')->orderBy('created_at','desc')->limit(3)->get();
-        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories, 'products'=>$products, 'testimonials'=>$testimonials]);
+        $blogs = Blog::with('blogCategory')->where('status','1')->orderBy('created_at','desc')->limit(4)->get();
+        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories, 'products'=>$products, 'testimonials'=>$testimonials, 'blogs'=>$blogs]);
     }
 
     public function searchProject(Request $request){

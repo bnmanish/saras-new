@@ -657,75 +657,30 @@
 						<h2>Stay Updated With Our Latest Articles</h2>
 					</div>
 					<div class="row g-4">
+						@foreach($blogs as $blog)
 						<div class="col-lg-6">
 							<div class="article-item aos" data-aos="fade-up">
 								<div class="article-img">
-									<a href="blog-details.html">
-										<img src="{{url('/')}}/assets/frontend/img/blog/article-01.jpg" class="img-fluid" alt="img">
+									<a href="{{ route('blog.details', $blog->slug) }}">
+										@if($blog->banner)
+											<img src="{{ asset('uploads/blog/' . $blog->banner) }}" class="img-fluid" alt="{{ $blog->title }}">
+										@else
+											<img src="{{ url('/assets/frontend/img/blog/article-01.jpg') }}" class="img-fluid" alt="{{ $blog->title }}">
+										@endif
 									</a>
 									<div class="date-icon">
-										<span>15</span>May
+										<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d') }}</span>{{ \Carbon\Carbon::parse($blog->created_at)->format('M') }}
 									</div>
 								</div>
 								<div class="article-info">
-									<span class="badge badge-cyan mb-2">Treatments</span>
-									<h6 class="mb-2"><a href="blog-details.html">Understanding and Preventing Glaucoma: A Detailed Guide</a></h6>
-									<p>Glaucoma is a leading cause of blind worldwide, yet many....</p>
+									<span class="badge badge-cyan mb-2">{{ $blog->blogCategory ? $blog->blogCategory->title : 'General' }}</span>
+									<h6 class="mb-2"><a href="{{ route('blog.details', $blog->slug) }}">{{ $blog->title }}</a></h6>
+									<p>{{ strip_tags($blog->short_description) }}</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="article-item aos" data-aos="fade-up">
-								<div class="article-img">
-									<a href="blog-details.html">
-										<img src="{{url('/')}}/assets/frontend/img/blog/article-02.jpg" class="img-fluid" alt="img">
-									</a>
-									<div class="date-icon">
-										<span>18</span>May
-									</div>
-								</div>
-								<div class="article-info">
-									<span class="badge badge-cyan mb-2">Neurology</span>
-									<h6 class="mb-2"><a href="blog-details.html">Understanding and Preventing Glaucoma: A Detailed Guide</a></h6>
-									<p>Discover the intersection of technology and neurology, transforming....</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="article-item aos" data-aos="fade-up">
-								<div class="article-img">
-									<a href="blog-details.html">
-										<img src="{{url('/')}}/assets/frontend/img/blog/article-03.jpg" class="img-fluid" alt="img">
-									</a>
-									<div class="date-icon">
-										<span>21</span>Apr
-									</div>
-								</div>
-								<div class="article-info">
-									<span class="badge badge-cyan mb-2">Dental</span>
-									<h6 class="mb-2"><a href="blog-details.html">5 Essential Tips for Maintaining Optimal Oral Health</a></h6>
-									<p>Learn the top five daily practices to keep your teeth....</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="article-item aos" data-aos="fade-up">
-								<div class="article-img">
-									<a href="blog-details.html">
-										<img src="{{url('/')}}/assets/frontend/img/blog/article-04.jpg" class="img-fluid" alt="img">
-									</a>
-									<div class="date-icon">
-										<span>22</span>Jan
-									</div>
-								</div>
-								<div class="article-info">
-									<span class="badge badge-cyan mb-2">Care & Treatment</span>
-									<h6 class="mb-2"><a href="blog-details.html">Beating Strong: The Digital Revol in Cardiac Care</a></h6>
-									<p>Discover how digital advancements are transforming cardiac care...</p>
-								</div>
-							</div>
-						</div>
-					</div>		
+						@endforeach
+					</div>
 					<div class="text-center load-item aos" data-aos="fade-up">
 						<a href="blog-grid.html" class="btn btn-dark d-inline-flex align-items-center">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
 					</div>			

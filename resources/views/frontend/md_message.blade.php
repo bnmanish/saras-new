@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>{{$page->meta_title}}</title>
 		<meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{$page->meta_title}}</title>
-        <meta name="keywords" content="{{$page->meta_keywords}}">
-        <meta name="description" content="{{$page->meta_description}}">
-        <meta property="og:title" content="{{$page->meta_title}}">
-        <meta property="og:description" content="{{$page->meta_description}}">
-        <meta property="og:image" content="{{url('uploads/setting/'.getSetting()->favicon)}}">
-        <link rel="canonical" href="{{route('home')}}">
-        {!!getSetting()->head_content!!}
-        <!-- FAVICON -->
-        <link rel="shortcut icon" type="image/x-icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<meta name="description" content="{{$page->meta_description}}">
+		<meta name="keywords" content="{{$page->meta_keywords}}">
+		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
+		<meta property="og:url" content="{{route('chairman.message')}}">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{$page->meta_title}}">
+		<meta property="og:description" content="{{$page->meta_description}}">
+		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
+		<meta name="twitter:title" content="{{$page->meta_title}}">
+		<meta name="twitter:description" content="{{$page->meta_description}}">
+		<!-- Apple Touch Icon -->
+		<link rel="shortcut icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
 		<!-- Theme Settings Js -->
 		<script src="{{url('/')}}/assets/frontend/js/theme-script.js"></script>
 
@@ -32,7 +35,8 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
-
+		{!!getSetting()->head_content!!}
+		
 	</head>
 
 <body>
@@ -71,14 +75,13 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 col-md-12">
-						<div class="about-img-info">
-							<div class="about-img">
-								<img src="{{url('uploads/page/'.$page->image)}}" class="img-fluid w-100" alt="about-image">
-							</div>
-						</div>
+						<img src="{{url('uploads/page/'.$page->image)}}" class="img-fluid w-100" alt="about us">
 					</div>
 					<div class="col-lg-6 col-md-12">
-						{!!$page->description!!}
+						
+						<div class="about-content text-justify">
+							{!!$page->description!!}
+						</div>
 					</div>
 				</div>
 			</div>

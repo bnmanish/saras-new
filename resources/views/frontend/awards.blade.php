@@ -35,6 +35,90 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
+
+		<!-- Awards Custom CSS -->
+		<style>
+			.awards-section {
+				padding: 60px 0;
+				background-color: #f8f9fa;
+			}
+			.award-card {
+				background: white;
+				border-radius: 10px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				margin-bottom: 20px;
+			}
+			.award-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+			}
+			.award-img {
+				position: relative;
+				height: 250px;
+				overflow: hidden;
+			}
+			.award-img img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.award-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.7);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			.award-card:hover .award-overlay {
+				opacity: 1;
+			}
+			.award-popup {
+				color: white;
+				font-size: 24px;
+				text-decoration: none;
+				padding: 10px;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.2);
+				transition: background 0.3s ease;
+			}
+			.award-popup:hover {
+				background: rgba(255, 255, 255, 0.4);
+				color: white;
+				text-decoration: none;
+			}
+			.award-content {
+				padding: 20px;
+				text-align: center;
+			}
+			.award-content h4 {
+				margin-bottom: 10px;
+				color: #333;
+				font-size: 18px;
+				font-weight: 600;
+			}
+			.award-content p {
+				color: #666;
+				font-size: 14px;
+				margin: 0;
+			}
+			@media (max-width: 768px) {
+				.award-img {
+					height: 200px;
+				}
+				.awards-section {
+					padding: 40px 0;
+				}
+			}
+		</style>
+
 		{!!getSetting()->head_content!!}
 		
 	</head>
@@ -70,521 +154,64 @@
 		</div>
 		<!-- /Breadcrumb -->
 
-		<!-- About Us -->
-		<section class="about-section">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6 col-md-12">
-						<img src="{{url('uploads/page/'.$page->image)}}" class="img-fluid w-100" alt="about us">
-					</div>
-					<div class="col-lg-6 col-md-12">
-						
-						<div class="about-content text-justify">
-							{!!$page->description!!}
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /About Us -->
-
-		<!-- Why Choose Us -->
-		<section class="why-choose-section">
+		<!-- Awards Section -->
+		<section class="awards-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-inner-header text-center">
-							<h2>Why Choose Us</h2>
+							<h2>Our Awards & Achievements</h2>
+							<p>Recognizing excellence and commitment to quality healthcare</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="card why-choose-card w-100">
-							<div class="card-body">
-								<div class="why-choose-icon">
-									<span><img src="{{url('/')}}/assets/frontend/img/icons/choose-01.svg" alt="choose-image"></span>
+					@forelse($awards as $award)
+					<div class="col-lg-3 col-md-6 d-flex mb-4">
+						<div class="award-card w-100">
+							<div class="award-img">
+								<img src="{{url('uploads/award/'.$award->image)}}" class="img-fluid" alt="{{ $award->title ?? 'Award' }}">
+								<div class="award-overlay">
+									<a href="{{url('uploads/award/'.$award->image)}}" class="award-popup" data-bs-toggle="modal" data-bs-target="#awardModal" data-image="{{url('uploads/award/'.$award->image)}}" data-title="{{ $award->title ?? 'Award' }}">
+										<i class="fas fa-search-plus"></i>
+									</a>
 								</div>
-								<div class="why-choose-content">
-									<h4>Qualified Staff of Doctors</h4>
-									<p>Our platform exclusively partners with highly qualified doctors who bring expertise & commitment to delivering top-notch healthcare.</p>
-								</div>
+							</div>
+							<div class="award-content">
+								<h4>{{ $award->title ?? 'Untitled Award' }}</h4>
+								@if($award->short_description)
+								<p>{{ $award->short_description }}</p>
+								@endif
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="card why-choose-card w-100">
-							<div class="card-body">
-								<div class="why-choose-icon">
-									<span><img src="{{url('/')}}/assets/frontend/img/icons/choose-02.svg" alt="choose-image"></span>
-								</div>
-								<div class="why-choose-content">
-									<h4>24 Hours Service</h4>
-									<p>Experience the healthcare access with our 24/7 service. Whether it's day or night, you can find & book appointments.</p>
-								</div>
-							</div>
-						</div>
+					@empty
+					<div class="col-12 text-center">
+						<p>No awards available at the moment.</p>
 					</div>
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="card why-choose-card w-100">
-							<div class="card-body">
-								<div class="why-choose-icon">
-									<span><img src="{{url('/')}}/assets/frontend/img/icons/choose-03.svg" alt="choose-image"></span>
-								</div>
-								<div class="why-choose-content">
-									<h4>Quality Lab Services</h4>
-									<p>Partnering with accredited labs, your health is our priority, and our quality lab services reflect our dedication to excellence.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="card why-choose-card w-100">
-							<div class="card-body">
-								<div class="why-choose-icon">
-									<span><img src="{{url('/')}}/assets/frontend/img/icons/choose-04.svg" alt="choose-image"></span>
-								</div>
-								<div class="why-choose-content">
-									<h4>Free Consultations</h4>
-									<p>Your well-being is important, and our commitment to providing accessible care begins with a free initial consultation.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					@endforelse
 				</div>
 			</div>
 		</section>
-		<!-- /Why Choose Us -->
+		<!-- /Awards Section -->
 
-		<!-- Way Section -->
-		<section class="way-section">
-			<div class="container">
-				<div class="way-bg">
-					<div class="way-shapes-img">
-						<div class="way-shapes-left">
-							<img src="{{url('/')}}/assets/frontend/img/shape-06.png" alt="shape-image">
-						</div>
-						<div class="way-shapes-right">
-							<img src="{{url('/')}}/assets/frontend/img/shape-07.png" alt="shape-image">
-						</div>
+		<!-- Award Modal -->
+		<div class="modal fade" id="awardModal" tabindex="-1" aria-labelledby="awardModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="awardModalLabel">Award Image</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="row align-items-end">
-						<div class="col-lg-7 col-md-12">
-							<div class="section-inner-header way-inner-header mb-0">
-								<h2>Be on Your Way to Feeling Better with the Doccure</h2>
-								<p>Be on your way to feeling better as we prioritize your health journey with personalized and accessible services.</p>
-								<a href="contact-us.html" class="btn btn-primary">Contact With Us</a>
-							</div>
-						</div>
-						<div class="col-lg-5 col-md-12">
-							<div class="way-img">
-								<img src="{{url('/')}}/assets/frontend/img/way-img.png" class="img-fluid" alt="doctor-way-image">
-							</div>
-						</div>
+					<div class="modal-body text-center">
+						<img id="awardModalImage" src="" class="img-fluid" alt="Award">
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- /Way Choose Us -->
+		</div>
+		<!-- /Award Modal -->
 
-		<!-- Doctors Section -->
-		<section class="doctors-section professional-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-inner-header text-center">
-							<h2>Best Doctors</h2>
-						</div>
-					</div>
-				</div>
 
-				<div class="row">
-
-					<!-- Doctor Item -->
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="doctor-profile-widget doc-item w-100">
-							<div class="doc-pro-img">
-								<a href="doctor-profile.html">
-									<div class="doctor-profile-img">
-										<img src="{{url('/')}}/assets/frontend/img/doctors/doctor-03.jpg" class="img-fluid" alt="Ruby Perrin">
-									</div>
-								</a>
-								<div class="doctor-amount">
-									<span>$200</span>
-								</div>
-							</div>
-							<div class="doc-content">
-								<div class="doc-pro-info">
-									<div class="doc-pro-name">
-										<a href="doctor-profile.html">Dr. Ruby Perrin</a>
-										<p>Cardiology</p>
-									</div>
-									<div class="reviews-ratings">
-										<p>
-											<span><i class="fas fa-star"></i> 4.5</span> (35)
-										</p>
-									</div>
-								</div>
-								<div class="doc-pro-location">
-									<p><i class="isax isax-location"></i>Newyork, USA</p>
-									<span class="badge badge-success doc-badge"><i class="fa-solid fa-circle"></i>Available</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Doctor Item -->
-
-					<!-- Doctor Item -->
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="doctor-profile-widget doc-item w-100">
-							<div class="doc-pro-img">
-								<a href="doctor-profile.html">
-									<div class="doctor-profile-img">
-										<img src="{{url('/')}}/assets/frontend/img/doctors/doctor-04.jpg" class="img-fluid" alt="Darren Elder">
-									</div>
-								</a>
-								<div class="doctor-amount">
-									<span>$360</span>
-								</div>
-							</div>
-							<div class="doc-content">
-								<div class="doc-pro-info">
-									<div class="doc-pro-name">
-										<a href="doctor-profile.html">Dr. Darren Elder</a>
-										<p>Neurology</p>
-									</div>
-									<div class="reviews-ratings">
-										<p>
-											<span><i class="fas fa-star"></i> 4.0</span> (20)
-										</p>
-									</div>
-								</div>
-								<div class="doc-pro-location">
-									<p><i class="isax isax-location"></i>Florida, USA</p>
-									<span class="badge badge-success doc-badge"><i class="fa-solid fa-circle"></i>Available</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Doctor Item -->
-
-					<!-- Doctor Item -->
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="doctor-profile-widget doc-item w-100">
-							<div class="doc-pro-img">
-								<a href="doctor-profile.html">
-									<div class="doctor-profile-img">
-										<img src="{{url('/')}}/assets/frontend/img/doctors/doctor-05.jpg" class="img-fluid" alt="Sofia Brient">
-									</div>
-								</a>
-								<div class="doctor-amount">
-									<span>$450</span>
-								</div>
-							</div>
-							<div class="doc-content">
-								<div class="doc-pro-info">
-									<div class="doc-pro-name">
-										<a href="doctor-profile.html">Dr. Sofia Brient</a>
-										<p>Urology</p>
-									</div>
-									<div class="reviews-ratings">
-										<p>
-											<span><i class="fas fa-star"></i> 4.5</span> (30)
-										</p>
-									</div>
-								</div>
-								<div class="doc-pro-location">
-									<p><i class="isax isax-location"></i>Georgia, USA</p>
-									<span class="badge badge-danger doc-badge"><i class="fa-solid fa-circle"></i>Unavailable</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Doctor Item -->
-
-					<!-- Doctor Item -->
-					<div class="col-lg-3 col-md-6 d-flex">
-						<div class="doctor-profile-widget doc-item w-100">
-							<div class="doc-pro-img">
-								<a href="doctor-profile.html">
-									<div class="doctor-profile-img">
-										<img src="{{url('/')}}/assets/frontend/img/doctors/doctor-02.jpg" class="img-fluid" alt="Paul Richard">
-									</div>
-								</a>
-								<div class="doctor-amount">
-									<span>$570</span>
-								</div>
-							</div>
-							<div class="doc-content">
-								<div class="doc-pro-info">
-									<div class="doc-pro-name">
-										<a href="doctor-profile.html">Dr. Paul Richard</a>
-										<p>Orthopedic</p>
-									</div>
-									<div class="reviews-ratings">
-										<p>
-											<span><i class="fas fa-star"></i> 4.3</span> (45)
-										</p>
-									</div>
-								</div>
-								<div class="doc-pro-location">
-									<p><i class="isax isax-location"></i>Michigan, USA</p>
-									<span class="badge badge-success doc-badge"><i class="fa-solid fa-circle"></i>Available</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Doctor Item -->
-
-				</div>
-			</div>
-		</section>
-		<!-- /Doctors Section -->
-
-		<!-- Testimonial Section -->
-		<section class="testimonial-section">
-			<div class="testimonial-shape-img">
-				<div class="testimonial-shape-left">
-					<img src="{{url('/')}}/assets/frontend/img/shape-04.png" alt="shape-image">
-				</div>
-				<div class="testimonial-shape-right">
-					<img src="{{url('/')}}/assets/frontend/img/shape-05.png" alt="shape-image">
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="testimonial-slider slick">
-							<div class="testimonial-grid">
-								<div class="testimonial-info">
-									<div class="testimonial-img">
-										<img src="{{url('/')}}/assets/frontend/img/clients/client-01.jpg" class="img-fluid" alt="client-image">
-									</div>
-									<div class="testimonial-content">
-										<div class="section-inner-header testimonial-header">
-											<h6>Testimonials</h6>
-											<h2>What Our Client Says</h2>
-										</div>
-										<div class="testimonial-details">
-											<p>Doccure exceeded my expectations in healthcare. The seamless booking process, coupled with the expertise of the doctors, made my experience exceptional. Their commitment to quality care and convenience truly sets them apart. I highly recommend Doccure for anyone seeking reliable and accessible healthcare services..</p>
-											<h6><span>John Doe</span> New York</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="testimonial-grid">
-								<div class="testimonial-info">
-									<div class="testimonial-img">
-										<img src="{{url('/')}}/assets/frontend/img/clients/client-02.jpg" class="img-fluid" alt="client-image">
-									</div>
-									<div class="testimonial-content">
-										<div class="section-inner-header testimonial-header">
-											<h6>Testimonials</h6>
-											<h2>What Our Client Says</h2>
-										</div>
-										<div class="testimonial-details">
-											<p>Doccure exceeded my expectations in healthcare. The seamless booking process, coupled with the expertise of the doctors, made my experience exceptional. Their commitment to quality care and convenience truly sets them apart. I highly recommend Doccure for anyone seeking reliable and accessible healthcare services..</p>
-											<h6><span>Amanda Warren</span> Florida</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="testimonial-grid">
-								<div class="testimonial-info">
-									<div class="testimonial-img">
-										<img src="{{url('/')}}/assets/frontend/img/clients/client-03.jpg" class="img-fluid" alt="client-image">
-									</div>
-									<div class="testimonial-content">
-										<div class="section-inner-header testimonial-header">
-											<h6>Testimonials</h6>
-											<h2>What Our Client Says</h2>
-										</div>
-										<div class="testimonial-details">
-											<p>Doccure exceeded my expectations in healthcare. The seamless booking process, coupled with the expertise of the doctors, made my experience exceptional. Their commitment to quality care and convenience truly sets them apart. I highly recommend Doccure for anyone seeking reliable and accessible healthcare services..</p>
-											<h6><span>Betty Carlson</span> Georgia</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="testimonial-grid">
-								<div class="testimonial-info">
-									<div class="testimonial-img">
-										<img src="{{url('/')}}/assets/frontend/img/clients/client-04.jpg" class="img-fluid" alt="client-image">
-									</div>
-									<div class="testimonial-content">
-										<div class="section-inner-header testimonial-header">
-											<h6>Testimonials</h6>
-											<h2>What Our Client Says</h2>
-										</div>
-										<div class="testimonial-details">
-											<p>Doccure exceeded my expectations in healthcare. The seamless booking process, coupled with the expertise of the doctors, made my experience exceptional. Their commitment to quality care and convenience truly sets them apart. I highly recommend Doccure for anyone seeking reliable and accessible healthcare services..</p>
-											<h6><span>Veronica</span> California</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="testimonial-grid">
-								<div class="testimonial-info">
-									<div class="testimonial-img">
-										<img src="{{url('/')}}/assets/frontend/img/clients/client-05.jpg" class="img-fluid" alt="client-image">
-									</div>
-									<div class="testimonial-content">
-										<div class="section-inner-header testimonial-header">
-											<h6>Testimonials</h6>
-											<h2>What Our Client Says</h2>
-										</div>
-										<div class="testimonial-details">
-											<p>Doccure exceeded my expectations in healthcare. The seamless booking process, coupled with the expertise of the doctors, made my experience exceptional. Their commitment to quality care and convenience truly sets them apart. I highly recommend Doccure for anyone seeking reliable and accessible healthcare services..</p>
-											<h6><span>Richard</span> Michigan</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /Testimonial Section -->
-
-		<!-- FAQ Section -->
-		<section class="faq-section faq-section-inner">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-inner-header text-center">
-							<h6>Get Your Answer</h6>
-							<h2>Frequently Asked Questions</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row align-items-center">
-					<div class="col-lg-6 col-md-12">
-						<div class="faq-img">
-							<img src="{{url('/')}}/assets/frontend/img/faq-img.png" class="img-fluid" alt="img">
-							<div class="faq-patients-count">
-								<div class="faq-smile-img">
-									<img src="{{url('/')}}/assets/frontend/img/icons/smiling-icon.svg" alt="icon">
-								</div>
-								<div class="faq-patients-content">
-									<h4><span class="count-digit">95</span>k+</h4>
-									<p>Happy Patients</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="faq-info">
-							<div class="accordion" id="accordionExample">
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingOne">
-										<a href="javascript:void(0)" class="accordion-button" data-bs-toggle="collapse"
-											data-bs-target="#collapseOne" aria-expanded="true"
-											aria-controls="collapseOne">
-											How do I book an appointment?
-										</a>
-									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse show"
-										aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking. </p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingTwo">
-										<a href="javascript:void(0)" class="accordion-button collapsed"  data-bs-toggle="collapse"
-											data-bs-target="#collapseTwo" aria-expanded="false"
-											aria-controls="collapseTwo">
-											Can i make an Appointment Online with White Plains Hospital Kendi?
-										</a>
-									</h2>
-									<div id="collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking. </p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingThree">
-										<a href="javascript:void(0)"
-										class="accordion-button collapsed"  data-bs-toggle="collapse"
-											data-bs-target="#collapseThree" aria-expanded="false"
-											aria-controls="collapseThree">
-											Is my personal information secure?
-										</a>
-									</h2>
-									<div id="collapseThree" class="accordion-collapse collapse"
-										aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking. </p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingFour">
-										<a href="javascript:void(0)" class="accordion-button collapsed"  data-bs-toggle="collapse"
-											data-bs-target="#collapseFour" aria-expanded="false"
-											aria-controls="collapseFour">
-											Can I cancel or reschedule my appointment?
-										</a>
-									</h2>
-									<div id="collapseFour" class="accordion-collapse collapse"
-										aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking. </p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingFive">
-										<a href="javascript:void(0)" class="accordion-button collapsed"  data-bs-toggle="collapse"
-											data-bs-target="#collapseFive" aria-expanded="false"
-											aria-controls="collapseFive">
-											How do I find a specific doctor or specialist?
-										</a>
-									</h2>
-									<div id="collapseFive" class="accordion-collapse collapse"
-										aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes, simply visit our website and log in or create an account. Search for a doctor based on specialization, location, or availability & confirm your booking. </p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /FAQ Section -->
 
 		@include('frontend.layouts.footer')
 
@@ -613,6 +240,24 @@
 
 	<!-- Custom JS -->
 	<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
+
+	<!-- Awards Modal Script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const awardModal = document.getElementById('awardModal');
+			const awardModalImage = document.getElementById('awardModalImage');
+			const awardModalLabel = document.getElementById('awardModalLabel');
+
+			awardModal.addEventListener('show.bs.modal', function (event) {
+				const button = event.relatedTarget;
+				const imageSrc = button.getAttribute('data-image');
+				const title = button.getAttribute('data-title');
+
+				awardModalImage.src = imageSrc;
+				awardModalLabel.textContent = title;
+			});
+		});
+	</script>
 
 </body>
 

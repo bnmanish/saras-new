@@ -8621,6 +8621,8 @@ header.inner-header {
   background: #FFF;
 }
 header.inner-header.header-fixed {
+  position: sticky;
+  top: 0;
   background: #FFF;
 }
 header.inner-header.fixed {
@@ -10012,7 +10014,8 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
   margin-right: 8px;
 }
 .header.header-fixed {
-  position: fixed;
+  position: sticky;
+  top: 0;
   display: block;
   width: 100%;
   z-index: 999;

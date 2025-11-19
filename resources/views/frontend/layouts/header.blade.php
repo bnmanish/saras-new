@@ -101,49 +101,11 @@
                                 <li><a href="{{ route('awards') }}">Awards</a></li>
 							</ul>
 						</li>
-						<li class="has-submenu">
-							<a href="javascript:void(0);">Patients <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Doctors</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="map-grid.html">Map Grid</a></li>
-										<li><a href="map-list.html">Map List</a></li>
-										<li><a href="map-list-availability.html">Map with Availability</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Search Doctor</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="search.html">Search Doctor 1</a></li>
-										<li><a href="search-2.html">Search Doctor 2</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Doctor Profile</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="doctor-profile.html">Doctor Profile 1</a></li>
-										<li><a href="doctor-profile-2.html">Doctor Profile 2</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Booking</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="booking.html">Booking</a></li>
-										<li><a href="booking-1.html">Booking 1</a></li>
-										<li><a href="booking-2.html">Booking 2</a></li>
-										<li><a href="booking-popup.html">Booking Popup</a></li>
-									</ul>
-								</li>
-								<li><a href="checkout.html">Checkout</a></li>
-								<li><a href="booking-success.html">Booking Success</a></li>
-								<li><a href="favourites.html">Favourites</a></li>
-								<li><a href="chat.html">Chat</a></li>
-								<li><a href="profile-settings.html">Profile Settings</a></li>
-								<li><a href="change-password.html">Change Password</a></li>
-							</ul>
+
+						<li class="has-submenu megamenu active">
+							<a href="{{route('directors')}}">Profiles</a>
 						</li>
+
 						<li class="has-submenu">
 							<a href="javascript:void(0);">Pharmacy <i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">

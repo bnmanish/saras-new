@@ -19313,7 +19313,7 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
   object-fit: cover;
   border-radius: 4px;
 }
-.profile-info-widget .booking-doc-img::after {
+/* .profile-info-widget .booking-doc-img::after {
   content: "ؐ";
   font-family: "iconsax";
   width: 20px;
@@ -19330,7 +19330,7 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
   line-height: 0;
   font-size: 16px;
   border-radius: 50%;
-}
+} */
 
 .change-avatar {
   display: -webkit-box;

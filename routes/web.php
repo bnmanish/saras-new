@@ -48,6 +48,7 @@ use App\Http\Controllers\frontend\FrontAdditionalPageController;
 use App\Http\Controllers\frontend\FrontProjectController;
 use App\Http\Controllers\frontend\DirectorsController;
 use App\Http\Controllers\frontend\DealershipEnquiryController as FrontendDealershipEnquiryController;
+use App\Http\Controllers\frontend\FrontProductCotroller;
 
 //-------------------------------------------------------------------------
 use App\Models\Page;
@@ -79,27 +80,9 @@ Route::get('/directors',[DirectorsController::class,'index'])->name('directors')
 
 
 Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');
-Route::get('/projects',[FrontProjectController::class,'index'])->name('projects');
-Route::get('/city/{url}',[FrontProjectController::class,'projectCitywise'])->name('project.citywise');
-Route::get('/brand/{url}',[FrontProjectController::class,'projectBrandwise'])->name('project.brandwise');
-Route::get('/type/{url}',[FrontProjectController::class,'projectTypewise'])->name('project.typewise');
-
-Route::get('/project/{slug}',[FrontProjectController::class,'projectDetails'])->name('project.details');
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
-Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
-
-Route::get('/blog',[frontBlogController::class,'index'])->name('blog');
-Route::get('/blog/{slug}',[frontBlogController::class,'blogDetails'])->name('blog.details');
-
-Route::get('/search',[HomeController::class,'searchProject'])->name('search.project');
-
-Route::post('/subscribe-news-letter', [HomeController::class, 'subscribeNewsLetter'])->name('subscribe.news.letter');
-
+Route::get('/products', [FrontProductCotroller::class, 'index'])->name('products');
 
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
-
-Route::get('/dealership-enquiry', [FrontendDealershipEnquiryController::class, 'showForm'])->name('dealership.enquiry');
-Route::post('/dealership-enquiry', [FrontendDealershipEnquiryController::class, 'submitForm'])->name('dealership.enquiry.submit');
 
 // Admin login route
 Route::prefix('admin')->group(function () {

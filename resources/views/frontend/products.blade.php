@@ -119,7 +119,7 @@
 									<div class="row align-items-center pb-3">
 										<div class="col-md-4 col-12 d-md-block d-none custom-short-by">
 											<h3 class="title pharmacy-title fs-24 mb-2">All Products</h3>
-											<span class="sort-title">Showing {{ $products->count() }} products</span>
+											<span class="sort-title text-danger">Showing {{ $products->count() }} products</span>
 										</div>
 									</div>
 
@@ -129,7 +129,7 @@
 											<div class="profile-widget w-100">
 												<div class="doc-img">
 													<a href="#" tabindex="-1">
-														<img class="img-fluid" alt="Product image" src="{{ $product->primaryImage ? asset('storage/' . $product->primaryImage->image_path) : asset('assets/frontend/img/products/product.jpg') }}">
+														<img class="img-fluid" alt="{{$product->name}}" src="{{asset('uploads/product/'.$product->primaryImage->image)}}">
 													</a>
 													<a href="javascript:void(0)" class="fav-btn" tabindex="-1">
 														<i class="far fa-bookmark"></i>
@@ -141,22 +141,16 @@
 													</h3>
 													<div class="row align-items-center">
 														<div class="col-lg-6 d-flex">
-															<span class="price me-2">${{ $product->price }}</span>
+															<span class="price me-2">₹{{ $product->price }}</span>
 															@if($product->pack_size)
 															<span class="price-strike">{{ $product->pack_size }}</span>
 															@endif
-														</div>
-														<div class="col-lg-6 text-end">
-															<a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 										@endforeach
-									</div>
-									<div class="col-md-12 text-center">
-										<a href="#" class="btn book-btn1 mb-4">Load More</a>
 									</div>
 								</div>
 
@@ -166,15 +160,12 @@
 									<div class="row align-items-center pb-3">
 										<div class="col-md-4 col-12 d-md-block d-none custom-short-by">
 											<h3 class="title pharmacy-title fs-24 mb-2">{{ $category->title }}</h3>
-											<span class="sort-title">Showing 0 products</span>
+											<span class="sort-title text-danger">Showing 0 products</span>
 										</div>
 									</div>
 
 									<div class="row product-list">
 										<!-- Products will be loaded here via AJAX -->
-									</div>
-									<div class="col-md-12 text-center">
-										<a href="#" class="btn book-btn1 mb-4">Load More</a>
 									</div>
 								</div>
 								@endforeach
@@ -218,37 +209,41 @@
 			function loadProducts(categoryId = null, targetPane = '#all') {
 				$.get('/products', {category: categoryId}, function(data) {
 					var html = '';
-					data.forEach(function(product) {
-						var imageSrc = product.primary_image ? '/storage/' + product.primary_image.image_path : '/assets/frontend/img/products/product.jpg';
-						html += '<div class="col-md-12 col-lg-4 col-xl-4 product-custom">';
-						html += '<div class="profile-widget w-100">';
-						html += '<div class="doc-img">';
-						html += '<a href="#" tabindex="-1">';
-						html += '<img class="img-fluid" alt="Product image" src="' + imageSrc + '">';
-						html += '</a>';
-						html += '<a href="javascript:void(0)" class="fav-btn" tabindex="-1">';
-						html += '<i class="far fa-bookmark"></i>';
-						html += '</a>';
-						html += '</div>';
-						html += '<div class="pro-content">';
-						html += '<h3 class="title">';
-						html += '<a href="#" tabindex="-1">' + product.name + '</a>';
-						html += '</h3>';
-						html += '<div class="row align-items-center">';
-						html += '<div class="col-lg-6 d-flex">';
-						html += '<span class="price me-2">$' + product.price + '</span>';
-						if (product.pack_size) {
-							html += '<span class="price-strike">' + product.pack_size + '</span>';
-						}
-						html += '</div>';
-						html += '<div class="col-lg-6 text-end">';
-						html += '<a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>';
-						html += '</div>';
-						html += '</div>';
-						html += '</div>';
-						html += '</div>';
-						html += '</div>';
-					});
+					if (data.length === 0) {
+						html = '<div class="col-12 text-center"><p>No products found</p></div>';
+					} else {
+						data.forEach(function(product) {
+							var imageSrc = product.primary_image ? '/uploads/product/' + product.primary_image.image_path : '/assets/frontend/img/products/product.jpg';
+							html += '<div class="col-md-12 col-lg-4 col-xl-4 product-custom">';
+							html += '<div class="profile-widget w-100">';
+							html += '<div class="doc-img">';
+							html += '<a href="#" tabindex="-1">';
+							html += '<img class="img-fluid" alt="Product image" src="' + imageSrc + '">';
+							html += '</a>';
+							html += '<a href="javascript:void(0)" class="fav-btn" tabindex="-1">';
+							html += '<i class="far fa-bookmark"></i>';
+							html += '</a>';
+							html += '</div>';
+							html += '<div class="pro-content">';
+							html += '<h3 class="title">';
+							html += '<a href="#" tabindex="-1">' + product.name + '</a>';
+							html += '</h3>';
+							html += '<div class="row align-items-center">';
+							html += '<div class="col-lg-6 d-flex">';
+							html += '<span class="price me-2">$' + product.price + '</span>';
+							if (product.pack_size) {
+								html += '<span class="price-strike">' + product.pack_size + '</span>';
+							}
+							html += '</div>';
+							html += '<div class="col-lg-6 text-end">';
+							html += '<a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>';
+							html += '</div>';
+							html += '</div>';
+							html += '</div>';
+							html += '</div>';
+							html += '</div>';
+						});
+					}
 					$(targetPane + ' .product-list').html(html);
 					var count = data.length;
 					$(targetPane + ' .sort-title').first().text('Showing ' + count + ' products');

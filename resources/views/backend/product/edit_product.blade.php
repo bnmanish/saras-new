@@ -79,7 +79,7 @@
                                      <select class="form-control" name="category_id">
                                          <option value="">Select Category</option>
                                          @foreach($categories as $category)
-                                         <option value="{{$category->id}}" @if($data->category_id == $category->id) selected @endif>{{$category->name}}</option>
+                                         <option value="{{$category->id}}" @if($data->category_id == $category->id) selected @endif>{{$category->title}}</option>
                                          @endforeach
                                      </select>
                                      @if($errors->first('category_id'))

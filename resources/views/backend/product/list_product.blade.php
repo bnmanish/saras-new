@@ -69,7 +69,7 @@
                                  @foreach($data as $dataRow)
                                  <tr>
                                      <td>{{$dataRow->name}}</td>
-                                     <td>{{$dataRow->category->name ?? 'N/A'}}</td>
+                                     <td>{{$dataRow->category->title ?? 'N/A'}}</td>
                                      <td>{{$dataRow->price ? '₹'.$dataRow->price : 'N/A'}}</td>
                                      <td>{{$dataRow->pack_size ?? 'N/A'}}</td>
                                       <td>

@@ -17,6 +17,7 @@ class FrontProductCotroller extends Controller
             } else {
                 $products = Product::with(['category', 'primaryImage'])->get();
             }
+
             return response()->json($products->map(function ($product) {
                 return [
                     'id' => $product->id,
@@ -24,7 +25,7 @@ class FrontProductCotroller extends Controller
                     'price' => $product->price,
                     'pack_size' => $product->pack_size,
                     'category_id' => $product->category_id,
-                    'primary_image' => $product->primaryImage,
+                    'primary_image' => $product->primaryImage ? $product->primaryImage->image_path : null,
                 ];
             }));
         }

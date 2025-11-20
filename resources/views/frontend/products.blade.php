@@ -115,60 +115,63 @@
 
 							<div class="tab-content" id="productTabsContent">
 								<!-- All Products Tab -->
-								<div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-									<div class="row align-items-center pb-3">
-										<div class="col-md-4 col-12 d-md-block d-none custom-short-by">
-											<h3 class="title pharmacy-title fs-24 mb-2">All Products</h3>
-											<span class="sort-title text-danger">Showing {{ $products->count() }} products</span>
-										</div>
-									</div>
+								@php $i = 0; @endphp
 
-									<div class="row product-list">
-										@foreach($products as $product)
-										<div class="col-md-12 col-lg-4 col-xl-4 product-custom">
-											<div class="profile-widget w-100">
-												<div class="doc-img">
-													<a href="#" tabindex="-1">
-														<img class="img-fluid" alt="{{$product->name}}" src="{{asset('uploads/product/'.$product->primaryImage->image)}}">
-													</a>
-													<a href="javascript:void(0)" class="fav-btn" tabindex="-1">
-														<i class="far fa-bookmark"></i>
-													</a>
-												</div>
-												<div class="pro-content">
-													<h3 class="title">
-														<a href="#" tabindex="-1">{{ $product->name }}</a>
-													</h3>
-													<div class="row align-items-center">
-														<div class="col-lg-6 d-flex">
-															<span class="price me-2">₹{{ $product->price }}</span>
-															@if($product->pack_size)
-															<span class="price-strike">{{ $product->pack_size }}</span>
-															@endif
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										@endforeach
-									</div>
-								</div>
-
-								<!-- Category Tabs -->
 								@foreach($categories as $category)
-								<div class="tab-pane fade" id="category-{{ $category->id }}" role="tabpanel" aria-labelledby="category-{{ $category->id }}-tab">
-									<div class="row align-items-center pb-3">
-										<div class="col-md-4 col-12 d-md-block d-none custom-short-by">
-											<h3 class="title pharmacy-title fs-24 mb-2">{{ $category->title }}</h3>
-											<span class="sort-title text-danger">Showing 0 products</span>
-										</div>
-									</div>
+								    @php 
+								        if($i == 0){
+								            $tabId = "all";
+								            $label = "all-tab";
+								            $activeClass = "show active"; 
+								        } else {
+								            $tabId = "category-" . $category->id;
+								            $label = "category-" . $category->id . "-tab";
+								            $activeClass = ""; 
+								        }
+								        $i++;
+								    @endphp
 
-									<div class="row product-list">
-										<!-- Products will be loaded here via AJAX -->
-									</div>
-								</div>
+								    <div class="tab-pane fade {{ $activeClass }}" id="{{ $tabId }}" role="tabpanel" aria-labelledby="{{ $label }}">
+								        <div class="row product-list">
+
+								            @foreach($products as $product)
+								            <div class="col-md-12 col-lg-4 col-xl-4 product-custom">
+								                <div class="profile-widget w-100">
+								                    <div class="doc-img">
+								                        <a href="#" tabindex="-1">
+								                            <img class="img-fluid" alt="{{ $product->name }}" 
+								                                 src="{{ asset('uploads/product/'.$product->primaryImage->image) }}">
+								                        </a>
+								                        <a href="javascript:void(0)" class="fav-btn" tabindex="-1">
+								                            <i class="far fa-bookmark"></i>
+								                        </a>
+								                    </div>
+
+								                    <div class="pro-content">
+								                        <h3 class="title">
+								                            <a href="#" tabindex="-1">{{ $product->name }}</a>
+								                        </h3>
+
+								                        <div class="row align-items-center">
+								                            <div class="col-lg-6 d-flex">
+								                                <span class="price me-2">₹{{ $product->price }}</span>
+								                                @if($product->pack_size)
+								                                <span class="price-strike">{{ $product->pack_size }}</span>
+								                                @endif
+								                            </div>
+								                        </div>
+
+								                    </div>
+								                </div>
+								            </div>
+								            @endforeach
+
+								        </div>
+								    </div>
 								@endforeach
+
+
+								
 							</div>
 
 						</div>
@@ -204,69 +207,6 @@
 		
 		<!-- Custom JS -->
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
-
-		<script>
-			function loadProducts(categoryId = null, targetPane = '#all') {
-				$.get('/products', {category: categoryId}, function(data) {
-					var html = '';
-					if (data.length === 0) {
-						html = '<div class="col-12 text-center"><p>No products found</p></div>';
-					} else {
-						data.forEach(function(product) {
-							var imageSrc = product.primary_image ? '/uploads/product/' + product.primary_image.image_path : '/assets/frontend/img/products/product.jpg';
-							html += '<div class="col-md-12 col-lg-4 col-xl-4 product-custom">';
-							html += '<div class="profile-widget w-100">';
-							html += '<div class="doc-img">';
-							html += '<a href="#" tabindex="-1">';
-							html += '<img class="img-fluid" alt="Product image" src="' + imageSrc + '">';
-							html += '</a>';
-							html += '<a href="javascript:void(0)" class="fav-btn" tabindex="-1">';
-							html += '<i class="far fa-bookmark"></i>';
-							html += '</a>';
-							html += '</div>';
-							html += '<div class="pro-content">';
-							html += '<h3 class="title">';
-							html += '<a href="#" tabindex="-1">' + product.name + '</a>';
-							html += '</h3>';
-							html += '<div class="row align-items-center">';
-							html += '<div class="col-lg-6 d-flex">';
-							html += '<span class="price me-2">$' + product.price + '</span>';
-							if (product.pack_size) {
-								html += '<span class="price-strike">' + product.pack_size + '</span>';
-							}
-							html += '</div>';
-							html += '<div class="col-lg-6 text-end">';
-							html += '<a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>';
-							html += '</div>';
-							html += '</div>';
-							html += '</div>';
-							html += '</div>';
-							html += '</div>';
-						});
-					}
-					$(targetPane + ' .product-list').html(html);
-					var count = data.length;
-					$(targetPane + ' .sort-title').first().text('Showing ' + count + ' products');
-				});
-			}
-
-			$(document).ready(function() {
-				$('#productTabs a').on('click', function(e) {
-					e.preventDefault();
-					$('#productTabs a').removeClass('active');
-					$(this).addClass('active');
-					var target = $(this).attr('href');
-					var categoryName = $(this).text();
-					$(target + ' .pharmacy-title').text(categoryName);
-					if (target === '#all') {
-						loadProducts(null, '#all');
-					} else {
-						var categoryId = target.replace('#category-', '');
-						loadProducts(categoryId, target);
-					}
-				});
-			});
-		</script>
 
 	</body>
 </html>

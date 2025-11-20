@@ -84,6 +84,10 @@ Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards')
 Route::get('/products', [FrontProductCotroller::class, 'index'])->name('products');
 Route::get('/tenders', [FrontTenderController::class, 'index'])->name('tenders');
 
+// Blog routes
+Route::get('/blog', [frontBlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [frontBlogController::class, 'blogDetails'])->name('blog.details');
+
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
 
 // Admin login route

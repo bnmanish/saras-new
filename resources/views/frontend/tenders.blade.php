@@ -132,10 +132,9 @@
 								</div>
 
 								<!-- Pagination -->
-								<div class="pagination dashboard-pagination">
-									{{ $tenders->links() }}
-								</div>
+								<x-pagination :paginator="$tenders" />
 								<!-- /Pagination -->
+								
 						</div>
 						<!-- /Invoices -->
 

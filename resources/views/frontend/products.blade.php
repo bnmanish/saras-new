@@ -1,37 +1,26 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="keywords" content="practo clone, doccure, doctor appointment, Practo clone html template, doctor booking template">
-		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-		<meta property="og:url" content="https://doccure.dreamstechnologies.com/html/">
+		<title>{{$page->meta_title}}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<meta name="description" content="{{$page->meta_description}}">
+		<meta name="keywords" content="{{$page->meta_keywords}}">
+		<meta property="og:url" content="{{route('chairman.message')}}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta property="og:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:domain" content="https://doccure.dreamstechnologies.com/html/">
-		<meta property="twitter:url" content="https://doccure.dreamstechnologies.com/html/">
-		<meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta name="twitter:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="twitter:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">	
-		<title>Doccure</title>
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{url('/')}}/assets/frontend/img/favicon.png" type="image/x-icon">
-
+		<meta property="og:title" content="{{$page->meta_title}}">
+		<meta property="og:description" content="{{$page->meta_description}}">
+		<meta name="twitter:title" content="{{$page->meta_title}}">
+		<meta name="twitter:description" content="{{$page->meta_description}}">
 		<!-- Apple Touch Icon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="{{url('/')}}/assets/frontend/img/apple-touch-icon.png">
-
+		<link rel="shortcut icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
 		<!-- Theme Settings Js -->
 		<script src="{{url('/')}}/assets/frontend/js/theme-script.js"></script>
-		
+
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/bootstrap.min.css">
-		
+
 		<!-- Fontawesome CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/fontawesome/css/fontawesome.min.css">
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/fontawesome/css/all.min.css">
@@ -40,52 +29,44 @@
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/iconsax.css">
 
 		<!-- Feathericon CSS -->
-    	<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/feather.css">
-		
-		<!-- Datetimepicker CSS -->
-		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/bootstrap-datetimepicker.min.css">
-		
-		<!-- Select2 CSS -->
-		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/select2/css/select2.min.css">
-		
-		<!-- Fancybox CSS -->
-		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/plugins/fancybox/jquery.fancybox.min.css">
-		
+		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/feather.css">
+
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
-	
+		{!!getSetting()->head_content!!}
+		
 	</head>
-	<body>
+
+<body>
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
 		
 			@include('frontend.layouts.header')
 
-			<!-- Breadcrumb -->
-			<div class="breadcrumb-bar">
-				<div class="container">
-					<div class="row align-items-center inner-banner">
-						<div class="col-md-12 col-12 text-center">
-							<nav aria-label="breadcrumb" class="page-breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home-15"></i></a></li>
-									<li class="breadcrumb-item" aria-current="page">Pharmacy</li>
-									<li class="breadcrumb-item active">Pain Relief</li>
-								</ol>
-								<h2 class="breadcrumb-title">Pain Relief</h2>
-							</nav>
-						</div>
+		<!-- Breadcrumb -->
+		<div class="breadcrumb-bar">
+			<div class="container">
+				<div class="row align-items-center inner-banner">
+					<div class="col-md-12 col-12 text-center">
+						<nav aria-label="breadcrumb" class="page-breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{route('home')}}"><i class="isax isax-home-15"></i></a></li>
+								<li class="breadcrumb-item active">{{$page->title}}</li>
+							</ol>
+							<h2 class="breadcrumb-title">{{$page->title}}</h2>
+						</nav>
 					</div>
 				</div>
-				<div class="breadcrumb-bg">
-					<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-bg-01.png" alt="img" class="breadcrumb-bg-01">
-					<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-bg-02.png" alt="img" class="breadcrumb-bg-02">
-					<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-icon.png" alt="img" class="breadcrumb-bg-03">
-					<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-icon.png" alt="img" class="breadcrumb-bg-04">
-				</div>
 			</div>
-			<!-- /Breadcrumb -->
+			<div class="breadcrumb-bg">
+				<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-bg-01.png" alt="img" class="breadcrumb-bg-01">
+				<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-bg-02.png" alt="img" class="breadcrumb-bg-02">
+				<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-icon.png" alt="img" class="breadcrumb-bg-03">
+				<img src="{{url('/')}}/assets/frontend/img/bg/breadcrumb-icon.png" alt="img" class="breadcrumb-bg-04">
+			</div>
+		</div>
+		<!-- /Breadcrumb -->
 
 			<!-- Category Tabs -->
 			<div class="container">

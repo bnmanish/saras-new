@@ -102,79 +102,18 @@
 							</ul>
 						</li>
 
-						<li class="has-submenu megamenu active">
+						<li class="has-submenu megamenu">
 							<a href="{{route('directors')}}">Profiles</a>
 						</li>
 
-						<li class="has-submenu">
-							<a href="javascript:void(0);">Pharmacy <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="pharmacy-index.html">Pharmacy</a></li>
-								<li><a href="pharmacy-details.html">Pharmacy Details</a></li>
-								<li><a href="pharmacy-search.html">Pharmacy Search</a></li>
-								<li><a href="product-all.html">Product</a></li>
-								<li><a href="product-description.html">Product Description</a></li>
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="product-checkout.html">Product Checkout</a></li>
-								<li><a href="payment-success.html">Payment Success</a></li>
-								<li><a href="pharmacy-register.html">Pharmacy Register</a></li>
-							</ul>
+						<li class="has-submenu megamenu">
+							<a href="{{route('products')}}">Products</a>
 						</li>
+
 						<li class="has-submenu">
-							<a href="javascript:void(0);">Pages <i class="fas fa-chevron-down"></i></a>
+							<a href="javascript:void(0);">Informations <i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">
-								<li><a href="about-us.html">About Us</a></li>
-								<li><a href="contact-us.html">Contact Us</a></li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Other Pages</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="blank-page.html">Starter Page</a></li>
-										<li><a href="pricing.html">Pricing Plan</a></li>
-										<li><a href="faq.html">FAQ</a></li>
-										<li><a href="maintenance.html">Maintenance</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-										<li><a href="terms-condition.html">Terms & Condition</a></li>
-										<li><a href="privacy-policy.html">Privacy Policy</a></li>
-										<li><a href="components.html">Components</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Authentication</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="login-email.html">Login Email</a></li>
-										<li><a href="login-phone.html">Login Phone</a></li>
-										<li><a href="doctor-signup.html">Doctor Signup</a></li>
-										<li><a href="patient-signup.html">Patient Signup</a></li>
-										<li><a href="forgot-password.html">Forgot Password 1</a></li>
-										<li><a href="forgot-password2.html">Forgot Password 2</a></li>
-										<li><a href="login-email-otp.html">Email OTP</a></li>
-										<li><a href="login-phone-otp.html">Phone OTP</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Error Pages</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="error-404.html">404 Error</a></li>
-										<li><a href="error-500.html">500 Error</a></li>
-									</ul>
-								</li>
-								<li><a href="hospitals.html">Hospitals</a></li>
-								<li><a href="speciality.html">Speciality</a></li>
-								<li><a href="clinic.html">Clinic</a></li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Call</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="voice-call.html">Voice Call</a></li>
-										<li><a href="video-call.html">Video Call</a></li>
-									</ul>
-								</li>
-								<li class="has-submenu">
-									<a href="javascript:void(0);">Invoices</a>
-									<ul class="submenu inner-submenu">
-										<li><a href="invoices.html">Invoices</a></li>
-										<li><a href="invoice-view.html">Invoice View</a></li>
-									</ul>
-								</li>
+								<li><a href="{{route('tenders')}}">Tenders</a></li>
 							</ul>
 						</li>
 						<li class="has-submenu">

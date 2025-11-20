@@ -49,6 +49,7 @@ use App\Http\Controllers\frontend\FrontProjectController;
 use App\Http\Controllers\frontend\DirectorsController;
 use App\Http\Controllers\frontend\DealershipEnquiryController as FrontendDealershipEnquiryController;
 use App\Http\Controllers\frontend\FrontProductCotroller;
+use App\Http\Controllers\frontend\FrontTenderController;
 
 //-------------------------------------------------------------------------
 use App\Models\Page;
@@ -81,6 +82,7 @@ Route::get('/directors',[DirectorsController::class,'index'])->name('directors')
 
 Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');
 Route::get('/products', [FrontProductCotroller::class, 'index'])->name('products');
+Route::get('/tenders', [FrontTenderController::class, 'index'])->name('tenders');
 
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
 

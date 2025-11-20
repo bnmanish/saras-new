@@ -114,65 +114,103 @@
 						<div class="col-12">
 
 							<div class="tab-content" id="productTabsContent">
-								<!-- All Products Tab -->
-								@php $i = 0; @endphp
 
-								@foreach($categories as $category)
-								    @php 
-								        if($i == 0){
-								            $tabId = "all";
-								            $label = "all-tab";
-								            $activeClass = "show active"; 
-								        } else {
-								            $tabId = "category-" . $category->id;
-								            $label = "category-" . $category->id . "-tab";
-								            $activeClass = ""; 
-								        }
-								        $i++;
-								    @endphp
+							    <!-- ALL PRODUCTS TAB -->
+							    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+							        <div class="row product-list">
+							            @if($products->isEmpty())
+							                <div class="col-12 text-center py-5">
+							                    <h5>No products found</h5>
+							                </div>
+							            @else
+							                @foreach($products as $product)
+							                    <div class="col-md-12 col-lg-3 product-custom">
+							                        <div class="profile-widget w-100">
+							                            <div class="doc-img">
+							                                <a href="#">
+							                                    @if($product->primaryImage)
+							                                        <img class="img-fluid" alt="{{ $product->name }}"
+							                                             src="{{ asset('uploads/product/'.$product->primaryImage->image) }}">
+							                                    @endif
+							                                </a>
+							                            </div>
 
-								    <div class="tab-pane fade {{ $activeClass }}" id="{{ $tabId }}" role="tabpanel" aria-labelledby="{{ $label }}">
-								        <div class="row product-list">
+							                            <div class="pro-content">
+							                                <h3 class="title">{{ $product->name }}</h3>
+							                                <div class="row align-items-center">
+							                                    <div class="col-lg-6 d-flex">
+							                                        <span class="price me-2">₹{{ $product->price }}</span>
+							                                        @if($product->pack_size)
+							                                            <span class="price-strike">{{ $product->pack_size }}</span>
+							                                        @endif
+							                                    </div>
+							                                </div>
+							                            </div>
 
-								            @foreach($products as $product)
-								            <div class="col-md-12 col-lg-4 col-xl-4 product-custom">
-								                <div class="profile-widget w-100">
-								                    <div class="doc-img">
-								                        <a href="#" tabindex="-1">
-								                            <img class="img-fluid" alt="{{ $product->name }}" 
-								                                 src="{{ asset('uploads/product/'.$product->primaryImage->image) }}">
-								                        </a>
-								                        <a href="javascript:void(0)" class="fav-btn" tabindex="-1">
-								                            <i class="far fa-bookmark"></i>
-								                        </a>
-								                    </div>
-
-								                    <div class="pro-content">
-								                        <h3 class="title">
-								                            <a href="#" tabindex="-1">{{ $product->name }}</a>
-								                        </h3>
-
-								                        <div class="row align-items-center">
-								                            <div class="col-lg-6 d-flex">
-								                                <span class="price me-2">₹{{ $product->price }}</span>
-								                                @if($product->pack_size)
-								                                <span class="price-strike">{{ $product->pack_size }}</span>
-								                                @endif
-								                            </div>
-								                        </div>
-
-								                    </div>
-								                </div>
-								            </div>
-								            @endforeach
-
-								        </div>
-								    </div>
-								@endforeach
+							                        </div>
+							                    </div>
+							                @endforeach
+							            @endif
+							        </div>
+							    </div>
 
 
-								
+							    <!-- CATEGORY TABS CONTENT -->
+							    @foreach($categories as $category)
+							        <div class="tab-pane fade" 
+							             id="category-{{ $category->id }}" 
+							             role="tabpanel" 
+							             aria-labelledby="category-{{ $category->id }}-tab">
+
+							            <div class="row product-list">
+
+							                @php
+							                    $filteredProducts = $products->where('category_id', $category->id);
+							                @endphp
+
+							                @if($filteredProducts->isEmpty())
+							                    <div class="col-12 text-center py-5">
+							                        <h5>No products found</h5>
+							                    </div>
+							                @else
+							                    @foreach($filteredProducts as $product)
+							                        <div class="col-md-12 col-lg-3 product-custom">
+							                            <div class="profile-widget w-100">
+
+							                                <div class="doc-img">
+							                                    <a href="#">
+							                                        @if($product->primaryImage)
+							                                            <img class="img-fluid" alt="{{ $product->name }}"
+							                                                 src="{{ asset('uploads/product/'.$product->primaryImage->image) }}">
+							                                        @endif
+							                                    </a>
+							                                </div>
+
+							                                <div class="pro-content">
+							                                    <h3 class="title">{{ $product->name }}</h3>
+							                                    <div class="row align-items-center">
+							                                        <div class="col-lg-6 d-flex">
+							                                            <span class="price me-2">₹{{ $product->price }}</span>
+							                                            @if($product->pack_size)
+							                                                <span class="price-strike">{{ $product->pack_size }}</span>
+							                                            @endif
+							                                        </div>
+							                                    </div>
+							                                </div>
+
+							                            </div>
+							                        </div>
+							                    @endforeach
+							                @endif
+
+							            </div>
+
+							        </div>
+							    @endforeach
+
 							</div>
+
+
 
 						</div>
 					</div>

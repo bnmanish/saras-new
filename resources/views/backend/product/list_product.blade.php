@@ -64,7 +64,6 @@
                                  </tr>
                              </thead>
 
-
                              <tbody>
                                  @foreach($data as $dataRow)
                                  <tr>

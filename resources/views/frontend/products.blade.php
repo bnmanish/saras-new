@@ -135,17 +135,18 @@
 							                                </a>
 							                            </div>
 
-							                            <div class="pro-content">
-							                                <h3 class="title">{{ $product->name }}</h3>
-							                                <div class="row align-items-center">
-							                                    <div class="col-lg-6 d-flex">
-							                                        <span class="price me-2">₹{{ $product->price }}</span>
-							                                        @if($product->pack_size)
-							                                            <span class="price-strike">{{ $product->pack_size }}</span>
-							                                        @endif
-							                                    </div>
-							                                </div>
-							                            </div>
+                            <div class="pro-content">
+                                <h3 class="title">{{ $product->name }} ({{ $product->category->title ?? 'N/A' }})</h3>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <span class="h5 text-success fw-bold">₹{{ $product->price }}</span>
+                                        @if($product->pack_size)
+                                            <span class="text-muted ms-2"><i class="fas fa-box me-1"></i>{{ $product->pack_size }}</span>
+                                        @endif
+                                    </div>
+                                    <small class="text-muted">{{ Str::limit($product->description ?? '', 50) }}</small>
+                                </div>
+                            </div>
 
 							                        </div>
 							                    </div>
@@ -186,17 +187,18 @@
 							                                    </a>
 							                                </div>
 
-							                                <div class="pro-content">
-							                                    <h3 class="title">{{ $product->name }}</h3>
-							                                    <div class="row align-items-center">
-							                                        <div class="col-lg-6 d-flex">
-							                                            <span class="price me-2">₹{{ $product->price }}</span>
-							                                            @if($product->pack_size)
-							                                                <span class="price-strike">{{ $product->pack_size }}</span>
-							                                            @endif
-							                                        </div>
-							                                    </div>
-							                                </div>
+                                <div class="pro-content">
+                                    <h3 class="title">{{ $product->name }} ({{ $product->category->title ?? 'N/A' }})</h3>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <div>
+                                            <span class="h5 text-success fw-bold">₹{{ $product->price }}</span>
+                                            @if($product->pack_size)
+                                                <span class="text-muted ms-2"><i class="fas fa-box me-1"></i>{{ $product->pack_size }}</span>
+                                            @endif
+                                        </div>
+                                        <small class="text-muted">{{ Str::limit($product->description ?? '', 50) }}</small>
+                                    </div>
+                                </div>
 
 							                            </div>
 							                        </div>

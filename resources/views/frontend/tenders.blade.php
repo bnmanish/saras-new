@@ -81,8 +81,10 @@
 								<ul class="header-list-btns">
 									<li>
 										<div class="input-block dash-search-input">
-											<input type="text" class="form-control" placeholder="Search">
-											<span class="search-icon"><i class="isax isax-search-normal"></i></span>
+											<form method="GET" action="{{ route('tenders') }}" class="d-flex">
+												<input type="text" name="search" class="form-control" placeholder="Search by title" value="{{ request('search') }}">
+												<button type="submit" class="btn btn-primary ms-2"><i class="isax isax-search-normal"></i></button>
+											</form>
 										</div>
 									</li>
 								</ul>
@@ -100,45 +102,30 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													
-													<td>1</td>
-													<td>TENDER INVITED FOR PEST MANAGEMENT AND PEST CONTROL SERVICE AT GANGMUL DAIRY HMH</td>
-													<td>20-Nov-2025</td>
-													<td>
-														<div class="action-item">
-															<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view">
-																<i class="isax isax-link-2"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													
-													<td>2</td>
-													<td>TENDER INVITED FOR PEST MANAGEMENT AND PEST CONTROL SERVICE AT GANGMUL DAIRY HMH</td>
-													<td>20-Nov-2025</td>
-													<td>
-														<div class="action-item">
-															<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view">
-																<i class="isax isax-link-2"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													
-													<td>3</td>
-													<td>TENDER INVITED FOR PEST MANAGEMENT AND PEST CONTROL SERVICE AT GANGMUL DAIRY HMH</td>
-													<td>20-Nov-2025</td>
-													<td>
-														<div class="action-item">
-															<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view">
-																<i class="isax isax-link-2"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
+												@if($tenders->isEmpty())
+													<tr>
+														<td colspan="4" class="text-center">No tenders found.</td>
+													</tr>
+												@else
+													@foreach($tenders as $tender)
+													<tr>
+														<td>{{ $loop->iteration + ($tenders->currentPage()-1)*$tenders->perPage() }}</td>
+														<td>{{ $tender->title }}</td>
+														<td>{{ $tender->publish_date->format('d-M-Y') }}</td>
+														<td>
+															<div class="action-item">
+																@if($tender->file)
+																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view" onclick="loadPdf('{{ url('uploads/tenders/'.$tender->file) }}', '{{ $tender->title }}', '{{ $tender->publish_date->format('d-M-Y') }}')">
+																		<i class="isax isax-link-2"></i>
+																	</a>
+																@else
+																	N/A
+																@endif
+															</div>
+														</td>
+													</tr>
+													@endforeach
+												@endif
 											</tbody>
 										</table>
 									</div>
@@ -146,26 +133,7 @@
 
 								<!-- Pagination -->
 								<div class="pagination dashboard-pagination">
-									<ul>
-										<li>
-											<a href="#" class="page-link prev">Prev</a>
-										</li>
-										<li>
-											<a href="#" class="page-link">1</a>
-										</li>
-										<li>
-											<a href="#" class="page-link active">2</a>
-										</li>
-										<li>
-											<a href="#" class="page-link">3</a>
-										</li>
-										<li>
-											<a href="#" class="page-link">4</a>
-										</li>
-										<li>
-											<a href="#" class="page-link next">Next</a>
-										</li>
-									</ul>
+									{{ $tenders->links() }}
 								</div>
 								<!-- /Pagination -->
 						</div>
@@ -181,7 +149,151 @@
 		   
 		</div>
 		<!-- /Main Wrapper -->
-
+				<!--View Invoice -->
+		<div class="modal fade custom-modals" id="invoice_view">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="invoice_viewLabel" style="word-break: break-word; margin-right: 50px;">View Tender PDF</h3>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 15px; top: 15px;">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<iframe id="pdfViewer" src="" width="100%" height="600px" style="border: none;"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /View Invoice -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /View Invoice -->
+								<div class="row">
+									<div class="col-md-6">
+										<div class="invoice-logo">
+											<img src="assets/img/logo.svg" alt="logo">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<p class="invoice-details">
+											Invoice No : <span> #INV005</span><br>
+											Issued: <span>21 Mar 2024</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Invoice Item -->
+							<div class="invoice-item">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="invoice-info">
+											<h6 class="customer-text">Billing From</h6>
+											<p class="invoice-details invoice-details-two">
+												Edalin Hendry <br>
+												806 Twin Willow Lane, <br>
+												Newyork, USA <br>
+											</p>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="invoice-info">
+											<h6 class="customer-text">Billing To</h6>
+											<p class="invoice-details invoice-details-two">
+												Richard Wilson <br>
+												299 Star Trek Drive<br>
+												Florida, 32405, USA<br>
+											</p>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="invoice-info invoice-info2">
+											<h6 class="customer-text">Payment Method</h6>
+											<p class="invoice-details">
+												Debit Card <br>
+												XXXXXXXXXXXX-2541<br>
+												HDFC Bank<br>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Invoice Item -->
+							
+							<!-- Invoice Item -->
+							<div class="invoice-item invoice-table-wrap">
+								<div class="row">
+									<div class="col-md-12">
+										<h6>Invoice Details</h6>
+										<div class="invoice-table">
+											<div class="table-responsive">
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Description</th>
+															<th>Quatity</th>
+															<th>VAT</th>
+															<th>Total</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-gray-9">General Consultation</td>
+															<td>1</td>
+															<td>$0</td>
+															<td>$150</td>
+														</tr>
+														<tr>
+															<td class="text-gray-9">Video Call</td>
+															<td>1</td>
+															<td>$0</td>
+															<td>$100</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-xl-4 ms-auto">
+										<div class="table-responsive">
+											<table class="invoice-table-two table">
+												<tbody>
+												<tr>
+													<th>Subtotal:</th>
+													<td><span>$350</span></td>
+												</tr>
+												<tr>
+													<th>Discount:</th>
+													<td><span>-10%</span></td>
+												</tr>
+												<tr>
+													<th>Total Amount:</th>
+													<td><span>$315</span></td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Invoice Item -->
+							
+							<!-- Invoice Information -->
+							<div class="other-info mb-0">
+								<h6 class="mb-2">Other information</h6>
+								<p class="mb-0">An account of the present illness, which includes the circumstances surrounding the onset of recent health changes and the chronology of subsequent events that have led the patient to seek medicine</p>
+							</div>
+							<!-- /Invoice Information -->
+							
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /View Invoice -->
 	  
 		<!-- jQuery -->
 		<script src="{{url('/')}}/assets/frontend/js/jquery-3.7.1.min.js"></script>
@@ -195,6 +307,13 @@
 		
 		<!-- Custom JS -->
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
-		
+
+		<script>
+		function loadPdf(url, title, date) {
+		    document.getElementById('pdfViewer').src = url;
+		    document.getElementById('invoice_viewLabel').innerText = title + ' - ' + date;
+		}
+		</script>
+
 	</body>
 </html>

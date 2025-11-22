@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Tender;
 use App\Models\MilkPurchasePriceChart;
+use App\Models\MilkSalePriceChart;
+use App\Models\Beneficiary;
 
 class FrontTenderController extends Controller
 {
@@ -28,5 +30,25 @@ class FrontTenderController extends Controller
         }
         $tenders = $query->orderBy('publish_date', 'desc')->paginate(10);
         return view('frontend/milk_purchase_chart')->with(['page'=>$page, 'tenders'=>$tenders]);
+    }
+
+    public function milkSalePriceChart(Request $request){
+        $page = Page::where(['id'=>20])->first();
+        $query = MilkSalePriceChart::where('status', 'active');
+        if($request->has('search') && $request->search != ''){
+            $query->where('title', 'like', '%'.$request->search.'%');
+        }
+        $tenders = $query->orderBy('publish_date', 'desc')->paginate(10);
+        return view('frontend/milk_sale_chart')->with(['page'=>$page, 'tenders'=>$tenders]);
+    }
+
+    public function beneficiaries(Request $request){
+        $page = Page::where(['id'=>21])->first();
+        $query = Beneficiary::where('status', 'active');
+        if($request->has('search') && $request->search != ''){
+            $query->where('title', 'like', '%'.$request->search.'%');
+        }
+        $tenders = $query->orderBy('publish_date', 'desc')->paginate(10);
+        return view('frontend/beneficiaries')->with(['page'=>$page, 'tenders'=>$tenders]);
     }
 }

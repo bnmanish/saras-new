@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<meta name="description" content="{{$page->meta_description}}">
 		<meta name="keywords" content="{{$page->meta_keywords}}">
-		<meta property="og:url" content="{{route('tenders')}}">
+		<meta property="og:url" content="{{route('milk.purchase.price.chart')}}">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="{{$page->meta_title}}">
 		<meta property="og:description" content="{{$page->meta_description}}">

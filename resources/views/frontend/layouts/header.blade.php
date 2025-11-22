@@ -114,6 +114,7 @@
 							<a href="javascript:void(0);">Informations <i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">
 								<li><a href="{{route('tenders')}}">Tenders</a></li>
+								<li><a href="{{route('milk.purchase.price.chart')}}">Milk Purchase Price Chart</a></li>
 							</ul>
 						</li>
 						<li class="has-submenu">

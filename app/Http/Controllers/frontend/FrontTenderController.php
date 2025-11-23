@@ -10,6 +10,7 @@ use App\Models\MilkPurchasePriceChart;
 use App\Models\MilkSalePriceChart;
 use App\Models\Beneficiary;
 use App\Models\QualityAssurance;
+use App\Models\ImportantLink;
 
 class FrontTenderController extends Controller
 {
@@ -61,5 +62,15 @@ class FrontTenderController extends Controller
         }
         $qualityAssurances = $query->orderBy('created_at', 'desc')->paginate(10);
         return view('frontend/quality_assurance')->with(['page'=>$page, 'qualityAssurances'=>$qualityAssurances]);
+    }
+
+    public function importantLinks(Request $request){
+        $page = Page::where(['id'=>24])->first();
+        $query = ImportantLink::query();
+        if($request->has('search') && $request->search != ''){
+            $query->where('title', 'like', '%'.$request->search.'%');
+        }
+        $importantLinks = $query->orderBy('created_at', 'desc')->paginate(10);
+        return view('frontend/important_links')->with(['page'=>$page, 'importantLinks'=>$importantLinks]);
     }
 }

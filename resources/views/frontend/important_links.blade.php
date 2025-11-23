@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<meta name="description" content="{{$page->meta_description}}">
 		<meta name="keywords" content="{{$page->meta_keywords}}">
-		<meta property="og:url" content="{{route('quality.assurance')}}">
+		<meta property="og:url" content="{{route('important.links')}}">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="{{$page->meta_title}}">
 		<meta property="og:description" content="{{$page->meta_description}}">
@@ -73,7 +73,7 @@
 				<div class="container">
 					<div class="row">
 
-						<!-- Quality Assurance -->
+						<!-- Important Links -->
 						<div class="col-12">
 
 							<div class="dashboard-header">
@@ -81,7 +81,7 @@
 								<ul class="header-list-btns">
 									<li>
 										<div class="input-block dash-search-input">
-											<form method="GET" action="{{ route('quality.assurance') }}" class="d-flex">
+											<form method="GET" action="{{ route('important.links') }}" class="d-flex">
 												<input type="text" name="search" class="form-control" placeholder="Search by title" value="{{ request('search') }}">
 												<button type="submit" class="btn btn-primary ms-2"><i class="isax isax-search-normal"></i></button>
 											</form>
@@ -97,34 +97,35 @@
 												<tr>
 													<th>SR No.</th>
 													<th>Title</th>
-													<th>Description</th>
-													<th>Date</th>
 													<th>Link</th>
+													<th>Date</th>
 												</tr>
 											</thead>
 											<tbody>
-												@if($qualityAssurances->isEmpty())
+												@if($importantLinks->isEmpty())
 													<tr>
-														<td colspan="5" class="text-center">No quality assurance records found.</td>
+														<td colspan="4" class="text-center">No important links found.</td>
 													</tr>
 												@else
-													@foreach($qualityAssurances as $qa)
+													@foreach($importantLinks as $link)
 													<tr>
-														<td>{{ $loop->iteration + ($qualityAssurances->currentPage()-1)*$qualityAssurances->perPage() }}</td>
-														<td>{{ $qa->title }}</td>
-														<td>{{ Str::limit($qa->description, 50) }}</td>
-														<td>{{ $qa->created_at->format('d-M-Y') }}</td>
+														<td>{{ $loop->iteration + ($importantLinks->currentPage()-1)*$importantLinks->perPage() }}</td>
+														<td>{{ $link->title }}</td>
 														<td>
 															<div class="action-item">
-																@if($qa->image && file_exists(public_path('uploads/quality_assurance/'.$qa->image)))
-																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#qa_view" onclick="loadPdf('{{ url('uploads/quality_assurance/'.$qa->image) }}', '{{ $qa->title }}', '{{ $qa->created_at->format('d-M-Y') }}')">
+																@if($link->link)
+																	<a href="{{ $link->link }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $link->link }}">
 																		<i class="isax isax-link-2"></i>
+																	</a>
+																	<a href="javascript:void(0);" onclick="copyToClipboard('{{ $link->link }}')" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy link">
+																		<i class="isax isax-copy"></i>
 																	</a>
 																@else
 																	N/A
 																@endif
 															</div>
 														</td>
+														<td>{{ $link->created_at->format('d-M-Y') }}</td>
 													</tr>
 													@endforeach
 												@endif
@@ -134,11 +135,11 @@
 								</div>
 
 								<!-- Pagination -->
-								<x-pagination :paginator="$qualityAssurances" />
+								<x-pagination :paginator="$importantLinks" />
 								<!-- /Pagination -->
 
 						</div>
-						<!-- /Quality Assurance -->
+						<!-- /Important Links -->
 
 					</div>
 				</div>
@@ -150,22 +151,6 @@
 
 		</div>
 		<!-- /Main Wrapper -->
-				<!--View QA File -->
-		<div class="modal fade custom-modals" id="qa_view">
-			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h3 class="modal-title" id="qa_viewLabel" style="word-break: break-word; margin-right: 50px;">View Quality Assurance File</h3>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 15px; top: 15px;">
-							<i class="fa-solid fa-xmark"></i>
-						</button>
-					</div>
-					<div class="modal-body">
-						<iframe id="pdfViewer" src="" width="100%" height="600px" style="border: none;"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<!-- jQuery -->
 		<script src="{{url('/')}}/assets/frontend/js/jquery-3.7.1.min.js"></script>
@@ -181,9 +166,35 @@
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
 
 		<script>
-		function loadPdf(url, title, date) {
-		    document.getElementById('pdfViewer').src = url;
-		    document.getElementById('qa_viewLabel').innerText = title + ' - ' + date;
+		// Initialize tooltips
+		document.addEventListener('DOMContentLoaded', function () {
+			var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+			var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		});
+
+		// Copy to clipboard function
+		function copyToClipboard(text) {
+			navigator.clipboard.writeText(text).then(function() {
+				// Show success message (you can customize this)
+				alert('Link copied to clipboard!');
+			}, function(err) {
+				console.error('Could not copy text: ', err);
+				// Fallback for older browsers
+				var textArea = document.createElement("textarea");
+				textArea.value = text;
+				document.body.appendChild(textArea);
+				textArea.focus();
+				textArea.select();
+				try {
+					document.execCommand('copy');
+					alert('Link copied to clipboard!');
+				} catch (err) {
+					console.error('Fallback: Could not copy text: ', err);
+				}
+				document.body.removeChild(textArea);
+			});
 		}
 		</script>
 

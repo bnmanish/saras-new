@@ -88,6 +88,7 @@ Route::get('/milk-purchase-price-chart', [FrontTenderController::class, 'milkPur
 Route::get('/milk-sale-price-chart', [FrontTenderController::class, 'milkSalePriceChart'])->name('milk.sale.price.chart');
 Route::get('/beneficiaries', [FrontTenderController::class, 'beneficiaries'])->name('beneficiaries');
 Route::get('/quality-assurance', [FrontTenderController::class, 'qualityAssurance'])->name('quality.assurance');
+Route::get('/important-links', [FrontTenderController::class, 'importantLinks'])->name('important.links');
 
 // Gallery routes
 Route::get('/gallery', [FrontendGalleryController::class, 'index'])->name('gallery');

@@ -117,9 +117,10 @@
 								<li><a href="{{route('milk.purchase.price.chart')}}">Milk Purchase Price Chart</a></li>
 								<li><a href="{{route('milk.sale.price.chart')}}">Milk Sale Price Chart</a></li>
 								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
-								<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
 							</ul>
 						</li>
+						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
+						<li><a href="{{route('important.links')}}">Important Links</a></li>
 						<li class="has-submenu megamenu">
 							<a href="{{route('gallery')}}">Gallery</a>
 						</li>
@@ -127,27 +128,6 @@
 						
 					</ul>
 				</div>
-				<ul class="nav header-navbar-rht">
-					<li class="searchbar">
-						<a href="javascript:void(0);"><i class="feather-search"></i></a>
-						<div class="togglesearch">
-							<form action="search.html">
-								<div class="input-group">
-									<input type="text" class="form-control">
-									<button type="submit" class="btn">Search</button>
-								</div>
-							</form>
-						</div>
-					</li>
-					<li>
-						<a href="login.html" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-lock-1 me-1"></i>Sign Up</a>
-					</li>
-					<li>
-						<a href="register.html" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
-							<i class="isax isax-user-tick me-1"></i>Register
-						</a>
-					</li>
-				</ul>
 			</div>
 		</nav>
 	</div>

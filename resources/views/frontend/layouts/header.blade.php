@@ -117,6 +117,7 @@
 								<li><a href="{{route('milk.purchase.price.chart')}}">Milk Purchase Price Chart</a></li>
 								<li><a href="{{route('milk.sale.price.chart')}}">Milk Sale Price Chart</a></li>
 								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
+								<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
 							</ul>
 						</li>
 						<li class="has-submenu megamenu">

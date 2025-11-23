@@ -9,6 +9,7 @@ use App\Models\Tender;
 use App\Models\MilkPurchasePriceChart;
 use App\Models\MilkSalePriceChart;
 use App\Models\Beneficiary;
+use App\Models\QualityAssurance;
 
 class FrontTenderController extends Controller
 {
@@ -50,5 +51,15 @@ class FrontTenderController extends Controller
         }
         $tenders = $query->orderBy('publish_date', 'desc')->paginate(10);
         return view('frontend/beneficiaries')->with(['page'=>$page, 'tenders'=>$tenders]);
+    }
+
+    public function qualityAssurance(Request $request){
+        $page = Page::where(['id'=>23])->first();
+        $query = QualityAssurance::where('status', 'active');
+        if($request->has('search') && $request->search != ''){
+            $query->where('title', 'like', '%'.$request->search.'%');
+        }
+        $qualityAssurances = $query->orderBy('created_at', 'desc')->paginate(10);
+        return view('frontend/quality_assurance')->with(['page'=>$page, 'qualityAssurances'=>$qualityAssurances]);
     }
 }

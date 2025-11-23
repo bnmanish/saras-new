@@ -1998,6 +1998,14 @@ button:focus {
   color: #465D7C !important;
 }
 .btn-soft-light:hover, .btn-soft-light:focus, .btn-soft-light.focus, .btn-soft-light:active, .btn-soft-light.active {
+}
+
+/* Gallery images 100% width on mobile */
+@media (max-width: 767px) {
+    .gallery-images img {
+        width: 100% !important;
+    }
+}
   box-shadow: 0 3px 12px rgba(226, 237, 255, 0.2);
   border-color: #E2EDFF;
   border-color: #465D7C;

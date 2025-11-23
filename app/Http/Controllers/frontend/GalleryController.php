@@ -10,12 +10,12 @@ use App\Models\Page;
 
 class GalleryController extends Controller
 {
-    public function index($categoryId = null)
+    public function index($categorySlug = null)
     {
         $page = Page::where(['id'=>22])->first();
-        if ($categoryId) {
-            $category = GalleryCategory::findOrFail($categoryId);
-            $galleries = Gallery::where('category_id', $categoryId)->with('images')->get();
+        if ($categorySlug) {
+            $category = GalleryCategory::where('slug', $categorySlug)->where('status', '1')->firstOrFail();
+            $galleries = Gallery::where('category_id', $category->id)->with('images')->get();
         } else {
             $category = null;
             $galleries = Gallery::with('images', 'category')->get();

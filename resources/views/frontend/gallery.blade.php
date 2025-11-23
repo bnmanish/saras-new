@@ -81,7 +81,7 @@
 					<div class="gallery-categories mb-4 mt-3">
 						<a href="{{ route('gallery') }}" class="btn btn-outline-primary {{ !$category ? 'active' : '' }}">All</a>
 						@foreach($galleryCategories as $cat)
-							<a href="{{ route('gallery.category', $cat->id) }}" class="btn btn-outline-primary {{ $category && $category->id == $cat->id ? 'active' : '' }}">{{ $cat->name }}</a>
+							<a href="{{ route('gallery.category', $cat->slug) }}" class="btn btn-outline-primary {{ $category && $category->slug == $cat->slug ? 'active' : '' }}">{{ $cat->name }}</a>
 						@endforeach
 					</div>
 

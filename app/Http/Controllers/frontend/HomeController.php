@@ -16,6 +16,7 @@ use App\Models\Subscriber;
 use App\Models\Amenity;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\GalleryCategory;
 use Illuminate\Support\Facades\Validator;
 use DB;
 

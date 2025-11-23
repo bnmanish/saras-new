@@ -48,6 +48,7 @@
                                  <tr>
                                      <th>SL No</th>
                                      <th>Name</th>
+                                     <th>Slug</th>
                                      <th>Status</th>
                                      <th>Action</th>
                                  </tr>
@@ -60,6 +61,7 @@
                                  <tr>
                                      <td>{{$sl}}</td>
                                      <td>{{$dataRow->name}}</td>
+                                     <td>{{$dataRow->slug}}</td>
                                      <td>
                                          @if($dataRow->status == '1')
                                              <span class="badge bg-success">Active</span>

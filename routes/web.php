@@ -90,7 +90,7 @@ Route::get('/beneficiaries', [FrontTenderController::class, 'beneficiaries'])->n
 
 // Gallery routes
 Route::get('/gallery', [FrontendGalleryController::class, 'index'])->name('gallery');
-Route::get('/gallery/category/{categoryId}', [FrontendGalleryController::class, 'index'])->name('gallery.category');
+Route::get('/gallery/category/{categorySlug}', [FrontendGalleryController::class, 'index'])->name('gallery.category');
 
 // Blog routes
 Route::get('/blog', [frontBlogController::class, 'index'])->name('blog');

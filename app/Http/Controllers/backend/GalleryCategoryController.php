@@ -17,10 +17,16 @@ class GalleryCategoryController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:gallery_categories,name'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:gallery_categories,slug'],
             'status' => ['required', 'in:0,1'],
         ]);
 
-        GalleryCategory::create($request->only('name', 'status'));
+        $data = $request->only('name', 'slug', 'status');
+        if (empty($data['slug'])) {
+            $data['slug'] = \Illuminate\Support\Str::slug($data['name']);
+        }
+
+        GalleryCategory::create($data);
 
         Session::flash('success','Gallery Category added successfully!');
         return redirect()->route('admin.list.gallery_category');
@@ -39,10 +45,16 @@ class GalleryCategoryController extends Controller
     public function editStoreGalleryCategory(Request $request,$id){
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:gallery_categories,name,'.$id],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:gallery_categories,slug,'.$id],
             'status' => ['required', 'in:0,1'],
         ]);
 
-        GalleryCategory::where('id',$id)->update($request->only('name', 'status'));
+        $data = $request->only('name', 'slug', 'status');
+        if (empty($data['slug'])) {
+            $data['slug'] = \Illuminate\Support\Str::slug($data['name']);
+        }
+
+        GalleryCategory::where('id',$id)->update($data);
         Session::flash('success','Gallery Category updated successfully!');
         return redirect()->route('admin.list.gallery_category');
     }

@@ -40,6 +40,17 @@
                              </div>
 
                              <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Slug</label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="slug" placeholder="category-slug" value="{{old('slug')}}">
+                                     <small class="text-muted">Leave empty to auto-generate from name</small>
+                                     @if($errors->first('slug'))
+                                     <p class="text-danger mb-0">{{ $errors->first('slug') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
                                  <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
                                  <div class="col-md-10">
                                      <select class="form-control" name="status">
@@ -70,4 +81,17 @@
 </div>
 @stop
 @push('scripts')
+<script>
+$(document).ready(function() {
+    $('input[name="name"]').on('input', function() {
+        var name = $(this).val();
+        var slug = name.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        $('input[name="slug"]').val(slug);
+    });
+});
+</script>
 @endpush

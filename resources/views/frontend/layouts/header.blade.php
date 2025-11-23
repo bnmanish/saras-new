@@ -119,16 +119,10 @@
 								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
 							</ul>
 						</li>
-
-						<li class="has-submenu">
-							<a href="javascript:void(0);">Gallery<i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="javascript:;">Gallery Category 1</a></li>
-								<li><a href="javascript:;">Gallery Category 2</a></li>
-								<li><a href="javascript:;">Gallery Category 3</a></li>
-								<li><a href="javascript:;">Gallery Category 4</a></li>
-							</ul>
+						<li class="has-submenu megamenu">
+							<a href="{{route('gallery')}}">Gallery</a>
 						</li>
+
 						
 					</ul>
 				</div>

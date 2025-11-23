@@ -29,17 +29,30 @@
                         <form method="post" action="{{route('admin.store.gallery_category')}}">
                             @csrf
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Name <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="name" placeholder="Category Name *" value="{{old('name')}}">
-                                    @if($errors->first('name'))
-                                    <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Name <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="name" placeholder="Category Name *" value="{{old('name')}}">
+                                     @if($errors->first('name'))
+                                     <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
-                            <div class="offset-md-2">
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Status <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <select class="form-control" name="status">
+                                         <option value="1" {{ old('status', '1') == '1' ? 'selected' : '' }}>Active</option>
+                                         <option value="0" {{ old('status') == '0' ? 'selected' : '' }}>Inactive</option>
+                                     </select>
+                                     @if($errors->first('status'))
+                                     <p class="text-danger mb-0">{{ $errors->first('status') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="offset-md-2">
                                 <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                             </div>
                         </form>

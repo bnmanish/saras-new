@@ -44,28 +44,36 @@
                         </div>
 
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>SL No</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
+                             <thead>
+                                 <tr>
+                                     <th>SL No</th>
+                                     <th>Name</th>
+                                     <th>Status</th>
+                                     <th>Action</th>
+                                 </tr>
+                             </thead>
 
 
                             <tbody>
                                 @php $sl = 1; @endphp
-                                @foreach($data as $dataRow)
-                                <tr>
-                                    <td>{{$sl}}</td>
-                                    <td>{{$dataRow->name}}</td>
-                                    <td>
-                                        <a href="{{route('admin.edit.gallery_category',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{route('admin.delete.gallery_category',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                @php $sl++; @endphp
-                                @endforeach
+                                 @foreach($data as $dataRow)
+                                 <tr>
+                                     <td>{{$sl}}</td>
+                                     <td>{{$dataRow->name}}</td>
+                                     <td>
+                                         @if($dataRow->status == '1')
+                                             <span class="badge bg-success">Active</span>
+                                         @else
+                                             <span class="badge bg-danger">Inactive</span>
+                                         @endif
+                                     </td>
+                                     <td>
+                                         <a href="{{route('admin.edit.gallery_category',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                         <a href="{{route('admin.delete.gallery_category',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>
+                                     </td>
+                                 </tr>
+                                 @php $sl++; @endphp
+                                 @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -50,6 +50,7 @@ use App\Http\Controllers\frontend\DirectorsController;
 use App\Http\Controllers\frontend\DealershipEnquiryController as FrontendDealershipEnquiryController;
 use App\Http\Controllers\frontend\FrontProductCotroller;
 use App\Http\Controllers\frontend\FrontTenderController;
+use App\Http\Controllers\frontend\GalleryController as FrontendGalleryController;
 
 //-------------------------------------------------------------------------
 use App\Models\Page;
@@ -86,6 +87,10 @@ Route::get('/tenders', [FrontTenderController::class, 'index'])->name('tenders')
 Route::get('/milk-purchase-price-chart', [FrontTenderController::class, 'milkPurchasePriceChart'])->name('milk.purchase.price.chart');
 Route::get('/milk-sale-price-chart', [FrontTenderController::class, 'milkSalePriceChart'])->name('milk.sale.price.chart');
 Route::get('/beneficiaries', [FrontTenderController::class, 'beneficiaries'])->name('beneficiaries');
+
+// Gallery routes
+Route::get('/gallery', [FrontendGalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery/category/{categoryId}', [FrontendGalleryController::class, 'index'])->name('gallery.category');
 
 // Blog routes
 Route::get('/blog', [frontBlogController::class, 'index'])->name('blog');

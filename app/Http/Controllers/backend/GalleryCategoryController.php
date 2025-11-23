@@ -17,9 +17,10 @@ class GalleryCategoryController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:gallery_categories,name'],
+            'status' => ['required', 'in:0,1'],
         ]);
 
-        GalleryCategory::create($request->only('name'));
+        GalleryCategory::create($request->only('name', 'status'));
 
         Session::flash('success','Gallery Category added successfully!');
         return redirect()->route('admin.list.gallery_category');
@@ -38,9 +39,10 @@ class GalleryCategoryController extends Controller
     public function editStoreGalleryCategory(Request $request,$id){
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:gallery_categories,name,'.$id],
+            'status' => ['required', 'in:0,1'],
         ]);
 
-        GalleryCategory::where('id',$id)->update($request->only('name'));
+        GalleryCategory::where('id',$id)->update($request->only('name', 'status'));
         Session::flash('success','Gallery Category updated successfully!');
         return redirect()->route('admin.list.gallery_category');
     }

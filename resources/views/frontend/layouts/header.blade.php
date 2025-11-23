@@ -116,24 +116,20 @@
 								<li><a href="{{route('tenders')}}">Tenders</a></li>
 								<li><a href="{{route('milk.purchase.price.chart')}}">Milk Purchase Price Chart</a></li>
 								<li><a href="{{route('milk.sale.price.chart')}}">Milk Sale Price Chart</a></li>
-								<li><a href="{{route('beneficiaries')}}">Beneficiaries</a></li>
+								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
 							</ul>
 						</li>
+
 						<li class="has-submenu">
-							<a href="#">Blog <i class="fas fa-chevron-down"></i></a>
+							<a href="javascript:void(0);">Gallery<i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">
-								<li><a href="blog-list.html">Blog List</a></li>
-								<li><a href="blog-grid.html">Blog Grid</a></li>
-								<li><a href="blog-details.html">Blog Details</a></li>
+								<li><a href="javascript:;">Gallery Category 1</a></li>
+								<li><a href="javascript:;">Gallery Category 2</a></li>
+								<li><a href="javascript:;">Gallery Category 3</a></li>
+								<li><a href="javascript:;">Gallery Category 4</a></li>
 							</ul>
 						</li>
-						<li class="has-submenu">
-							<a href="#">Admin <i class="fas fa-chevron-down"></i></a>
-							<ul class="submenu">
-								<li><a href="admin/index.html" target="_blank">Admin</a></li>
-								<li><a href="pharmacy/index.html" target="_blank">Pharmacy Admin</a></li>
-							</ul>
-						</li>
+						
 					</ul>
 				</div>
 				<ul class="nav header-navbar-rht">

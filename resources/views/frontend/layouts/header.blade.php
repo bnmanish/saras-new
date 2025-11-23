@@ -119,11 +119,13 @@
 								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
 							</ul>
 						</li>
-						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
-						<li><a href="{{route('important.links')}}">Important Links</a></li>
+						
 						<li class="has-submenu megamenu">
 							<a href="{{route('gallery')}}">Gallery</a>
 						</li>
+						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
+						<li><a href="{{route('important.links')}}">Important Links</a></li>
+						<li><a href="{{route('contact')}}">Contact Us</a></li>
 
 						
 					</ul>

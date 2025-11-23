@@ -98,6 +98,9 @@ Route::get('/gallery/category/{categorySlug}', [FrontendGalleryController::class
 Route::get('/blog', [frontBlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [frontBlogController::class, 'blogDetails'])->name('blog.details');
 
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
+
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
 
 // Admin login route

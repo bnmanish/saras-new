@@ -112,7 +112,7 @@
 													<tr>
 														<td>{{ $loop->iteration + ($qualityAssurances->currentPage()-1)*$qualityAssurances->perPage() }}</td>
 														<td>{{ $qa->title }}</td>
-														<td>{{ Str::limit($qa->description, 50) }}</td>
+														<td>{!! Str::limit($qa->description, 50) !!}</td>
 														<td>{{ $qa->created_at->format('d-M-Y') }}</td>
 														<td>
 															<div class="action-item">

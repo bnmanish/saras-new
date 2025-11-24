@@ -68,21 +68,31 @@
 						<div class="social-icon">
 							<h6 class="mb-3">Connect With Us</h6>
 							<ul>
-								<li>
-									<a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
-								</li>
-								<li>
-									<a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
-								</li>
-								<li>
-									<a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
-								</li>
+								@if(getSetting()->facebook)
+									<li>
+										<a href="{{getSetting()->facebook}}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+									</li>
+								@endif
+								@if(getSetting()->twitter)
+									<li>
+										<a href="{{getSetting()->twitter}}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+									</li>
+								@endif
+								@if(getSetting()->instagram)
+									<li>
+										<a href="{{getSetting()->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+									</li>
+								@endif
+								@if(getSetting()->linkedin)
+									<li>
+										<a href="{{getSetting()->linkedin}}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+									</li>
+								@endif
+								@if(getSetting()->youtube)
+									<li>
+										<a href="{{getSetting()->youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+									</li>
+								@endif
 							</ul>
 						</div>
 					</div>
@@ -102,7 +112,7 @@
 			<!-- Copyright -->
 			<div class="copyright">
 				<div class="copyright-text">
-					<p class="mb-0">Copyright © 2025 Doccure. All Rights Reserved</p>
+					<p class="mb-0">{!!getSetting()->copyrights!!}</p>
 				</div>
 				<!-- Copyright Menu -->
 				<div class="copyright-menu">

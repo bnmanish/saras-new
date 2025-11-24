@@ -100,6 +100,7 @@ Route::get('/blog/{slug}', [frontBlogController::class, 'blogDetails'])->name('b
 
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
+Route::post('/subscribe-newsletter', [HomeController::class, 'subscribeNewsLetter'])->name('subscribe.newsletter');
 
 Route::get('/{slug}', [HomeController::class, 'additionalPage'])->name('additional.page');
 

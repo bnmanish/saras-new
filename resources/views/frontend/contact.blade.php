@@ -203,6 +203,6 @@
 		
 		<!-- Custom JS -->
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
-		
+
 	</body>
 </html>

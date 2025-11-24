@@ -94,7 +94,7 @@ class HomeController extends Controller
         $subscribe = new Subscriber;
         $subscribe->email = $request->email;
         $subscribe->save();
-        return response()->json(array('status'=>true,'message'=>'Greate ! You have subscribed successfully.'));
+        return response()->json(array('status'=>true,'message'=>'Thanks for subscribing!'));
     }
   
   	public function error404(){

@@ -24,11 +24,11 @@ class ContactController extends Controller
 
     public function enquiry(Request $request){
 
-        $this->validate($request,[
+        $request->validate([
             'name' => 'required|max:50',
             'phone' => 'required|digits:10',
             'email' => 'required|email|max:50',
-            'subject' => 'required|max|max:500',
+            'subject' => 'required|max:500',
             'message' => 'required',
         ]);
 

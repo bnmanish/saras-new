@@ -114,37 +114,55 @@
 						<div class="col-lg-7 col-md-12 d-flex">
 							<div class="card contact-form-card w-100">
 								<div class="card-body">
+									@if(session('success'))
+										<div class="alert alert-success">{{ session('success') }}</div>
+									@endif
 									<form action="{{route('enquiry')}}" method="post">
 										@csrf
 										<div class="row">
 											<div class="col-md-6">
 												<div class="mb-3">
 													<label class="form-label">Name</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+													@if($errors->has('name'))
+														<span class="text-danger">{{ $errors->first('name') }}</span>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="mb-3">
 													<label class="form-label">Email</label>
-													<input type="text" class="form-control">
+													<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+													@if($errors->has('email'))
+														<span class="text-danger">{{ $errors->first('email') }}</span>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="mb-3">
 													<label class="form-label">Phone Number</label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+													@if($errors->has('phone'))
+														<span class="text-danger">{{ $errors->first('phone') }}</span>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="mb-3">
-													<label class="form-label">Services</label>
-													<input type="text" class="form-control">
+													<label class="form-label">Subject</label>
+													<input type="text" class="form-control" name="subject" value="{{ old('subject') }}">
+													@if($errors->has('subject'))
+														<span class="text-danger">{{ $errors->first('subject') }}</span>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="mb-3">
 													<label class="form-label">Message</label>
-													<textarea class="form-control" rows="6"></textarea>
+													<textarea class="form-control" rows="6" name="message">{{ old('message') }}</textarea>
+													@if($errors->has('message'))
+														<span class="text-danger">{{ $errors->first('message') }}</span>
+													@endif
 												</div>
 											</div>
 											<div class="col-md-12">

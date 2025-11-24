@@ -2,59 +2,27 @@
 	<div class="container">
 		<div class="topbar-info">
 			<div class="d-flex align-items-center gap-3 header-info">
-				<p><i class="isax isax-message-text5 me-1"></i>info@example.com</p>
-				<p><i class="isax isax-call5 me-1"></i>+1 66589 14556</p>
+				<p><i class="isax isax-message-text5 me-1"></i><a href="mailto:{{getSetting()->primary_email ?? 'info@example.com'}}">{{getSetting()->primary_email ?? 'info@example.com'}}</a></p>
+				<p><i class="isax isax-call5 me-1"></i><a href="tel:{{getSetting()->primary_contact ?? '+1 66589 14556'}}">{{getSetting()->primary_contact ?? '+1 66589 14556'}}</a></p>
 			</div>
 			<ul>
-				<li class="header-theme">
-					<a href="javascript:void(0);" id="dark-mode-toggle" class="theme-toggle">
-						<i class="isax isax-sun-1"></i>
-					</a>
-					<a href="javascript:void(0);" id="light-mode-toggle" class="theme-toggle activate">
-						<i class="isax isax-moon"></i>
-					</a>
-				</li>
-				<li class="d-inline-flex align-items-center drop-header">
-					<div class="dropdown dropdown-country me-3">
-						<a href="javascript:void(0);" class="d-inline-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="{{url('/')}}/assets/frontend/img/flags/us-flag.svg" class="me-2" alt="flag">
-						</a>
-						<ul class="dropdown-menu p-2 mt-2">
-							<li>
-								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-									<img src="{{url('/')}}/assets/frontend/img/flags/us-flag.svg" class="me-2" alt="flag">ENG
-								</a>
-							</li>
-							<li>
-								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-									<img src="{{url('/')}}/assets/frontend/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
-								</a>
-							</li>
-							<li>
-								<a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
-									<img src="{{url('/')}}/assets/frontend/img/flags/france-flag.svg" class="me-2" alt="flag">FRA
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="dropdown dropdown-amt">
-						<a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							USD
-						</a>
-						<ul class="dropdown-menu p-2 mt-2">
-							<li><a class="dropdown-item rounded" href="javascript:void(0);">USD</a></li>
-							<li><a class="dropdown-item rounded" href="javascript:void(0);">YEN</a></li>
-							<li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a></li>
-						</ul>
-					</div>
-				</li>
 				<li class="social-header">
 					<div class="social-icon">
-						<a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
-						<a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
-						<a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
-						<a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
+						@if(getSetting()->facebook)
+							<a href="{{getSetting()->facebook}}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+						@endif
+						@if(getSetting()->twitter)
+							<a href="{{getSetting()->twitter}}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+						@endif
+						@if(getSetting()->instagram)
+							<a href="{{getSetting()->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+						@endif
+						@if(getSetting()->linkedin)
+							<a href="{{getSetting()->linkedin}}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+						@endif
+						@if(getSetting()->youtube)
+							<a href="{{getSetting()->youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+						@endif
 					</div>
 				</li>
 			</ul>
@@ -75,14 +43,14 @@
 					</span>
 				</a>
 				<a href="{{route('home')}}" class="navbar-brand logo">
-					<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
+					<img src="{{url('uploads/setting/'.getSetting()->site_logo)}}" class="img-fluid" alt="Logo">
 				</a>
 			</div>
 			<div class="header-menu">
 				<div class="main-menu-wrapper">
 					<div class="menu-header">
 						<a href="{{route('home')}}" class="menu-logo">
-							<img src="{{url('/')}}/assets/frontend/img/logo.svg" class="img-fluid" alt="Logo">
+							<img src="{{url('uploads/setting/'.getSetting()->site_logo)}}" class="img-fluid" alt="Logo">
 						</a>
 						<a id="menu_close" class="menu-close" href="javascript:void(0);">
 							<i class="fas fa-times"></i>

@@ -75,7 +75,7 @@
 						<div class="subscribe-input">
 							<form id="subscribe-form" action="{{route('subscribe.newsletter')}}" method="post">
 								@csrf
-								<input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
+								<input type="text" name="email" class="form-control" placeholder="Enter Email Address">
 								<button type="submit" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center"><i class="isax isax-send-25 me-1"></i>Send</button>
 							</form>
 						</div>

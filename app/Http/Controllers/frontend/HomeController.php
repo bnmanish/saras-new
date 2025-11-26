@@ -89,7 +89,7 @@ class HomeController extends Controller
             'email' => 'required|email|max:50|unique:subscribers,email',
         ]);
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'message' => 'The email field is required, invalid, or already subscribed.']);
+            return response()->json(['success' => false, 'message' => $validator->errors()->first('email')]);
         }
         $subscribe = new Subscriber;
         $subscribe->email = $request->email;

@@ -61,7 +61,6 @@
 						<p class="mb-2">Subscribe & Stay Updated from the Doccure</p>
 						<div class="subscribe-input">
 							<div id="subscribe-message"></div>
-							<div id="subscribe-message"></div>
 							<form id="subscribe-form" action="#" method="post">
 								@csrf
 								<input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
@@ -141,39 +140,7 @@
 </footer>
 <!-- /Footer Section -->
 
-<script>
-$(document).ready(function(){
-    $('#subscribe-btn').on('click', function(e){
-        e.preventDefault();
-        var form = $('#subscribe-form');
-        var formData = form.serialize();
-        var btn = $(this);
-        btn.prop('disabled', true).html('<i class="isax isax-send-25 me-1"></i>Sending...');
-        $.ajax({
-            url: '{{route("subscribe.newsletter")}}',
-            type: 'POST',
-            data: formData,
-            success: function(response){
-                if(response.status){
-                    $('#subscribe-message').html('<div class="alert alert-success mt-2">' + response.message + '</div>');
-                    form[0].reset();
-                }else{
-                    var errors = '';
-                    $.each(response.errors.email, function(key, value){
-                        errors += value + '<br>';
-                    });
-                    $('#subscribe-message').html('<div class="alert alert-danger mt-2">' + errors + '</div>');
-                }
-                btn.prop('disabled', false).html('<i class="isax isax-send-25 me-1"></i>Send');
-            },
-            error: function(){
-                $('#subscribe-message').html('<div class="alert alert-danger mt-2">Something went wrong. Please try again.</div>');
-                btn.prop('disabled', false).html('<i class="isax isax-send-25 me-1"></i>Send');
-            }
-        });
-    });
-});
-</script>
+
 
 <!-- Cursor -->
 <div class="mouse-cursor cursor-outer"></div>

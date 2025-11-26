@@ -729,9 +729,43 @@
 	
 		<!-- jQuery -->
 		<script src="{{url('/')}}/assets/frontend/js/jquery-3.7.1.min.js"></script>
-		
+
 		<!-- Bootstrap Bundle JS -->
 		<script src="{{url('/')}}/assets/frontend/js/bootstrap.bundle.min.js"></script>
+
+		<script>
+		$(document).ready(function(){
+		    $('#subscribe-btn').on('click', function(e){
+		        e.preventDefault();
+		        var form = $('#subscribe-form');
+		        var formData = form.serialize();
+		        var btn = $(this);
+		        btn.prop('disabled', true).html('<i class="isax isax-send-25 me-1"></i>Sending...');
+		        $.ajax({
+		            url: '{{route("subscribe.newsletter")}}',
+		            type: 'POST',
+		            data: formData,
+		            success: function(response){
+		                if(response.status){
+		                    $('#subscribe-message').html('<div class="alert alert-success mt-2">' + response.message + '</div>');
+		                    form[0].reset();
+		                }else{
+		                    var errors = '';
+		                    $.each(response.errors.email, function(key, value){
+		                        errors += value + '<br>';
+		                    });
+		                    $('#subscribe-message').html('<div class="alert alert-danger mt-2">' + errors + '</div>');
+		                }
+		                btn.prop('disabled', false).html('<i class="isax isax-send-25 me-1"></i>Send');
+		            },
+		            error: function(){
+		                $('#subscribe-message').html('<div class="alert alert-danger mt-2">Something went wrong. Please try again.</div>');
+		                btn.prop('disabled', false).html('<i class="isax isax-send-25 me-1"></i>Send');
+		            }
+		        });
+		    });
+		});
+		</script>
 		
 		<!-- Feather Icon JS -->
 		<script src="{{url('/')}}/assets/frontend/js/feather.min.js"></script>

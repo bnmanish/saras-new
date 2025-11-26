@@ -84,7 +84,7 @@
 									</div>
 									<div class="contact-details">
 										<h4>Address</h4>
-										<p>8432 Mante Highway, Aminaport, USA</p>
+										<p>{{ getSetting()->primary_address }}</p>
 									</div>
 								</div>
 							</div>
@@ -95,7 +95,7 @@
 									</div>
 									<div class="contact-details">
 										<h4>Phone Number</h4>
-										<p>+1 315 369 5943</p>
+										<p>{{ getSetting()->primary_contact }}</p>
 									</div>
 								</div>
 							</div>
@@ -106,7 +106,7 @@
 									</div>
 									<div class="contact-details">
 										<h4>Email Address</h4>
-										<p>doccure@example.com</p>
+										<p>{{ getSetting()->primary_email }}</p>
 									</div>
 								</div>
 							</div>

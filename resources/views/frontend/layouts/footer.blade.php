@@ -136,15 +136,6 @@
 						<li><a href="javascript:void(0);">Refund Policy</a></li>
 					</ul>
 				</div>
-				<!-- /Copyright Menu -->
-				<ul class="payment-method">
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-01.svg" alt="Img"></a></li>
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-02.svg" alt="Img"></a></li>
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-03.svg" alt="Img"></a></li>
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-04.svg" alt="Img"></a></li>
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-05.svg" alt="Img"></a></li>
-					<li><a href="javascript:void(0);"><img src="{{url('/')}}/assets/frontend/img/icons/card-06.svg" alt="Img"></a></li>
-				</ul>
 			</div>
 			<!-- /Copyright -->					
 		</div>

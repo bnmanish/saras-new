@@ -59,12 +59,24 @@
 					<div class="footer-widget">
 						<h6 class="footer-title">Newsletter</h6>
 						<p class="mb-2">Subscribe & Stay Updated from the Doccure</p>
+						@if(Session::has('success'))
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							<strong>Success!</strong> {{Session::get('success')}}
+						</div>
+						@endif
+						@if(Session::has('error'))
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							<strong>Error!</strong> {{Session::get('error')}}
+						</div>
+						@endif
+						<div id="subscribe-message"></div>
 						<div class="subscribe-input">
-							<div id="subscribe-message"></div>
-							<form id="subscribe-form" action="#" method="post">
+							<form id="subscribe-form" action="{{route('subscribe.newsletter')}}" method="post">
 								@csrf
 								<input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
-								<button type="button" id="subscribe-btn" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center"><i class="isax isax-send-25 me-1"></i>Send</button>
+								<button type="submit" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center"><i class="isax isax-send-25 me-1"></i>Send</button>
 							</form>
 						</div>
 						<div class="social-icon">
@@ -138,6 +150,35 @@
 		</div>
 	</div>
 </footer>
+<script>
+document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const formData = new FormData(form);
+    const messageDiv = document.getElementById('subscribe-message');
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        messageDiv.innerHTML = '';
+        if (data.success) {
+            messageDiv.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><strong>Success!</strong> ' + data.message + '</div>';
+            form.reset();
+        } else {
+            messageDiv.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><strong>Error!</strong> ' + data.message + '</div>';
+        }
+    })
+    .catch(error => {
+        messageDiv.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><strong>Error!</strong> Something went wrong. Please try again.</div>';
+    });
+});
+</script>
 <!-- /Footer Section -->
 
 

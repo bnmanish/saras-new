@@ -16,4 +16,9 @@ class FrontProductCotroller extends Controller
         $categories = Category::get();
         return view('frontend/products', compact('products', 'categories','page'));
     }
+
+    public function details($slug){
+        return view('frontend/product_details');
+    }
+
 }

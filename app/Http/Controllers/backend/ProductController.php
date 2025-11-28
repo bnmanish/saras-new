@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Category;
 use Session;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -21,6 +22,7 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:products,slug'],
             'category_id' => ['required', 'exists:categories,id'],
             'price' => ['nullable', 'integer'],
             'pack_size' => ['nullable', 'string', 'max:255'],
@@ -34,8 +36,17 @@ class ProductController extends Controller
             'images.*' => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
+        $slug = $request->slug ?: Str::slug($request->name);
+        $originalSlug = $slug;
+        $count = 1;
+        while (Product::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+
         $product = new Product;
         $product->name = $request->name;
+        $product->slug = $slug;
         $product->category_id = $request->category_id;
         $product->price = $request->price;
         $product->pack_size = $request->pack_size;
@@ -81,6 +92,7 @@ class ProductController extends Controller
     public function editStoreProduct(Request $request,$id){
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:products,slug,' . $id],
             'category_id' => ['required', 'exists:categories,id'],
             'price' => ['nullable', 'integer'],
             'pack_size' => ['nullable', 'string', 'max:255'],
@@ -94,8 +106,17 @@ class ProductController extends Controller
             'images.*' => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
+        $slug = $request->slug ?: Str::slug($request->name);
+        $originalSlug = $slug;
+        $count = 1;
+        while (Product::where('slug', $slug)->where('id', '!=', $id)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+
         $product = Product::find($id);
         $product->name = $request->name;
+        $product->slug = $slug;
         $product->category_id = $request->category_id;
         $product->price = $request->price;
         $product->pack_size = $request->pack_size;

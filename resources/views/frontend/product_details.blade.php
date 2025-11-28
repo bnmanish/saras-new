@@ -1,30 +1,21 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-
+		<title>{{$product->meta_title}}</title>
 		<meta charset="utf-8">
-		<title>Doccure</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="keywords" content="practo clone, doccure, doctor appointment, Practo clone html template, doctor booking template">
-		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-		<meta property="og:url" content="https://doccure.dreamstechnologies.com/html/">
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<meta name="description" content="{{$product->meta_description}}">
+		<meta name="keywords" content="{{$product->meta_keywords}}">
+		<meta property="og:url" content="{{route('products.details',$product->slug)}}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta property="og:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:domain" content="https://doccure.dreamstechnologies.com/html/">
-		<meta property="twitter:url" content="https://doccure.dreamstechnologies.com/html/">
-		<meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta name="twitter:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="twitter:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">	
+		<meta property="og:title" content="{{$product->meta_title}}">
+		<meta property="og:description" content="{{$product->meta_description}}">
+		<meta name="twitter:title" content="{{$product->meta_title}}">
+		<meta name="twitter:description" content="{{$product->meta_description}}">
 		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="{{url('/')}}/assets/frontend/img/favicon.png" type="image/x-icon">
-
 		<!-- Apple Touch Icon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="{{url('/')}}/assets/frontend/img/apple-touch-icon.png">
+		<link rel="shortcut icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
 
 		<!-- Theme Settings Js -->
 		<script src="{{url('/')}}/assets/frontend/js/theme-script.js"></script>
@@ -69,11 +60,10 @@
 						<div class="col-md-12 col-12 text-center">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home-15"></i></a></li>
-									<li class="breadcrumb-item" aria-current="page">Pharmacy</li>
-									<li class="breadcrumb-item active">Product Description</li>
+									<li class="breadcrumb-item"><a href="{{route('home')}}"><i class="isax isax-home-15"></i></a></li>
+									<li class="breadcrumb-item active">{{$product->name}}</li>
 								</ol>
-								<h2 class="breadcrumb-title">Product Description</h2>
+								<h2 class="breadcrumb-title">{{$product->name}}</h2>
 							</nav>
 						</div>
 					</div>

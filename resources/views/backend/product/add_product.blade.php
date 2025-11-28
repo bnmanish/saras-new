@@ -37,15 +37,25 @@
                         <form method="post" action="{{route('admin.store.product')}}" enctype="multipart/form-data">
                             @csrf
 
-                             <div class="mb-3 row">
-                                 <label class="col-md-2 col-form-label">Product Name <span class="text-danger">*</span></label>
-                                 <div class="col-md-10">
-                                     <input class="form-control" type="text" name="name" placeholder="Product name *" value="{{old('name')}}">
-                                     @if($errors->first('name'))
-                                     <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
-                                     @endif
-                                 </div>
-                             </div>
+                              <div class="mb-3 row">
+                                  <label class="col-md-2 col-form-label">Product Name <span class="text-danger">*</span></label>
+                                  <div class="col-md-10">
+                                      <input class="form-control" type="text" name="name" placeholder="Product name *" value="{{old('name')}}">
+                                      @if($errors->first('name'))
+                                      <p class="text-danger mb-0">{{ $errors->first('name') }}</p>
+                                      @endif
+                                  </div>
+                              </div>
+
+                              <div class="mb-3 row">
+                                  <label class="col-md-2 col-form-label">Slug</label>
+                                  <div class="col-md-10">
+                                      <input class="form-control" type="text" name="slug" placeholder="Slug (leave empty to auto-generate)" value="{{old('slug')}}">
+                                      @if($errors->first('slug'))
+                                      <p class="text-danger mb-0">{{ $errors->first('slug') }}</p>
+                                      @endif
+                                  </div>
+                              </div>
 
                              <div class="mb-3 row">
                                  <label class="col-md-2 col-form-label">Category <span class="text-danger">*</span></label>

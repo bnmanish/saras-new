@@ -18,7 +18,8 @@ class FrontProductCotroller extends Controller
     }
 
     public function details($slug){
-        return view('frontend/product_details');
+        $product = Product::with(['category', 'images', 'primaryImage'])->where('slug', $slug)->firstOrFail();
+        return view('frontend/product_details', compact('product'));
     }
 
 }

@@ -151,16 +151,18 @@
 					<div class="owl-carousel spciality-slider aos" data-aos="fade-up">
 						@foreach($categories as $category)
 						<div class="spaciality-item">
-							<div class="spaciality-img">
-								@if($category->icon)
-									<img src="{{asset('uploads/category_icons/'.$category->icon)}}" alt="{{$category->title}} Icon" style="width: 100%; object-fit: cover;">
-								@else
-									<div style="width: 100%; background: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-										<i class="fas fa-image" style="font-size: 48px; color: #dee2e6;"></i>
-									</div>
-								@endif
-							</div>
-							<h6><a href="{{ $category->slug ? route('products.category', $category->slug) : route('products') }}">{{$category->title}}</a></h6>
+							<a href="{{ $category->slug ? route('products.category', $category->slug) : route('products') }}">
+								<div class="spaciality-img">
+									@if($category->icon)
+										<img src="{{asset('uploads/category_icons/'.$category->icon)}}" alt="{{$category->title}} Icon" style="width: 100%; object-fit: cover;">
+									@else
+										<div style="width: 100%; background: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+											<i class="fas fa-image" style="font-size: 48px; color: #dee2e6;"></i>
+										</div>
+									@endif
+								</div>
+								<h6>{{$category->title}}</h6>
+							</a>
 						</div>
 						@endforeach
 					</div>

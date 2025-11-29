@@ -78,7 +78,7 @@
 								</li>
 								@foreach($categories as $category)
 								<li class="nav-item" role="presentation">
-									<a class="nav-link" id="category-{{ $category->id }}-tab" data-bs-toggle="tab" href="#category-{{ $category->id }}" role="tab" aria-controls="category-{{ $category->id }}" aria-selected="false">{{ $category->title }}</a>
+									<a class="nav-link" id="category-{{ $category->slug }}-tab" data-bs-toggle="tab" href="#category-{{ $category->slug }}" role="tab" aria-controls="category-{{ $category->slug }}" aria-selected="false">{{ $category->title }}</a>
 								</li>
 								@endforeach
 							</ul>
@@ -139,10 +139,10 @@
 
 							    <!-- CATEGORY TABS CONTENT -->
 							    @foreach($categories as $category)
-							        <div class="tab-pane fade" 
-							             id="category-{{ $category->id }}" 
-							             role="tabpanel" 
-							             aria-labelledby="category-{{ $category->id }}-tab">
+							        <div class="tab-pane fade"
+							             id="category-{{ $category->slug }}"
+							             role="tabpanel"
+							             aria-labelledby="category-{{ $category->slug }}-tab">
 
 							            <div class="row product-list">
 

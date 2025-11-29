@@ -60675,3 +60675,17 @@ ul li {
     z-index: -1;
     height: 165px;
 }
+
+.dynamic-description li::before {
+    /*content: '❀';*/
+    content: '✽';
+    margin-right: 0.5rem;
+    color: #0E82FD;
+}
+
+.dynamic-description li {
+    position: relative;
+    padding-left: 1.5rem; /* space for icon */
+    text-indent: -1.26rem; /* pulls first line back so icon sits correctly */
+    margin-bottom: 10px;
+}

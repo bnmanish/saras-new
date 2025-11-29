@@ -211,7 +211,9 @@
 											</div>
 											<div class="doc-info-cont product-cont">
 												<h4 class="doc-name mb-2">{{$product->name}}</h4>
-												{!!$product->short_description!!}
+												<div class="dynamic-description">
+													{!!$product->short_description!!}
+												</div>
 											</div>
 										</div>
 										
@@ -231,7 +233,7 @@
 									<!-- /Tab Menu -->
 									
 									<!-- Tab Content -->
-									<div class="tab-content pt-3">
+									<div class="tab-content dynamic-description pt-3">
 									
 										{!!$product->long_description!!}
 										

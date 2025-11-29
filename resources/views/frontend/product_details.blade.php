@@ -53,6 +53,11 @@
 				border-radius: 10px;
 				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 			}
+			@media (max-width: 576px) {
+				.doctor-img1 .carousel {
+					max-width: 100%;
+				}
+			}
 			.doctor-img1 .carousel-inner {
 				position: relative;
 				width: 100%;
@@ -114,6 +119,14 @@
 			.doctor-img1 .thumbnail-container .img-thumbnail.active {
 				border-color: #007bff;
 				box-shadow: 0 0 5px rgba(0,123,255,0.5);
+			}
+			.product-description .doctor-img1 {
+				width: 40%;
+			}
+			@media (max-width: 576px) {
+				.product-description .doctor-img1 {
+					width: 100%;
+				}
 			}
 		</style>
 

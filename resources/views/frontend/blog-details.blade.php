@@ -44,6 +44,15 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ url('/') }}/assets/frontend/css/custom.css">
 
+    <style>
+        @media (max-width: 767.98px) {
+            .doctor-img1 img {
+                width: 100% !important;
+                max-height: none !important;
+            }
+        }
+    </style>
+
     {!! getSetting()->head_content !!}
 </head>
 <body>

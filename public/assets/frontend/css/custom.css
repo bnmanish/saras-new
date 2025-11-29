@@ -45760,14 +45760,17 @@ span.refund {
 }
 
 .product-description .doctor-img1 {
-  width: 40%;
+  width: 50%;
 }
 .product-description .doc-info-cont {
-  width: 60%;
+  width: 50%;
 }
 
 @media (max-width: 767.98px) {
   .product-description .doc-info-cont {
+    width: 100%;
+  }
+  .product-description .doctor-img1 {
     width: 100%;
   }
 }

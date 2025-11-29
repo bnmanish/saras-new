@@ -44,7 +44,79 @@
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
-	
+
+		<style>
+			.doctor-img1 .carousel {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
+				border-radius: 10px;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			}
+			.doctor-img1 .carousel-inner {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				height: 400px;
+				border-radius: 10px;
+			}
+			.doctor-img1 .carousel-item {
+				height: 400px;
+			}
+			.doctor-img1 .carousel-item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+			.doctor-img1 .carousel-indicators {
+				bottom: -40px;
+			}
+			.doctor-img1 .carousel-indicators button {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin: 0 5px;
+			}
+			.doctor-img1 .carousel-control-prev,
+			.doctor-img1 .carousel-control-next {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background-color: rgba(0,0,0,0.5);
+				border: none;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.doctor-img1 .carousel-control-prev {
+				left: 10px;
+			}
+			.doctor-img1 .carousel-control-next {
+				right: 10px;
+			}
+			.doctor-img1 .carousel-control-prev-icon,
+			.doctor-img1 .carousel-control-next-icon {
+				width: 20px;
+				height: 20px;
+			}
+			/* Thumbnail styles */
+			.doctor-img1 .thumbnail-container {
+				margin-top: 60px;
+			}
+			.doctor-img1 .thumbnail-container .img-thumbnail {
+				border: 2px solid #dee2e6;
+				transition: border-color 0.3s ease;
+				cursor: pointer;
+			}
+			.doctor-img1 .thumbnail-container .img-thumbnail:hover {
+				border-color: #007bff;
+			}
+			.doctor-img1 .thumbnail-container .img-thumbnail.active {
+				border-color: #007bff;
+				box-shadow: 0 0 5px rgba(0,123,255,0.5);
+			}
+		</style>
+
 	</head>
 	<body>
 
@@ -76,13 +148,12 @@
 				</div>
 			</div>
 			<!-- /Breadcrumb -->
-			
+
 			<!-- Page Content -->
 			<div class="content">
 				<div class="container">
 
 					<div class="row">
-
 						<div class="col-md-12">
 							<!-- Doctor Widget -->
 							<div class="card">
@@ -90,7 +161,55 @@
 									<div class="doctor-widget">
 										<div class="doc-info-left">
 											<div class="doctor-img1">
-													<img src="{{url('/')}}/assets/frontend/img/products/product.jpg" class="img-fluid" alt="User Image">
+												@if($product->images->count() > 0)
+													<div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
+														<div class="carousel-indicators">
+															@foreach($product->images as $index => $image)
+																<button type="button" data-bs-target="#productImageCarousel" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+															@endforeach
+														</div>
+														<div class="carousel-inner">
+															@foreach($product->images as $index => $image)
+																<div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+																	@if(file_exists(public_path('uploads/product/' . $image->image)))
+																		<img src="{{ url('uploads/product/' . $image->image) }}" class="d-block w-100" alt="{{ $product->name }} Image {{ $index + 1 }}">
+																	@else
+																		<img src="{{ url('/') }}/assets/frontend/img/products/product.jpg" class="d-block w-100" alt="Image not found">
+																	@endif
+																</div>
+															@endforeach
+														</div>
+														@if($product->images->count() > 1)
+															<button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
+																<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+																<span class="visually-hidden">Previous</span>
+															</button>
+															<button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
+																<span class="carousel-control-next-icon" aria-hidden="true"></span>
+																<span class="visually-hidden">Next</span>
+															</button>
+														@endif
+													</div>
+													@if($product->images->count() > 1)
+														<div class="thumbnail-container">
+															<div class="row justify-content-center">
+																@foreach($product->images as $index => $image)
+																	<div class="col-2 mb-2">
+																		@if(file_exists(public_path('uploads/product/' . $image->image)))
+																			<img src="{{ url('uploads/product/' . $image->image) }}" class="img-thumbnail {{ $index == 0 ? 'active' : '' }}" style="width: 100%; height: 60px; object-fit: cover;" onclick="goToSlide({{ $index }})" alt="Thumbnail {{ $index + 1 }}" id="thumb-{{ $index }}">
+																		@else
+																			<img src="{{ url('/') }}/assets/frontend/img/products/product.jpg" class="img-thumbnail {{ $index == 0 ? 'active' : '' }}" style="width: 100%; height: 60px; object-fit: cover;" onclick="goToSlide({{ $index }})" alt="Thumbnail not found" id="thumb-{{ $index }}">
+																		@endif
+																	</div>
+																@endforeach
+															</div>
+														</div>
+													@endif
+												@else
+													<div style="height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+														<img src="{{ url('/') }}/assets/frontend/img/products/product.jpg" class="img-fluid" style="max-height: 400px; border-radius: 10px;" alt="No Image">
+													</div>
+												@endif
 											</div>
 											<div class="doc-info-cont product-cont">
 												<h4 class="doc-name mb-2">{{$product->name}}</h4>
@@ -219,6 +338,43 @@
 		
 		<!-- Custom JS -->
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
-		
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var carouselElement = document.getElementById('productImageCarousel');
+				if (carouselElement) {
+					var carousel = new bootstrap.Carousel(carouselElement, {
+						interval: 5000, // Auto slide every 5 seconds
+						wrap: true
+					});
+
+					// Update thumbnail active state on slide change
+					carouselElement.addEventListener('slid.bs.carousel', function (event) {
+						updateThumbnailActiveState(event.to);
+					});
+				}
+			});
+
+			function goToSlide(index) {
+				var carousel = bootstrap.Carousel.getInstance(document.getElementById('productImageCarousel'));
+				if (carousel) {
+					carousel.to(index);
+					updateThumbnailActiveState(index);
+				}
+			}
+
+			function updateThumbnailActiveState(activeIndex) {
+				// Remove active class from all thumbnails
+				document.querySelectorAll('.thumbnail-container .img-thumbnail').forEach(function(thumb) {
+					thumb.classList.remove('active');
+				});
+				// Add active class to current thumbnail
+				var activeThumb = document.getElementById('thumb-' + activeIndex);
+				if (activeThumb) {
+					activeThumb.classList.add('active');
+				}
+			}
+		</script>
+
 	</body>
 </html>

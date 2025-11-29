@@ -181,7 +181,7 @@
 						@foreach($products as $product)
 						<div class="card">
 							<div class="card-img card-img-hover">
-								<a href="#"><img src="{{ $product->primaryImage ? asset('uploads/product/' . $product->primaryImage->image) : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=' }}" alt="{{ $product->name }}"></a>
+								<a href="{{route('products.details',$product->slug)}}"><img src="{{ $product->primaryImage ? asset('uploads/product/' . $product->primaryImage->image) : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4=' }}" alt="{{ $product->name }}"></a>
 								<div class="grid-overlay-item d-flex align-items-center justify-content-between">
 									<span class="badge bg-orange"><i class="fa-solid fa-star me-1"></i>5.0</span>
 									<a href="javascript:void(0)" class="fav-icon">
@@ -191,25 +191,20 @@
 							</div>
 							<div class="card-body p-0">
 								<div class="d-flex active-bar align-items-center justify-content-between p-3">
-									<a href="#" class="text-indigo fw-medium fs-14">{{ $product->category->title ?? 'Product' }}</a>
-									<span class="badge bg-success-light d-inline-flex align-items-center">
-										<i class="fa-solid fa-circle fs-5 me-1"></i>
-										Available
-									</span>
+									<a href="javascript:;" class="text-indigo fw-medium fs-14">{{ $product->category->title ?? 'Product' }}</a>
 								</div>
 								<div class="p-3 pt-0">
 									<div class="doctor-info-detail mb-3 pb-3">
-										<h3 class="mb-1"><a href="#">{{ $product->name }}</a></h3>
-
+										<h3 class="mb-1"><a href="{{route('products.details',$product->slug)}}">{{ $product->name }}</a></h3>
 									</div>
 									<div class="d-flex align-items-center justify-content-between">
 										@if($product->price)
 										<div>
 											<p class="mb-1">Price</p>
-											<h3 class="text-orange">${{ $product->price }}</h3>
+											<h3 class="text-orange">₹ {{ $product->price }}</h3>
 										</div>
 										@endif
-										<a href="#" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
+										<a href="{{route('products.details',$product->slug)}}" class="btn btn-md btn-dark d-inline-flex align-items-center rounded-pill">
 											<i class="isax isax-calendar-1 me-2"></i>
 											Details
 										</a>

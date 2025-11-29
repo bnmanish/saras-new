@@ -92,15 +92,15 @@
                                  </div>
                              </div>
 
-                             <div class="mb-3 row">
-                                 <label class="col-md-2 col-form-label">Short Description</label>
-                                 <div class="col-md-10">
-                                     <textarea class="form-control" name="short_description" rows="3" placeholder="Short description">{{old('short_description')}}</textarea>
-                                     @if($errors->first('short_description'))
-                                     <p class="text-danger mb-0">{{ $errors->first('short_description') }}</p>
-                                     @endif
-                                 </div>
-                             </div>
+                              <div class="mb-3 row">
+                                  <label class="col-md-2 col-form-label">Short Description</label>
+                                  <div class="col-md-10">
+                                      <textarea class="form-control texteditor" name="short_description" rows="3" placeholder="Short description">{{old('short_description')}}</textarea>
+                                      @if($errors->first('short_description'))
+                                      <p class="text-danger mb-0">{{ $errors->first('short_description') }}</p>
+                                      @endif
+                                  </div>
+                              </div>
 
                              <div class="mb-3 row">
                                  <label class="col-md-2 col-form-label">Long Description</label>

@@ -10602,7 +10602,7 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index: -1 !important;
+  /*z-index: -1 !important;*/
 }
 
 .divider .carousel-caption {

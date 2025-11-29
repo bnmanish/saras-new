@@ -190,21 +190,6 @@
 															</button>
 														@endif
 													</div>
-													@if($product->images->count() > 1)
-														<div class="thumbnail-container">
-															<div class="row justify-content-center">
-																@foreach($product->images as $index => $image)
-																	<div class="col-2 mb-2">
-																		@if(file_exists(public_path('uploads/product/' . $image->image)))
-																			<img src="{{ url('uploads/product/' . $image->image) }}" class="img-thumbnail {{ $index == 0 ? 'active' : '' }}" style="width: 100%; height: 60px; object-fit: cover;" onclick="goToSlide({{ $index }})" alt="Thumbnail {{ $index + 1 }}" id="thumb-{{ $index }}">
-																		@else
-																			<img src="{{ url('/') }}/assets/frontend/img/products/product.jpg" class="img-thumbnail {{ $index == 0 ? 'active' : '' }}" style="width: 100%; height: 60px; object-fit: cover;" onclick="goToSlide({{ $index }})" alt="Thumbnail not found" id="thumb-{{ $index }}">
-																		@endif
-																	</div>
-																@endforeach
-															</div>
-														</div>
-													@endif
 												@else
 													<div style="height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 														<img src="{{ url('/') }}/assets/frontend/img/products/product.jpg" class="img-fluid" style="max-height: 400px; border-radius: 10px;" alt="No Image">

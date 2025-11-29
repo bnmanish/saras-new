@@ -160,7 +160,7 @@
 									</div>
 								@endif
 							</div>
-							<h6><a href="#">{{$category->title}}</a></h6>
+							<h6><a href="{{ $category->slug ? route('products.category', $category->slug) : route('products') }}">{{$category->title}}</a></h6>
 						</div>
 						@endforeach
 					</div>

@@ -14,7 +14,16 @@ class FrontProductCotroller extends Controller
         $page = Page::where(['id'=>17])->first();
         $products = Product::with(['category', 'primaryImage'])->get();
         $categories = Category::get();
-        return view('frontend/products', compact('products', 'categories','page'));
+        $activeCategory = null;
+        return view('frontend/products', compact('products', 'categories','page', 'activeCategory'));
+    }
+
+    public function category($categorySlug){
+        $page = Page::where(['id'=>17])->first();
+        $products = Product::with(['category', 'primaryImage'])->get();
+        $categories = Category::get();
+        $activeCategory = $categorySlug;
+        return view('frontend/products', compact('products', 'categories','page', 'activeCategory'));
     }
 
     public function details($slug){

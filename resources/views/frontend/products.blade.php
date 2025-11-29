@@ -74,11 +74,11 @@
 					<div class="col-12">
 							<ul class="nav nav-tabs" id="productTabs" role="tablist">
 								<li class="nav-item" role="presentation">
-									<a class="nav-link active" id="all-tab" data-bs-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
+									<a class="nav-link {{ !$activeCategory ? 'active' : '' }}" id="all-tab" data-bs-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="{{ !$activeCategory ? 'true' : 'false' }}">All</a>
 								</li>
 								@foreach($categories as $category)
 								<li class="nav-item" role="presentation">
-									<a class="nav-link" id="category-{{ $category->slug }}-tab" data-bs-toggle="tab" href="#category-{{ $category->slug }}" role="tab" aria-controls="category-{{ $category->slug }}" aria-selected="false">{{ $category->title }}</a>
+									<a class="nav-link {{ $activeCategory == $category->slug ? 'active' : '' }}" id="category-{{ $category->slug }}-tab" data-bs-toggle="tab" href="#category-{{ $category->slug }}" role="tab" aria-controls="category-{{ $category->slug }}" aria-selected="{{ $activeCategory == $category->slug ? 'true' : 'false' }}">{{ $category->title }}</a>
 								</li>
 								@endforeach
 							</ul>
@@ -97,7 +97,7 @@
 							<div class="tab-content" id="productTabsContent">
 
 							    <!-- ALL PRODUCTS TAB -->
-							    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+							    <div class="tab-pane fade {{ !$activeCategory ? 'show active' : '' }}" id="all" role="tabpanel" aria-labelledby="all-tab">
 							        <div class="row product-list">
 							            @if($products->isEmpty())
 							                <div class="col-12 text-center py-5">
@@ -139,7 +139,7 @@
 
 							    <!-- CATEGORY TABS CONTENT -->
 							    @foreach($categories as $category)
-							        <div class="tab-pane fade"
+							        <div class="tab-pane fade {{ $activeCategory == $category->slug ? 'show active' : '' }}"
 							             id="category-{{ $category->slug }}"
 							             role="tabpanel"
 							             aria-labelledby="category-{{ $category->slug }}-tab">

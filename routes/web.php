@@ -83,7 +83,8 @@ Route::get('/directors',[DirectorsController::class,'index'])->name('directors')
 
 Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');
 Route::get('/products', [FrontProductCotroller::class, 'index'])->name('products');
-Route::get('/products/{slug}', [FrontProductCotroller::class, 'details'])->name('products.details');
+Route::get('/products/{categorySlug}', [FrontProductCotroller::class, 'category'])->name('products.category');
+Route::get('/product/{slug}', [FrontProductCotroller::class, 'details'])->name('products.details');
 Route::get('/tenders', [FrontTenderController::class, 'index'])->name('tenders');
 Route::get('/milk-purchase-price-chart', [FrontTenderController::class, 'milkPurchasePriceChart'])->name('milk.purchase.price.chart');
 Route::get('/milk-sale-price-chart', [FrontTenderController::class, 'milkSalePriceChart'])->name('milk.sale.price.chart');

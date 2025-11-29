@@ -29,15 +29,26 @@
                         <form method="post" action="{{route('admin.store.category')}}" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="mb-3 row">
-                                <label class="col-md-2 col-form-label">Title <span class="text-danger">*</span></label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="text" name="title" placeholder="Category title *" value="{{old('title')}}">
-                                    @if($errors->first('title'))
-                                    <p class="text-danger mb-0">{{ $errors->first('title') }}</p>
-                                    @endif
-                                </div>
-                            </div>
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Title <span class="text-danger">*</span></label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="title" placeholder="Category title *" value="{{old('title')}}">
+                                     @if($errors->first('title'))
+                                     <p class="text-danger mb-0">{{ $errors->first('title') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
+
+                             <div class="mb-3 row">
+                                 <label class="col-md-2 col-form-label">Slug</label>
+                                 <div class="col-md-10">
+                                     <input class="form-control" type="text" name="slug" placeholder="Category slug (leave empty to auto-generate)" value="{{old('slug')}}">
+                                     <small class="text-muted">If left empty, slug will be generated from the title.</small>
+                                     @if($errors->first('slug'))
+                                     <p class="text-danger mb-0">{{ $errors->first('slug') }}</p>
+                                     @endif
+                                 </div>
+                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-md-2 col-form-label">Icon</label>

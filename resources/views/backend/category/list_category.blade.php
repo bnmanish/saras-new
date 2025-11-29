@@ -44,15 +44,16 @@
                         </div>
 
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                             <thead>
-                                 <tr>
-                                     <th>S.No</th>
-                                     <th>Icon</th>
-                                     <th>Name</th>
-                                     <th>Status</th>
-                                     <th>Action</th>
-                                 </tr>
-                             </thead>
+                              <thead>
+                                  <tr>
+                                      <th>S.No</th>
+                                      <th>Icon</th>
+                                      <th>Name</th>
+                                      <th>Slug</th>
+                                      <th>Status</th>
+                                      <th>Action</th>
+                                  </tr>
+                              </thead>
 
 
                              <tbody>
@@ -67,8 +68,9 @@
                                              <span class="text-muted">No icon</span>
                                          @endif
                                      </td>
-                                     <td>{{$dataRow->title}}</td>
-                                     <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
+                                      <td>{{$dataRow->title}}</td>
+                                      <td>{{$dataRow->slug}}</td>
+                                      <td>{{$dataRow->status == 1 ? 'Enabled' : 'Disabled'}}</td>
                                      <td>
                                          <a href="{{route('admin.edit.category',$dataRow->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                                          <a href="{{route('admin.delete.category',$dataRow->id)}}" class="btn btn-danger btn-sm" onclick="return confirm('Really! Do you want to delete?')"><i class="fas fa-trash"></i></a>

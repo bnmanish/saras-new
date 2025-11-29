@@ -45766,6 +45766,12 @@ span.refund {
   width: 60%;
 }
 
+@media (max-width: 767.98px) {
+  .product-description .doc-info-cont {
+    width: 100%;
+  }
+}
+
 ul.benifits-col li {
   color: #465D7C;
 }

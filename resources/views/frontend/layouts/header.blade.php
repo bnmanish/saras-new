@@ -93,6 +93,7 @@
 						</li>
 						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
 						<li><a href="{{route('important.links')}}">Important Links</a></li>
+						<li><a href="{{route('blog')}}">Blog</a></li>
 						<li><a href="{{route('contact')}}">Contact Us</a></li>
 
 						

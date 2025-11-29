@@ -60678,7 +60678,7 @@ ul li {
 
 .dynamic-description li::before {
     /*content: '❀';*/
-    content: '✽';
+    content: '⮞';
     margin-right: 0.5rem;
     color: #0E82FD;
 }

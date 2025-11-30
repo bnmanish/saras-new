@@ -105,6 +105,8 @@ Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
 Route::post('/subscribe-newsletter', [HomeController::class, 'subscribeNewsLetter'])->name('subscribe.newsletter');
 
+Route::post('/{slug}', [HomeController::class, 'additionalPages'])->name('additional.page');
+
 // Redirect login to admin login
 Route::get('/login', function () {
     return redirect()->route('admin.login');

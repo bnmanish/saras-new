@@ -102,4 +102,9 @@ class HomeController extends Controller
         return view('frontend/404')->with(['page'=>$page]);
     }
 
+    public function additionalPages($slug){
+        $page = AdditionalPage::where(['slug'=>$slug,'status'=>'1'])->firstOrFail();
+        return view('frontend/additional_page')->with(['page'=>$page]);
+    }
+
 }

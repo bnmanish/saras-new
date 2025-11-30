@@ -94,16 +94,8 @@
 		<div class="container">
 			<!-- Copyright -->
 			<div class="copyright">
-				<div class="copyright-text">
+				<div class="copyright-text text-center">
 					<p class="mb-0">{!!getSetting()->copyrights!!}</p>
-				</div>
-				<!-- Copyright Menu -->
-				<div class="copyright-menu">
-					<ul class="policy-menu">
-						<li><a href="javascript:void(0);">Legal Notice</a></li>
-						<li><a href="privacy-policy.html">Privacy Policy</a></li>
-						<li><a href="javascript:void(0);">Refund Policy</a></li>
-					</ul>
 				</div>
 			</div>
 			<!-- /Copyright -->					

@@ -6,6 +6,7 @@ This document outlines the complete CRUD (Create, Read, Update, Delete) operatio
 - [Directors Module](#directors-module)
 - [Products Module](#products-module)
 - [Login Logs Module](#login-logs-module)
+- [Footer Links Module](#footer-links-module)
 - [Access Control](#access-control)
 
 ## Directors Module
@@ -207,6 +208,132 @@ The Login Logs module tracks user authentication attempts with geolocation data.
   - Duplicate prevention (same IP, user, status within 5 minutes)
   - Geolocation fetching via IP
   - User agent capture
+
+## Footer Links Module
+
+### Overview
+The Footer Links module manages dynamic footer sections and links. Admins can create up to 4 footer sections and add unlimited links to each section. Links can open in the same tab or new tab, and have active/inactive status.
+
+### Database Structure
+
+#### Footer Sections Table
+- **Table**: `footer_sections`
+- **Fields**:
+  - `id` (Primary Key)
+  - `name` (String) - Section name (dynamic, up to 4 active sections)
+  - `status` (Enum: '0','1' - 0=disabled, 1=enabled)
+  - `sort_order` (Integer) - Display order (lower numbers appear first)
+  - `timestamps`
+
+#### Footer Links Table
+- **Table**: `footer_links`
+- **Fields**:
+  - `id` (Primary Key)
+  - `section_id` (Foreign Key to footer_sections)
+  - `title` (String) - Link display text
+  - `url` (String) - Link URL
+  - `target` (Enum: '_self', '_blank' - open in same/new tab)
+  - `status` (Enum: '0','1' - 0=inactive, 1=active)
+  - `timestamps`
+
+### CRUD Operations
+
+#### Footer Sections
+
+##### Create
+- **Route**: `GET /admin/add-footer-section` - Add form
+- **Route**: `POST /admin/store-footer-section` - Create
+- **Controller**: `FooterController@addSection`, `FooterController@storeSection`
+- **View**: `backend/footer/add_section.blade.php`
+- **Validation**:
+  - `name`: required, string, max:255
+  - `status`: required, in:0,1
+  - `sort_order`: nullable, integer, min:0
+
+##### Read/List
+- **Route**: `GET /admin/list-footer-sections`
+- **Controller**: `FooterController@listSections`
+- **View**: `backend/footer/list_sections.blade.php`
+- **Features**:
+  - DataTable display
+  - Status management
+  - Edit/Delete actions
+
+##### Update
+- **Route**: `GET /admin/edit-footer-section/{id}` - Edit form
+- **Route**: `POST /admin/update-footer-section/{id}` - Update
+- **Controller**: `FooterController@editSection`, `FooterController@updateSection`
+- **View**: `backend/footer/edit_section.blade.php`
+- **Validation**:
+  - `name`: required, string, max:255
+  - `status`: required, in:0,1
+  - `sort_order`: nullable, integer, min:0
+
+##### Delete
+- **Route**: `GET /admin/delete-footer-section/{id}`
+- **Controller**: `FooterController@deleteSection`
+- **Features**:
+  - Cascade deletion of associated links
+
+#### Footer Links
+
+##### Create
+- **Route**: `GET /admin/add-footer-link` - Add form
+- **Route**: `POST /admin/store-footer-link` - Create
+- **Controller**: `FooterController@addLink`, `FooterController@storeLink`
+- **View**: `backend/footer/add_link.blade.php`
+- **Validation**:
+  - `section_id`: required, exists in footer_sections
+  - `title`: required, string, max:255
+  - `url`: required, valid URL
+  - `target`: required, in:_self,_blank
+  - `status`: required, in:0,1
+
+##### Read/List
+- **Route**: `GET /admin/list-footer-links`
+- **Controller**: `FooterController@listLinks`
+- **View**: `backend/footer/list_links.blade.php`
+- **Features**:
+  - DataTable display with section information
+  - URL preview (clickable)
+  - Target display (Same/New Tab)
+  - Status management
+  - Edit/Delete actions
+
+##### Update
+- **Route**: `GET /admin/edit-footer-link/{id}` - Edit form
+- **Route**: `POST /admin/update-footer-link/{id}` - Update
+- **Controller**: `FooterController@editLink`, `FooterController@updateLink`
+- **View**: `backend/footer/edit_link.blade.php`
+
+##### Delete
+- **Route**: `GET /admin/delete-footer-link/{id}`
+- **Controller**: `FooterController@deleteLink`
+
+### Frontend Integration
+- Footer sections are displayed dynamically in `resources/views/frontend/layouts/footer.blade.php`
+- Only active sections (status=1) and active links (status=1) are shown
+- Sections are ordered by `sort_order` field (ascending), then by `id`
+- Maximum 4 sections displayed in the footer
+- Links open according to target setting (_self or _blank)
+
+### API Endpoints Summary
+
+#### Footer Sections
+- `GET /admin/add-footer-section` - Add form
+- `POST /admin/store-footer-section` - Create
+- `GET /admin/list-footer-sections` - List
+- `GET /admin/edit-footer-section/{id}` - Edit form
+- `POST /admin/update-footer-section/{id}` - Update
+- `GET /admin/delete-footer-section/{id}` - Delete
+
+#### Footer Links
+- `GET /admin/add-footer-link` - Add form
+- `POST /admin/store-footer-link` - Create
+- `GET /admin/list-footer-links` - List
+- `GET /admin/edit-footer-link/{id}` - Edit form
+- `POST /admin/update-footer-link/{id}` - Update
+- `GET /admin/delete-footer-link/{id}` - Delete
 
 ## Access Control
 

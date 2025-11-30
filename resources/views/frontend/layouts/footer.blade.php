@@ -5,54 +5,23 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="row">
+						@php
+							$footerSections = \App\Models\FooterSection::with(['links' => function($query) {
+								$query->where('status', '1');
+							}])->where('status', '1')->orderBy('sort_order')->orderBy('id')->take(4)->get();
+						@endphp
+						@foreach($footerSections as $section)
 						<div class="col-lg-3 col-md-3">
 							<div class="footer-widget footer-menu">
-								<h6 class="footer-title">Company</h6>
+								<h6 class="footer-title">{{$section->name}}</h6>
 								<ul>
-									<li><a href="about-us.html">About</a></li>
-									<li><a href="search.html">Features</a></li>
-									<li><a href="javascript:void(0);">Works</a></li>
-									<li><a href="javascript:void(0);">Careers</a></li>
-									<li><a href="javascript:void(0);">Locations</a></li>
+									@foreach($section->links as $link)
+									<li><a href="{{$link->url}}" target="{{$link->target}}">{{$link->title}}</a></li>
+									@endforeach
 								</ul>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-3">
-							<div class="footer-widget footer-menu">
-								<h6 class="footer-title">Treatments</h6>
-								<ul>
-									<li><a href="search.html">Dental</a></li>
-									<li><a href="search.html">Cardiac</a></li>
-									<li><a href="search.html">Spinal Cord</a></li>
-									<li><a href="search.html">Hair Growth</a></li>
-									<li><a href="search.html">Anemia & Disorder</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3">
-							<div class="footer-widget footer-menu">
-								<h6 class="footer-title">Specialities</h6>
-								<ul>
-									<li><a href="search.html">Transplant</a></li>
-									<li><a href="search.html">Cardiologist</a></li>
-									<li><a href="search.html">Oncology</a></li>
-									<li><a href="search.html">Pediatrics</a></li>
-									<li><a href="search.html">Gynacology</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3">
-							<div class="footer-widget footer-menu">
-								<h6 class="footer-title">Utilites</h6>
-								<ul>
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="contact-us.html">Contact</a></li>
-									<li><a href="contact-us.html">Request A Quote</a></li>
-									<li><a href="javascript:void(0);">Premium Membership</a></li>
-									<li><a href="javascript:void(0);">Integrations</a></li>
-								</ul>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-7">

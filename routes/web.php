@@ -36,6 +36,7 @@ use App\Http\Controllers\backend\TenderController;
 use App\Http\Controllers\backend\MilkPurchasePriceChartController;
 use App\Http\Controllers\backend\MilkSalePriceChartController;
 use App\Http\Controllers\backend\BeneficiaryController;
+use App\Http\Controllers\backend\FooterController;
 use App\Http\Controllers\backend\LoginLogController;
 
 
@@ -329,6 +330,22 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete-gallery/{id}', [GalleryController::class, 'deleteGallery'])->name('admin.delete.gallery');
         Route::post('/delete-gallery-image/{id}', [GalleryController::class, 'deleteGalleryImage'])->name('admin.delete.gallery_image');
         Route::post('/reorder-gallery-images', [GalleryController::class, 'reorderGalleryImages'])->name('admin.reorder.gallery_images');
+
+        // Footer Sections
+        Route::get('/add-footer-section', [FooterController::class, 'addSection'])->name('admin.add.footer.section');
+        Route::post('/store-footer-section', [FooterController::class, 'storeSection'])->name('admin.store.footer.section');
+        Route::get('/list-footer-sections', [FooterController::class, 'listSections'])->name('admin.list.footer.sections');
+        Route::get('/edit-footer-section/{id}', [FooterController::class, 'editSection'])->name('admin.edit.footer.section');
+        Route::post('/update-footer-section/{id}', [FooterController::class, 'updateSection'])->name('admin.update.footer.section');
+        Route::get('/delete-footer-section/{id}', [FooterController::class, 'deleteSection'])->name('admin.delete.footer.section');
+
+        // Footer Links
+        Route::get('/add-footer-link', [FooterController::class, 'addLink'])->name('admin.add.footer.link');
+        Route::post('/store-footer-link', [FooterController::class, 'storeLink'])->name('admin.store.footer.link');
+        Route::get('/list-footer-links', [FooterController::class, 'listLinks'])->name('admin.list.footer.links');
+        Route::get('/edit-footer-link/{id}', [FooterController::class, 'editLink'])->name('admin.edit.footer.link');
+        Route::post('/update-footer-link/{id}', [FooterController::class, 'updateLink'])->name('admin.update.footer.link');
+        Route::get('/delete-footer-link/{id}', [FooterController::class, 'deleteLink'])->name('admin.delete.footer.link');
 
         // Admin logout
         Route::get('admin/logout', [LoginController::class, 'adminLogout'])->name('admin.logout');

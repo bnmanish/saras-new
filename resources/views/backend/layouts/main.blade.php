@@ -304,9 +304,20 @@
                                        <li @if(str_contains(Route::currentRouteName(), 'milk_sale')) class="mm-active" @endif><a href="{{route('admin.list.milk_sale_price_charts')}}">Sale Charts</a></li>
                                        <li @if(str_contains(Route::currentRouteName(), 'beneficiaries')) class="mm-active" @endif><a href="{{route('admin.list.beneficiaries')}}">Beneficiaries</a></li>
                                    </ul>
+                               </li>
+
+                              <li @if(str_contains(Route::currentRouteName(), 'footer')) class="mm-active" @endif>
+                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'footer')) mm-active @endif">
+                                      <i class="fas fa-list"></i>
+                                      <span>Footer Links</span>
+                                  </a>
+                                  <ul class="sub-menu" aria-expanded="false">
+                                      <li @if(str_contains(Route::currentRouteName(), 'footer.section')) class="mm-active" @endif><a href="{{route('admin.list.footer.sections')}}">Footer Sections</a></li>
+                                      <li @if(str_contains(Route::currentRouteName(), 'footer.link')) class="mm-active" @endif><a href="{{route('admin.list.footer.links')}}">Footer Links</a></li>
+                                  </ul>
                               </li>
 
-                             <li @if(str_contains(Route::currentRouteName(), 'gallery')) class="mm-active" @endif>
+                              <li @if(str_contains(Route::currentRouteName(), 'gallery')) class="mm-active" @endif>
                                  <a href="javascript: void(0);" class="has-arrow waves-effect @if(str_contains(Route::currentRouteName(), 'gallery')) mm-active @endif">
                                      <i class="fas fa-images"></i>
                                      <span>Manage Gallery</span>

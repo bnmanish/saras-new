@@ -59,10 +59,234 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
-		<style>
+<style>
 			.owl-dots{
 				display: none;
 			}
+			
+/* About Us Styles */
+		.about-section {
+			padding: 60px 0;
+			background: aliceblue;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.about-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="90" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="90" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+			opacity: 0.1;
+		}
+		
+		.about-content-wrapper {
+			position: relative;
+			z-index: 1;
+		}
+		
+		.about-card {
+			background: rgba(255, 255, 255, 0.95);
+			backdrop-filter: blur(10px);
+			border-radius: 20px;
+			padding: 40px;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.about-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+		}
+		
+		.about-section .section-header h2 {
+			margin-bottom: 30px;
+		}
+		
+		.about-section .section-header .badge {
+			background: rgba(255, 255, 255, 0.2);
+			color: white;
+			border: 1px solid rgba(255, 255, 255, 0.3);
+		}
+		
+		.about-features {
+			display: flex;
+			justify-content: space-around;
+			margin-top: 30px;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+		
+		.about-feature {
+			text-align: center;
+			flex: 1;
+			min-width: 150px;
+		}
+		
+		.about-feature-icon {
+			width: 60px;
+			height: 60px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 15px;
+			color: white;
+			font-size: 24px;
+			box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+		}
+		
+		.about-feature h6 {
+			color: #333;
+			font-weight: 600;
+			margin-bottom: 5px;
+		}
+		
+		.about-feature p {
+			color: #666;
+			font-size: 14px;
+			margin: 0;
+		}
+		
+		/* Gallery Styles */
+		.gallery-section {
+			padding: 80px 0;
+			background: #f8f9fa;
+		}
+			
+			.gallery-item {
+				position: relative;
+				overflow: hidden;
+				border-radius: 12px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.gallery-item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+			}
+			
+			.gallery-img-container {
+				position: relative;
+				width: 100%;
+				height: 250px;
+				overflow: hidden;
+			}
+			
+			.gallery-image {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.3s ease;
+				cursor: pointer;
+			}
+			
+			.gallery-image:hover {
+				transform: scale(1.05);
+			}
+			
+			.gallery-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0,0,0,0.5);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			
+			.gallery-item:hover .gallery-overlay {
+				opacity: 1;
+			}
+			
+			.gallery-overlay i {
+				color: white;
+				font-size: 24px;
+			}
+			
+		/* Modal Styles */
+		.modal-body {
+			padding: 0;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.modal-body img {
+			width: 100%;
+			height: auto;
+			max-height: 80vh;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+			cursor: grab;
+		}
+		
+		.modal-body img:active {
+			cursor: grabbing;
+		}
+		
+		/* Zoom Controls */
+		.zoom-controls {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 1060;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+		
+		.zoom-btn {
+			background: rgba(0, 0, 0, 0.7);
+			color: white;
+			border: none;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background 0.3s ease;
+			font-size: 18px;
+		}
+		
+		.zoom-btn:hover {
+			background: rgba(0, 0, 0, 0.9);
+		}
+		
+		.zoom-info {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			background: rgba(0, 0, 0, 0.7);
+			color: white;
+			padding: 5px 10px;
+			border-radius: 5px;
+			font-size: 12px;
+			z-index: 1060;
+		}
+		
+		.image-container {
+			position: relative;
+			width: 100%;
+			height: 80vh;
+			overflow: hidden;
+			cursor: grab;
+		}
+		
+		.image-container.dragging {
+			cursor: grabbing;
+		}
 		</style>
 	</head>		
 	<body>
@@ -86,67 +310,57 @@
 			</section>
 			<!-- /Home Banner -->
 
-			<!-- List -->
-			<div class="list-section">
+			<!-- About Us Section -->
+			<section class="about-section">
 				<div class="container">
-					<div class="list-card card mb-0">
-						<div class="card-body">
-							<div class="d-flex align-items-center justify-content-center justify-content-xl-between flex-wrap gap-4 list-wraps">
-								<a href="booking.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-secondary">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-01.svg" alt="img">
+					<div class="about-content-wrapper">
+						<div class=" section-header sec-header-one text-center aos" data-aos="fade-up">
+							<span class="badge badge-primary">About Us</span>
+							<h2>Who We Are</h2>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-lg-10 col-md-12">
+								<div class="about-card aos" data-aos="fade-up">
+									<div class="about-content text-center mb-4">
+										{!!$about->short_description!!}
 									</div>
-									<h6>Book Appointment</h6>
-								</a>
-								<a href="doctor-grid.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-primary">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-02.svg" alt="img">
+									<div class="about-features">
+										<div class="about-feature">
+											<div class="about-feature-icon">
+												<i class="fas fa-cheese"></i>
+											</div>
+											<h6>Premium Quality</h6>
+											<p>Fresh dairy products</p>
+										</div>
+										<div class="about-feature">
+											<div class="about-feature-icon">
+												<i class="fas fa-cow"></i>
+											</div>
+											<h6>Farm Fresh</h6>
+											<p>From local farms</p>
+										</div>
+										<div class="about-feature">
+											<div class="about-feature-icon">
+												<i class="fas fa-snowflake"></i>
+											</div>
+											<h6>Cold Chain</h6>
+											<p>Optimal freshness</p>
+										</div>
 									</div>
-									<h6>Talk to Doctors</h6>
-								</a>
-								<a href="hospitals.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-pink">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-03.svg" alt="img">
-									</div>
-									<h6>Hospitals & Clinics</h6>
-								</a>
-								<a href="index-3.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-cyan">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-04.svg" alt="img">
-									</div>
-									<h6>Healthcare</h6>
-								</a>
-								<a href="index-13.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-purple">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-05.svg" alt="img">
-									</div>
-									<h6>Medicine & Supplies</h6>
-								</a>
-								<a href="index-12.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-orange">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-06.svg" alt="img">
-									</div>
-									<h6>Lab Testing</h6>
-								</a>
-								<a href="index-13.html" class="list-item aos" data-aos="fade-up">
-									<div class="list-icon bg-teal">
-										<img src="{{url('/')}}/assets/frontend/img/icons/list-icon-07.svg" alt="img">
-									</div>
-									<h6>Home Care</h6>
-								</a>
+								</div>
 							</div>
-						</div>		
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- /List -->
+			</section>
+			<!-- /About Us Section -->
 
 			<!-- Categories Section -->
 			<section class="speciality-section">
 				<div class="container">
 					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 						<span class="badge badge-primary">Our Categories</span>
-						<h2>Highlighting the Care & Support</h2>
+						<h2>Premium Dairy Categories</h2>
 					</div>
 					<div class="owl-carousel spciality-slider aos" data-aos="fade-up">
 						@foreach($categories as $category)
@@ -175,8 +389,8 @@
 			<section class="doctor-section">
 				<div class="container">
 					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
-						<span class="badge badge-primary">Featured Doctors</span>
-						<h2>Our Highlighted Doctors</h2>
+<span class="badge badge-primary">Featured Products</span>
+						<h2>Our Premium Products</h2>
 					</div>
 
 					<div class="doctors-slider owl-carousel aos" data-aos="fade-up">
@@ -218,8 +432,48 @@
 					</div>
 					<div class="doctor-nav nav-bottom owl-nav"></div>
 				</div>
-			</section>
+</section>
 			<!-- /Doctor Section -->
+
+			<!-- Gallery Section -->
+			@if($latestGalleryImages && $latestGalleryImages->count() > 0)
+			<section class="gallery-section">
+				<div class="container">
+					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+						<span class="badge badge-primary">Gallery</span>
+						<h2>Latest Gallery Images</h2>
+					</div>
+					<div class="gallery-grid aos" data-aos="fade-up">
+						<div class="row g-3">
+							@foreach($latestGalleryImages as $galleryImage)
+							<div class="col-lg-3 col-md-4 col-sm-6">
+								<div class="gallery-item">
+									<div class="gallery-img-container">
+										<img src="{{asset('uploads/gallery/'.$galleryImage->image)}}" 
+											 alt="{{ $galleryImage->gallery->title ?? 'Gallery Image' }}" 
+											 class="img-fluid gallery-image"
+											 data-bs-toggle="modal" 
+											 data-bs-target="#imageModal" 
+											 data-image="{{asset('uploads/gallery/'.$galleryImage->image)}}"
+											 data-title="{{ $galleryImage->gallery->title ?? 'Gallery Image' }}">
+										<div class="gallery-overlay">
+											<i class="fas fa-search-plus"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							@endforeach
+						</div>
+					</div>
+					<div class="text-center mt-4 aos" data-aos="fade-up">
+						<a href="{{ route('gallery') }}" class="btn btn-primary d-inline-flex align-items-center">
+							View All Gallery <i class="fas fa-arrow-right ms-2"></i>
+						</a>
+					</div>
+				</div>
+			</section>
+			@endif
+			<!-- /Gallery Section -->
 
 			<!-- Services Section -->
 			<section class="services-section aos" data-aos="fade-up">
@@ -506,7 +760,7 @@
 					</div>
 				</div>
 			</section>
-
+{{--
 			<section class="faq-section-one">
 				<div class="container">
 					<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
@@ -610,9 +864,9 @@
 					</div>
 				</div>
 			</section>
-
+--}}
 			<!-- App Section -->
-			<section class="app-section app-sec-one p-0">
+			<!-- <section class="app-section app-sec-one p-0">
 				<div class="container">
 					<div class="app-bg">
 						<div class="row">
@@ -644,7 +898,7 @@
 				<div class="download-bg">
 					<img src="{{url('/')}}/assets/frontend/img/bg/download-bg.png" alt="img">
 				</div>
-			</section>
+			</section> -->
 			<!-- /App Section -->
 
 			<!-- Article Section -->
@@ -720,10 +974,39 @@
 			</section>
 			<!-- /Info Section -->
 
-			@include('frontend.layouts.footer')
+@include('frontend.layouts.footer')
 		
 		</div>		
 		<!-- /Main Wrapper -->
+		
+		<!-- Image Modal -->
+		<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="imageModalLabel">Gallery Image</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body p-0">
+						<div class="image-container" id="imageContainer">
+							<img id="modalImage" src="" alt="" class="img-fluid">
+							<div class="zoom-controls">
+								<button class="zoom-btn" id="zoomInBtn" title="Zoom In">
+									<i class="fas fa-search-plus"></i>
+								</button>
+								<button class="zoom-btn" id="zoomOutBtn" title="Zoom Out">
+									<i class="fas fa-search-minus"></i>
+								</button>
+								<button class="zoom-btn" id="zoomResetBtn" title="Reset Zoom">
+									<i class="fas fa-compress"></i>
+								</button>
+							</div>
+							<div class="zoom-info" id="zoomInfo">100%</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<!-- jQuery -->
 		<script src="{{url('/')}}/assets/frontend/js/jquery-3.7.1.min.js"></script>
@@ -750,8 +1033,154 @@
 		<!-- Animation JS -->
 		<script src="{{url('/')}}/assets/frontend/js/aos.js"></script>
 				
-		<!-- Custom JS -->
+<!-- Custom JS -->
 		<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
+		
+		<!-- Gallery Modal Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const imageModal = document.getElementById('imageModal');
+				const modalImage = document.getElementById('modalImage');
+				const modalTitle = document.getElementById('imageModalLabel');
+				const imageContainer = document.getElementById('imageContainer');
+				const zoomInBtn = document.getElementById('zoomInBtn');
+				const zoomOutBtn = document.getElementById('zoomOutBtn');
+				const zoomResetBtn = document.getElementById('zoomResetBtn');
+				const zoomInfo = document.getElementById('zoomInfo');
+				
+				let currentZoom = 1;
+				let isDragging = false;
+				let startX, startY, scrollLeft, scrollTop;
+				
+				// Add click event to all gallery images
+				document.querySelectorAll('.gallery-image').forEach(function(image) {
+					image.addEventListener('click', function() {
+						const imageSrc = this.getAttribute('data-image');
+						const imageTitle = this.getAttribute('data-title');
+						
+						modalImage.src = imageSrc;
+						modalImage.alt = imageTitle;
+						modalTitle.textContent = imageTitle;
+						resetZoom();
+					});
+				});
+				
+				// Clear modal image when modal is hidden
+				imageModal.addEventListener('hidden.bs.modal', function () {
+					modalImage.src = '';
+					modalTitle.textContent = 'Gallery Image';
+					resetZoom();
+				});
+				
+				// Zoom functions
+				function updateZoom() {
+					modalImage.style.transform = `scale(${currentZoom})`;
+					zoomInfo.textContent = Math.round(currentZoom * 100) + '%';
+				}
+				
+				function zoomIn() {
+					if (currentZoom < 3) {
+						currentZoom += 0.25;
+						updateZoom();
+					}
+				}
+				
+				function zoomOut() {
+					if (currentZoom > 0.5) {
+						currentZoom -= 0.25;
+						updateZoom();
+					}
+				}
+				
+				function resetZoom() {
+					currentZoom = 1;
+					updateZoom();
+					imageContainer.scrollLeft = 0;
+					imageContainer.scrollTop = 0;
+				}
+				
+				// Zoom controls
+				zoomInBtn.addEventListener('click', zoomIn);
+				zoomOutBtn.addEventListener('click', zoomOut);
+				zoomResetBtn.addEventListener('click', resetZoom);
+				
+				// Mouse wheel zoom
+				imageContainer.addEventListener('wheel', function(e) {
+					e.preventDefault();
+					if (e.deltaY < 0) {
+						zoomIn();
+					} else {
+						zoomOut();
+					}
+				});
+				
+				// Drag functionality
+				imageContainer.addEventListener('mousedown', function(e) {
+					if (currentZoom > 1) {
+						isDragging = true;
+						imageContainer.classList.add('dragging');
+						startX = e.pageX - imageContainer.offsetLeft;
+						startY = e.pageY - imageContainer.offsetTop;
+						scrollLeft = imageContainer.scrollLeft;
+						scrollTop = imageContainer.scrollTop;
+					}
+				});
+				
+				imageContainer.addEventListener('mouseleave', function() {
+					isDragging = false;
+					imageContainer.classList.remove('dragging');
+				});
+				
+				imageContainer.addEventListener('mouseup', function() {
+					isDragging = false;
+					imageContainer.classList.remove('dragging');
+				});
+				
+				imageContainer.addEventListener('mousemove', function(e) {
+					if (!isDragging) return;
+					e.preventDefault();
+					const x = e.pageX - imageContainer.offsetLeft;
+					const y = e.pageY - imageContainer.offsetTop;
+					const walkX = (x - startX) * 2;
+					const walkY = (y - startY) * 2;
+					imageContainer.scrollLeft = scrollLeft - walkX;
+					imageContainer.scrollTop = scrollTop - walkY;
+				});
+				
+				// Double click to zoom
+				modalImage.addEventListener('dblclick', function(e) {
+					e.preventDefault();
+					if (currentZoom === 1) {
+						currentZoom = 2;
+					} else {
+						resetZoom();
+					}
+					updateZoom();
+				});
+				
+				// Keyboard shortcuts
+				document.addEventListener('keydown', function(e) {
+					if (imageModal.classList.contains('show')) {
+						switch(e.key) {
+							case '+':
+							case '=':
+								zoomIn();
+								break;
+							case '-':
+							case '_':
+								zoomOut();
+								break;
+							case '0':
+								resetZoom();
+								break;
+							case 'Escape':
+								// Let Bootstrap handle escape
+								break;
+						}
+					}
+				});
+			});
+		</script>
 	
 	</body>
 </html>

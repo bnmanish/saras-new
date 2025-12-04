@@ -17,6 +17,8 @@ use App\Models\Amenity;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\GalleryCategory;
+use App\Models\Gallery;
+use App\Models\GalleryImage;
 use Illuminate\Support\Facades\Validator;
 use DB;
 
@@ -32,7 +34,24 @@ class HomeController extends Controller
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
         $blogs = Blog::with('blogCategory')->where('status','1')->orderBy('created_at','desc')->limit(4)->get();
         $galleryCategories = GalleryCategory::where('status', '1')->get();
-        return view('frontend/home')->with(['slider'=>$slider,'page'=>$page,'about'=>$about,'categories'=>$categories, 'products'=>$products, 'testimonials'=>$testimonials, 'blogs'=>$blogs, 'galleryCategories'=>$galleryCategories]);
+        
+        // Get latest gallery images for home page
+        $latestGalleryImages = GalleryImage::with('gallery')
+            ->orderBy('created_at', 'desc')
+            ->limit(8)
+            ->get();
+        
+        return view('frontend/home')->with([
+            'slider'=>$slider,
+            'page'=>$page,
+            'about'=>$about,
+            'categories'=>$categories, 
+            'products'=>$products, 
+            'testimonials'=>$testimonials, 
+            'blogs'=>$blogs, 
+            'galleryCategories'=>$galleryCategories,
+            'latestGalleryImages'=>$latestGalleryImages
+        ]);
     }
 
     public function searchProject(Request $request){

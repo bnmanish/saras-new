@@ -52,6 +52,7 @@ use App\Http\Controllers\frontend\DealershipEnquiryController as FrontendDealers
 use App\Http\Controllers\frontend\FrontProductCotroller;
 use App\Http\Controllers\frontend\FrontTenderController;
 use App\Http\Controllers\frontend\GalleryController as FrontendGalleryController;
+use App\Http\Controllers\frontend\MediaPressController as FrontendMediaPressController;
 
 //-------------------------------------------------------------------------
 use App\Models\Page;
@@ -101,9 +102,13 @@ Route::get('/gallery/category/{categorySlug}', [FrontendGalleryController::class
 Route::get('/blog', [frontBlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [frontBlogController::class, 'blogDetails'])->name('blog.details');
 
+// Media Press routes
+Route::get('/media-press', [FrontendMediaPressController::class, 'index'])->name('media.press');
+
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
 Route::post('/subscribe-newsletter', [HomeController::class, 'subscribeNewsLetter'])->name('subscribe.newsletter');
+Route::post('/submit-distributor-enquiry', [FrontendDealershipEnquiryController::class, 'submitDistributorForm'])->name('submit.distributor.enquiry');
 
 Route::post('/{slug}', [HomeController::class, 'additionalPages'])->name('additional.page');
 

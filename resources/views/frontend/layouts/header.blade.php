@@ -67,11 +67,8 @@
 								<li><a href="{{ route('chairman.message') }}">Chairman Message</a></li>
                                 <li><a href="{{ route('md.message') }}">MD Message</a></li>
                                 <li><a href="{{ route('awards') }}">Awards</a></li>
+                                <li><a href="{{route('directors')}}">Profiles</a></li>
 							</ul>
-						</li>
-
-						<li class="has-submenu megamenu">
-							<a href="{{route('directors')}}">Profiles</a>
 						</li>
 
 						<li class="has-submenu megamenu">
@@ -85,22 +82,156 @@
 								<li><a href="{{route('milk.purchase.price.chart')}}">Milk Purchase Price Chart</a></li>
 								<li><a href="{{route('milk.sale.price.chart')}}">Milk Sale Price Chart</a></li>
 								<li><a href="{{route('beneficiaries')}}">Beneficiaries Under CM Sambal Yojna</a></li>
+								<li><a href="{{route('gallery')}}">Gallery</a></li>
 							</ul>
-						</li>
-						
-						<li class="has-submenu megamenu">
-							<a href="{{route('gallery')}}">Gallery</a>
 						</li>
 						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
 						<li><a href="{{route('important.links')}}">Important Links</a></li>
+						<li><a href="{{route('media.press')}}">Media & Press</a></li>
 						<li><a href="{{route('blog')}}">Blog</a></li>
-						<li><a href="{{route('contact')}}">Contact Us</a></li>
-
-						
+						<li><a href="{{route('contact')}}">Contact Us</a></li>						
 					</ul>
 				</div>
+				<ul class="nav header-navbar-rht">
+					<li>
+						<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#becomeDistributorModal" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-shop me-1"></i>Dealer</a>
+					</li>
+				</ul>
 			</div>
 		</nav>
 	</div>
 </header>
 <!-- /Header -->
+
+<!-- Become a Distributor Modal -->
+<div class="modal fade" id="becomeDistributorModal" tabindex="-1" aria-labelledby="becomeDistributorModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="becomeDistributorModalLabel">Become a Distributor</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="distributorForm">
+					@csrf
+					<div class="mb-3">
+						<label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="name" name="name" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="city" class="form-label">City <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="city" name="city" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="mobile" class="form-label">Mobile <span class="text-danger">*</span></label>
+						<input type="tel" class="form-control" id="mobile" name="mobile" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+						<input type="email" class="form-control" id="email" name="email" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="business_type" class="form-label">Business Type <span class="text-danger">*</span></label>
+						<select class="form-control" id="business_type" name="business_type" required>
+							<option value="">Select Business Type</option>
+							<option value="retailer">Retailer</option>
+							<option value="wholesaler">Wholesaler</option>
+							<option value="distributor">Distributor</option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="message" class="form-label">Message</label>
+						<textarea class="form-control" id="message" name="message" rows="3"></textarea>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="alert alert-success d-none" id="successMessage"></div>
+					<div class="alert alert-danger d-none" id="errorMessage"></div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitDistributorForm">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const form = document.getElementById('distributorForm');
+	const submitBtn = document.getElementById('submitDistributorForm');
+	const successMessage = document.getElementById('successMessage');
+	const errorMessage = document.getElementById('errorMessage');
+	
+	submitBtn.addEventListener('click', function(e) {
+		e.preventDefault();
+		
+		// Reset messages
+		successMessage.classList.add('d-none');
+		errorMessage.classList.add('d-none');
+		
+		// Validate form
+		if (!form.checkValidity()) {
+			form.classList.add('was-validated');
+			return;
+		}
+		
+		// Disable submit button
+		submitBtn.disabled = true;
+		submitBtn.textContent = 'Submitting...';
+		
+		// Get form data
+		const formData = new FormData(form);
+		
+		// Submit via AJAX
+		fetch('{{ route("submit.distributor.enquiry") }}', {
+			method: 'POST',
+			body: formData,
+			headers: {
+				'X-Requested-With': 'XMLHttpRequest'
+			}
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				successMessage.textContent = data.message || 'Enquiry submitted successfully!';
+				successMessage.classList.remove('d-none');
+				form.reset();
+				form.classList.remove('was-validated');
+				
+				// Close modal after 2 seconds
+				setTimeout(function() {
+					const modal = bootstrap.Modal.getInstance(document.getElementById('becomeDistributorModal'));
+					modal.hide();
+					successMessage.classList.add('d-none');
+				}, 2000);
+			} else {
+				errorMessage.textContent = data.message || 'Something went wrong. Please try again.';
+				errorMessage.classList.remove('d-none');
+			}
+		})
+		.catch(error => {
+			errorMessage.textContent = 'Something went wrong. Please try again.';
+			errorMessage.classList.remove('d-none');
+		})
+		.finally(() => {
+			submitBtn.disabled = false;
+			submitBtn.textContent = 'Submit';
+		});
+	});
+	
+	// Reset form when modal is closed
+	const modal = document.getElementById('becomeDistributorModal');
+	modal.addEventListener('hidden.bs.modal', function() {
+		form.reset();
+		form.classList.remove('was-validated');
+		successMessage.classList.add('d-none');
+		errorMessage.classList.add('d-none');
+	});
+});
+</script>

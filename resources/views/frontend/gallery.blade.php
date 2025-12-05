@@ -85,27 +85,29 @@
 						@endforeach
 					</div>
 
-					<div class="row">
+					<!-- Individual Image Grid -->
+					<div class="row g-3">
 						@forelse($galleries as $gallery)
-							<div class="col-lg-4 col-md-6 mb-4">
-								<div class="gallery-item">
-									<h4>{{ $gallery->title }}</h4>
-									@if($gallery->category)
-										<p class="text-muted">{{ $gallery->category->name }}</p>
-									@endif
-									<div class="gallery-images">
-										@foreach($gallery->images as $image)
-											<img src="{{ url('uploads/gallery/' . $image->image) }}" alt="{{ $gallery->title }}" class="img-fluid mb-2">
-										@endforeach
+							@foreach($gallery->images as $image)
+								<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="image-grid-item">
+										<div class="image-container">
+											<img src="{{ url('uploads/gallery/' . $image->image) }}" alt="{{ $gallery->title }}" class="img-fluid">
+											<div class="image-overlay">
+												<h5 class="image-title">{{ $gallery->title }}</h5>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
+							@endforeach
 						@empty
 							<div class="col-12">
-								<p class="text-center">No galleries found.</p>
+								<p class="text-center">No gallery images found.</p>
 							</div>
 						@endforelse
 					</div>
+
+
 				</div>
 			</section>
 			<!-- /Gallery Section -->

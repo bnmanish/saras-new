@@ -121,7 +121,7 @@
 				box-shadow: 0 0 5px rgba(0,123,255,0.5);
 			}
 			.product-description .doctor-img1 {
-				width: 40%;
+				width: 50%;
 			}
 			@media (max-width: 576px) {
 				.product-description .doctor-img1 {
@@ -167,7 +167,7 @@
 				<div class="container">
 
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-7 col-lg-3 col-xl-9">
 							<!-- Doctor Widget -->
 							<div class="card">
 								<div class="card-body product-description">
@@ -242,6 +242,72 @@
 							</div>
 							<!-- /Doctor Details Tab -->
 
+						</div>
+
+						<div class="col-md-5 col-lg-3 col-xl-3 theiaStickySidebar">
+							
+							<!-- Right Details -->
+							<div class="card search-filter">
+								<div class="card-body">
+									<div class="clini-infos mt-0">
+										<h2>₹ {{$product->price}}  <span class="badge badge-primary">In stock</span></h2>
+									</div>
+									
+									<div class="clinic-details mt-4">
+										<div class="clinic-booking">
+											<a class="btn btn-primary" href="{{route('contact')}}">Contact Us</a>
+										</div>
+									</div>
+									<div class="card flex-fill mt-4 mb-0">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item text-gray-6">Category	<span class="float-end">{{$product->category->title}}</span></li>
+											<li class="list-group-item text-gray-6">Pack Size	<span class="float-end">{{$product->pack_size}}</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="card search-filter">
+								<div class="card-body">
+									<div class="card flex-fill mt-0 mb-0">
+										<ul class="list-group list-group-flush benifits-col">
+											<li class="list-group-item d-flex align-items-center">
+												<div>
+													<i class="fas fa-shipping-fast"></i>
+												</div>
+												<div>
+													Free Shipping<br><span class="text-sm">For orders from $50</span>
+												</div>
+											</li>
+											<li class="list-group-item d-flex align-items-center">
+												<div>
+													<i class="far fa-question-circle"></i>
+												</div>
+												<div>
+													Support 24/7<br><span class="text-sm">Call us anytime</span>
+												</div>
+											</li>
+											<li class="list-group-item d-flex align-items-center">
+												<div>
+													<i class="fas fa-hands"></i>
+												</div>
+												<div>
+													100% Safety<br><span class="text-sm">Only secure payments</span>
+												</div>
+											</li>
+											<li class="list-group-item d-flex align-items-center">
+												<div>
+													<i class="fas fa-tag"></i>
+												</div>
+												<div>
+													Hot Offers<br><span class="text-sm">Discounts up to 90%</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- /Right Details -->
+							
 						</div>
 
 					</div>

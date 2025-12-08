@@ -698,7 +698,7 @@
 						@endforeach
 					</div>
 					<div class="text-center load-item aos" data-aos="fade-up">
-						<a href="blog-grid.html" class="btn btn-dark d-inline-flex align-items-center">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
+						<a href="{{route('blog')}}" class="btn btn-dark d-inline-flex align-items-center">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
 					</div>			
 				</div>
 			</section>

@@ -128,6 +128,35 @@
 					width: 100%;
 				}
 			}
+			
+			/* Related Products Styles */
+			.related-products-slider .product-card {
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: none;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+				overflow: hidden;
+			}
+			.related-products-slider .product-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+			}
+			.related-products-slider .product-image {
+				transition: transform 0.3s ease;
+			}
+			.related-products-slider .product-card:hover .product-image {
+				transform: scale(1.05);
+			}
+			.related-products-slider .card-title {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+			}
+			.related-products-slider .card-body {
+				padding: 1rem;
+			}
+			.related-products-slider .text-primary {
+				font-weight: 700;
+			}
 		</style>
 
 	</head>
@@ -241,6 +270,49 @@
 								</div>
 							</div>
 							<!-- /Doctor Details Tab -->
+							
+							<!-- Related Products Slider -->
+							@if($relatedProducts->count() > 0)
+							<div class="card mt-4">
+								<div class="card-body">
+									<h3 class="card-title mb-4">Related Products</h3>
+									<div class="related-products-slider">
+										<div class="row">
+											@foreach($relatedProducts as $relatedProduct)
+											<div class="col-md-6 col-lg-4 mb-4">
+												<div class="card h-100 product-card">
+													<a href="{{route('products.details', $relatedProduct->slug)}}" class="text-decoration-none">
+														@if($relatedProduct->primaryImage)
+															<img src="{{url('uploads/product/' . $relatedProduct->primaryImage->image)}}" 
+																class="card-img-top product-image" 
+																alt="{{$relatedProduct->name}}"
+																style="height: 200px; object-fit: cover;">
+														@else
+															<img src="{{url('/assets/frontend/img/products/product.jpg')}}" 
+																class="card-img-top product-image" 
+																alt="{{$relatedProduct->name}}"
+																style="height: 200px; object-fit: cover;">
+														@endif
+														<div class="card-body">
+															<h5 class="card-title text-dark">{{$relatedProduct->name}}</h5>
+															<p class="card-text text-muted small">{{$relatedProduct->category->title}}</p>
+															<div class="d-flex justify-content-between align-items-center">
+																<span class="h5 text-primary mb-0">₹{{$relatedProduct->price}}</span>
+																<span class="badge bg-success">In Stock</span>
+															</div>
+															@if($relatedProduct->pack_size)
+															<p class="card-text text-muted small mb-0">Pack Size: {{$relatedProduct->pack_size}}</p>
+															@endif
+														</div>
+													</a>
+												</div>
+											</div>
+											@endforeach
+										</div>
+									</div>
+								</div>
+							</div>
+							@endif
 
 						</div>
 

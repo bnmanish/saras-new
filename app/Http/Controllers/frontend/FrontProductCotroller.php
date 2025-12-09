@@ -28,7 +28,20 @@ class FrontProductCotroller extends Controller
 
     public function details($slug){
         $product = Product::with(['category', 'images', 'primaryImage'])->where('slug', $slug)->firstOrFail();
-        return view('frontend/product_details', compact('product'));
+        
+        // Get related products
+        $relatedProducts = collect(); // Always return a collection
+        if ($product->related_products && is_array($product->related_products)) {
+            // Convert string IDs to integers for proper comparison
+            $relatedIds = array_map('intval', $product->related_products);
+            $relatedProducts = Product::with(['category', 'primaryImage'])
+                ->whereIn('id', $relatedIds)
+                ->where('status', '1')  // Compare with string since status is stored as string
+                ->where('id', '!=', $product->id)
+                ->get();
+        }
+        
+        return view('frontend/product_details', compact('product', 'relatedProducts'));
     }
 
 }

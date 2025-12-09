@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
-		<meta charset="UTF-8">
+		<title>{{$page->meta_title}}</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
-		<meta name="description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="keywords" content="practo clone, doccure, doctor appointment, Practo clone html template, doctor booking template">
+		<meta name="description" content="{{$page->meta_description}}">
+		<meta name="keywords" content="{{$page->meta_keywords}}">
 		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
-		<meta property="og:url" content="https://doccure.dreamstechnologies.com/html/">
+		<meta property="og:url" content="{{route('home')}}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta property="og:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
+		<meta property="og:title" content="{{$page->meta_title}}">
+		<meta property="og:description" content="{{$page->meta_description}}">
 		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:domain" content="https://doccure.dreamstechnologies.com/html/">
-		<meta property="twitter:url" content="https://doccure.dreamstechnologies.com/html/">
-		<meta name="twitter:title" content="Doctors Appointment HTML Website Templates | Doccure">
-		<meta name="twitter:description" content="The responsive professional Doccure template offers many features, like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat.">
-		<meta name="twitter:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
+		<meta name="twitter:title" content="{{$page->meta_title}}">
+		<meta name="twitter:description" content="{{$page->meta_description}}">
+		<!-- Apple Touch Icon -->
+		<link rel="shortcut icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{url('uploads/setting/'.getSetting()->favicon)}}">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
-		<title>Doccure</title>
-		
+		{!!getSetting()->head_content!!}
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="{{url('/')}}/assets/frontend/img/favicon.png" type="image/x-icon">
 
@@ -59,7 +57,6 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{url('/')}}/assets/frontend/css/custom.css">
-
 	</head>		
 	<body>
 

@@ -92,6 +92,14 @@ Route::get('/milk-purchase-price-chart', [FrontTenderController::class, 'milkPur
 Route::get('/milk-sale-price-chart', [FrontTenderController::class, 'milkSalePriceChart'])->name('milk.sale.price.chart');
 Route::get('/beneficiaries', [FrontTenderController::class, 'beneficiaries'])->name('beneficiaries');
 Route::get('/quality-assurance', [FrontTenderController::class, 'qualityAssurance'])->name('quality.assurance');
+
+// Script Management Routes
+Route::get('/scripts', [App\Http\Controllers\Backend\ScriptController::class, 'index'])->name('scripts.index');
+Route::get('/scripts/create', [App\Http\Controllers\Backend\ScriptController::class, 'create'])->name('scripts.create');
+Route::post('/scripts/store', [App\Http\Controllers\Backend\ScriptController::class, 'store'])->name('scripts.store');
+Route::get('/scripts/edit/{id}', [App\Http\Controllers\Backend\ScriptController::class, 'edit'])->name('scripts.edit');
+Route::post('/scripts/update/{id}', [App\Http\Controllers\Backend\ScriptController::class, 'update'])->name('scripts.update');
+Route::post('/scripts/destroy/{id}', [App\Http\Controllers\Backend\ScriptController::class, 'destroy'])->name('scripts.destroy');
 Route::get('/important-links', [FrontTenderController::class, 'importantLinks'])->name('important.links');
 
 // Gallery routes

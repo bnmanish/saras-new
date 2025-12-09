@@ -106,6 +106,11 @@
 
 	<!-- Custom JS -->
 	<script src="{{url('/')}}/assets/frontend/js/script.js"></script>
+	@if(!empty($page->scripts))
+	<script>
+		{!! $page->scripts !!}
+	</script>
+	@endif
 
 </body>
 

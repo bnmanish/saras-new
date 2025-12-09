@@ -258,6 +258,11 @@
 			});
 		});
 	</script>
+	@if(!empty($page->scripts))
+	<script>
+		{!! $page->scripts !!}
+	</script>
+	@endif
 
 </body>
 

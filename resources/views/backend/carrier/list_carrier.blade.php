@@ -39,6 +39,7 @@
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
+                                    <th>SL No</th>
                                     <th>Name</th>
                                     <th>City</th>
                                     <th>Mobile</th>
@@ -52,8 +53,10 @@
 
 
                             <tbody>
+                                @php $sl = 1; @endphp
                                 @foreach($data as $dataRow)
                                 <tr>
+                                    <td>{{$sl}}</td>
                                     <td>{{$dataRow->name}}</td>
                                     <td>{{$dataRow->city}}</td>
                                     <td>{{$dataRow->mobile}}</td>
@@ -81,6 +84,7 @@
                                         </button>
                                     </td>
                                 </tr>
+                                @php $sl++; @endphp
                                 @endforeach
                             </tbody>
                         </table>

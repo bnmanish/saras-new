@@ -112,6 +112,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->user_name = $request->user_name;
         $user->password = Hash::make($request->password);
+        $user->role = 'admin';
         $user->email_verified = 1;
         $user->mobile_verified = 1;
         $user->status = $request->status ? '1':'0';
@@ -141,6 +142,7 @@ class UserController extends Controller
                 "email" => $request->email,
                 "user_name" => $request->user_name,
                 "password" => Hash::make($request->password),
+                "role" => 'admin',
                 "email_verified" => 1,
                 "mobile_verified" => 1,
                 "status" => $request->status ? '1':'0',
@@ -150,6 +152,7 @@ class UserController extends Controller
                 "name" => $request->name,
                 "email" => $request->email,
                 "user_name" => $request->user_name,
+                "role" => 'admin',
                 "email_verified" => 1,
                 "mobile_verified" => 1,
                 "status" => $request->status ? '1':'0',

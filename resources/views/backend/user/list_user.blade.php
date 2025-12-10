@@ -44,6 +44,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>User Name</th>
+                                    <!-- <th>Role</th> -->
                                     <th>Register Date</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -56,6 +57,7 @@
                                     <td>{{$dataRow->name}}</td>
                                     <td>{{$dataRow->email}} @if($dataRow->email_verified == '1')<i class="fas fa-check-circle"></i> @endif</td>
                                     <td>{{$dataRow->user_name}}</td>
+                                    <!-- <td><span class="badge bg-{{$dataRow->role == 'admin' ? 'danger' : 'primary'}}">{{ucfirst($dataRow->role)}}</span></td> -->
                                     <td>{{date('d-m-Y',strtotime($dataRow->created_at))}}</td>
                                     <td>{{$dataRow->status == '1' ? 'Enable' : 'No'}}</td>
                                     <td>

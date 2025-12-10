@@ -46,6 +46,7 @@
                                     <th>Position</th>
                                     <th>Date</th>
                                     <th>Resume</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 
@@ -67,6 +68,18 @@
                                         No Resume
                                         @endif
                                     </td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewCarrierModal"
+                                            data-name="{{ $dataRow->name }}"
+                                            data-email="{{ $dataRow->email }}"
+                                            data-mobile="{{ $dataRow->mobile }}"
+                                            data-city="{{ $dataRow->city }}"
+                                            data-position="{{ $dataRow->position }}"
+                                            data-resume="{{ $dataRow->resume ? asset('uploads/'.$dataRow->resume) : '' }}"
+                                            data-submitted-at="{{ $dataRow->created_at->format('d-m-Y H:i') }}">
+                                            <i class="fas fa-info-circle"></i> View
+                                        </button>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -78,6 +91,71 @@
 
     </div> <!-- container-fluid -->
 </div>
+
+<!-- View Carrier Modal -->
+<div class="modal fade" id="viewCarrierModal" tabindex="-1" aria-labelledby="viewCarrierModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewCarrierModalLabel">Carrier Application Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+             <div class="modal-body">
+                 <div class="row">
+                     <div class="col-md-6">
+                         <p><strong>Name:</strong> <span id="modalCarrierName"></span></p>
+                         <p><strong>Email:</strong> <span id="modalCarrierEmail"></span></p>
+                         <p><strong>Mobile:</strong> <span id="modalCarrierMobile"></span></p>
+                         <p><strong>City:</strong> <span id="modalCarrierCity"></span></p>
+                     </div>
+                     <div class="col-md-6">
+                         <p><strong>Position:</strong> <span id="modalCarrierPosition"></span></p>
+                         <p><strong>Submitted At:</strong> <span id="modalCarrierSubmittedAt"></span></p>
+                     </div>
+                 </div>
+                 <div class="row mt-3">
+                     <div class="col-12">
+                         <p><strong>Resume:</strong></p>
+                         <div id="modalCarrierResume" class="border p-2 bg-light rounded">
+                             <span id="resumeLink"></span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @stop
 @push('scripts')
+<script>
+    var viewCarrierModal = document.getElementById('viewCarrierModal');
+    viewCarrierModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var name = button.getAttribute('data-name');
+        var email = button.getAttribute('data-email');
+        var mobile = button.getAttribute('data-mobile');
+        var city = button.getAttribute('data-city');
+        var position = button.getAttribute('data-position');
+        var resume = button.getAttribute('data-resume');
+        var submittedAt = button.getAttribute('data-submitted-at');
+
+        document.getElementById('modalCarrierName').textContent = name;
+        document.getElementById('modalCarrierEmail').textContent = email;
+        document.getElementById('modalCarrierMobile').textContent = mobile;
+        document.getElementById('modalCarrierCity').textContent = city;
+        document.getElementById('modalCarrierPosition').textContent = position;
+        document.getElementById('modalCarrierSubmittedAt').textContent = submittedAt;
+        
+        var resumeLink = document.getElementById('resumeLink');
+        if (resume) {
+            resumeLink.innerHTML = '<a href="' + resume + '" target="_blank" class="btn btn-sm btn-info me-2"><i class="fas fa-eye"></i> View Resume</a>' +
+                                  '<a href="' + resume + '" download class="btn btn-sm btn-success"><i class="fas fa-download"></i> Download Resume</a>';
+        } else {
+            resumeLink.textContent = 'No Resume';
+        }
+    });
+</script>
 @endpush

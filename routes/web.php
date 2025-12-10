@@ -117,6 +117,7 @@ Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-enquiry', [ContactController::class, 'enquiry'])->name('enquiry');
 Route::post('/subscribe-newsletter', [HomeController::class, 'subscribeNewsLetter'])->name('subscribe.newsletter');
 Route::post('/submit-distributor-enquiry', [FrontendDealershipEnquiryController::class, 'submitDistributorForm'])->name('submit.distributor.enquiry');
+Route::post('/submit-carrier-application', [CarrierController::class, 'submitCarrierForm'])->name('submit.carrier.application');
 
 Route::post('/{slug}', [HomeController::class, 'additionalPages'])->name('additional.page');
 

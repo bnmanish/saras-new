@@ -94,6 +94,9 @@
 				</div>
 				<ul class="nav header-navbar-rht">
 					<li>
+						<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#becomeCarrierModal" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-briefcase me-1"></i>Career</a>
+					</li>
+					<li>
 						<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#becomeDistributorModal" class="btn btn-md btn-primary-gradient d-inline-flex align-items-center rounded-pill"><i class="isax isax-shop me-1"></i>Dealer</a>
 					</li>
 				</ul>
@@ -156,6 +159,68 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-primary" id="submitDistributorForm">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Become a Carrier Modal -->
+<div class="modal fade" id="becomeCarrierModal" tabindex="-1" aria-labelledby="becomeCarrierModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="becomeCarrierModalLabel">Apply for Career</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="carrierForm" enctype="multipart/form-data">
+					@csrf
+					<div class="mb-3">
+						<label for="carrier_name" class="form-label">Name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="carrier_name" name="name" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="carrier_city" class="form-label">City <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="carrier_city" name="city" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="carrier_mobile" class="form-label">Mobile <span class="text-danger">*</span></label>
+						<input type="tel" class="form-control" id="carrier_mobile" name="mobile" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="carrier_email" class="form-label">Email <span class="text-danger">*</span></label>
+						<input type="email" class="form-control" id="carrier_email" name="email" required>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="carrier_position" class="form-label">Position <span class="text-danger">*</span></label>
+						<select class="form-control" id="carrier_position" name="position" required>
+							<option value="">Select Position</option>
+							<option value="Sales Executive">Sales Executive</option>
+							<option value="Delivery Person">Delivery Person</option>
+							<option value="Warehouse Staff">Warehouse Staff</option>
+							<option value="Office Staff">Office Staff</option>
+							<option value="Driver">Driver</option>
+							<option value="Other">Other</option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="mb-3">
+						<label for="carrier_resume" class="form-label">Resume <span class="text-danger">*</span></label>
+						<input type="file" class="form-control" id="carrier_resume" name="resume" accept=".pdf,.doc,.docx" required>
+						<div class="invalid-feedback"></div>
+						<small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+					</div>
+					<div class="alert alert-success d-none" id="carrierSuccessMessage"></div>
+					<div class="alert alert-danger d-none" id="carrierErrorMessage"></div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitCarrierForm">Submit</button>
 			</div>
 		</div>
 	</div>
@@ -232,6 +297,88 @@ document.addEventListener('DOMContentLoaded', function() {
 		form.classList.remove('was-validated');
 		successMessage.classList.add('d-none');
 		errorMessage.classList.add('d-none');
+	});
+});
+
+// Carrier Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+	const carrierForm = document.getElementById('carrierForm');
+	const submitCarrierBtn = document.getElementById('submitCarrierForm');
+	const carrierSuccessMessage = document.getElementById('carrierSuccessMessage');
+	const carrierErrorMessage = document.getElementById('carrierErrorMessage');
+	
+	submitCarrierBtn.addEventListener('click', function(e) {
+		e.preventDefault();
+		
+		// Reset messages
+		carrierSuccessMessage.classList.add('d-none');
+		carrierErrorMessage.classList.add('d-none');
+		
+		// Validate form
+		if (!carrierForm.checkValidity()) {
+			carrierForm.classList.add('was-validated');
+			return;
+		}
+		
+		// Check file size
+		const resumeFile = document.getElementById('carrier_resume').files[0];
+		if (resumeFile && resumeFile.size > 5 * 1024 * 1024) { // 5MB limit
+			carrierErrorMessage.textContent = 'Resume file size must be less than 5MB.';
+			carrierErrorMessage.classList.remove('d-none');
+			return;
+		}
+		
+		// Disable submit button
+		submitCarrierBtn.disabled = true;
+		submitCarrierBtn.textContent = 'Submitting...';
+		
+		// Get form data
+		const formData = new FormData(carrierForm);
+		
+		// Submit via AJAX
+		fetch('{{ route("submit.carrier.application") }}', {
+			method: 'POST',
+			body: formData,
+			headers: {
+				'X-Requested-With': 'XMLHttpRequest'
+			}
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				carrierSuccessMessage.textContent = data.message || 'Application submitted successfully!';
+				carrierSuccessMessage.classList.remove('d-none');
+				carrierForm.reset();
+				carrierForm.classList.remove('was-validated');
+				
+				// Close modal after 2 seconds
+				setTimeout(function() {
+					const modal = bootstrap.Modal.getInstance(document.getElementById('becomeCarrierModal'));
+					modal.hide();
+					carrierSuccessMessage.classList.add('d-none');
+				}, 2000);
+			} else {
+				carrierErrorMessage.textContent = data.message || 'Something went wrong. Please try again.';
+				carrierErrorMessage.classList.remove('d-none');
+			}
+		})
+		.catch(error => {
+			carrierErrorMessage.textContent = 'Something went wrong. Please try again.';
+			carrierErrorMessage.classList.remove('d-none');
+		})
+		.finally(() => {
+			submitCarrierBtn.disabled = false;
+			submitCarrierBtn.textContent = 'Submit';
+		});
+	});
+	
+	// Reset form when modal is closed
+	const carrierModal = document.getElementById('becomeCarrierModal');
+	carrierModal.addEventListener('hidden.bs.modal', function() {
+		carrierForm.reset();
+		carrierForm.classList.remove('was-validated');
+		carrierSuccessMessage.classList.add('d-none');
+		carrierErrorMessage.classList.add('d-none');
 	});
 });
 </script>

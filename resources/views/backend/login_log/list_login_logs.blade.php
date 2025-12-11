@@ -98,7 +98,16 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         pageLength: 10,
-        ajax: '{{route("admin.login.logs.data")}}',
+        ajax: {
+            url: '{{route("admin.login.logs.data")}}',
+            data: function(d) {
+                d.start_date = $('#start_date').val();
+                d.end_date = $('#end_date').val();
+                d.username = $('#username').val();
+                d.ip_address = $('#ip_address').val();
+                d.status = $('#statusInput').val();
+            }
+        },
         columns: [
             { data: 'id', name: 'id' },
             { data: 'username', name: 'username' },

@@ -27,7 +27,7 @@ return new class extends Migration
             $table->dropColumn('email');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('ip_address');
-            $table->enum('status', ['success', 'fail']);
+            $table->string('status')->default('success');
             $table->string('location')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });

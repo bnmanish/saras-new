@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->string('username')->nullable(); // in case user is deleted
             $table->string('ip_address');
-            $table->enum('status', ['success', 'fail']);
+            $table->string('status')->default('success');
             $table->timestamps();
         });
     }

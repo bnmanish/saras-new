@@ -105,12 +105,9 @@ class TestLoginLogs extends Command
         }
 
         foreach ($logs as $log) {
-            $status = $log->status == 'success' ? 'SUCCESS' : 'FAIL';
-            $this->line("{$log->created_at->format('Y-m-d H:i:s')} | {$status} | {$log->username} | {$log->ip_address} | {$log->location}");
+            $this->line("{$log->created_at->format('Y-m-d H:i:s')} | SUCCESS | {$log->username} | {$log->email}");
         }
 
         $this->info("\nTotal logs: " . LoginLog::count());
-        $this->info("Success logs: " . LoginLog::where('status', 'success')->count());
-        $this->info("Fail logs: " . LoginLog::where('status', 'fail')->count());
     }
 }

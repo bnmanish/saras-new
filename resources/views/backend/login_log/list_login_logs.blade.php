@@ -44,24 +44,13 @@
                                 <label for="end_date">End Date</label>
                                 <input type="date" class="form-control" id="end_date" name="end_date">
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="ip_address">IP/Location</label>
-                                <input type="text" class="form-control" id="ip_address" name="ip_address" placeholder="IP or Location">
-                            </div>
+                         <div class="col-md-6 mb-3">
+                                 <label for="username">Username/Email</label>
+                                 <input type="text" class="form-control" id="username" name="username" placeholder="Username or Email">
+                             </div>
+
                         </div>
-                         <div class="row mb-4">
-                              <div class="col-12 col-md-3 mb-3">
-                                  <label for="statusInput">Status</label>
-                                  <select class="form-control form-select" id="statusInput" name="status">
-                                      <option value="">All Status</option>
-                                      <option value="success">✅ Success</option>
-                                      <option value="fail">❌ Fail</option>
-                                  </select>
-                              </div>
+
                              <div class="col-md-6 mb-3">
                                  <label>&nbsp;</label>
                                  <div class="d-flex gap-2">
@@ -77,9 +66,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Username</th>
-                                    <th>Location/IP</th>
+                                    <th>Email</th>
                                     <th>Created At</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                         </table>
@@ -100,21 +88,18 @@ $(document).ready(function () {
         pageLength: 10,
         ajax: {
             url: '{{route("admin.login.logs.data")}}',
-            data: function(d) {
-                d.start_date = $('#start_date').val();
-                d.end_date = $('#end_date').val();
-                d.username = $('#username').val();
-                d.ip_address = $('#ip_address').val();
-                d.status = $('#statusInput').val();
-            }
+           data: function(d) {
+                 d.start_date = $('#start_date').val();
+                 d.end_date = $('#end_date').val();
+                 d.username = $('#username').val();
+             }
         },
-        columns: [
-            { data: 'id', name: 'id' },
-            { data: 'username', name: 'username' },
-            { data: 'location_info', name: 'ip_address' },
-            { data: 'created_at_formatted', name: 'created_at' },
-            { data: 'status_badge', name: 'status' }
-        ],
+       columns: [
+             { data: 'id', name: 'id' },
+             { data: 'username_display', name: 'username' },
+             { data: 'email_display', name: 'email' },
+             { data: 'created_at_formatted', name: 'created_at' }
+         ],
         order: [[3, 'desc']]
     });
 
@@ -133,24 +118,22 @@ $(document).ready(function () {
         exportData('excel');
     });
 
-    function exportData(format) {
-        var params = {
-            start_date: $('#start_date').val(),
-            end_date: $('#end_date').val(),
-            username: $('#username').val(),
-            ip_address: $('#ip_address').val(),
-            status: $('#statusInput').val(),
-            format: format
-        };
+   function exportData(format) {
+         var params = {
+             start_date: $('#start_date').val(),
+             end_date: $('#end_date').val(),
+             username: $('#username').val(),
+             format: format
+         };
 
         var url = '{{ route("admin.login.logs.export") }}?' + $.param(params);
         window.open(url, '_blank');
     }
 
-    // Auto filter on input change
-    $('#start_date, #end_date, #username, #ip_address, #statusInput').on('change keyup', function() {
-        table.ajax.reload();
-    });
+  // Auto filter on input change
+     $('#start_date, #end_date, #username').on('change keyup', function() {
+         table.ajax.reload();
+     });
 });
 </script>
 @endpush

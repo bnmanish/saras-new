@@ -5,8 +5,8 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Hash;
-use Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
@@ -98,7 +98,7 @@ class UserController extends Controller
         return response()->json($dataArr);
     }
 
-    public function stroeUser(Request $request){
+    public function storeUser(Request $request){
 
         $request->validate([
             'name'      => 'required|string|max:255',

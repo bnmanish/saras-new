@@ -169,7 +169,7 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li @if(str_contains(Route::currentRouteName(), 'user')) class="mm-active" @endif><a href="{{route('admin.list.user')}}">Users</a></li>
-                                    <li @if(str_contains(Route::currentRouteName(), 'login')) class="mm-active" @endif><a href="{{route('admin.login.logs')}}">Login Logs</a></li>
+                                    
                                 </ul>
                             </li>
 

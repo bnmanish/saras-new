@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slider;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class SliderController extends Controller
 {
@@ -13,10 +13,10 @@ class SliderController extends Controller
         return view('backend/slider/add_slider');
     }
 
-    public function stroeSlider(Request $request){
+    public function storeSlider(Request $request){
         // return $request->all();
 
-        $this->validate($request,[
+        $request->validate([
             'title' => 'required|max:255',
             'status' => 'required',
             'image' => 'required|image',
@@ -52,7 +52,7 @@ class SliderController extends Controller
     }
 
     public function editStoreSlider(Request $request,$id){
-        $this->validate($request,[
+        $request->validate([
             'title' => 'required|max:255',
             'status' => 'required',
         ]);

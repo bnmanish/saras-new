@@ -27,7 +27,6 @@ class LoginController extends Controller
 
         $uname = $request->user_name;
         $password = $request->password;
-        $ipAddress = $request->ip();
 
         // Try login with email first
         if (Auth::attempt(['email' => $uname, 'password' => $password, 'status' => '1'])) {

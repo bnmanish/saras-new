@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\AdditionalPage;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class AdditionalPageController extends Controller
 {
@@ -14,7 +14,7 @@ class AdditionalPageController extends Controller
         return view('backend/page/additional/add_page');
     }
 
-    public function stroePage(Request $request){
+    public function storePage(Request $request){
 
         // return $request->all();
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Director;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class DirectorController extends Controller
 {
@@ -13,7 +13,7 @@ class DirectorController extends Controller
         return view('backend/director/add_director');
     }
 
-    public function stroeProfile(Request $request){
+    public function storeProfile(Request $request){
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],

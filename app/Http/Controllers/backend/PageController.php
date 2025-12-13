@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Page;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class PageController extends Controller
@@ -14,7 +14,7 @@ class PageController extends Controller
         return view('backend/page/add_page');
     }
 
-    public function stroePage(Request $request){
+    public function storePage(Request $request){
 
         $request->validate([
             'title' => ['required', 'string', 'max:255', Rule::unique('pages', 'title')],

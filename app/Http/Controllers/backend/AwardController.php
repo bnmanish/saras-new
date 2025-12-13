@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Award;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class AwardController extends Controller
@@ -14,7 +14,7 @@ class AwardController extends Controller
         return view('backend/award/add_award');
     }
 
-    public function stroeAward(Request $request){
+    public function storeAward(Request $request){
 
         // return $request->all();
 

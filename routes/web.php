@@ -37,7 +37,7 @@ use App\Http\Controllers\backend\MilkPurchasePriceChartController;
 use App\Http\Controllers\backend\MilkSalePriceChartController;
 use App\Http\Controllers\backend\BeneficiaryController;
 use App\Http\Controllers\backend\FooterController;
-use App\Http\Controllers\backend\LoginLogController;
+
 
 
 // frontend controllers
@@ -139,7 +139,7 @@ Route::prefix('admin')->group(function () {
 
         // Manage user
         Route::get('/add-user', [UserController::class, 'addUser'])->name('admin.add.user');
-        Route::post('/store-user', [UserController::class, 'stroeUser'])->name('admin.store.user');
+        Route::post('/store-user', [UserController::class, 'storeUser'])->name('admin.store.user');
 
         Route::get('/list-user', [UserController::class, 'listUser'])->name('admin.list.user');
         // get data
@@ -151,7 +151,7 @@ Route::prefix('admin')->group(function () {
 
         // Manage Slider
         Route::get('/add-slider', [SliderController::class, 'addSlider'])->name('admin.add.slider');
-        Route::post('/store-slider', [SliderController::class, 'stroeSlider'])->name('admin.store.slider');
+        Route::post('/store-slider', [SliderController::class, 'storeSlider'])->name('admin.store.slider');
         Route::get('/list-slider', [SliderController::class, 'listSlider'])->name('admin.list.slider');
         Route::get('/edit-slider/{id}', [SliderController::class, 'editSlider'])->name('admin.edit.slider');
         Route::post('/edit-store-slider/{id}', [SliderController::class, 'editStoreSlider'])->name('admin.edit.store.slider');
@@ -186,7 +186,7 @@ Route::prefix('admin')->group(function () {
 
         // Manage Additional Page
         Route::get('/add-page', [PageController::class, 'addPage'])->name('admin.add.page');
-        Route::post('/store-page', [PageController::class, 'stroePage'])->name('admin.store.page');
+        Route::post('/store-page', [PageController::class, 'storePage'])->name('admin.store.page');
         Route::get('/list-page', [PageController::class, 'listPage'])->name('admin.list.page');
         Route::get('/edit-page/{id}', [PageController::class, 'editPage'])->name('admin.edit.page');
         Route::post('/edit-store-page/{id}', [PageController::class, 'editStorePage'])->name('admin.edit.store.page');
@@ -208,7 +208,7 @@ Route::prefix('admin')->group(function () {
 
         // Manage Additional
         Route::get('/add-additional-page', [AdditionalPageController::class, 'addPage'])->name('admin.add.additional.page');
-        Route::post('/store-additional-page', [AdditionalPageController::class, 'stroePage'])->name('admin.store.additional.page');
+        Route::post('/store-additional-page', [AdditionalPageController::class, 'storePage'])->name('admin.store.additional.page');
         Route::get('/list-additional-page', [AdditionalPageController::class, 'listPage'])->name('admin.list.additional.page');
         Route::get('/edit-additional-page/{id}', [AdditionalPageController::class, 'editPage'])->name('admin.edit.additional.page');
         Route::post('/edit-store-additional-page/{id}', [AdditionalPageController::class, 'editStorePage'])->name('admin.edit.store.additional.page');
@@ -218,7 +218,7 @@ Route::prefix('admin')->group(function () {
 
         // Manage Award
         Route::get('/add-award', [AwardController::class, 'addAward'])->name('admin.add.award');
-        Route::post('/store-award', [AwardController::class, 'stroeAward'])->name('admin.store.award');
+        Route::post('/store-award', [AwardController::class, 'storeAward'])->name('admin.store.award');
         Route::get('/list-award', [AwardController::class, 'listAward'])->name('admin.list.award');
         Route::get('/edit-award/{id}', [AwardController::class, 'editAward'])->name('admin.edit.award');
         Route::post('/edit-store-award/{id}', [AwardController::class, 'editStoreAward'])->name('admin.edit.store.award');
@@ -243,16 +243,13 @@ Route::prefix('admin')->group(function () {
 
         // Manage Directors
         Route::get('/add-director', [DirectorController::class, 'addProfile'])->name('admin.add.director');
-        Route::post('/store-director', [DirectorController::class, 'stroeProfile'])->name('admin.store.director');
+        Route::post('/store-director', [DirectorController::class, 'storeProfile'])->name('admin.store.director');
         Route::get('/list-director', [DirectorController::class, 'listProfile'])->name('admin.list.director');
         Route::get('/edit-director/{id}', [DirectorController::class, 'editProfile'])->name('admin.edit.director');
         Route::post('/edit-store-director/{id}', [DirectorController::class, 'editStoreProfile'])->name('admin.edit.store.director');
         Route::get('/delete-director/{id}', [DirectorController::class, 'deleteProfile'])->name('admin.delete.director');
 
-        // Login Logs
-        Route::get('/login-logs', [LoginLogController::class, 'index'])->name('admin.login.logs');
-        Route::get('/login-logs-data', [LoginLogController::class, 'getData'])->name('admin.login.logs.data');
-        Route::get('/login-logs-export', [LoginLogController::class, 'export'])->name('admin.login.logs.export');
+        
 
         // Media/Press
         Route::get('/add-media-press', [MediaPressController::class, 'addMediaPress'])->name('admin.add.media_press');

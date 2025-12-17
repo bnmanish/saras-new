@@ -81,7 +81,7 @@
 								<ul class="header-list-btns">
 									<li>
 										<div class="input-block dash-search-input">
-											<form method="GET" action="{{ route('milk.sale.price.chart') }}" class="d-flex">
+											<form method="GET" action="{{ route('beneficiaries') }}" class="d-flex">
 												<input type="text" name="search" class="form-control" placeholder="Search by title" value="{{ request('search') }}">
 												<button type="submit" class="btn btn-primary ms-2"><i class="isax isax-search-normal"></i></button>
 											</form>
@@ -115,7 +115,7 @@
 														<td>
 															<div class="action-item">
 																@if($tender->file)
-																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view" onclick="loadPdf('{{ url('uploads/milk_purchase_price_charts/'.$tender->file) }}', '{{ $tender->title }}', '{{ $tender->publish_date->format('d-M-Y') }}')">
+																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view" onclick="loadPdf('{{ url('uploads/beneficiaries/'.$tender->file) }}', '{{ $tender->title }}', '{{ $tender->publish_date->format('d-M-Y') }}')">
 																		<i class="isax isax-link-2"></i>
 																	</a>
 																@else

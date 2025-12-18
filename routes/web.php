@@ -81,6 +81,7 @@ Route::get('/about-us',[AboutController::class,'index'])->name('about.us');
 Route::get('/about-us/chairman-message',[AboutController::class,'chairmanMessage'])->name('chairman.message');
 Route::get('/about-us/md-message',[AboutController::class,'mdMessage'])->name('md.message');
 Route::get('/directors',[DirectorsController::class,'index'])->name('directors');
+Route::get('/our-team',[DirectorsController::class,'ourTeam'])->name('our.team');
 
 
 Route::get('/about-us/awards',[AboutController::class,'awards'])->name('awards');

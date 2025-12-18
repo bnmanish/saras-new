@@ -68,6 +68,7 @@
                                 <li><a href="{{ route('md.message') }}">MD Message</a></li>
                                 <li><a href="{{ route('awards') }}">Awards</a></li>
                                 <li><a href="{{route('directors')}}">Profiles</a></li>
+                                <li><a href="{{route('our.team')}}">Our Team</a></li>
 							</ul>
 						</li>
 

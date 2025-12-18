@@ -86,7 +86,13 @@
 							</ul>
 						</li>
 						<li><a href="{{route('quality.assurance')}}">Quality Assurance</a></li>
-						<li><a href="{{route('important.links')}}">Important Links</a></li>
+						<li class="has-submenu">
+							<a href="javascript:void(0);">Important <i class="fas fa-chevron-down"></i></a>
+							<ul class="submenu">
+								<li><a href="{{route('important.links')}}">Important Links</a></li>
+								<li><a href="{{route('important.contacts')}}">Important Contacts</a></li>
+							</ul>
+						</li>
 						<!-- <li><a href="{{route('media.press')}}">Media & Press</a></li> -->
 						<li><a href="{{route('blog')}}">Blog</a></li>
 						<li><a href="{{route('contact')}}">Contact Us</a></li>						

@@ -101,6 +101,7 @@ Route::get('/scripts/edit/{id}', [App\Http\Controllers\Backend\ScriptController:
 Route::post('/scripts/update/{id}', [App\Http\Controllers\Backend\ScriptController::class, 'update'])->name('scripts.update');
 Route::post('/scripts/destroy/{id}', [App\Http\Controllers\Backend\ScriptController::class, 'destroy'])->name('scripts.destroy');
 Route::get('/important-links', [FrontTenderController::class, 'importantLinks'])->name('important.links');
+Route::get('/important-contacts', [FrontTenderController::class, 'importantContacts'])->name('important.contacts');
 
 // Gallery routes
 Route::get('/gallery', [FrontendGalleryController::class, 'index'])->name('gallery');

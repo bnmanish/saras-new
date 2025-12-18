@@ -11,6 +11,7 @@ use App\Models\MilkSalePriceChart;
 use App\Models\Beneficiary;
 use App\Models\QualityAssurance;
 use App\Models\ImportantLink;
+use App\Models\ImportantContact;
 
 class FrontTenderController extends Controller
 {
@@ -72,5 +73,11 @@ class FrontTenderController extends Controller
         }
         $importantLinks = $query->orderBy('created_at', 'desc')->paginate(10);
         return view('frontend/important_links')->with(['page'=>$page, 'importantLinks'=>$importantLinks]);
+    }
+
+    public function importantContacts(Request $request){
+        $page = Page::where(['id'=>25])->first();
+        $importantContacts = ImportantContact::where('status', 'active')->orderBy('created_at', 'desc')->get();
+        return view('frontend/important_contacts')->with(['page'=>$page, 'importantContacts'=>$importantContacts]);
     }
 }

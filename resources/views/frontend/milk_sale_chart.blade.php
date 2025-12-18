@@ -115,7 +115,7 @@
 														<td>
 															<div class="action-item">
 																@if($tender->file)
-																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view" onclick="loadPdf('{{ url('uploads/milk_purchase_price_charts/'.$tender->file) }}', '{{ $tender->title }}', '{{ $tender->publish_date->format('d-M-Y') }}')">
+																	<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#invoice_view" onclick="loadPdf('{{ url('uploads/milk_sale_price_charts/'.$tender->file) }}', '{{ $tender->title }}', '{{ $tender->publish_date->format('d-M-Y') }}')">
 																		<i class="isax isax-link-2"></i>
 																	</a>
 																@else

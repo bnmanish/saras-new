@@ -88,6 +88,128 @@
                 margin-top: 0.5rem;
             }
         }
+        
+        /* Creative Blog Header Styles */
+        .blog-hero-header {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-hero-image img {
+            transition: transform 0.6s ease;
+        }
+        
+        .blog-hero-header:hover .blog-hero-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+        
+        .blog-hero-header .position-absolute {
+            z-index: 2;
+        }
+        
+        .blog-category-badge .badge {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-category-badge .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .blog-title {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .blog-meta {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+        
+        .blog-meta > div {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-meta > div:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .blog-meta i {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .blog-intro {
+            border-left: 4px solid #007bff;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .bg-gradient-dark {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 1.75rem !important;
+            }
+            
+            .blog-hero-image img {
+                height: 300px !important;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+            }
+            
+            .blog-meta > div {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 
     {!! getSetting()->head_content !!}
@@ -131,22 +253,68 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <!-- Blog Widget -->
-                        <div class="card">
-                            <div class="card-body product-description">
-                                            <h4 class="doc-name mb-2">{{ $blog->title }}</h4>
-                                            <div class="blog-meta mb-3">
-                                                <span class="badge bg-primary">{{ $blog->blogCategory->title ?? 'Uncategorized' }}</span>
-                                                <span class="text-muted ms-2">{{ $blog->created_at->format('M d, Y') }}</span>
-
-                                                 <div>
-                                                    <img src="{{ asset('uploads/blog/' . $blog->banner) }}" class="img-fluid w-100" alt="{{ $blog->title }}">
-                                                </div>
-
-                                                <div class="tab-content dynamic-description pt-3">
-                                                    {!! $blog->short_description !!}
-                                                </div>
-
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-0">
+                                <!-- Creative Blog Header -->
+                                <div class="blog-hero-header position-relative overflow-hidden rounded-top">
+                                    <div class="blog-hero-image">
+                                        @if($blog->banner)
+                                            <img src="{{ asset('uploads/blog/' . $blog->banner) }}" 
+                                                 class="w-100" 
+                                                 alt="{{ $blog->title }}"
+                                                 style="height: 400px; object-fit: cover;">
+                                        @else
+                                            <div class="w-100 d-flex align-items-center justify-content-center bg-gradient-primary" 
+                                                 style="height: 400px;">
+                                                <i class="fas fa-blog text-white" style="font-size: 4rem; opacity: 0.5;"></i>
                                             </div>
+                                        @endif
+                                    </div>
+                                    
+                                    <!-- Overlay with Title and Meta -->
+                                    <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark text-white p-4">
+                                        <div class="container">
+                                            <div class="blog-category-badge mb-3">
+                                                <span class="badge bg-white text-primary fw-bold">
+                                                    <i class="fas fa-tag me-1"></i>
+                                                    {{ $blog->blogCategory->title ?? 'Uncategorized' }}
+                                                </span>
+                                            </div>
+                                            
+                                            <h1 class="blog-title display-5 fw-bold mb-3 text-white">
+                                                {{ $blog->title }}
+                                            </h1>
+                                            
+                                            <div class="blog-meta d-flex align-items-center flex-wrap gap-3">
+                                                <div class="blog-date d-flex align-items-center">
+                                                    <i class="far fa-calendar-alt me-2"></i>
+                                                    <span>{{ $blog->created_at->format('F j, Y') }}</span>
+                                                </div>
+                                                
+                                                <div class="blog-updated-date d-flex align-items-center">
+                                                    <i class="fas fa-sync-alt me-2"></i>
+                                                    <span>Updated {{ $blog->updated_at->format('M j, Y') }}</span>
+                                                </div>
+                                                
+                                                @if($blog->user)
+                                                <div class="blog-author d-flex align-items-center">
+                                                    <i class="far fa-user me-2"></i>
+                                                    <span>{{ $blog->user->name }}</span>
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Blog Content -->
+                                <div class="p-4">
+                                    <div class="blog-intro mb-4">
+                                        <div class="lead text-muted fst-italic">
+                                            {!! $blog->short_description !!}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- /Blog Widget -->

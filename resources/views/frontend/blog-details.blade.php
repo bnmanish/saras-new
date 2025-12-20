@@ -51,6 +51,43 @@
                 max-height: none !important;
             }
         }
+        
+        .blog-item {
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .blog-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .blog-item a:hover {
+            color: #007bff !important;
+        }
+        
+        .blog-info h6 {
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+        
+        @media (max-width: 991.98px) {
+            .blog-item .blog-img {
+                margin-bottom: 0.5rem;
+            }
+            
+            .blog-item {
+                text-align: center;
+            }
+            
+            .blog-item .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .blog-item .blog-info {
+                margin-left: 0 !important;
+                margin-top: 0.5rem;
+            }
+        }
     </style>
 
     {!! getSetting()->head_content !!}
@@ -76,8 +113,8 @@
                             <h2 class="breadcrumb-title">{{ $blog->meta_title }}</h2>
                         </nav>
                     </div>
+                    </div>  
                 </div>
-            </div>
             <div class="breadcrumb-bg">
                 <img src="{{ url('/') }}/assets/frontend/img/bg/breadcrumb-bg-01.png" alt="img" class="breadcrumb-bg-01">
                 <img src="{{ url('/') }}/assets/frontend/img/bg/breadcrumb-bg-02.png" alt="img" class="breadcrumb-bg-02">
@@ -92,37 +129,24 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-lg-8 col-md-12">
                         <!-- Blog Widget -->
                         <div class="card">
                             <div class="card-body product-description">
-                                <div class="doctor-widget">
-                                    <div class="doc-info-left">
-                                        <div class="doctor-img1">
-                                            @if($blog->banner)
-                                                <div style="height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                                                    <img src="{{ asset('uploads/blog/' . $blog->banner) }}" class="img-fluid" style="max-height: 400px; border-radius: 10px; object-fit: cover;" alt="{{ $blog->title }}">
-                                                </div>
-                                            @else
-                                                <div style="height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                                                    <img src="{{ url('/') }}/assets/frontend/img/blog/blog.jpg" class="img-fluid" style="max-height: 400px; border-radius: 10px;" alt="No Image">
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="doc-info-cont product-cont">
                                             <h4 class="doc-name mb-2">{{ $blog->title }}</h4>
                                             <div class="blog-meta mb-3">
                                                 <span class="badge bg-primary">{{ $blog->blogCategory->title ?? 'Uncategorized' }}</span>
                                                 <span class="text-muted ms-2">{{ $blog->created_at->format('M d, Y') }}</span>
+
+                                                 <div>
+                                                    <img src="{{ asset('uploads/blog/' . $blog->banner) }}" class="img-fluid w-100" alt="{{ $blog->title }}">
+                                                </div>
 
                                                 <div class="tab-content dynamic-description pt-3">
                                                     {!! $blog->short_description !!}
                                                 </div>
 
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- /Blog Widget -->
@@ -140,6 +164,56 @@
                         <!-- /Blog Details Tab -->
 
                     </div>
+                                        <!-- Latest Blogs Sidebar -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Latest Blogs</h5>
+                            </div>
+                            <div class="card-body">
+                                @if($blogs->count() > 0)
+                                    @foreach($blogs as $latestBlog)
+                                        <div class="blog-item mb-3 pb-3 {{ !$loop->last ? 'border-bottom' : '' }}">
+                                            <div class="d-flex">
+                                                <div class="blog-img flex-shrink-0">
+                                                    @if($latestBlog->banner)
+                                                        <img src="{{ asset('uploads/blog/' . $latestBlog->banner) }}" 
+                                                             alt="{{ $latestBlog->title }}" 
+                                                             class="img-fluid rounded" 
+                                                             style="width: 80px; height: 60px; object-fit: cover;">
+                                                    @else
+                                                        <img src="{{ url('/') }}/assets/frontend/img/blog/blog.jpg" 
+                                                             alt="{{ $latestBlog->title }}" 
+                                                             class="img-fluid rounded" 
+                                                             style="width: 80px; height: 60px; object-fit: cover;">
+                                                    @endif
+                                                </div>
+                                                <div class="blog-info ms-3">
+                                                    <h6 class="mb-1">
+                                                        <a href="{{ route('blog.details', $latestBlog->slug) }}" 
+                                                           class="text-decoration-none text-dark">
+                                                            {{ Str::limit($latestBlog->title, 50) }}
+                                                        </a>
+                                                    </h6>
+                                                    <small class="text-muted">
+                                                        <i class="far fa-calendar"></i> {{ $latestBlog->created_at->format('M d, Y') }}
+                                                    </small>
+                                                    <div class="mt-1">
+                                                        <span class="badge bg-light text-dark">
+                                                            {{ $latestBlog->blogCategory->title ?? 'Uncategorized' }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <p class="text-muted">No latest blogs found.</p>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Latest Blogs Sidebar -->
                 </div>
 
             </div>

@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="topbar-info">
 			<div class="d-flex align-items-center gap-3 header-info">
-				<p><i class="isax isax-message-text5 me-1"></i><a href="mailto:{{getSetting()->primary_email ?? 'info@example.com'}}">{{getSetting()->primary_email ?? 'info@example.com'}}</a></p>
-				<p><i class="isax isax-call5 me-1"></i><a href="tel:{{getSetting()->primary_contact ?? '+1 66589 14556'}}">{{getSetting()->primary_contact ?? '+1 66589 14556'}}</a></p>
+				<p><i class="isax isax-message-text5 me-1"></i><a href="mailto:{{getSetting()->primary_email ?? 'gngmu-rj@nic.in'}}">{{getSetting()->primary_email ?? 'gngmu-rj@nic.in'}}</a></p>
+				<p><i class="isax isax-call5 me-1"></i><a href="tel:{{getSetting()->primary_contact ?? '+9177260 07333'}}">{{getSetting()->primary_contact ?? '+9177260 07333'}}</a></p>
 			</div>
 			<ul>
 				<li class="social-header">

@@ -160,7 +160,7 @@
 							                            <div class="profile-widget w-100">
 
 							                                <div class="doc-img">
-							                                    <a href="#">
+							                                    <a href="{{route('products.details',$product->slug)}}">
 							                                        @if($product->primaryImage)
 							                                            <img class="img-fluid" alt="{{ $product->name }}"
 							                                                 src="{{ asset('uploads/product/'.$product->primaryImage->image) }}">
@@ -169,7 +169,9 @@
 							                                </div>
 
                                 <div class="pro-content">
-                                    <h3 class="title">{{ $product->name }} ({{ $product->category->title ?? 'N/A' }})</h3>
+                                	<a href="{{route('products.details',$product->slug)}}">
+                                    	<h3 class="title">{{ $product->name }} ({{ $product->category->title ?? 'N/A' }})</h3>
+                                	</a>
                                     <div class="d-flex justify-content-between align-items-center mt-2">
                                         <div>
                                             <span class="h5 text-success fw-bold">₹{{ $product->price }}</span>

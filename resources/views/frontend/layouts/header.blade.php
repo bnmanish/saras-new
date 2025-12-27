@@ -57,9 +57,7 @@
 						</a>
 					</div>
 					<ul class="main-nav">
-						<li class="has-submenu megamenu active">
-							<a href="{{route('home')}}">Home</a>
-						</li>
+						<li><a href="{{route('home')}}">Home</a></li>
 						<li class="has-submenu">
 							<a href="javascript:void(0);">About Us <i class="fas fa-chevron-down"></i></a>
 							<ul class="submenu">
@@ -72,9 +70,7 @@
 							</ul>
 						</li>
 
-						<li class="has-submenu megamenu">
-							<a href="{{route('products')}}">Products</a>
-						</li>
+						<li><a href="{{route('products')}}">Products</a></li>
 
 						<li class="has-submenu">
 							<a href="javascript:void(0);">Informations <i class="fas fa-chevron-down"></i></a>

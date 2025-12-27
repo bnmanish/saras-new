@@ -192,22 +192,85 @@
         
         @media (max-width: 768px) {
             .blog-title {
-                font-size: 1.75rem !important;
+                font-size: 1.5rem !important;
             }
             
             .blog-hero-image img {
-                height: 300px !important;
+                height: 250px !important;
+                object-fit: cover !important;
             }
             
             .blog-meta {
-                flex-direction: column;
-                align-items: flex-start !important;
-                gap: 0.5rem !important;
+                font-size: 0.6rem !important;
+                gap: 0.25rem !important;
+                justify-content: flex-start !important;
+                flex-wrap: nowrap !important;
+                overflow: visible !important;
+                padding: 0.1rem !important;
             }
             
             .blog-meta > div {
-                width: 100%;
-                justify-content: center;
+                padding: 0.1rem 0.3rem !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+                background: rgba(255,255,255,0.05) !important;
+                border-radius: 12px !important;
+                min-width: 0 !important;
+            }
+            
+            .blog-meta i {
+                font-size: 0.5rem !important;
+                margin-right: 0.15rem !important;
+                width: 0.5rem !important;
+                display: inline-block !important;
+            }
+            
+            .blog-meta span {
+                font-size: 0.55rem !important;
+                line-height: 1 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-meta {
+                font-size: 0.5rem !important;
+                gap: 0.15rem !important;
+                padding: 0.05rem !important;
+            }
+            
+            .blog-meta > div {
+                padding: 0.05rem 0.2rem !important;
+                border-radius: 8px !important;
+            }
+            
+            .blog-meta i {
+                font-size: 0.45rem !important;
+                margin-right: 0.1rem !important;
+                width: 0.45rem !important;
+            }
+            
+            .blog-meta span {
+                font-size: 0.45rem !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .blog-meta {
+                font-size: 0.45rem !important;
+                gap: 0.1rem !important;
+            }
+            
+            .blog-meta > div {
+                padding: 0.05rem 0.15rem !important;
+            }
+            
+            .blog-meta i {
+                font-size: 0.4rem !important;
+                margin-right: 0.08rem !important;
+            }
+            
+            .blog-meta span {
+                font-size: 0.4rem !important;
             }
         }
     </style>
@@ -262,7 +325,7 @@
                                             <img src="{{ asset('uploads/blog/' . $blog->banner) }}" 
                                                  class="w-100" 
                                                  alt="{{ $blog->title }}"
-                                                 style="height: 400px; object-fit: cover;">
+                                                 style="height: 400px; object-fit: cover; object-position: center;">
                                         @else
                                             <div class="w-100 d-flex align-items-center justify-content-center bg-gradient-primary" 
                                                  style="height: 400px;">
@@ -288,12 +351,12 @@
                                             <div class="blog-meta d-flex align-items-center flex-wrap gap-3">
                                                 <div class="blog-date d-flex align-items-center">
                                                     <i class="far fa-calendar-alt me-2"></i>
-                                                    <span>{{ $blog->created_at->format('F j, Y') }}</span>
+                                                    <span>{{ $blog->created_at->format('M j, Y') }}</span>
                                                 </div>
                                                 
                                                 <div class="blog-updated-date d-flex align-items-center">
                                                     <i class="fas fa-sync-alt me-2"></i>
-                                                    <span>Updated {{ $blog->updated_at->format('M j, Y') }}</span>
+                                                    <span>{{ $blog->updated_at->format('M j, Y') }}</span>
                                                 </div>
                                                 
                                                 @if($blog->user)

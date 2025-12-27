@@ -71,7 +71,9 @@
 					<div class="banner-slider-container">
 						<div class="owl-carousel banner-slider">
 							@foreach($slider as $slide)
-							<div class="banner-slide" style="background-image: url('{{asset('uploads/slider/' . $slide->image)}}');"></div>
+							<div class="banner-slide">
+								<img src="{{asset('uploads/slider/' . $slide->image)}}" alt="Slider Image" class="slider-image">
+							</div>
 							@endforeach
 						</div>
 					</div>

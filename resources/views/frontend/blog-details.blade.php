@@ -190,6 +190,142 @@
             }
         }
         
+        /* Latest Blogs Creative Styles */
+        .latest-blogs-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .latest-blogs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .latest-blogs-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .latest-blogs-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .latest-blogs-header h5 {
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .blog-item-creative {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-item-creative::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(103, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .blog-item-creative:hover::before {
+            left: 100%;
+        }
+        
+        .blog-item-creative:hover {
+            transform: translateX(5px);
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(103, 126, 234, 0.2);
+        }
+        
+        .blog-item-creative:last-child {
+            margin-bottom: 0;
+        }
+        
+        .blog-img-creative {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blog-img-creative img {
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-item-creative:hover .blog-img-creative img {
+            transform: scale(1.1);
+        }
+        
+        .blog-info-creative h6 {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-info-creative h6:hover {
+            color: #667eea;
+        }
+        
+        .blog-meta-creative {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .blog-meta-creative small {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #6c757d;
+        }
+        
+        .badge-creative {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
         @media (max-width: 768px) {
             .blog-title {
                 font-size: 1.5rem !important;
@@ -255,10 +391,60 @@
         }
         
         @media (max-width: 360px) {
+            .breadcrumb-bar {
+                min-height: 160px !important;
+                padding: 1rem 0 !important;
+            }
+            
+            .breadcrumb-title {
+                font-size: 1.1rem !important;
+            }
+            
             .blog-meta {
                 font-size: 0.45rem !important;
                 gap: 0.1rem !important;
+        }
+        
+        @media (max-width: 480px) {
+            .latest-blogs-card {
+                margin-top: 1.5rem;
             }
+            
+            .blog-item-creative {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .blog-img-creative {
+                margin-bottom: 0.5rem;
+            }
+            
+            .blog-img-creative img {
+                width: 100px !important;
+                height: 70px !important;
+            }
+            
+            .blog-info-creative {
+                width: 100%;
+            }
+            
+            .blog-meta-creative {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .latest-blogs-card {
+                margin-top: 2rem;
+            }
+            
+            .blog-item-creative:hover {
+                transform: translateY(-3px);
+            }
+        }
             
             .blog-meta > div {
                 padding: 0.05rem 0.15rem !important;
@@ -271,6 +457,171 @@
             
             .blog-meta span {
                 font-size: 0.4rem !important;
+            }
+            
+            /* Mobile Latest Blogs Styles */
+            .latest-blogs-card {
+                border-radius: 15px;
+                margin-top: 1rem;
+            }
+            
+            .latest-blogs-header {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .latest-blogs-header h5 {
+                font-size: 1.1rem;
+            }
+            
+            .blog-item-creative {
+                padding: 0.75rem;
+                margin-bottom: 0.75rem;
+                border-radius: 12px;
+            }
+            
+            .blog-img-creative img {
+                width: 60px !important;
+                height: 45px !important;
+            }
+            
+            .blog-info-creative h6 {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+            
+            .blog-meta-creative small {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
+            }
+            
+            .badge-creative {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .latest-blogs-card {
+                margin-top: 1.5rem;
+            }
+            
+            .blog-item-creative {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .blog-img-creative {
+                margin-bottom: 0.5rem;
+            }
+            
+            .blog-img-creative img {
+                width: 100px !important;
+                height: 70px !important;
+            }
+            
+            .blog-info-creative {
+                width: 100%;
+            }
+            
+            .blog-meta-creative {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .latest-blogs-card {
+                margin-top: 2rem;
+            }
+            
+            .blog-item-creative:hover {
+                transform: translateY(-3px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .latest-blogs-card {
+                margin-top: 1.5rem;
+            }
+            
+            .blog-item-creative {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .blog-img-creative {
+                margin-bottom: 0.5rem;
+            }
+            
+            .blog-img-creative img {
+                width: 100px !important;
+                height: 70px !important;
+            }
+            
+            .blog-info-creative {
+                width: 100%;
+            }
+            
+            .blog-meta-creative {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .latest-blogs-card {
+                margin-top: 2rem;
+            }
+            
+            .blog-item-creative:hover {
+                transform: translateY(-3px);
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .latest-blogs-card {
+                border-radius: 15px;
+                margin-top: 1rem;
+            }
+            
+            .latest-blogs-header {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .latest-blogs-header h5 {
+                font-size: 1.1rem;
+            }
+            
+            .blog-item-creative {
+                padding: 0.75rem;
+                margin-bottom: 0.75rem;
+                border-radius: 12px;
+            }
+            
+            .blog-img-creative img {
+                width: 60px !important;
+                height: 45px !important;
+            }
+            
+            .blog-info-creative h6 {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+            
+            .blog-meta-creative small {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
+            }
+            
+            .badge-creative {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.5rem;
             }
         }
     </style>
@@ -397,16 +748,18 @@
                     </div>
                                         <!-- Latest Blogs Sidebar -->
                     <div class="col-lg-4 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0">Latest Blogs</h5>
+                        <div class="latest-blogs-card">
+                            <div class="latest-blogs-header">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-blog me-2"></i>Latest Blogs
+                                </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body p-3">
                                 @if($blogs->count() > 0)
                                     @foreach($blogs as $latestBlog)
-                                        <div class="blog-item mb-3 pb-3 {{ !$loop->last ? 'border-bottom' : '' }}">
-                                            <div class="d-flex">
-                                                <div class="blog-img flex-shrink-0">
+                                        <div class="blog-item-creative">
+                                            <div class="d-flex align-items-center">
+                                                <div class="blog-img-creative flex-shrink-0">
                                                     @if($latestBlog->banner)
                                                         <img src="{{ asset('uploads/blog/' . $latestBlog->banner) }}" 
                                                              alt="{{ $latestBlog->title }}" 
@@ -419,18 +772,18 @@
                                                              style="width: 80px; height: 60px; object-fit: cover;">
                                                     @endif
                                                 </div>
-                                                <div class="blog-info ms-3">
-                                                    <h6 class="mb-1">
+                                                <div class="blog-info-creative ms-3 flex-grow-1">
+                                                    <h6 class="mb-2">
                                                         <a href="{{ route('blog.details', $latestBlog->slug) }}" 
-                                                           class="text-decoration-none text-dark">
-                                                            {{ Str::limit($latestBlog->title, 50) }}
+                                                           class="text-decoration-none">
+                                                            {{ Str::limit($latestBlog->title, 45) }}
                                                         </a>
                                                     </h6>
-                                                    <small class="text-muted">
-                                                        <i class="far fa-calendar"></i> {{ $latestBlog->created_at->format('M d, Y') }}
-                                                    </small>
-                                                    <div class="mt-1">
-                                                        <span class="badge bg-light text-dark">
+                                                    <div class="blog-meta-creative">
+                                                        <small>
+                                                            <i class="far fa-calendar me-1"></i>{{ $latestBlog->created_at->format('M d, Y') }}
+                                                        </small>
+                                                        <span class="badge-creative">
                                                             {{ $latestBlog->blogCategory->title ?? 'Uncategorized' }}
                                                         </span>
                                                     </div>
@@ -439,7 +792,10 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    <p class="text-muted">No latest blogs found.</p>
+                                    <div class="text-center py-4">
+                                        <i class="fas fa-blog text-muted mb-2" style="font-size: 2rem;"></i>
+                                        <p class="text-muted">No latest blogs found.</p>
+                                    </div>
                                 @endif
                             </div>
                         </div>

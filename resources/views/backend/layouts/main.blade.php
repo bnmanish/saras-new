@@ -66,7 +66,7 @@
                                     <img src="{{@url('uploads/setting/'.getSetting()->favicon)}}" alt="logo-sm-light" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{@url('uploads/setting/'.getSetting()->site_logo2)}}" alt="logo-light" height="24">
+                                    <img src="{{@url('uploads/setting/'.getSetting()->site_logo)}}" alt="logo-light" height="24">
                                 </span>
                             </a>
                         </div>

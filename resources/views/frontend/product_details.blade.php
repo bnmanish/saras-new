@@ -366,14 +366,14 @@
 													100% Safety<br><span class="text-sm">Only secure payments</span>
 												</div>
 											</li>
-											<li class="list-group-item d-flex align-items-center">
+											<!-- <li class="list-group-item d-flex align-items-center">
 												<div>
 													<i class="fas fa-tag"></i>
 												</div>
 												<div>
 													Hot Offers<br><span class="text-sm">Discounts up to 90%</span>
 												</div>
-											</li>
+											</li> -->
 										</ul>
 									</div>
 								</div>

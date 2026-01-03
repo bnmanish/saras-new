@@ -343,37 +343,25 @@
 									<div class="card flex-fill mt-0 mb-0">
 										<ul class="list-group list-group-flush benifits-col">
 											<li class="list-group-item d-flex align-items-center">
-												<div>
-													<i class="fas fa-shipping-fast"></i>
-												</div>
-												<div>
-													Free Shipping<br><span class="text-sm">For orders from $50</span>
+												<div><i class="fas fa-shipping-fast"></i> </div>
+												<div> Free Shipping<!-- <br><span class="text-sm">For orders from $50</span> -->
 												</div>
 											</li>
 											<li class="list-group-item d-flex align-items-center">
-												<div>
-													<i class="far fa-question-circle"></i>
-												</div>
-												<div>
-													Support 24/7<br><span class="text-sm">Call us anytime</span>
+												<div><i class="far fa-question-circle"></i></div>
+												<div> Support 24/7<!-- <br><span class="text-sm">Call us anytime</span> -->
 												</div>
 											</li>
 											<li class="list-group-item d-flex align-items-center">
-												<div>
-													<i class="fas fa-hands"></i>
-												</div>
-												<div>
-													100% Safety<br><span class="text-sm">Only secure payments</span>
+												<div><i class="fas fa-hands"></i></div>
+												<div> 100% Safety<!-- <br><span class="text-sm">Only secure payments</span> -->
 												</div>
 											</li>
-											<!-- <li class="list-group-item d-flex align-items-center">
-												<div>
-													<i class="fas fa-tag"></i>
+											<li class="list-group-item d-flex align-items-center">
+												<div><i class="fas fa-tag"></i></div>
+												<div> Hot Offers<!--<br> <span class="text-sm">Discounts up to 90%</span> -->
 												</div>
-												<div>
-													Hot Offers<br><span class="text-sm">Discounts up to 90%</span>
-												</div>
-											</li> -->
+											</li>
 										</ul>
 									</div>
 								</div>

@@ -64,7 +64,7 @@ Saras is a modern corporate website built with Laravel 12 that serves as the dig
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/bnmanish/saras-new.git
 cd saras-new
 ```
 

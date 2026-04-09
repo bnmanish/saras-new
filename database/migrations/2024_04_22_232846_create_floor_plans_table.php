@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('floor_plans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id')->nullable();
-            $table->foreign('project_id')->references('id')->on('projects');
             $table->string('file');
             $table->enum('status',['0','1'])->nullable()->default('1')->comment('0=disable,1=enable');
             $table->timestamps();

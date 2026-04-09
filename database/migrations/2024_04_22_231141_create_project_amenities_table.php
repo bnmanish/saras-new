@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('project_amenities', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id')->nullable();
-            $table->foreign('project_id')->references('id')->on('projects');
             $table->unsignedBigInteger('amenity_id')->nullable();
-            $table->foreign('amenity_id')->references('id')->on('amenities');
             $table->timestamps();
         });
     }

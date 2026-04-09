@@ -6,7 +6,10 @@ use App\Models\City;
 use App\Models\Brand;
 
 function getSetting(){
-	return Setting::first();
+	return Setting::first() ?? Setting::create([
+        'site_name' => 'My Website',
+        'favicon' => 'default-favicon.ico',
+    ]);
 }
 
 function citiesList(){

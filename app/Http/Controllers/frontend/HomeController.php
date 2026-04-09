@@ -26,9 +26,16 @@ class HomeController extends Controller
 {
     public function home(){
         $slider = Slider::select('desciption','image')->where('status','1')->orderBy('sorting_order','asc')->get();
-        $page = Page::where(['id'=>1])->first();
-        $about = Page::where(['id'=>2])->first();
-        $categories = Category::select('title','slug','icon')->where('status','1')->orderBy('id','asc')->get();
+        $page = Page::firstOrCreate(['id' => 1], [
+            'meta_title' => 'Home',
+            'meta_description' => 'Welcome to our website',
+            'meta_keywords' => 'home, welcome',
+        ]);
+        $about = Page::firstOrCreate(['id' => 2], [
+            'meta_title' => 'About',
+            'short_description' => 'Welcome to our company',
+        ]);
+        $categories = Category::select('name')->where('status','1')->orderBy('id','asc')->get();
         $products = Product::with(['primaryImage', 'category'])->where('status', '1')->inRandomOrder()->limit(10)->get();
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{$page->meta_title}}</title>
+		<title>{{ $page->meta_title ?? 'Default Title' }}</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
-		<meta name="description" content="{{$page->meta_description}}">
-		<meta name="keywords" content="{{$page->meta_keywords}}">
+		<meta name="description" content="{{ $page->meta_description ?? '' }}">
+		<meta name="keywords" content="{{ $page->meta_keywords ?? '' }}">
 		<meta name="author" content="Practo Clone HTML Template - Doctor Booking Template">
 		<meta property="og:url" content="{{route('home')}}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="{{$page->meta_title}}">
-		<meta property="og:description" content="{{$page->meta_description}}">
+		<meta property="og:title" content="{{ $page->meta_title ?? 'Default Title' }}">
+		<meta property="og:description" content="{{ $page->meta_description ?? '' }}">
 		<meta property="og:image" content="{{url('/')}}/assets/frontend/img/preview-banner.jpg">
-		<meta name="twitter:title" content="{{$page->meta_title}}">
-		<meta name="twitter:description" content="{{$page->meta_description}}">
+		<meta name="twitter:title" content="{{ $page->meta_title ?? 'Default Title' }}">
+		<meta name="twitter:description" content="{{ $page->meta_description ?? '' }}">
 		<!-- Apple Touch Icon -->
 		<link rel="shortcut icon" href="{{url('uploads/setting/'.getSetting()->favicon)}}" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{url('uploads/setting/'.getSetting()->favicon)}}">

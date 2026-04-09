@@ -14,9 +14,19 @@ class AboutController extends Controller
         $page = Page::where(['id'=>2])->first();
         return view('frontend/about_us')->with(['page'=>$page]);
     }
-    
+
     public function chairmanMessage(){
-        $page = Page::where(['id'=>14])->first();
+        $page = Page::find(14);
+        if (!$page) {
+            $page = new Page();
+            $page->title = 'Chairman Message';
+            $page->meta_title = 'Chairman Message';
+            $page->meta_description = '';
+            $page->meta_keywords = '';
+            $page->description = '';
+            $page->image = '';
+            $page->save();
+        }
         return view('frontend/chairman_message')->with(['page'=>$page]);
     }
 

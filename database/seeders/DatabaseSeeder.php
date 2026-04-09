@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GallerySeeder::class);
         $this->call(QualityAssuranceSeeder::class);
         $this->call(MilkPurchasePriceChartSeeder::class);
+        $this->call(PageSeeder::class);
     }
 }

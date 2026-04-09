@@ -35,7 +35,7 @@ class HomeController extends Controller
             'meta_title' => 'About',
             'short_description' => 'Welcome to our company',
         ]);
-        $categories = Category::select('name')->where('status','1')->orderBy('id','asc')->get();
+        $categories = Category::select('title')->where('status','1')->orderBy('id','asc')->get();
         $products = Product::with(['primaryImage', 'category'])->where('status', '1')->inRandomOrder()->limit(10)->get();
 
         $testimonials = Testimonial::where(['status'=>'1'])->orderBy('created_at','desc')->get();
